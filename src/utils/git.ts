@@ -1,7 +1,8 @@
 import { execa } from 'execa';
-import { outro, spinner } from '@clack/prompts';
 import { readFileSync } from 'fs';
 import ignore, { Ignore } from 'ignore';
+import { join } from 'path';
+import { outro, spinner } from '@clack/prompts';
 
 export const assertGitRepo = async () => {
   try {
@@ -15,43 +16,44 @@ export const assertGitRepo = async () => {
 //   (file) => `:(exclude)${file}`
 // );
 
-export const getOpenCommitIgnore = (): Ignore => {
+export const getOpenCommitIgnore = async (): Promise<Ignore> => {
+  const gitDir = await getGitDir();
+
   const ig = ignore();
 
   try {
-    ig.add(readFileSync('.opencommitignore').toString().split('\n'));
+    ig.add(
+      readFileSync(join(gitDir, '.opencommitignore')).toString().split('\n')
+    );
   } catch (e) {}
 
   return ig;
 };
 
-export const getCoreHooksPath = async(): Promise<string> => {
-  const { stdout } = await execa('git', [
-    'config',
-    'core.hooksPath']);
+export const getCoreHooksPath = async (): Promise<string> => {
+  const gitDir = await getGitDir();
+
+  const { stdout } = await execa('git', ['config', 'core.hooksPath'], {
+    cwd: gitDir
+  });
 
   return stdout;
-}
+};
 
 export const getStagedFiles = async (): Promise<string[]> => {
-  const { stdout: gitDir } = await execa('git', [
-    'rev-parse',
-    '--show-toplevel'
-  ]);
+  const gitDir = await getGitDir();
 
-  const { stdout: files } = await execa('git', [
-    'diff',
-    '--name-only',
-    '--cached',
-    '--relative',
-    gitDir
-  ]);
+  const { stdout: files } = await execa(
+    'git',
+    ['diff', '--name-only', '--cached', '--relative'],
+    { cwd: gitDir }
+  );
 
   if (!files) return [];
 
   const filesList = files.split('\n');
 
-  const ig = getOpenCommitIgnore();
+  const ig = await getOpenCommitIgnore();
   const allowedFiles = filesList.filter((file) => !ig.ignores(file));
 
   if (!allowedFiles) return [];
@@ -60,12 +62,17 @@ export const getStagedFiles = async (): Promise<string[]> => {
 };
 
 export const getChangedFiles = async (): Promise<string[]> => {
-  const { stdout: modified } = await execa('git', ['ls-files', '--modified']);
-  const { stdout: others } = await execa('git', [
-    'ls-files',
-    '--others',
-    '--exclude-standard'
-  ]);
+  const gitDir = await getGitDir();
+
+  const { stdout: modified } = await execa('git', ['ls-files', '--modified'], {
+    cwd: gitDir
+  });
+
+  const { stdout: others } = await execa(
+    'git',
+    ['ls-files', '--others', '--exclude-standard'],
+    { cwd: gitDir }
+  );
 
   const files = [...modified.split('\n'), ...others.split('\n')].filter(
     (file) => !!file
@@ -75,20 +82,35 @@ export const getChangedFiles = async (): Promise<string[]> => {
 };
 
 export const gitAdd = async ({ files }: { files: string[] }) => {
+  const gitDir = await getGitDir();
+
   const gitAddSpinner = spinner();
+
   gitAddSpinner.start('Adding files to commit');
-  await execa('git', ['add', ...files]);
-  gitAddSpinner.stop('Done');
+
+  await execa('git', ['add', ...files], { cwd: gitDir });
+
+  gitAddSpinner.stop(`Staged ${files.length} files`);
 };
 
 export const getDiff = async ({ files }: { files: string[] }) => {
+  const gitDir = await getGitDir();
+
   const lockFiles = files.filter(
-    (file) => file.includes('.lock') || file.includes('-lock.')
+    (file) =>
+      file.includes('.lock') ||
+      file.includes('-lock.') ||
+      file.includes('.svg') ||
+      file.includes('.png') ||
+      file.includes('.jpg') ||
+      file.includes('.jpeg') ||
+      file.includes('.webp') ||
+      file.includes('.gif')
   );
 
   if (lockFiles.length) {
     outro(
-      `Some files are '.lock' files which are excluded by default from 'git diff'. No commit messages are generated for this files:\n${lockFiles.join(
+      `Some files are excluded by default from 'git diff'. No commit messages are generated for this files:\n${lockFiles.join(
         '\n'
       )}`
     );
@@ -98,12 +120,20 @@ export const getDiff = async ({ files }: { files: string[] }) => {
     (file) => !file.includes('.lock') && !file.includes('-lock.')
   );
 
-  const { stdout: diff } = await execa('git', [
-    'diff',
-    '--staged',
-    '--',
-    ...filesWithoutLocks
-  ]);
+  const { stdout: diff } = await execa(
+    'git',
+    ['diff', '--staged', '--', ...filesWithoutLocks],
+    { cwd: gitDir }
+  );
 
   return diff;
+};
+
+export const getGitDir = async (): Promise<string> => {
+  const { stdout: gitDir } = await execa('git', [
+    'rev-parse',
+    '--show-toplevel'
+  ]);
+
+  return gitDir;
 };

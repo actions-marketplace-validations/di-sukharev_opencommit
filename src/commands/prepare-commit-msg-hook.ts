@@ -1,9 +1,11 @@
-import fs from 'fs/promises';
 import chalk from 'chalk';
+import fs from 'fs/promises';
+
 import { intro, outro, spinner } from '@clack/prompts';
+
+import { generateCommitMessageByDiff } from '../generateCommitMessageFromGitDiff';
 import { getChangedFiles, getDiff, getStagedFiles, gitAdd } from '../utils/git';
 import { getConfig } from './config';
-import { generateCommitMessageByDiff } from '../generateCommitMessageFromGitDiff';
 
 const [messageFilePath, commitSource] = process.argv.slice(2);
 
@@ -24,7 +26,7 @@ export const prepareCommitMessageHook = async (
 
       if (changedFiles) await gitAdd({ files: changedFiles });
       else {
-        outro('No changes detected, write some code and run `oc` again');
+        outro('No changes detected, write some code and run `oco` again');
         process.exit(1);
       }
     }
@@ -37,10 +39,11 @@ export const prepareCommitMessageHook = async (
 
     const config = getConfig();
 
-    if (!config?.OCO_OPENAI_API_KEY) {
-      throw new Error(
-        'No OPEN_AI_API exists. Set your OPEN_AI_API=<key> in ~/.opencommit'
+    if (!config.OCO_API_KEY) {
+      outro(
+        'No OCO_API_KEY is set. Set your key via `oco config set OCO_API_KEY=<value>. For more info see https://github.com/di-sukharev/opencommit'
       );
+      return;
     }
 
     const spin = spinner();
@@ -53,10 +56,14 @@ export const prepareCommitMessageHook = async (
 
     const fileContent = await fs.readFile(messageFilePath);
 
-    await fs.writeFile(
-      messageFilePath,
-      commitMessage + '\n' + fileContent.toString()
-    );
+    const messageWithComment = `# ${commitMessage}\n\n# ---------- [OpenCommit] ---------- #\n# Remove the # above to use this generated commit message.\n# To cancel the commit, just close this window without making any changes.\n\n${fileContent.toString()}`;
+    const messageWithoutComment = `${commitMessage}\n\n${fileContent.toString()}`;
+
+    const message = config.OCO_HOOK_AUTO_UNCOMMENT
+      ? messageWithoutComment
+      : messageWithComment;
+
+    await fs.writeFile(messageFilePath, message);
   } catch (error) {
     outro(`${chalk.red('✖')} ${error}`);
     process.exit(1);

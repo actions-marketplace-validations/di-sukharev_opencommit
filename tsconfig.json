@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["ES5", "ES6"],
+    "target": "ES2020",
+    "lib": ["ES6", "ES2020"],
 
-    "module": "ESNext",
-    // "rootDir": "./src",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+
     "resolveJsonModule": true,
+    "moduleResolution": "NodeNext",
 
     "allowJs": true,
 
@@ -21,6 +21,7 @@
 
     "skipLibCheck": true
   },
+  "include": ["test/jest-setup.ts"],
   "exclude": ["node_modules"],
   "ts-node": {
     "esm": true,
