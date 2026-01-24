@@ -78,10 +78,10 @@ var require_command = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -207,7 +207,7 @@ var init_stringify = __esm({
 // node_modules/uuid/dist/esm-node/v1.js
 function v1(options, buf, offset) {
   let i3 = buf && offset || 0;
-  const b3 = buf || new Array(16);
+  const b4 = buf || new Array(16);
   options = options || {};
   let node = options.node || _nodeId;
   let clockseq = options.clockseq !== void 0 ? options.clockseq : _clockseq;
@@ -237,21 +237,21 @@ function v1(options, buf, offset) {
   _clockseq = clockseq;
   msecs += 122192928e5;
   const tl = ((msecs & 268435455) * 1e4 + nsecs) % 4294967296;
-  b3[i3++] = tl >>> 24 & 255;
-  b3[i3++] = tl >>> 16 & 255;
-  b3[i3++] = tl >>> 8 & 255;
-  b3[i3++] = tl & 255;
+  b4[i3++] = tl >>> 24 & 255;
+  b4[i3++] = tl >>> 16 & 255;
+  b4[i3++] = tl >>> 8 & 255;
+  b4[i3++] = tl & 255;
   const tmh = msecs / 4294967296 * 1e4 & 268435455;
-  b3[i3++] = tmh >>> 8 & 255;
-  b3[i3++] = tmh & 255;
-  b3[i3++] = tmh >>> 24 & 15 | 16;
-  b3[i3++] = tmh >>> 16 & 255;
-  b3[i3++] = clockseq >>> 8 | 128;
-  b3[i3++] = clockseq & 255;
+  b4[i3++] = tmh >>> 8 & 255;
+  b4[i3++] = tmh & 255;
+  b4[i3++] = tmh >>> 24 & 15 | 16;
+  b4[i3++] = tmh >>> 16 & 255;
+  b4[i3++] = clockseq >>> 8 | 128;
+  b4[i3++] = clockseq & 255;
   for (let n2 = 0; n2 < 6; ++n2) {
-    b3[i3 + n2] = node[n2];
+    b4[i3 + n2] = node[n2];
   }
-  return buf || stringify_default(b3);
+  return buf || stringify_default(b4);
 }
 var _nodeId, _clockseq, _lastMSecs, _lastNSecs, v1_default;
 var init_v1 = __esm({
@@ -269,24 +269,24 @@ function parse(uuid) {
   if (!validate_default(uuid)) {
     throw TypeError("Invalid UUID");
   }
-  let v2;
+  let v6;
   const arr = new Uint8Array(16);
-  arr[0] = (v2 = parseInt(uuid.slice(0, 8), 16)) >>> 24;
-  arr[1] = v2 >>> 16 & 255;
-  arr[2] = v2 >>> 8 & 255;
-  arr[3] = v2 & 255;
-  arr[4] = (v2 = parseInt(uuid.slice(9, 13), 16)) >>> 8;
-  arr[5] = v2 & 255;
-  arr[6] = (v2 = parseInt(uuid.slice(14, 18), 16)) >>> 8;
-  arr[7] = v2 & 255;
-  arr[8] = (v2 = parseInt(uuid.slice(19, 23), 16)) >>> 8;
-  arr[9] = v2 & 255;
-  arr[10] = (v2 = parseInt(uuid.slice(24, 36), 16)) / 1099511627776 & 255;
-  arr[11] = v2 / 4294967296 & 255;
-  arr[12] = v2 >>> 24 & 255;
-  arr[13] = v2 >>> 16 & 255;
-  arr[14] = v2 >>> 8 & 255;
-  arr[15] = v2 & 255;
+  arr[0] = (v6 = parseInt(uuid.slice(0, 8), 16)) >>> 24;
+  arr[1] = v6 >>> 16 & 255;
+  arr[2] = v6 >>> 8 & 255;
+  arr[3] = v6 & 255;
+  arr[4] = (v6 = parseInt(uuid.slice(9, 13), 16)) >>> 8;
+  arr[5] = v6 & 255;
+  arr[6] = (v6 = parseInt(uuid.slice(14, 18), 16)) >>> 8;
+  arr[7] = v6 & 255;
+  arr[8] = (v6 = parseInt(uuid.slice(19, 23), 16)) >>> 8;
+  arr[9] = v6 & 255;
+  arr[10] = (v6 = parseInt(uuid.slice(24, 36), 16)) / 1099511627776 & 255;
+  arr[11] = v6 / 4294967296 & 255;
+  arr[12] = v6 >>> 24 & 255;
+  arr[13] = v6 >>> 16 & 255;
+  arr[14] = v6 >>> 8 & 255;
+  arr[15] = v6 & 255;
   return arr;
 }
 var parse_default;
@@ -493,10 +493,10 @@ var require_file_command = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -595,8 +595,8 @@ var require_proxy = __commonJS({
       if (typeof reqPort === "number") {
         upperReqHosts.push(`${upperReqHosts[0]}:${reqPort}`);
       }
-      for (const upperNoProxyItem of noProxy.split(",").map((x2) => x2.trim().toUpperCase()).filter((x2) => x2)) {
-        if (upperNoProxyItem === "*" || upperReqHosts.some((x2) => x2 === upperNoProxyItem || x2.endsWith(`.${upperNoProxyItem}`) || upperNoProxyItem.startsWith(".") && x2.endsWith(`${upperNoProxyItem}`))) {
+      for (const upperNoProxyItem of noProxy.split(",").map((x3) => x3.trim().toUpperCase()).filter((x3) => x3)) {
+        if (upperNoProxyItem === "*" || upperReqHosts.some((x3) => x3 === upperNoProxyItem || x3.endsWith(`.${upperNoProxyItem}`) || upperNoProxyItem.startsWith(".") && x3.endsWith(`${upperNoProxyItem}`))) {
           return true;
         }
       }
@@ -1260,7 +1260,7 @@ var require_util = __commonJS({
     var nodeUtil = require("util");
     var { stringify: stringify3 } = require("querystring");
     var { headerNameLowerCasedRecord } = require_constants();
-    var [nodeMajor, nodeMinor] = process.versions.node.split(".").map((v2) => Number(v2));
+    var [nodeMajor, nodeMinor] = process.versions.node.split(".").map((v6) => Number(v6));
     function nop() {
     }
     function isStream2(obj) {
@@ -1412,7 +1412,7 @@ var require_util = __commonJS({
         let val = obj[key];
         if (!val) {
           if (Array.isArray(headers[i3 + 1])) {
-            obj[key] = headers[i3 + 1].map((x2) => x2.toString("utf8"));
+            obj[key] = headers[i3 + 1].map((x3) => x3.toString("utf8"));
           } else {
             obj[key] = headers[i3 + 1].toString("utf8");
           }
@@ -1953,14 +1953,14 @@ var require_HeaderParser = __commonJS({
       }
       const lines = this.buffer.split(RE_CRLF);
       const len = lines.length;
-      let m4, h3;
+      let m4, h4;
       for (var i3 = 0; i3 < len; ++i3) {
         if (lines[i3].length === 0) {
           continue;
         }
         if (lines[i3][0] === "	" || lines[i3][0] === " ") {
-          if (h3) {
-            this.header[h3][this.header[h3].length - 1] += lines[i3];
+          if (h4) {
+            this.header[h4][this.header[h4].length - 1] += lines[i3];
             continue;
           }
         }
@@ -1969,9 +1969,9 @@ var require_HeaderParser = __commonJS({
           return;
         }
         m4 = RE_HDR.exec(lines[i3]);
-        h3 = m4[1].toLowerCase();
-        this.header[h3] = this.header[h3] || [];
-        this.header[h3].push(m4[2] || "");
+        h4 = m4[1].toLowerCase();
+        this.header[h4] = this.header[h4] || [];
+        this.header[h4].push(m4[2] || "");
         if (++this.npairs === this.maxHeaderPairs) {
           break;
         }
@@ -3989,17 +3989,17 @@ var require_util2 = __commonJS({
     }
     function isValidReasonPhrase(statusText) {
       for (let i3 = 0; i3 < statusText.length; ++i3) {
-        const c2 = statusText.charCodeAt(i3);
-        if (!(c2 === 9 || // HTAB
-        c2 >= 32 && c2 <= 126 || // SP / VCHAR
-        c2 >= 128 && c2 <= 255)) {
+        const c3 = statusText.charCodeAt(i3);
+        if (!(c3 === 9 || // HTAB
+        c3 >= 32 && c3 <= 126 || // SP / VCHAR
+        c3 >= 128 && c3 <= 255)) {
           return false;
         }
       }
       return true;
     }
-    function isTokenCharCode(c2) {
-      switch (c2) {
+    function isTokenCharCode(c3) {
+      switch (c3) {
         case 34:
         case 40:
         case 41:
@@ -4019,7 +4019,7 @@ var require_util2 = __commonJS({
         case 125:
           return false;
         default:
-          return c2 >= 33 && c2 <= 126;
+          return c3 >= 33 && c3 <= 126;
       }
     }
     function isValidHTTPToken(characters) {
@@ -4326,11 +4326,11 @@ var require_util2 = __commonJS({
     }
     function tryUpgradeRequestToAPotentiallyTrustworthyURL(request3) {
     }
-    function sameOrigin(A3, B2) {
-      if (A3.origin === B2.origin && A3.origin === "null") {
+    function sameOrigin(A4, B2) {
+      if (A4.origin === B2.origin && A4.origin === "null") {
         return true;
       }
-      if (A3.protocol === B2.protocol && A3.hostname === B2.hostname && A3.port === B2.port) {
+      if (A4.protocol === B2.protocol && A4.hostname === B2.hostname && A4.port === B2.port) {
         return true;
       }
       return false;
@@ -4595,11 +4595,11 @@ var require_webidl = __commonJS({
         message: `"${context2.value}" is an invalid ${context2.type}.`
       });
     };
-    webidl.brandCheck = function(V4, I2, opts = void 0) {
-      if (opts?.strict !== false && !(V4 instanceof I2)) {
+    webidl.brandCheck = function(V4, I3, opts = void 0) {
+      if (opts?.strict !== false && !(V4 instanceof I3)) {
         throw new TypeError("Illegal invocation");
       } else {
-        return V4?.[Symbol.toStringTag] === I2.prototype[Symbol.toStringTag];
+        return V4?.[Symbol.toStringTag] === I3.prototype[Symbol.toStringTag];
       }
     };
     webidl.argumentLengthCheck = function({ length }, min, ctx) {
@@ -4656,44 +4656,44 @@ var require_webidl = __commonJS({
         lowerBound = Math.pow(-2, bitLength) - 1;
         upperBound = Math.pow(2, bitLength - 1) - 1;
       }
-      let x2 = Number(V4);
-      if (x2 === 0) {
-        x2 = 0;
+      let x3 = Number(V4);
+      if (x3 === 0) {
+        x3 = 0;
       }
       if (opts.enforceRange === true) {
-        if (Number.isNaN(x2) || x2 === Number.POSITIVE_INFINITY || x2 === Number.NEGATIVE_INFINITY) {
+        if (Number.isNaN(x3) || x3 === Number.POSITIVE_INFINITY || x3 === Number.NEGATIVE_INFINITY) {
           throw webidl.errors.exception({
             header: "Integer conversion",
             message: `Could not convert ${V4} to an integer.`
           });
         }
-        x2 = webidl.util.IntegerPart(x2);
-        if (x2 < lowerBound || x2 > upperBound) {
+        x3 = webidl.util.IntegerPart(x3);
+        if (x3 < lowerBound || x3 > upperBound) {
           throw webidl.errors.exception({
             header: "Integer conversion",
-            message: `Value must be between ${lowerBound}-${upperBound}, got ${x2}.`
+            message: `Value must be between ${lowerBound}-${upperBound}, got ${x3}.`
           });
         }
-        return x2;
+        return x3;
       }
-      if (!Number.isNaN(x2) && opts.clamp === true) {
-        x2 = Math.min(Math.max(x2, lowerBound), upperBound);
-        if (Math.floor(x2) % 2 === 0) {
-          x2 = Math.floor(x2);
+      if (!Number.isNaN(x3) && opts.clamp === true) {
+        x3 = Math.min(Math.max(x3, lowerBound), upperBound);
+        if (Math.floor(x3) % 2 === 0) {
+          x3 = Math.floor(x3);
         } else {
-          x2 = Math.ceil(x2);
+          x3 = Math.ceil(x3);
         }
-        return x2;
+        return x3;
       }
-      if (Number.isNaN(x2) || x2 === 0 && Object.is(0, x2) || x2 === Number.POSITIVE_INFINITY || x2 === Number.NEGATIVE_INFINITY) {
+      if (Number.isNaN(x3) || x3 === 0 && Object.is(0, x3) || x3 === Number.POSITIVE_INFINITY || x3 === Number.NEGATIVE_INFINITY) {
         return 0;
       }
-      x2 = webidl.util.IntegerPart(x2);
-      x2 = x2 % Math.pow(2, bitLength);
-      if (signedness === "signed" && x2 >= Math.pow(2, bitLength) - 1) {
-        return x2 - Math.pow(2, bitLength);
+      x3 = webidl.util.IntegerPart(x3);
+      x3 = x3 % Math.pow(2, bitLength);
+      if (signedness === "signed" && x3 >= Math.pow(2, bitLength) - 1) {
+        return x3 - Math.pow(2, bitLength);
       }
-      return x2;
+      return x3;
     };
     webidl.util.IntegerPart = function(n2) {
       const r3 = Math.floor(Math.abs(n2));
@@ -4729,29 +4729,29 @@ var require_webidl = __commonJS({
       };
     };
     webidl.recordConverter = function(keyConverter, valueConverter) {
-      return (O3) => {
-        if (webidl.util.Type(O3) !== "Object") {
+      return (O4) => {
+        if (webidl.util.Type(O4) !== "Object") {
           throw webidl.errors.exception({
             header: "Record",
-            message: `Value of type ${webidl.util.Type(O3)} is not an Object.`
+            message: `Value of type ${webidl.util.Type(O4)} is not an Object.`
           });
         }
         const result = {};
-        if (!types.isProxy(O3)) {
-          const keys2 = Object.keys(O3);
+        if (!types.isProxy(O4)) {
+          const keys2 = Object.keys(O4);
           for (const key of keys2) {
             const typedKey = keyConverter(key);
-            const typedValue = valueConverter(O3[key]);
+            const typedValue = valueConverter(O4[key]);
             result[typedKey] = typedValue;
           }
           return result;
         }
-        const keys = Reflect.ownKeys(O3);
+        const keys = Reflect.ownKeys(O4);
         for (const key of keys) {
-          const desc = Reflect.getOwnPropertyDescriptor(O3, key);
+          const desc = Reflect.getOwnPropertyDescriptor(O4, key);
           if (desc?.enumerable) {
             const typedKey = keyConverter(key);
-            const typedValue = valueConverter(O3[key]);
+            const typedValue = valueConverter(O4[key]);
             result[typedKey] = typedValue;
           }
         }
@@ -4828,39 +4828,39 @@ var require_webidl = __commonJS({
       return String(V4);
     };
     webidl.converters.ByteString = function(V4) {
-      const x2 = webidl.converters.DOMString(V4);
-      for (let index = 0; index < x2.length; index++) {
-        if (x2.charCodeAt(index) > 255) {
+      const x3 = webidl.converters.DOMString(V4);
+      for (let index = 0; index < x3.length; index++) {
+        if (x3.charCodeAt(index) > 255) {
           throw new TypeError(
-            `Cannot convert argument to a ByteString because the character at index ${index} has a value of ${x2.charCodeAt(index)} which is greater than 255.`
+            `Cannot convert argument to a ByteString because the character at index ${index} has a value of ${x3.charCodeAt(index)} which is greater than 255.`
           );
         }
       }
-      return x2;
+      return x3;
     };
     webidl.converters.USVString = toUSVString;
     webidl.converters.boolean = function(V4) {
-      const x2 = Boolean(V4);
-      return x2;
+      const x3 = Boolean(V4);
+      return x3;
     };
     webidl.converters.any = function(V4) {
       return V4;
     };
     webidl.converters["long long"] = function(V4) {
-      const x2 = webidl.util.ConvertToInt(V4, 64, "signed");
-      return x2;
+      const x3 = webidl.util.ConvertToInt(V4, 64, "signed");
+      return x3;
     };
     webidl.converters["unsigned long long"] = function(V4) {
-      const x2 = webidl.util.ConvertToInt(V4, 64, "unsigned");
-      return x2;
+      const x3 = webidl.util.ConvertToInt(V4, 64, "unsigned");
+      return x3;
     };
     webidl.converters["unsigned long"] = function(V4) {
-      const x2 = webidl.util.ConvertToInt(V4, 32, "unsigned");
-      return x2;
+      const x3 = webidl.util.ConvertToInt(V4, 32, "unsigned");
+      return x3;
     };
     webidl.converters["unsigned short"] = function(V4, opts) {
-      const x2 = webidl.util.ConvertToInt(V4, 16, "unsigned", opts);
-      return x2;
+      const x3 = webidl.util.ConvertToInt(V4, 16, "unsigned", opts);
+      return x3;
     };
     webidl.converters.ArrayBuffer = function(V4, opts = {}) {
       if (webidl.util.Type(V4) !== "Object" || !types.isAnyArrayBuffer(V4)) {
@@ -6967,7 +6967,7 @@ var require_constants3 = __commonJS({
         exports2.HEADER_CHARS.push(i3);
       }
     }
-    exports2.CONNECTION_TOKEN_CHARS = exports2.HEADER_CHARS.filter((c2) => c2 !== 44);
+    exports2.CONNECTION_TOKEN_CHARS = exports2.HEADER_CHARS.filter((c3) => c3 !== 44);
     exports2.MAJOR = exports2.NUM_MAP;
     exports2.MINOR = exports2.MAJOR;
     var HEADER_STATE;
@@ -9018,7 +9018,7 @@ var require_pool_base = __commonJS({
             pool.emit("drain", origin2, [pool, ...targets]);
           }
           if (pool[kClosedResolve] && queue.isEmpty()) {
-            Promise.all(pool[kClients].map((c2) => c2.close())).then(pool[kClosedResolve]);
+            Promise.all(pool[kClients].map((c3) => c3.close())).then(pool[kClosedResolve]);
           }
         };
         this[kOnConnect] = (origin2, targets) => {
@@ -9067,7 +9067,7 @@ var require_pool_base = __commonJS({
       }
       async [kClose]() {
         if (this[kQueue].isEmpty()) {
-          return Promise.all(this[kClients].map((c2) => c2.close()));
+          return Promise.all(this[kClients].map((c3) => c3.close()));
         } else {
           return new Promise((resolve) => {
             this[kClosedResolve] = resolve;
@@ -9082,7 +9082,7 @@ var require_pool_base = __commonJS({
           }
           item.handler.onError(err);
         }
-        return Promise.all(this[kClients].map((c2) => c2.destroy(err)));
+        return Promise.all(this[kClients].map((c3) => c3.destroy(err)));
       }
       [kDispatch](opts, handler) {
         const dispatcher = this[kGetDispatcher]();
@@ -9246,9 +9246,9 @@ var require_balanced_pool = __commonJS({
     var kWeight = Symbol("kWeight");
     var kMaxWeightPerServer = Symbol("kMaxWeightPerServer");
     var kErrorPenalty = Symbol("kErrorPenalty");
-    function getGreatestCommonDivisor(a3, b3) {
-      if (b3 === 0) return a3;
-      return getGreatestCommonDivisor(b3, a3 % b3);
+    function getGreatestCommonDivisor(a4, b4) {
+      if (b4 === 0) return a4;
+      return getGreatestCommonDivisor(b4, a4 % b4);
     }
     function defaultFactory(origin2, opts) {
       return new Pool(origin2, opts);
@@ -9323,7 +9323,7 @@ var require_balanced_pool = __commonJS({
         if (!dispatcher) {
           return;
         }
-        const allClientsBusy = this[kClients].map((pool) => pool[kNeedDrain]).reduce((a3, b3) => a3 && b3, true);
+        const allClientsBusy = this[kClients].map((pool) => pool[kNeedDrain]).reduce((a4, b4) => a4 && b4, true);
         if (allClientsBusy) {
           return;
         }
@@ -10783,7 +10783,7 @@ var require_mock_utils = __commonJS({
       return Object.entries(data).reduce((keyValuePairs, [key, value]) => [
         ...keyValuePairs,
         Buffer.from(`${key}`),
-        Array.isArray(value) ? value.map((x2) => Buffer.from(`${x2}`)) : Buffer.from(`${value}`)
+        Array.isArray(value) ? value.map((x3) => Buffer.from(`${x3}`)) : Buffer.from(`${value}`)
       ], []);
     }
     function getStatusText(statusCode) {
@@ -12123,7 +12123,7 @@ var require_headers = __commonJS({
           return this[kHeadersList][kHeadersSortedMap];
         }
         const headers = [];
-        const names = [...this[kHeadersList]].sort((a3, b3) => a3[0] < b3[0] ? -1 : 1);
+        const names = [...this[kHeadersList]].sort((a4, b4) => a4[0] < b4[0] ? -1 : 1);
         const cookies = this[kHeadersList].cookies;
         for (let i3 = 0; i3 < names.length; ++i3) {
           const [name, value] = names[i3];
@@ -14198,7 +14198,7 @@ var require_fetch = __commonJS({
                   const key = headersList[n2 + 0].toString("latin1");
                   const val = headersList[n2 + 1].toString("latin1");
                   if (key.toLowerCase() === "content-encoding") {
-                    codings = val.toLowerCase().split(",").map((x2) => x2.trim());
+                    codings = val.toLowerCase().split(",").map((x3) => x3.trim());
                   } else if (key.toLowerCase() === "location") {
                     location = val;
                   }
@@ -14209,7 +14209,7 @@ var require_fetch = __commonJS({
                 for (const key of keys) {
                   const val = headersList[key];
                   if (key.toLowerCase() === "content-encoding") {
-                    codings = val.toLowerCase().split(",").map((x2) => x2.trim()).reverse();
+                    codings = val.toLowerCase().split(",").map((x3) => x3.trim()).reverse();
                   } else if (key.toLowerCase() === "location") {
                     location = val;
                   }
@@ -14830,25 +14830,25 @@ var require_util4 = __commonJS({
       return new TextDecoder(encoding).decode(sliced);
     }
     function BOMSniffing(ioQueue) {
-      const [a3, b3, c2] = ioQueue;
-      if (a3 === 239 && b3 === 187 && c2 === 191) {
+      const [a4, b4, c3] = ioQueue;
+      if (a4 === 239 && b4 === 187 && c3 === 191) {
         return "UTF-8";
-      } else if (a3 === 254 && b3 === 255) {
+      } else if (a4 === 254 && b4 === 255) {
         return "UTF-16BE";
-      } else if (a3 === 255 && b3 === 254) {
+      } else if (a4 === 255 && b4 === 254) {
         return "UTF-16LE";
       }
       return null;
     }
     function combineByteSequences(sequences) {
-      const size = sequences.reduce((a3, b3) => {
-        return a3 + b3.byteLength;
+      const size = sequences.reduce((a4, b4) => {
+        return a4 + b4.byteLength;
       }, 0);
       let offset = 0;
-      return sequences.reduce((a3, b3) => {
-        a3.set(b3, offset);
-        offset += b3.byteLength;
-        return a3;
+      return sequences.reduce((a4, b4) => {
+        a4.set(b4, offset);
+        offset += b4.byteLength;
+        return a4;
       }, new Uint8Array(size));
     }
     module2.exports = {
@@ -15135,8 +15135,8 @@ var require_util5 = __commonJS({
     var assert = require("assert");
     var { URLSerializer } = require_dataURL();
     var { isValidHeaderName: isValidHeaderName2 } = require_util2();
-    function urlEquals(A3, B2, excludeFragment = false) {
-      const serializedA = URLSerializer(A3, excludeFragment);
+    function urlEquals(A4, B2, excludeFragment = false) {
+      const serializedA = URLSerializer(A4, excludeFragment);
       const serializedB = URLSerializer(B2, excludeFragment);
       return serializedA === serializedB;
     }
@@ -16851,7 +16851,7 @@ var require_receiver = __commonJS({
        * @param {Buffer} chunk
        * @param {() => void} callback
        */
-      _write(chunk, _3, callback) {
+      _write(chunk, _4, callback) {
         this.#buffers.push(chunk);
         this.#byteOffset += chunk.length;
         this.run(callback);
@@ -17621,10 +17621,10 @@ var require_lib = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -18177,9 +18177,9 @@ var require_lib = __commonJS({
             }
             function dateTimeDeserializer(key, value) {
               if (typeof value === "string") {
-                const a3 = new Date(value);
-                if (!isNaN(a3.valueOf())) {
-                  return a3;
+                const a4 = new Date(value);
+                if (!isNaN(a4.valueOf())) {
+                  return a4;
                 }
               }
               return value;
@@ -18219,7 +18219,7 @@ var require_lib = __commonJS({
       }
     };
     exports2.HttpClient = HttpClient;
-    var lowercaseKeys = (obj) => Object.keys(obj).reduce((c2, k4) => (c2[k4.toLowerCase()] = obj[k4], c2), {});
+    var lowercaseKeys = (obj) => Object.keys(obj).reduce((c3, k4) => (c3[k4.toLowerCase()] = obj[k4], c3), {});
   }
 });
 
@@ -18732,10 +18732,10 @@ var require_path_utils = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -18777,10 +18777,10 @@ var require_core = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -18867,7 +18867,7 @@ var require_core = __commonJS({
     }
     exports2.getInput = getInput;
     function getMultilineInput(name, options) {
-      const inputs = getInput(name, options).split("\n").filter((x2) => x2 !== "");
+      const inputs = getInput(name, options).split("\n").filter((x3) => x3 !== "");
       if (options && options.trimWhitespace === false) {
         return inputs;
       }
@@ -19001,10 +19001,10 @@ var require_io_util = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -19174,10 +19174,10 @@ var require_io = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -19422,10 +19422,10 @@ var require_toolrunner = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -19495,24 +19495,24 @@ var require_toolrunner = __commonJS({
         if (IS_WINDOWS) {
           if (this._isCmdFile()) {
             cmd += toolPath;
-            for (const a3 of args) {
-              cmd += ` ${a3}`;
+            for (const a4 of args) {
+              cmd += ` ${a4}`;
             }
           } else if (options.windowsVerbatimArguments) {
             cmd += `"${toolPath}"`;
-            for (const a3 of args) {
-              cmd += ` ${a3}`;
+            for (const a4 of args) {
+              cmd += ` ${a4}`;
             }
           } else {
             cmd += this._windowsQuoteCmdArg(toolPath);
-            for (const a3 of args) {
-              cmd += ` ${this._windowsQuoteCmdArg(a3)}`;
+            for (const a4 of args) {
+              cmd += ` ${this._windowsQuoteCmdArg(a4)}`;
             }
           }
         } else {
           cmd += toolPath;
-          for (const a3 of args) {
-            cmd += ` ${a3}`;
+          for (const a4 of args) {
+            cmd += ` ${a4}`;
           }
         }
         return cmd;
@@ -19545,9 +19545,9 @@ var require_toolrunner = __commonJS({
         if (IS_WINDOWS) {
           if (this._isCmdFile()) {
             let argline = `/D /S /C "${this._windowsQuoteCmdArg(this.toolPath)}`;
-            for (const a3 of this.args) {
+            for (const a4 of this.args) {
               argline += " ";
-              argline += options.windowsVerbatimArguments ? a3 : this._windowsQuoteCmdArg(a3);
+              argline += options.windowsVerbatimArguments ? a4 : this._windowsQuoteCmdArg(a4);
             }
             argline += '"';
             return [argline];
@@ -19595,7 +19595,7 @@ var require_toolrunner = __commonJS({
         ];
         let needsQuotes = false;
         for (const char of arg) {
-          if (cmdSpecialChars.some((x2) => x2 === char)) {
+          if (cmdSpecialChars.some((x3) => x3 === char)) {
             needsQuotes = true;
             break;
           }
@@ -19788,39 +19788,39 @@ var require_toolrunner = __commonJS({
       let inQuotes = false;
       let escaped = false;
       let arg = "";
-      function append2(c2) {
-        if (escaped && c2 !== '"') {
+      function append2(c3) {
+        if (escaped && c3 !== '"') {
           arg += "\\";
         }
-        arg += c2;
+        arg += c3;
         escaped = false;
       }
       for (let i3 = 0; i3 < argString.length; i3++) {
-        const c2 = argString.charAt(i3);
-        if (c2 === '"') {
+        const c3 = argString.charAt(i3);
+        if (c3 === '"') {
           if (!escaped) {
             inQuotes = !inQuotes;
           } else {
-            append2(c2);
+            append2(c3);
           }
           continue;
         }
-        if (c2 === "\\" && escaped) {
-          append2(c2);
+        if (c3 === "\\" && escaped) {
+          append2(c3);
           continue;
         }
-        if (c2 === "\\" && inQuotes) {
+        if (c3 === "\\" && inQuotes) {
           escaped = true;
           continue;
         }
-        if (c2 === " " && !inQuotes) {
+        if (c3 === " " && !inQuotes) {
           if (arg.length > 0) {
             args.push(arg);
             arg = "";
           }
           continue;
         }
-        append2(c2);
+        append2(c3);
       }
       if (arg.length > 0) {
         args.push(arg.trim());
@@ -19906,10 +19906,10 @@ var require_exec = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -20076,10 +20076,10 @@ var require_utils3 = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -20441,7 +20441,7 @@ var require_dist_node2 = __commonJS({
       if (!matches) {
         return [];
       }
-      return matches.map(removeNonChars).reduce((a3, b3) => a3.concat(b3), []);
+      return matches.map(removeNonChars).reduce((a4, b4) => a4.concat(b4), []);
     }
     function omit(object, keysToOmit) {
       const result = { __proto__: null };
@@ -20461,8 +20461,8 @@ var require_dist_node2 = __commonJS({
       }).join("");
     }
     function encodeUnreserved(str2) {
-      return encodeURIComponent(str2).replace(/[!'()*]/g, function(c2) {
-        return "%" + c2.charCodeAt(0).toString(16).toUpperCase();
+      return encodeURIComponent(str2).replace(/[!'()*]/g, function(c3) {
+        return "%" + c3.charCodeAt(0).toString(16).toUpperCase();
       });
     }
     function encodeValue(operator, value, key) {
@@ -20548,7 +20548,7 @@ var require_dist_node2 = __commonJS({
       var operators = ["+", "#", ".", "/", ";", "?", "&"];
       template = template.replace(
         /\{([^\{\}]+)\}|([^\{\}]+)/g,
-        function(_3, expression, literal) {
+        function(_4, expression, literal) {
           if (expression) {
             let operator = "";
             const values = [];
@@ -23975,10 +23975,10 @@ var require_utils4 = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -24035,10 +24035,10 @@ var require_github = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -24070,16 +24070,16 @@ var require_src = __commonJS({
     var CSI = `${ESC}[`;
     var beep = "\x07";
     var cursor = {
-      to(x2, y4) {
-        if (!y4) return `${CSI}${x2 + 1}G`;
-        return `${CSI}${y4 + 1};${x2 + 1}H`;
+      to(x3, y5) {
+        if (!y5) return `${CSI}${x3 + 1}G`;
+        return `${CSI}${y5 + 1};${x3 + 1}H`;
       },
-      move(x2, y4) {
+      move(x3, y5) {
         let ret = "";
-        if (x2 < 0) ret += `${CSI}${-x2}D`;
-        else if (x2 > 0) ret += `${CSI}${x2}C`;
-        if (y4 < 0) ret += `${CSI}${-y4}A`;
-        else if (y4 > 0) ret += `${CSI}${y4}B`;
+        if (x3 < 0) ret += `${CSI}${-x3}D`;
+        else if (x3 > 0) ret += `${CSI}${x3}C`;
+        if (y5 < 0) ret += `${CSI}${-y5}A`;
+        else if (y5 > 0) ret += `${CSI}${y5}B`;
         return ret;
       },
       up: (count = 1) => `${CSI}${count}A`,
@@ -24187,6 +24187,843 @@ var require_picocolors = __commonJS({
     };
     module2.exports = createColors();
     module2.exports.createColors = createColors;
+  }
+});
+
+// node_modules/@clack/core/dist/index.mjs
+function q({ onlyFirst: t2 = false } = {}) {
+  const u3 = ["[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]+)*|[a-zA-Z\\d]+(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)", "(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-ntqry=><~]))"].join("|");
+  return new RegExp(u3, t2 ? void 0 : "g");
+}
+function S(t2) {
+  if (typeof t2 != "string") throw new TypeError(`Expected a \`string\`, got \`${typeof t2}\``);
+  return t2.replace(q(), "");
+}
+function j(t2) {
+  return t2 && t2.__esModule && Object.prototype.hasOwnProperty.call(t2, "default") ? t2.default : t2;
+}
+function A(t2, u3 = {}) {
+  if (typeof t2 != "string" || t2.length === 0 || (u3 = { ambiguousIsNarrow: true, ...u3 }, t2 = S(t2), t2.length === 0)) return 0;
+  t2 = t2.replace(DD(), "  ");
+  const F3 = u3.ambiguousIsNarrow ? 1 : 2;
+  let e3 = 0;
+  for (const s2 of t2) {
+    const C3 = s2.codePointAt(0);
+    if (C3 <= 31 || C3 >= 127 && C3 <= 159 || C3 >= 768 && C3 <= 879) continue;
+    switch (Q.eastAsianWidth(s2)) {
+      case "F":
+      case "W":
+        e3 += 2;
+        break;
+      case "A":
+        e3 += F3;
+        break;
+      default:
+        e3 += 1;
+    }
+  }
+  return e3;
+}
+function tD() {
+  const t2 = /* @__PURE__ */ new Map();
+  for (const [u3, F3] of Object.entries(r)) {
+    for (const [e3, s2] of Object.entries(F3)) r[e3] = { open: `\x1B[${s2[0]}m`, close: `\x1B[${s2[1]}m` }, F3[e3] = r[e3], t2.set(s2[0], s2[1]);
+    Object.defineProperty(r, u3, { value: F3, enumerable: false });
+  }
+  return Object.defineProperty(r, "codes", { value: t2, enumerable: false }), r.color.close = "\x1B[39m", r.bgColor.close = "\x1B[49m", r.color.ansi = T(), r.color.ansi256 = P(), r.color.ansi16m = W(), r.bgColor.ansi = T(m), r.bgColor.ansi256 = P(m), r.bgColor.ansi16m = W(m), Object.defineProperties(r, { rgbToAnsi256: { value: (u3, F3, e3) => u3 === F3 && F3 === e3 ? u3 < 8 ? 16 : u3 > 248 ? 231 : Math.round((u3 - 8) / 247 * 24) + 232 : 16 + 36 * Math.round(u3 / 255 * 5) + 6 * Math.round(F3 / 255 * 5) + Math.round(e3 / 255 * 5), enumerable: false }, hexToRgb: { value: (u3) => {
+    const F3 = /[a-f\d]{6}|[a-f\d]{3}/i.exec(u3.toString(16));
+    if (!F3) return [0, 0, 0];
+    let [e3] = F3;
+    e3.length === 3 && (e3 = [...e3].map((C3) => C3 + C3).join(""));
+    const s2 = Number.parseInt(e3, 16);
+    return [s2 >> 16 & 255, s2 >> 8 & 255, s2 & 255];
+  }, enumerable: false }, hexToAnsi256: { value: (u3) => r.rgbToAnsi256(...r.hexToRgb(u3)), enumerable: false }, ansi256ToAnsi: { value: (u3) => {
+    if (u3 < 8) return 30 + u3;
+    if (u3 < 16) return 90 + (u3 - 8);
+    let F3, e3, s2;
+    if (u3 >= 232) F3 = ((u3 - 232) * 10 + 8) / 255, e3 = F3, s2 = F3;
+    else {
+      u3 -= 16;
+      const i3 = u3 % 36;
+      F3 = Math.floor(u3 / 36) / 5, e3 = Math.floor(i3 / 6) / 5, s2 = i3 % 6 / 5;
+    }
+    const C3 = Math.max(F3, e3, s2) * 2;
+    if (C3 === 0) return 30;
+    let D4 = 30 + (Math.round(s2) << 2 | Math.round(e3) << 1 | Math.round(F3));
+    return C3 === 2 && (D4 += 60), D4;
+  }, enumerable: false }, rgbToAnsi: { value: (u3, F3, e3) => r.ansi256ToAnsi(r.rgbToAnsi256(u3, F3, e3)), enumerable: false }, hexToAnsi: { value: (u3) => r.ansi256ToAnsi(r.hexToAnsi256(u3)), enumerable: false } }), r;
+}
+function R(t2, u3, F3) {
+  return String(t2).normalize().replace(/\r\n/g, `
+`).split(`
+`).map((e3) => ED(e3, u3, F3)).join(`
+`);
+}
+function aD(t2, u3) {
+  if (t2 === u3) return;
+  const F3 = t2.split(`
+`), e3 = u3.split(`
+`), s2 = [];
+  for (let C3 = 0; C3 < Math.max(F3.length, e3.length); C3++) F3[C3] !== e3[C3] && s2.push(C3);
+  return s2;
+}
+function hD(t2) {
+  return t2 === V;
+}
+function v(t2, u3) {
+  t2.isTTY && t2.setRawMode(u3);
+}
+function WD({ input: t2 = import_node_process.stdin, output: u3 = import_node_process.stdout, overwrite: F3 = true, hideCursor: e3 = true } = {}) {
+  const s2 = f.createInterface({ input: t2, output: u3, prompt: "", tabSize: 1 });
+  f.emitKeypressEvents(t2, s2), t2.isTTY && t2.setRawMode(true);
+  const C3 = (D4, { name: i3 }) => {
+    if (String(D4) === "" && process.exit(0), !F3) return;
+    let n2 = i3 === "return" ? 0 : -1, E3 = i3 === "return" ? -1 : 0;
+    f.moveCursor(u3, n2, E3, () => {
+      f.clearLine(u3, 1, () => {
+        t2.once("keypress", C3);
+      });
+    });
+  };
+  return e3 && process.stdout.write(import_sisteransi.cursor.hide), t2.once("keypress", C3), () => {
+    t2.off("keypress", C3), e3 && process.stdout.write(import_sisteransi.cursor.show), t2.isTTY && !PD && t2.setRawMode(false), s2.terminal = false, s2.close();
+  };
+}
+var import_sisteransi, import_node_process, f, import_node_readline, import_node_tty, import_picocolors, M, J, Q, X, DD, m, T, P, W, r, uD, FD, eD, g, sD, b, O, CD, I, w, N, L, iD, y, rD, ED, oD, nD, a, V, z, lD, x, xD, BD, cD, G, AD, pD, fD, K, gD, vD, dD, Y, mD, bD, wD, Z, yD, $D, kD, H, _D, SD, jD, MD, TD, PD;
+var init_dist = __esm({
+  "node_modules/@clack/core/dist/index.mjs"() {
+    import_sisteransi = __toESM(require_src(), 1);
+    import_node_process = require("node:process");
+    f = __toESM(require("node:readline"), 1);
+    import_node_readline = __toESM(require("node:readline"), 1);
+    import_node_tty = require("node:tty");
+    import_picocolors = __toESM(require_picocolors(), 1);
+    M = { exports: {} };
+    (function(t2) {
+      var u3 = {};
+      t2.exports = u3, u3.eastAsianWidth = function(e3) {
+        var s2 = e3.charCodeAt(0), C3 = e3.length == 2 ? e3.charCodeAt(1) : 0, D4 = s2;
+        return 55296 <= s2 && s2 <= 56319 && 56320 <= C3 && C3 <= 57343 && (s2 &= 1023, C3 &= 1023, D4 = s2 << 10 | C3, D4 += 65536), D4 == 12288 || 65281 <= D4 && D4 <= 65376 || 65504 <= D4 && D4 <= 65510 ? "F" : D4 == 8361 || 65377 <= D4 && D4 <= 65470 || 65474 <= D4 && D4 <= 65479 || 65482 <= D4 && D4 <= 65487 || 65490 <= D4 && D4 <= 65495 || 65498 <= D4 && D4 <= 65500 || 65512 <= D4 && D4 <= 65518 ? "H" : 4352 <= D4 && D4 <= 4447 || 4515 <= D4 && D4 <= 4519 || 4602 <= D4 && D4 <= 4607 || 9001 <= D4 && D4 <= 9002 || 11904 <= D4 && D4 <= 11929 || 11931 <= D4 && D4 <= 12019 || 12032 <= D4 && D4 <= 12245 || 12272 <= D4 && D4 <= 12283 || 12289 <= D4 && D4 <= 12350 || 12353 <= D4 && D4 <= 12438 || 12441 <= D4 && D4 <= 12543 || 12549 <= D4 && D4 <= 12589 || 12593 <= D4 && D4 <= 12686 || 12688 <= D4 && D4 <= 12730 || 12736 <= D4 && D4 <= 12771 || 12784 <= D4 && D4 <= 12830 || 12832 <= D4 && D4 <= 12871 || 12880 <= D4 && D4 <= 13054 || 13056 <= D4 && D4 <= 19903 || 19968 <= D4 && D4 <= 42124 || 42128 <= D4 && D4 <= 42182 || 43360 <= D4 && D4 <= 43388 || 44032 <= D4 && D4 <= 55203 || 55216 <= D4 && D4 <= 55238 || 55243 <= D4 && D4 <= 55291 || 63744 <= D4 && D4 <= 64255 || 65040 <= D4 && D4 <= 65049 || 65072 <= D4 && D4 <= 65106 || 65108 <= D4 && D4 <= 65126 || 65128 <= D4 && D4 <= 65131 || 110592 <= D4 && D4 <= 110593 || 127488 <= D4 && D4 <= 127490 || 127504 <= D4 && D4 <= 127546 || 127552 <= D4 && D4 <= 127560 || 127568 <= D4 && D4 <= 127569 || 131072 <= D4 && D4 <= 194367 || 177984 <= D4 && D4 <= 196605 || 196608 <= D4 && D4 <= 262141 ? "W" : 32 <= D4 && D4 <= 126 || 162 <= D4 && D4 <= 163 || 165 <= D4 && D4 <= 166 || D4 == 172 || D4 == 175 || 10214 <= D4 && D4 <= 10221 || 10629 <= D4 && D4 <= 10630 ? "Na" : D4 == 161 || D4 == 164 || 167 <= D4 && D4 <= 168 || D4 == 170 || 173 <= D4 && D4 <= 174 || 176 <= D4 && D4 <= 180 || 182 <= D4 && D4 <= 186 || 188 <= D4 && D4 <= 191 || D4 == 198 || D4 == 208 || 215 <= D4 && D4 <= 216 || 222 <= D4 && D4 <= 225 || D4 == 230 || 232 <= D4 && D4 <= 234 || 236 <= D4 && D4 <= 237 || D4 == 240 || 242 <= D4 && D4 <= 243 || 247 <= D4 && D4 <= 250 || D4 == 252 || D4 == 254 || D4 == 257 || D4 == 273 || D4 == 275 || D4 == 283 || 294 <= D4 && D4 <= 295 || D4 == 299 || 305 <= D4 && D4 <= 307 || D4 == 312 || 319 <= D4 && D4 <= 322 || D4 == 324 || 328 <= D4 && D4 <= 331 || D4 == 333 || 338 <= D4 && D4 <= 339 || 358 <= D4 && D4 <= 359 || D4 == 363 || D4 == 462 || D4 == 464 || D4 == 466 || D4 == 468 || D4 == 470 || D4 == 472 || D4 == 474 || D4 == 476 || D4 == 593 || D4 == 609 || D4 == 708 || D4 == 711 || 713 <= D4 && D4 <= 715 || D4 == 717 || D4 == 720 || 728 <= D4 && D4 <= 731 || D4 == 733 || D4 == 735 || 768 <= D4 && D4 <= 879 || 913 <= D4 && D4 <= 929 || 931 <= D4 && D4 <= 937 || 945 <= D4 && D4 <= 961 || 963 <= D4 && D4 <= 969 || D4 == 1025 || 1040 <= D4 && D4 <= 1103 || D4 == 1105 || D4 == 8208 || 8211 <= D4 && D4 <= 8214 || 8216 <= D4 && D4 <= 8217 || 8220 <= D4 && D4 <= 8221 || 8224 <= D4 && D4 <= 8226 || 8228 <= D4 && D4 <= 8231 || D4 == 8240 || 8242 <= D4 && D4 <= 8243 || D4 == 8245 || D4 == 8251 || D4 == 8254 || D4 == 8308 || D4 == 8319 || 8321 <= D4 && D4 <= 8324 || D4 == 8364 || D4 == 8451 || D4 == 8453 || D4 == 8457 || D4 == 8467 || D4 == 8470 || 8481 <= D4 && D4 <= 8482 || D4 == 8486 || D4 == 8491 || 8531 <= D4 && D4 <= 8532 || 8539 <= D4 && D4 <= 8542 || 8544 <= D4 && D4 <= 8555 || 8560 <= D4 && D4 <= 8569 || D4 == 8585 || 8592 <= D4 && D4 <= 8601 || 8632 <= D4 && D4 <= 8633 || D4 == 8658 || D4 == 8660 || D4 == 8679 || D4 == 8704 || 8706 <= D4 && D4 <= 8707 || 8711 <= D4 && D4 <= 8712 || D4 == 8715 || D4 == 8719 || D4 == 8721 || D4 == 8725 || D4 == 8730 || 8733 <= D4 && D4 <= 8736 || D4 == 8739 || D4 == 8741 || 8743 <= D4 && D4 <= 8748 || D4 == 8750 || 8756 <= D4 && D4 <= 8759 || 8764 <= D4 && D4 <= 8765 || D4 == 8776 || D4 == 8780 || D4 == 8786 || 8800 <= D4 && D4 <= 8801 || 8804 <= D4 && D4 <= 8807 || 8810 <= D4 && D4 <= 8811 || 8814 <= D4 && D4 <= 8815 || 8834 <= D4 && D4 <= 8835 || 8838 <= D4 && D4 <= 8839 || D4 == 8853 || D4 == 8857 || D4 == 8869 || D4 == 8895 || D4 == 8978 || 9312 <= D4 && D4 <= 9449 || 9451 <= D4 && D4 <= 9547 || 9552 <= D4 && D4 <= 9587 || 9600 <= D4 && D4 <= 9615 || 9618 <= D4 && D4 <= 9621 || 9632 <= D4 && D4 <= 9633 || 9635 <= D4 && D4 <= 9641 || 9650 <= D4 && D4 <= 9651 || 9654 <= D4 && D4 <= 9655 || 9660 <= D4 && D4 <= 9661 || 9664 <= D4 && D4 <= 9665 || 9670 <= D4 && D4 <= 9672 || D4 == 9675 || 9678 <= D4 && D4 <= 9681 || 9698 <= D4 && D4 <= 9701 || D4 == 9711 || 9733 <= D4 && D4 <= 9734 || D4 == 9737 || 9742 <= D4 && D4 <= 9743 || 9748 <= D4 && D4 <= 9749 || D4 == 9756 || D4 == 9758 || D4 == 9792 || D4 == 9794 || 9824 <= D4 && D4 <= 9825 || 9827 <= D4 && D4 <= 9829 || 9831 <= D4 && D4 <= 9834 || 9836 <= D4 && D4 <= 9837 || D4 == 9839 || 9886 <= D4 && D4 <= 9887 || 9918 <= D4 && D4 <= 9919 || 9924 <= D4 && D4 <= 9933 || 9935 <= D4 && D4 <= 9953 || D4 == 9955 || 9960 <= D4 && D4 <= 9983 || D4 == 10045 || D4 == 10071 || 10102 <= D4 && D4 <= 10111 || 11093 <= D4 && D4 <= 11097 || 12872 <= D4 && D4 <= 12879 || 57344 <= D4 && D4 <= 63743 || 65024 <= D4 && D4 <= 65039 || D4 == 65533 || 127232 <= D4 && D4 <= 127242 || 127248 <= D4 && D4 <= 127277 || 127280 <= D4 && D4 <= 127337 || 127344 <= D4 && D4 <= 127386 || 917760 <= D4 && D4 <= 917999 || 983040 <= D4 && D4 <= 1048573 || 1048576 <= D4 && D4 <= 1114109 ? "A" : "N";
+      }, u3.characterLength = function(e3) {
+        var s2 = this.eastAsianWidth(e3);
+        return s2 == "F" || s2 == "W" || s2 == "A" ? 2 : 1;
+      };
+      function F3(e3) {
+        return e3.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]|[^\uD800-\uDFFF]/g) || [];
+      }
+      u3.length = function(e3) {
+        for (var s2 = F3(e3), C3 = 0, D4 = 0; D4 < s2.length; D4++) C3 = C3 + this.characterLength(s2[D4]);
+        return C3;
+      }, u3.slice = function(e3, s2, C3) {
+        textLen = u3.length(e3), s2 = s2 || 0, C3 = C3 || 1, s2 < 0 && (s2 = textLen + s2), C3 < 0 && (C3 = textLen + C3);
+        for (var D4 = "", i3 = 0, n2 = F3(e3), E3 = 0; E3 < n2.length; E3++) {
+          var h4 = n2[E3], o3 = u3.length(h4);
+          if (i3 >= s2 - (o3 == 2 ? 1 : 0)) if (i3 + o3 <= C3) D4 += h4;
+          else break;
+          i3 += o3;
+        }
+        return D4;
+      };
+    })(M);
+    J = M.exports;
+    Q = j(J);
+    X = function() {
+      return /\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62(?:\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73|\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74|\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67)\uDB40\uDC7F|(?:\uD83E\uDDD1\uD83C\uDFFF\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFE])|(?:\uD83E\uDDD1\uD83C\uDFFE\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFD\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFC\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFB\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFB\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFC-\uDFFF])|\uD83D\uDC68(?:\uD83C\uDFFB(?:\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF]))|\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFC-\uDFFF])|[\u2695\u2696\u2708]\uFE0F|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))?|(?:\uD83C[\uDFFC-\uDFFF])\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF]))|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83D\uDC68|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFE])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])\uFE0F|\u200D(?:(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D[\uDC66\uDC67])|\uD83D[\uDC66\uDC67])|\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC)?|(?:\uD83D\uDC69(?:\uD83C\uDFFB\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|(?:\uD83C[\uDFFC-\uDFFF])\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69]))|\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1)(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC69(?:\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83E\uDDD1(?:\u200D(?:\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83D\uDC69\u200D\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D[\uDC66\uDC67])|\uD83D\uDC69\u200D\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D\uDC41\uFE0F\u200D\uD83D\uDDE8|\uD83E\uDDD1(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|\uD83D\uDC69(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|\uD83D\uDE36\u200D\uD83C\uDF2B|\uD83C\uDFF3\uFE0F\u200D\u26A7|\uD83D\uDC3B\u200D\u2744|(?:(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF])\u200D[\u2640\u2642]|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|\uD83C\uDFF4\u200D\u2620|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])\u200D[\u2640\u2642]|[\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u2328\u23CF\u23ED-\u23EF\u23F1\u23F2\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB\u25FC\u2600-\u2604\u260E\u2611\u2618\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u2692\u2694-\u2697\u2699\u269B\u269C\u26A0\u26A7\u26B0\u26B1\u26C8\u26CF\u26D1\u26D3\u26E9\u26F0\u26F1\u26F4\u26F7\u26F8\u2702\u2708\u2709\u270F\u2712\u2714\u2716\u271D\u2721\u2733\u2734\u2744\u2747\u2763\u27A1\u2934\u2935\u2B05-\u2B07\u3030\u303D\u3297\u3299]|\uD83C[\uDD70\uDD71\uDD7E\uDD7F\uDE02\uDE37\uDF21\uDF24-\uDF2C\uDF36\uDF7D\uDF96\uDF97\uDF99-\uDF9B\uDF9E\uDF9F\uDFCD\uDFCE\uDFD4-\uDFDF\uDFF5\uDFF7]|\uD83D[\uDC3F\uDCFD\uDD49\uDD4A\uDD6F\uDD70\uDD73\uDD76-\uDD79\uDD87\uDD8A-\uDD8D\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA\uDECB\uDECD-\uDECF\uDEE0-\uDEE5\uDEE9\uDEF0\uDEF3])\uFE0F|\uD83C\uDFF3\uFE0F\u200D\uD83C\uDF08|\uD83D\uDC69\u200D\uD83D\uDC67|\uD83D\uDC69\u200D\uD83D\uDC66|\uD83D\uDE35\u200D\uD83D\uDCAB|\uD83D\uDE2E\u200D\uD83D\uDCA8|\uD83D\uDC15\u200D\uD83E\uDDBA|\uD83E\uDDD1(?:\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC|\uD83C\uDFFB)?|\uD83D\uDC69(?:\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC|\uD83C\uDFFB)?|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDF6\uD83C\uDDE6|\uD83C\uDDF4\uD83C\uDDF2|\uD83D\uDC08\u200D\u2B1B|\u2764\uFE0F\u200D(?:\uD83D\uDD25|\uD83E\uDE79)|\uD83D\uDC41\uFE0F|\uD83C\uDFF3\uFE0F|\uD83C\uDDFF(?:\uD83C[\uDDE6\uDDF2\uDDFC])|\uD83C\uDDFE(?:\uD83C[\uDDEA\uDDF9])|\uD83C\uDDFC(?:\uD83C[\uDDEB\uDDF8])|\uD83C\uDDFB(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA])|\uD83C\uDDFA(?:\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF])|\uD83C\uDDF9(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF])|\uD83C\uDDF8(?:\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF])|\uD83C\uDDF7(?:\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC])|\uD83C\uDDF5(?:\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE])|\uD83C\uDDF3(?:\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF])|\uD83C\uDDF2(?:\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF])|\uD83C\uDDF1(?:\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE])|\uD83C\uDDF0(?:\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF])|\uD83C\uDDEF(?:\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5])|\uD83C\uDDEE(?:\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9])|\uD83C\uDDED(?:\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA])|\uD83C\uDDEC(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE])|\uD83C\uDDEB(?:\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7])|\uD83C\uDDEA(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA])|\uD83C\uDDE9(?:\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF])|\uD83C\uDDE8(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF])|\uD83C\uDDE7(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF])|\uD83C\uDDE6(?:\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF])|[#\*0-9]\uFE0F\u20E3|\u2764\uFE0F|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])|\uD83C\uDFF4|(?:[\u270A\u270B]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5])(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u270C\u270D]|\uD83D[\uDD74\uDD90])(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])|[\u270A\u270B]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC08\uDC15\uDC3B\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE2E\uDE35\uDE36\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5]|\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD]|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF]|[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF84\uDF86-\uDF93\uDFA0-\uDFC1\uDFC5\uDFC6\uDFC8\uDFC9\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC07\uDC09-\uDC14\uDC16-\uDC3A\uDC3C-\uDC3E\uDC40\uDC44\uDC45\uDC51-\uDC65\uDC6A\uDC79-\uDC7B\uDC7D-\uDC80\uDC84\uDC88-\uDC8E\uDC90\uDC92-\uDCA9\uDCAB-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDDA4\uDDFB-\uDE2D\uDE2F-\uDE34\uDE37-\uDE44\uDE48-\uDE4A\uDE80-\uDEA2\uDEA4-\uDEB3\uDEB7-\uDEBF\uDEC1-\uDEC5\uDED0-\uDED2\uDED5-\uDED7\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0D\uDD0E\uDD10-\uDD17\uDD1D\uDD20-\uDD25\uDD27-\uDD2F\uDD3A\uDD3F-\uDD45\uDD47-\uDD76\uDD78\uDD7A-\uDDB4\uDDB7\uDDBA\uDDBC-\uDDCB\uDDD0\uDDE0-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6]|(?:[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u270A\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF93\uDFA0-\uDFCA\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF4\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC3E\uDC40\uDC42-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDD7A\uDD95\uDD96\uDDA4\uDDFB-\uDE4F\uDE80-\uDEC5\uDECC\uDED0-\uDED2\uDED5-\uDED7\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0C-\uDD3A\uDD3C-\uDD45\uDD47-\uDD78\uDD7A-\uDDCB\uDDCD-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6])|(?:[#\*0-9\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692-\u2697\u2699\u269B\u269C\u26A0\u26A1\u26A7\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD7A\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA4\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED2\uDED5-\uDED7\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0C-\uDD3A\uDD3C-\uDD45\uDD47-\uDD78\uDD7A-\uDDCB\uDDCD-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6])\uFE0F|(?:[\u261D\u26F9\u270A-\u270D]|\uD83C[\uDF85\uDFC2-\uDFC4\uDFC7\uDFCA-\uDFCC]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66-\uDC78\uDC7C\uDC81-\uDC83\uDC85-\uDC87\uDC8F\uDC91\uDCAA\uDD74\uDD75\uDD7A\uDD90\uDD95\uDD96\uDE45-\uDE47\uDE4B-\uDE4F\uDEA3\uDEB4-\uDEB6\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1F\uDD26\uDD30-\uDD39\uDD3C-\uDD3E\uDD77\uDDB5\uDDB6\uDDB8\uDDB9\uDDBB\uDDCD-\uDDCF\uDDD1-\uDDDD])/g;
+    };
+    DD = j(X);
+    m = 10;
+    T = (t2 = 0) => (u3) => `\x1B[${u3 + t2}m`;
+    P = (t2 = 0) => (u3) => `\x1B[${38 + t2};5;${u3}m`;
+    W = (t2 = 0) => (u3, F3, e3) => `\x1B[${38 + t2};2;${u3};${F3};${e3}m`;
+    r = { modifier: { reset: [0, 0], bold: [1, 22], dim: [2, 22], italic: [3, 23], underline: [4, 24], overline: [53, 55], inverse: [7, 27], hidden: [8, 28], strikethrough: [9, 29] }, color: { black: [30, 39], red: [31, 39], green: [32, 39], yellow: [33, 39], blue: [34, 39], magenta: [35, 39], cyan: [36, 39], white: [37, 39], blackBright: [90, 39], gray: [90, 39], grey: [90, 39], redBright: [91, 39], greenBright: [92, 39], yellowBright: [93, 39], blueBright: [94, 39], magentaBright: [95, 39], cyanBright: [96, 39], whiteBright: [97, 39] }, bgColor: { bgBlack: [40, 49], bgRed: [41, 49], bgGreen: [42, 49], bgYellow: [43, 49], bgBlue: [44, 49], bgMagenta: [45, 49], bgCyan: [46, 49], bgWhite: [47, 49], bgBlackBright: [100, 49], bgGray: [100, 49], bgGrey: [100, 49], bgRedBright: [101, 49], bgGreenBright: [102, 49], bgYellowBright: [103, 49], bgBlueBright: [104, 49], bgMagentaBright: [105, 49], bgCyanBright: [106, 49], bgWhiteBright: [107, 49] } };
+    Object.keys(r.modifier);
+    uD = Object.keys(r.color);
+    FD = Object.keys(r.bgColor);
+    [...uD, ...FD];
+    eD = tD();
+    g = /* @__PURE__ */ new Set(["\x1B", "\x9B"]);
+    sD = 39;
+    b = "\x07";
+    O = "[";
+    CD = "]";
+    I = "m";
+    w = `${CD}8;;`;
+    N = (t2) => `${g.values().next().value}${O}${t2}${I}`;
+    L = (t2) => `${g.values().next().value}${w}${t2}${b}`;
+    iD = (t2) => t2.split(" ").map((u3) => A(u3));
+    y = (t2, u3, F3) => {
+      const e3 = [...u3];
+      let s2 = false, C3 = false, D4 = A(S(t2[t2.length - 1]));
+      for (const [i3, n2] of e3.entries()) {
+        const E3 = A(n2);
+        if (D4 + E3 <= F3 ? t2[t2.length - 1] += n2 : (t2.push(n2), D4 = 0), g.has(n2) && (s2 = true, C3 = e3.slice(i3 + 1).join("").startsWith(w)), s2) {
+          C3 ? n2 === b && (s2 = false, C3 = false) : n2 === I && (s2 = false);
+          continue;
+        }
+        D4 += E3, D4 === F3 && i3 < e3.length - 1 && (t2.push(""), D4 = 0);
+      }
+      !D4 && t2[t2.length - 1].length > 0 && t2.length > 1 && (t2[t2.length - 2] += t2.pop());
+    };
+    rD = (t2) => {
+      const u3 = t2.split(" ");
+      let F3 = u3.length;
+      for (; F3 > 0 && !(A(u3[F3 - 1]) > 0); ) F3--;
+      return F3 === u3.length ? t2 : u3.slice(0, F3).join(" ") + u3.slice(F3).join("");
+    };
+    ED = (t2, u3, F3 = {}) => {
+      if (F3.trim !== false && t2.trim() === "") return "";
+      let e3 = "", s2, C3;
+      const D4 = iD(t2);
+      let i3 = [""];
+      for (const [E3, h4] of t2.split(" ").entries()) {
+        F3.trim !== false && (i3[i3.length - 1] = i3[i3.length - 1].trimStart());
+        let o3 = A(i3[i3.length - 1]);
+        if (E3 !== 0 && (o3 >= u3 && (F3.wordWrap === false || F3.trim === false) && (i3.push(""), o3 = 0), (o3 > 0 || F3.trim === false) && (i3[i3.length - 1] += " ", o3++)), F3.hard && D4[E3] > u3) {
+          const B2 = u3 - o3, p3 = 1 + Math.floor((D4[E3] - B2 - 1) / u3);
+          Math.floor((D4[E3] - 1) / u3) < p3 && i3.push(""), y(i3, h4, u3);
+          continue;
+        }
+        if (o3 + D4[E3] > u3 && o3 > 0 && D4[E3] > 0) {
+          if (F3.wordWrap === false && o3 < u3) {
+            y(i3, h4, u3);
+            continue;
+          }
+          i3.push("");
+        }
+        if (o3 + D4[E3] > u3 && F3.wordWrap === false) {
+          y(i3, h4, u3);
+          continue;
+        }
+        i3[i3.length - 1] += h4;
+      }
+      F3.trim !== false && (i3 = i3.map((E3) => rD(E3)));
+      const n2 = [...i3.join(`
+`)];
+      for (const [E3, h4] of n2.entries()) {
+        if (e3 += h4, g.has(h4)) {
+          const { groups: B2 } = new RegExp(`(?:\\${O}(?<code>\\d+)m|\\${w}(?<uri>.*)${b})`).exec(n2.slice(E3).join("")) || { groups: {} };
+          if (B2.code !== void 0) {
+            const p3 = Number.parseFloat(B2.code);
+            s2 = p3 === sD ? void 0 : p3;
+          } else B2.uri !== void 0 && (C3 = B2.uri.length === 0 ? void 0 : B2.uri);
+        }
+        const o3 = eD.codes.get(Number(s2));
+        n2[E3 + 1] === `
+` ? (C3 && (e3 += L("")), s2 && o3 && (e3 += N(o3))) : h4 === `
+` && (s2 && o3 && (e3 += N(s2)), C3 && (e3 += L(C3)));
+      }
+      return e3;
+    };
+    oD = Object.defineProperty;
+    nD = (t2, u3, F3) => u3 in t2 ? oD(t2, u3, { enumerable: true, configurable: true, writable: true, value: F3 }) : t2[u3] = F3;
+    a = (t2, u3, F3) => (nD(t2, typeof u3 != "symbol" ? u3 + "" : u3, F3), F3);
+    V = Symbol("clack:cancel");
+    z = /* @__PURE__ */ new Map([["k", "up"], ["j", "down"], ["h", "left"], ["l", "right"]]);
+    lD = /* @__PURE__ */ new Set(["up", "down", "left", "right", "space", "enter"]);
+    x = class {
+      constructor({ render: u3, input: F3 = import_node_process.stdin, output: e3 = import_node_process.stdout, ...s2 }, C3 = true) {
+        a(this, "input"), a(this, "output"), a(this, "rl"), a(this, "opts"), a(this, "_track", false), a(this, "_render"), a(this, "_cursor", 0), a(this, "state", "initial"), a(this, "value"), a(this, "error", ""), a(this, "subscribers", /* @__PURE__ */ new Map()), a(this, "_prevFrame", ""), this.opts = s2, this.onKeypress = this.onKeypress.bind(this), this.close = this.close.bind(this), this.render = this.render.bind(this), this._render = u3.bind(this), this._track = C3, this.input = F3, this.output = e3;
+      }
+      prompt() {
+        const u3 = new import_node_tty.WriteStream(0);
+        return u3._write = (F3, e3, s2) => {
+          this._track && (this.value = this.rl.line.replace(/\t/g, ""), this._cursor = this.rl.cursor, this.emit("value", this.value)), s2();
+        }, this.input.pipe(u3), this.rl = import_node_readline.default.createInterface({ input: this.input, output: u3, tabSize: 2, prompt: "", escapeCodeTimeout: 50 }), import_node_readline.default.emitKeypressEvents(this.input, this.rl), this.rl.prompt(), this.opts.initialValue !== void 0 && this._track && this.rl.write(this.opts.initialValue), this.input.on("keypress", this.onKeypress), v(this.input, true), this.output.on("resize", this.render), this.render(), new Promise((F3, e3) => {
+          this.once("submit", () => {
+            this.output.write(import_sisteransi.cursor.show), this.output.off("resize", this.render), v(this.input, false), F3(this.value);
+          }), this.once("cancel", () => {
+            this.output.write(import_sisteransi.cursor.show), this.output.off("resize", this.render), v(this.input, false), F3(V);
+          });
+        });
+      }
+      on(u3, F3) {
+        const e3 = this.subscribers.get(u3) ?? [];
+        e3.push({ cb: F3 }), this.subscribers.set(u3, e3);
+      }
+      once(u3, F3) {
+        const e3 = this.subscribers.get(u3) ?? [];
+        e3.push({ cb: F3, once: true }), this.subscribers.set(u3, e3);
+      }
+      emit(u3, ...F3) {
+        const e3 = this.subscribers.get(u3) ?? [], s2 = [];
+        for (const C3 of e3) C3.cb(...F3), C3.once && s2.push(() => e3.splice(e3.indexOf(C3), 1));
+        for (const C3 of s2) C3();
+      }
+      unsubscribe() {
+        this.subscribers.clear();
+      }
+      onKeypress(u3, F3) {
+        if (this.state === "error" && (this.state = "active"), F3?.name && !this._track && z.has(F3.name) && this.emit("cursor", z.get(F3.name)), F3?.name && lD.has(F3.name) && this.emit("cursor", F3.name), u3 && (u3.toLowerCase() === "y" || u3.toLowerCase() === "n") && this.emit("confirm", u3.toLowerCase() === "y"), u3 === "	" && this.opts.placeholder && (this.value || (this.rl.write(this.opts.placeholder), this.emit("value", this.opts.placeholder))), u3 && this.emit("key", u3.toLowerCase()), F3?.name === "return") {
+          if (this.opts.validate) {
+            const e3 = this.opts.validate(this.value);
+            e3 && (this.error = e3, this.state = "error", this.rl.write(this.value));
+          }
+          this.state !== "error" && (this.state = "submit");
+        }
+        u3 === "" && (this.state = "cancel"), (this.state === "submit" || this.state === "cancel") && this.emit("finalize"), this.render(), (this.state === "submit" || this.state === "cancel") && this.close();
+      }
+      close() {
+        this.input.unpipe(), this.input.removeListener("keypress", this.onKeypress), this.output.write(`
+`), v(this.input, false), this.rl.close(), this.emit(`${this.state}`, this.value), this.unsubscribe();
+      }
+      restoreCursor() {
+        const u3 = R(this._prevFrame, process.stdout.columns, { hard: true }).split(`
+`).length - 1;
+        this.output.write(import_sisteransi.cursor.move(-999, u3 * -1));
+      }
+      render() {
+        const u3 = R(this._render(this) ?? "", process.stdout.columns, { hard: true });
+        if (u3 !== this._prevFrame) {
+          if (this.state === "initial") this.output.write(import_sisteransi.cursor.hide);
+          else {
+            const F3 = aD(this._prevFrame, u3);
+            if (this.restoreCursor(), F3 && F3?.length === 1) {
+              const e3 = F3[0];
+              this.output.write(import_sisteransi.cursor.move(0, e3)), this.output.write(import_sisteransi.erase.lines(1));
+              const s2 = u3.split(`
+`);
+              this.output.write(s2[e3]), this._prevFrame = u3, this.output.write(import_sisteransi.cursor.move(0, s2.length - e3 - 1));
+              return;
+            } else if (F3 && F3?.length > 1) {
+              const e3 = F3[0];
+              this.output.write(import_sisteransi.cursor.move(0, e3)), this.output.write(import_sisteransi.erase.down());
+              const s2 = u3.split(`
+`).slice(e3);
+              this.output.write(s2.join(`
+`)), this._prevFrame = u3;
+              return;
+            }
+            this.output.write(import_sisteransi.erase.down());
+          }
+          this.output.write(u3), this.state === "initial" && (this.state = "active"), this._prevFrame = u3;
+        }
+      }
+    };
+    xD = class extends x {
+      get cursor() {
+        return this.value ? 0 : 1;
+      }
+      get _value() {
+        return this.cursor === 0;
+      }
+      constructor(u3) {
+        super(u3, false), this.value = !!u3.initialValue, this.on("value", () => {
+          this.value = this._value;
+        }), this.on("confirm", (F3) => {
+          this.output.write(import_sisteransi.cursor.move(0, -1)), this.value = F3, this.state = "submit", this.close();
+        }), this.on("cursor", () => {
+          this.value = !this.value;
+        });
+      }
+    };
+    BD = Object.defineProperty;
+    cD = (t2, u3, F3) => u3 in t2 ? BD(t2, u3, { enumerable: true, configurable: true, writable: true, value: F3 }) : t2[u3] = F3;
+    G = (t2, u3, F3) => (cD(t2, typeof u3 != "symbol" ? u3 + "" : u3, F3), F3);
+    AD = class extends x {
+      constructor(u3) {
+        super(u3, false), G(this, "options"), G(this, "cursor", 0);
+        const { options: F3 } = u3;
+        this.options = Object.entries(F3).flatMap(([e3, s2]) => [{ value: e3, group: true, label: e3 }, ...s2.map((C3) => ({ ...C3, group: e3 }))]), this.value = [...u3.initialValues ?? []], this.cursor = Math.max(this.options.findIndex(({ value: e3 }) => e3 === u3.cursorAt), 0), this.on("cursor", (e3) => {
+          switch (e3) {
+            case "left":
+            case "up":
+              this.cursor = this.cursor === 0 ? this.options.length - 1 : this.cursor - 1;
+              break;
+            case "down":
+            case "right":
+              this.cursor = this.cursor === this.options.length - 1 ? 0 : this.cursor + 1;
+              break;
+            case "space":
+              this.toggleValue();
+              break;
+          }
+        });
+      }
+      getGroupItems(u3) {
+        return this.options.filter((F3) => F3.group === u3);
+      }
+      isGroupSelected(u3) {
+        return this.getGroupItems(u3).every((F3) => this.value.includes(F3.value));
+      }
+      toggleValue() {
+        const u3 = this.options[this.cursor];
+        if (u3.group === true) {
+          const F3 = u3.value, e3 = this.getGroupItems(F3);
+          this.isGroupSelected(F3) ? this.value = this.value.filter((s2) => e3.findIndex((C3) => C3.value === s2) === -1) : this.value = [...this.value, ...e3.map((s2) => s2.value)], this.value = Array.from(new Set(this.value));
+        } else {
+          const F3 = this.value.includes(u3.value);
+          this.value = F3 ? this.value.filter((e3) => e3 !== u3.value) : [...this.value, u3.value];
+        }
+      }
+    };
+    pD = Object.defineProperty;
+    fD = (t2, u3, F3) => u3 in t2 ? pD(t2, u3, { enumerable: true, configurable: true, writable: true, value: F3 }) : t2[u3] = F3;
+    K = (t2, u3, F3) => (fD(t2, typeof u3 != "symbol" ? u3 + "" : u3, F3), F3);
+    gD = class extends x {
+      constructor(u3) {
+        super(u3, false), K(this, "options"), K(this, "cursor", 0), this.options = u3.options, this.value = [...u3.initialValues ?? []], this.cursor = Math.max(this.options.findIndex(({ value: F3 }) => F3 === u3.cursorAt), 0), this.on("key", (F3) => {
+          F3 === "a" && this.toggleAll();
+        }), this.on("cursor", (F3) => {
+          switch (F3) {
+            case "left":
+            case "up":
+              this.cursor = this.cursor === 0 ? this.options.length - 1 : this.cursor - 1;
+              break;
+            case "down":
+            case "right":
+              this.cursor = this.cursor === this.options.length - 1 ? 0 : this.cursor + 1;
+              break;
+            case "space":
+              this.toggleValue();
+              break;
+          }
+        });
+      }
+      get _value() {
+        return this.options[this.cursor].value;
+      }
+      toggleAll() {
+        const u3 = this.value.length === this.options.length;
+        this.value = u3 ? [] : this.options.map((F3) => F3.value);
+      }
+      toggleValue() {
+        const u3 = this.value.includes(this._value);
+        this.value = u3 ? this.value.filter((F3) => F3 !== this._value) : [...this.value, this._value];
+      }
+    };
+    vD = Object.defineProperty;
+    dD = (t2, u3, F3) => u3 in t2 ? vD(t2, u3, { enumerable: true, configurable: true, writable: true, value: F3 }) : t2[u3] = F3;
+    Y = (t2, u3, F3) => (dD(t2, typeof u3 != "symbol" ? u3 + "" : u3, F3), F3);
+    mD = class extends x {
+      constructor({ mask: u3, ...F3 }) {
+        super(F3), Y(this, "valueWithCursor", ""), Y(this, "_mask", "\u2022"), this._mask = u3 ?? "\u2022", this.on("finalize", () => {
+          this.valueWithCursor = this.masked;
+        }), this.on("value", () => {
+          if (this.cursor >= this.value.length) this.valueWithCursor = `${this.masked}${import_picocolors.default.inverse(import_picocolors.default.hidden("_"))}`;
+          else {
+            const e3 = this.masked.slice(0, this.cursor), s2 = this.masked.slice(this.cursor);
+            this.valueWithCursor = `${e3}${import_picocolors.default.inverse(s2[0])}${s2.slice(1)}`;
+          }
+        });
+      }
+      get cursor() {
+        return this._cursor;
+      }
+      get masked() {
+        return this.value.replaceAll(/./g, this._mask);
+      }
+    };
+    bD = Object.defineProperty;
+    wD = (t2, u3, F3) => u3 in t2 ? bD(t2, u3, { enumerable: true, configurable: true, writable: true, value: F3 }) : t2[u3] = F3;
+    Z = (t2, u3, F3) => (wD(t2, typeof u3 != "symbol" ? u3 + "" : u3, F3), F3);
+    yD = class extends x {
+      constructor(u3) {
+        super(u3, false), Z(this, "options"), Z(this, "cursor", 0), this.options = u3.options, this.cursor = this.options.findIndex(({ value: F3 }) => F3 === u3.initialValue), this.cursor === -1 && (this.cursor = 0), this.changeValue(), this.on("cursor", (F3) => {
+          switch (F3) {
+            case "left":
+            case "up":
+              this.cursor = this.cursor === 0 ? this.options.length - 1 : this.cursor - 1;
+              break;
+            case "down":
+            case "right":
+              this.cursor = this.cursor === this.options.length - 1 ? 0 : this.cursor + 1;
+              break;
+          }
+          this.changeValue();
+        });
+      }
+      get _value() {
+        return this.options[this.cursor];
+      }
+      changeValue() {
+        this.value = this._value.value;
+      }
+    };
+    $D = Object.defineProperty;
+    kD = (t2, u3, F3) => u3 in t2 ? $D(t2, u3, { enumerable: true, configurable: true, writable: true, value: F3 }) : t2[u3] = F3;
+    H = (t2, u3, F3) => (kD(t2, typeof u3 != "symbol" ? u3 + "" : u3, F3), F3);
+    _D = class extends x {
+      constructor(u3) {
+        super(u3, false), H(this, "options"), H(this, "cursor", 0), this.options = u3.options;
+        const F3 = this.options.map(({ value: [e3] }) => e3?.toLowerCase());
+        this.cursor = Math.max(F3.indexOf(u3.initialValue), 0), this.on("key", (e3) => {
+          if (!F3.includes(e3)) return;
+          const s2 = this.options.find(({ value: [C3] }) => C3?.toLowerCase() === e3);
+          s2 && (this.value = s2.value, this.state = "submit", this.emit("submit"));
+        });
+      }
+    };
+    SD = Object.defineProperty;
+    jD = (t2, u3, F3) => u3 in t2 ? SD(t2, u3, { enumerable: true, configurable: true, writable: true, value: F3 }) : t2[u3] = F3;
+    MD = (t2, u3, F3) => (jD(t2, typeof u3 != "symbol" ? u3 + "" : u3, F3), F3);
+    TD = class extends x {
+      constructor(u3) {
+        super(u3), MD(this, "valueWithCursor", ""), this.on("finalize", () => {
+          this.value || (this.value = u3.defaultValue), this.valueWithCursor = this.value;
+        }), this.on("value", () => {
+          if (this.cursor >= this.value.length) this.valueWithCursor = `${this.value}${import_picocolors.default.inverse(import_picocolors.default.hidden("_"))}`;
+          else {
+            const F3 = this.value.slice(0, this.cursor), e3 = this.value.slice(this.cursor);
+            this.valueWithCursor = `${F3}${import_picocolors.default.inverse(e3[0])}${e3.slice(1)}`;
+          }
+        });
+      }
+      get cursor() {
+        return this._cursor;
+      }
+    };
+    PD = globalThis.process.platform.startsWith("win");
+  }
+});
+
+// node_modules/@clack/prompts/dist/index.mjs
+var dist_exports = {};
+__export(dist_exports, {
+  cancel: () => ne,
+  confirm: () => Q2,
+  group: () => $e,
+  groupMultiselect: () => se,
+  intro: () => ae,
+  isCancel: () => hD,
+  log: () => g2,
+  multiselect: () => re,
+  note: () => ie,
+  outro: () => ce,
+  password: () => Y2,
+  select: () => ee,
+  selectKey: () => te,
+  spinner: () => le,
+  text: () => J2
+});
+function N2() {
+  return import_node_process2.default.platform !== "win32" ? import_node_process2.default.env.TERM !== "linux" : Boolean(import_node_process2.default.env.CI) || Boolean(import_node_process2.default.env.WT_SESSION) || Boolean(import_node_process2.default.env.TERMINUS_SUBLIME) || import_node_process2.default.env.ConEmuTask === "{cmd::Cmder}" || import_node_process2.default.env.TERM_PROGRAM === "Terminus-Sublime" || import_node_process2.default.env.TERM_PROGRAM === "vscode" || import_node_process2.default.env.TERM === "xterm-256color" || import_node_process2.default.env.TERM === "alacritty" || import_node_process2.default.env.TERMINAL_EMULATOR === "JetBrains-JediTerm";
+}
+function ue() {
+  const r3 = ["[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]+)*|[a-zA-Z\\d]+(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)", "(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-nq-uy=><~]))"].join("|");
+  return new RegExp(r3, "g");
+}
+var import_node_process2, import_picocolors2, import_sisteransi2, p, u, W2, D, F, f2, L2, a2, o, w2, S2, _2, y2, A2, q2, R2, G2, H2, K2, U2, Z2, z2, X2, h, J2, Y2, Q2, ee, te, re, se, b2, ie, ne, ae, ce, g2, C, le, $e;
+var init_dist2 = __esm({
+  "node_modules/@clack/prompts/dist/index.mjs"() {
+    init_dist();
+    init_dist();
+    import_node_process2 = __toESM(require("node:process"), 1);
+    import_picocolors2 = __toESM(require_picocolors(), 1);
+    import_sisteransi2 = __toESM(require_src(), 1);
+    p = N2();
+    u = (r3, n2) => p ? r3 : n2;
+    W2 = u("\u25C6", "*");
+    D = u("\u25A0", "x");
+    F = u("\u25B2", "x");
+    f2 = u("\u25C7", "o");
+    L2 = u("\u250C", "T");
+    a2 = u("\u2502", "|");
+    o = u("\u2514", "\u2014");
+    w2 = u("\u25CF", ">");
+    S2 = u("\u25CB", " ");
+    _2 = u("\u25FB", "[\u2022]");
+    y2 = u("\u25FC", "[+]");
+    A2 = u("\u25FB", "[ ]");
+    q2 = u("\u25AA", "\u2022");
+    R2 = u("\u2500", "-");
+    G2 = u("\u256E", "+");
+    H2 = u("\u251C", "+");
+    K2 = u("\u256F", "+");
+    U2 = u("\u25CF", "\u2022");
+    Z2 = u("\u25C6", "*");
+    z2 = u("\u25B2", "!");
+    X2 = u("\u25A0", "x");
+    h = (r3) => {
+      switch (r3) {
+        case "initial":
+        case "active":
+          return import_picocolors2.default.cyan(W2);
+        case "cancel":
+          return import_picocolors2.default.red(D);
+        case "error":
+          return import_picocolors2.default.yellow(F);
+        case "submit":
+          return import_picocolors2.default.green(f2);
+      }
+    };
+    J2 = (r3) => new TD({ validate: r3.validate, placeholder: r3.placeholder, defaultValue: r3.defaultValue, initialValue: r3.initialValue, render() {
+      const n2 = `${import_picocolors2.default.gray(a2)}
+${h(this.state)}  ${r3.message}
+`, s2 = r3.placeholder ? import_picocolors2.default.inverse(r3.placeholder[0]) + import_picocolors2.default.dim(r3.placeholder.slice(1)) : import_picocolors2.default.inverse(import_picocolors2.default.hidden("_")), t2 = this.value ? this.valueWithCursor : s2;
+      switch (this.state) {
+        case "error":
+          return `${n2.trim()}
+${import_picocolors2.default.yellow(a2)}  ${t2}
+${import_picocolors2.default.yellow(o)}  ${import_picocolors2.default.yellow(this.error)}
+`;
+        case "submit":
+          return `${n2}${import_picocolors2.default.gray(a2)}  ${import_picocolors2.default.dim(this.value || r3.placeholder)}`;
+        case "cancel":
+          return `${n2}${import_picocolors2.default.gray(a2)}  ${import_picocolors2.default.strikethrough(import_picocolors2.default.dim(this.value ?? ""))}${this.value?.trim() ? `
+` + import_picocolors2.default.gray(a2) : ""}`;
+        default:
+          return `${n2}${import_picocolors2.default.cyan(a2)}  ${t2}
+${import_picocolors2.default.cyan(o)}
+`;
+      }
+    } }).prompt();
+    Y2 = (r3) => new mD({ validate: r3.validate, mask: r3.mask ?? q2, render() {
+      const n2 = `${import_picocolors2.default.gray(a2)}
+${h(this.state)}  ${r3.message}
+`, s2 = this.valueWithCursor, t2 = this.masked;
+      switch (this.state) {
+        case "error":
+          return `${n2.trim()}
+${import_picocolors2.default.yellow(a2)}  ${t2}
+${import_picocolors2.default.yellow(o)}  ${import_picocolors2.default.yellow(this.error)}
+`;
+        case "submit":
+          return `${n2}${import_picocolors2.default.gray(a2)}  ${import_picocolors2.default.dim(t2)}`;
+        case "cancel":
+          return `${n2}${import_picocolors2.default.gray(a2)}  ${import_picocolors2.default.strikethrough(import_picocolors2.default.dim(t2 ?? ""))}${t2 ? `
+` + import_picocolors2.default.gray(a2) : ""}`;
+        default:
+          return `${n2}${import_picocolors2.default.cyan(a2)}  ${s2}
+${import_picocolors2.default.cyan(o)}
+`;
+      }
+    } }).prompt();
+    Q2 = (r3) => {
+      const n2 = r3.active ?? "Yes", s2 = r3.inactive ?? "No";
+      return new xD({ active: n2, inactive: s2, initialValue: r3.initialValue ?? true, render() {
+        const t2 = `${import_picocolors2.default.gray(a2)}
+${h(this.state)}  ${r3.message}
+`, i3 = this.value ? n2 : s2;
+        switch (this.state) {
+          case "submit":
+            return `${t2}${import_picocolors2.default.gray(a2)}  ${import_picocolors2.default.dim(i3)}`;
+          case "cancel":
+            return `${t2}${import_picocolors2.default.gray(a2)}  ${import_picocolors2.default.strikethrough(import_picocolors2.default.dim(i3))}
+${import_picocolors2.default.gray(a2)}`;
+          default:
+            return `${t2}${import_picocolors2.default.cyan(a2)}  ${this.value ? `${import_picocolors2.default.green(w2)} ${n2}` : `${import_picocolors2.default.dim(S2)} ${import_picocolors2.default.dim(n2)}`} ${import_picocolors2.default.dim("/")} ${this.value ? `${import_picocolors2.default.dim(S2)} ${import_picocolors2.default.dim(s2)}` : `${import_picocolors2.default.green(w2)} ${s2}`}
+${import_picocolors2.default.cyan(o)}
+`;
+        }
+      } }).prompt();
+    };
+    ee = (r3) => {
+      const n2 = (s2, t2) => {
+        const i3 = s2.label ?? String(s2.value);
+        return t2 === "active" ? `${import_picocolors2.default.green(w2)} ${i3} ${s2.hint ? import_picocolors2.default.dim(`(${s2.hint})`) : ""}` : t2 === "selected" ? `${import_picocolors2.default.dim(i3)}` : t2 === "cancelled" ? `${import_picocolors2.default.strikethrough(import_picocolors2.default.dim(i3))}` : `${import_picocolors2.default.dim(S2)} ${import_picocolors2.default.dim(i3)}`;
+      };
+      return new yD({ options: r3.options, initialValue: r3.initialValue, render() {
+        const s2 = `${import_picocolors2.default.gray(a2)}
+${h(this.state)}  ${r3.message}
+`;
+        switch (this.state) {
+          case "submit":
+            return `${s2}${import_picocolors2.default.gray(a2)}  ${n2(this.options[this.cursor], "selected")}`;
+          case "cancel":
+            return `${s2}${import_picocolors2.default.gray(a2)}  ${n2(this.options[this.cursor], "cancelled")}
+${import_picocolors2.default.gray(a2)}`;
+          default:
+            return `${s2}${import_picocolors2.default.cyan(a2)}  ${this.options.map((t2, i3) => n2(t2, i3 === this.cursor ? "active" : "inactive")).join(`
+${import_picocolors2.default.cyan(a2)}  `)}
+${import_picocolors2.default.cyan(o)}
+`;
+        }
+      } }).prompt();
+    };
+    te = (r3) => {
+      const n2 = (s2, t2 = "inactive") => {
+        const i3 = s2.label ?? String(s2.value);
+        return t2 === "selected" ? `${import_picocolors2.default.dim(i3)}` : t2 === "cancelled" ? `${import_picocolors2.default.strikethrough(import_picocolors2.default.dim(i3))}` : t2 === "active" ? `${import_picocolors2.default.bgCyan(import_picocolors2.default.gray(` ${s2.value} `))} ${i3} ${s2.hint ? import_picocolors2.default.dim(`(${s2.hint})`) : ""}` : `${import_picocolors2.default.gray(import_picocolors2.default.bgWhite(import_picocolors2.default.inverse(` ${s2.value} `)))} ${i3} ${s2.hint ? import_picocolors2.default.dim(`(${s2.hint})`) : ""}`;
+      };
+      return new _D({ options: r3.options, initialValue: r3.initialValue, render() {
+        const s2 = `${import_picocolors2.default.gray(a2)}
+${h(this.state)}  ${r3.message}
+`;
+        switch (this.state) {
+          case "submit":
+            return `${s2}${import_picocolors2.default.gray(a2)}  ${n2(this.options.find((t2) => t2.value === this.value), "selected")}`;
+          case "cancel":
+            return `${s2}${import_picocolors2.default.gray(a2)}  ${n2(this.options[0], "cancelled")}
+${import_picocolors2.default.gray(a2)}`;
+          default:
+            return `${s2}${import_picocolors2.default.cyan(a2)}  ${this.options.map((t2, i3) => n2(t2, i3 === this.cursor ? "active" : "inactive")).join(`
+${import_picocolors2.default.cyan(a2)}  `)}
+${import_picocolors2.default.cyan(o)}
+`;
+        }
+      } }).prompt();
+    };
+    re = (r3) => {
+      const n2 = (s2, t2) => {
+        const i3 = s2.label ?? String(s2.value);
+        return t2 === "active" ? `${import_picocolors2.default.cyan(_2)} ${i3} ${s2.hint ? import_picocolors2.default.dim(`(${s2.hint})`) : ""}` : t2 === "selected" ? `${import_picocolors2.default.green(y2)} ${import_picocolors2.default.dim(i3)}` : t2 === "cancelled" ? `${import_picocolors2.default.strikethrough(import_picocolors2.default.dim(i3))}` : t2 === "active-selected" ? `${import_picocolors2.default.green(y2)} ${i3} ${s2.hint ? import_picocolors2.default.dim(`(${s2.hint})`) : ""}` : t2 === "submitted" ? `${import_picocolors2.default.dim(i3)}` : `${import_picocolors2.default.dim(A2)} ${import_picocolors2.default.dim(i3)}`;
+      };
+      return new gD({ options: r3.options, initialValues: r3.initialValues, required: r3.required ?? true, cursorAt: r3.cursorAt, validate(s2) {
+        if (this.required && s2.length === 0) return `Please select at least one option.
+${import_picocolors2.default.reset(import_picocolors2.default.dim(`Press ${import_picocolors2.default.gray(import_picocolors2.default.bgWhite(import_picocolors2.default.inverse(" space ")))} to select, ${import_picocolors2.default.gray(import_picocolors2.default.bgWhite(import_picocolors2.default.inverse(" enter ")))} to submit`))}`;
+      }, render() {
+        let s2 = `${import_picocolors2.default.gray(a2)}
+${h(this.state)}  ${r3.message}
+`;
+        switch (this.state) {
+          case "submit":
+            return `${s2}${import_picocolors2.default.gray(a2)}  ${this.options.filter(({ value: t2 }) => this.value.includes(t2)).map((t2) => n2(t2, "submitted")).join(import_picocolors2.default.dim(", ")) || import_picocolors2.default.dim("none")}`;
+          case "cancel": {
+            const t2 = this.options.filter(({ value: i3 }) => this.value.includes(i3)).map((i3) => n2(i3, "cancelled")).join(import_picocolors2.default.dim(", "));
+            return `${s2}${import_picocolors2.default.gray(a2)}  ${t2.trim() ? `${t2}
+${import_picocolors2.default.gray(a2)}` : ""}`;
+          }
+          case "error": {
+            const t2 = this.error.split(`
+`).map((i3, c3) => c3 === 0 ? `${import_picocolors2.default.yellow(o)}  ${import_picocolors2.default.yellow(i3)}` : `   ${i3}`).join(`
+`);
+            return s2 + import_picocolors2.default.yellow(a2) + "  " + this.options.map((i3, c3) => {
+              const l3 = this.value.includes(i3.value), $4 = c3 === this.cursor;
+              return $4 && l3 ? n2(i3, "active-selected") : l3 ? n2(i3, "selected") : n2(i3, $4 ? "active" : "inactive");
+            }).join(`
+${import_picocolors2.default.yellow(a2)}  `) + `
+` + t2 + `
+`;
+          }
+          default:
+            return `${s2}${import_picocolors2.default.cyan(a2)}  ${this.options.map((t2, i3) => {
+              const c3 = this.value.includes(t2.value), l3 = i3 === this.cursor;
+              return l3 && c3 ? n2(t2, "active-selected") : c3 ? n2(t2, "selected") : n2(t2, l3 ? "active" : "inactive");
+            }).join(`
+${import_picocolors2.default.cyan(a2)}  `)}
+${import_picocolors2.default.cyan(o)}
+`;
+        }
+      } }).prompt();
+    };
+    se = (r3) => {
+      const n2 = (s2, t2, i3 = []) => {
+        const c3 = s2.label ?? String(s2.value), l3 = typeof s2.group == "string", $4 = l3 && (i3[i3.indexOf(s2) + 1] ?? { group: true }), v6 = l3 && $4.group === true, m4 = l3 ? `${v6 ? o : a2} ` : "";
+        return t2 === "active" ? `${import_picocolors2.default.dim(m4)}${import_picocolors2.default.cyan(_2)} ${c3} ${s2.hint ? import_picocolors2.default.dim(`(${s2.hint})`) : ""}` : t2 === "group-active" ? `${m4}${import_picocolors2.default.cyan(_2)} ${import_picocolors2.default.dim(c3)}` : t2 === "group-active-selected" ? `${m4}${import_picocolors2.default.green(y2)} ${import_picocolors2.default.dim(c3)}` : t2 === "selected" ? `${import_picocolors2.default.dim(m4)}${import_picocolors2.default.green(y2)} ${import_picocolors2.default.dim(c3)}` : t2 === "cancelled" ? `${import_picocolors2.default.strikethrough(import_picocolors2.default.dim(c3))}` : t2 === "active-selected" ? `${import_picocolors2.default.dim(m4)}${import_picocolors2.default.green(y2)} ${c3} ${s2.hint ? import_picocolors2.default.dim(`(${s2.hint})`) : ""}` : t2 === "submitted" ? `${import_picocolors2.default.dim(c3)}` : `${import_picocolors2.default.dim(m4)}${import_picocolors2.default.dim(A2)} ${import_picocolors2.default.dim(c3)}`;
+      };
+      return new AD({ options: r3.options, initialValues: r3.initialValues, required: r3.required ?? true, cursorAt: r3.cursorAt, validate(s2) {
+        if (this.required && s2.length === 0) return `Please select at least one option.
+${import_picocolors2.default.reset(import_picocolors2.default.dim(`Press ${import_picocolors2.default.gray(import_picocolors2.default.bgWhite(import_picocolors2.default.inverse(" space ")))} to select, ${import_picocolors2.default.gray(import_picocolors2.default.bgWhite(import_picocolors2.default.inverse(" enter ")))} to submit`))}`;
+      }, render() {
+        let s2 = `${import_picocolors2.default.gray(a2)}
+${h(this.state)}  ${r3.message}
+`;
+        switch (this.state) {
+          case "submit":
+            return `${s2}${import_picocolors2.default.gray(a2)}  ${this.options.filter(({ value: t2 }) => this.value.includes(t2)).map((t2) => n2(t2, "submitted")).join(import_picocolors2.default.dim(", "))}`;
+          case "cancel": {
+            const t2 = this.options.filter(({ value: i3 }) => this.value.includes(i3)).map((i3) => n2(i3, "cancelled")).join(import_picocolors2.default.dim(", "));
+            return `${s2}${import_picocolors2.default.gray(a2)}  ${t2.trim() ? `${t2}
+${import_picocolors2.default.gray(a2)}` : ""}`;
+          }
+          case "error": {
+            const t2 = this.error.split(`
+`).map((i3, c3) => c3 === 0 ? `${import_picocolors2.default.yellow(o)}  ${import_picocolors2.default.yellow(i3)}` : `   ${i3}`).join(`
+`);
+            return `${s2}${import_picocolors2.default.yellow(a2)}  ${this.options.map((i3, c3, l3) => {
+              const $4 = this.value.includes(i3.value) || i3.group === true && this.isGroupSelected(`${i3.value}`), v6 = c3 === this.cursor;
+              return !v6 && typeof i3.group == "string" && this.options[this.cursor].value === i3.group ? n2(i3, $4 ? "group-active-selected" : "group-active", l3) : v6 && $4 ? n2(i3, "active-selected", l3) : $4 ? n2(i3, "selected", l3) : n2(i3, v6 ? "active" : "inactive", l3);
+            }).join(`
+${import_picocolors2.default.yellow(a2)}  `)}
+${t2}
+`;
+          }
+          default:
+            return `${s2}${import_picocolors2.default.cyan(a2)}  ${this.options.map((t2, i3, c3) => {
+              const l3 = this.value.includes(t2.value) || t2.group === true && this.isGroupSelected(`${t2.value}`), $4 = i3 === this.cursor;
+              return !$4 && typeof t2.group == "string" && this.options[this.cursor].value === t2.group ? n2(t2, l3 ? "group-active-selected" : "group-active", c3) : $4 && l3 ? n2(t2, "active-selected", c3) : l3 ? n2(t2, "selected", c3) : n2(t2, $4 ? "active" : "inactive", c3);
+            }).join(`
+${import_picocolors2.default.cyan(a2)}  `)}
+${import_picocolors2.default.cyan(o)}
+`;
+        }
+      } }).prompt();
+    };
+    b2 = (r3) => r3.replace(ue(), "");
+    ie = (r3 = "", n2 = "") => {
+      const s2 = `
+${r3}
+`.split(`
+`), t2 = Math.max(s2.reduce((c3, l3) => (l3 = b2(l3), l3.length > c3 ? l3.length : c3), 0), b2(n2).length) + 2, i3 = s2.map((c3) => `${import_picocolors2.default.gray(a2)}  ${import_picocolors2.default.dim(c3)}${" ".repeat(t2 - b2(c3).length)}${import_picocolors2.default.gray(a2)}`).join(`
+`);
+      process.stdout.write(`${import_picocolors2.default.gray(a2)}
+${import_picocolors2.default.green(f2)}  ${import_picocolors2.default.reset(n2)} ${import_picocolors2.default.gray(R2.repeat(Math.max(t2 - n2.length - 1, 1)) + G2)}
+${i3}
+${import_picocolors2.default.gray(H2 + R2.repeat(t2 + 2) + K2)}
+`);
+    };
+    ne = (r3 = "") => {
+      process.stdout.write(`${import_picocolors2.default.gray(o)}  ${import_picocolors2.default.red(r3)}
+
+`);
+    };
+    ae = (r3 = "") => {
+      process.stdout.write(`${import_picocolors2.default.gray(L2)}  ${r3}
+`);
+    };
+    ce = (r3 = "") => {
+      process.stdout.write(`${import_picocolors2.default.gray(a2)}
+${import_picocolors2.default.gray(o)}  ${r3}
+
+`);
+    };
+    g2 = { message: (r3 = "", { symbol: n2 = import_picocolors2.default.gray(a2) } = {}) => {
+      const s2 = [`${import_picocolors2.default.gray(a2)}`];
+      if (r3) {
+        const [t2, ...i3] = r3.split(`
+`);
+        s2.push(`${n2}  ${t2}`, ...i3.map((c3) => `${import_picocolors2.default.gray(a2)}  ${c3}`));
+      }
+      process.stdout.write(`${s2.join(`
+`)}
+`);
+    }, info: (r3) => {
+      g2.message(r3, { symbol: import_picocolors2.default.blue(U2) });
+    }, success: (r3) => {
+      g2.message(r3, { symbol: import_picocolors2.default.green(Z2) });
+    }, step: (r3) => {
+      g2.message(r3, { symbol: import_picocolors2.default.green(f2) });
+    }, warn: (r3) => {
+      g2.message(r3, { symbol: import_picocolors2.default.yellow(z2) });
+    }, warning: (r3) => {
+      g2.warn(r3);
+    }, error: (r3) => {
+      g2.message(r3, { symbol: import_picocolors2.default.red(X2) });
+    } };
+    C = p ? ["\u25D2", "\u25D0", "\u25D3", "\u25D1"] : ["\u2022", "o", "O", "0"];
+    le = () => {
+      let r3, n2;
+      const s2 = p ? 80 : 120;
+      return { start(t2 = "") {
+        t2 = t2.replace(/\.?\.?\.$/, ""), r3 = WD(), process.stdout.write(`${import_picocolors2.default.gray(a2)}
+${import_picocolors2.default.magenta("\u25CB")}  ${t2}
+`);
+        let i3 = 0, c3 = 0;
+        n2 = setInterval(() => {
+          let l3 = C[i3];
+          process.stdout.write(import_sisteransi2.cursor.move(-999, -1)), process.stdout.write(`${import_picocolors2.default.magenta(l3)}  ${t2}${Math.floor(c3) >= 1 ? ".".repeat(Math.floor(c3)).slice(0, 3) : ""}   
+`), i3 = i3 === C.length - 1 ? 0 : i3 + 1, c3 = c3 === C.length ? 0 : c3 + 0.125;
+        }, s2);
+      }, stop(t2 = "") {
+        process.stdout.write(import_sisteransi2.cursor.move(-999, -2)), process.stdout.write(import_sisteransi2.erase.down(2)), clearInterval(n2), process.stdout.write(`${import_picocolors2.default.gray(a2)}
+${import_picocolors2.default.green(f2)}  ${t2}
+`), r3();
+      } };
+    };
+    $e = async (r3, n2) => {
+      const s2 = {}, t2 = Object.keys(r3);
+      for (const i3 of t2) {
+        const c3 = r3[i3], l3 = await c3({ results: s2 })?.catch(($4) => {
+          throw $4;
+        });
+        if (typeof n2?.onCancel == "function" && hD(l3)) {
+          s2[i3] = "canceled", n2.onCancel({ results: s2 });
+          continue;
+        }
+        s2[i3] = l3;
+      }
+      return s2;
+    };
   }
 });
 
@@ -24581,13 +25418,13 @@ var require_ini = __commonJS({
       const out = /* @__PURE__ */ Object.create(null);
       let p3 = out;
       let section = null;
-      const re2 = /^\[([^\]]*)\]$|^([^=]+)(=(.*))?$/i;
+      const re3 = /^\[([^\]]*)\]$|^([^=]+)(=(.*))?$/i;
       const lines = str2.split(/[\r\n]+/g);
       for (const line of lines) {
         if (!line || line.match(/^\s*[;#]/)) {
           continue;
         }
-        const match = line.match(re2);
+        const match = line.match(re3);
         if (!match) {
           continue;
         }
@@ -24673,20 +25510,20 @@ var require_ini = __commonJS({
         let esc = false;
         let unesc = "";
         for (let i3 = 0, l3 = val.length; i3 < l3; i3++) {
-          const c2 = val.charAt(i3);
+          const c3 = val.charAt(i3);
           if (esc) {
-            if ("\\;#".indexOf(c2) !== -1) {
-              unesc += c2;
+            if ("\\;#".indexOf(c3) !== -1) {
+              unesc += c3;
             } else {
-              unesc += "\\" + c2;
+              unesc += "\\" + c3;
             }
             esc = false;
-          } else if (";#".indexOf(c2) !== -1) {
+          } else if (";#".indexOf(c3) !== -1) {
             break;
-          } else if (c2 === "\\") {
+          } else if (c3 === "\\") {
             esc = true;
           } else {
-            unesc += c2;
+            unesc += c3;
           }
         }
         if (esc) {
@@ -24726,27 +25563,27 @@ var require_lib2 = __commonJS({
       }
       return options.globals.Number(value);
     }
-    function evenRound(x2) {
-      if (x2 > 0 && x2 % 1 === 0.5 && (x2 & 1) === 0 || x2 < 0 && x2 % 1 === -0.5 && (x2 & 1) === 1) {
-        return censorNegativeZero(Math.floor(x2));
+    function evenRound(x3) {
+      if (x3 > 0 && x3 % 1 === 0.5 && (x3 & 1) === 0 || x3 < 0 && x3 % 1 === -0.5 && (x3 & 1) === 1) {
+        return censorNegativeZero(Math.floor(x3));
       }
-      return censorNegativeZero(Math.round(x2));
+      return censorNegativeZero(Math.round(x3));
     }
     function integerPart(n2) {
       return censorNegativeZero(Math.trunc(n2));
     }
-    function sign(x2) {
-      return x2 < 0 ? -1 : 1;
+    function sign(x3) {
+      return x3 < 0 ? -1 : 1;
     }
-    function modulo(x2, y4) {
-      const signMightNotMatch = x2 % y4;
-      if (sign(y4) !== sign(signMightNotMatch)) {
-        return signMightNotMatch + y4;
+    function modulo(x3, y5) {
+      const signMightNotMatch = x3 % y5;
+      if (sign(y5) !== sign(signMightNotMatch)) {
+        return signMightNotMatch + y5;
       }
       return signMightNotMatch;
     }
-    function censorNegativeZero(x2) {
-      return x2 === 0 ? 0 : x2;
+    function censorNegativeZero(x3) {
+      return x3 === 0 ? 0 : x3;
     }
     function createIntegerConversion(bitLength, { unsigned }) {
       let lowerBound, upperBound;
@@ -24760,39 +25597,39 @@ var require_lib2 = __commonJS({
       const twoToTheBitLength = 2 ** bitLength;
       const twoToOneLessThanTheBitLength = 2 ** (bitLength - 1);
       return (value, options = {}) => {
-        let x2 = toNumber(value, options);
-        x2 = censorNegativeZero(x2);
+        let x3 = toNumber(value, options);
+        x3 = censorNegativeZero(x3);
         if (options.enforceRange) {
-          if (!Number.isFinite(x2)) {
+          if (!Number.isFinite(x3)) {
             throw makeException(TypeError, "is not a finite number", options);
           }
-          x2 = integerPart(x2);
-          if (x2 < lowerBound || x2 > upperBound) {
+          x3 = integerPart(x3);
+          if (x3 < lowerBound || x3 > upperBound) {
             throw makeException(
               TypeError,
               `is outside the accepted range of ${lowerBound} to ${upperBound}, inclusive`,
               options
             );
           }
-          return x2;
+          return x3;
         }
-        if (!Number.isNaN(x2) && options.clamp) {
-          x2 = Math.min(Math.max(x2, lowerBound), upperBound);
-          x2 = evenRound(x2);
-          return x2;
+        if (!Number.isNaN(x3) && options.clamp) {
+          x3 = Math.min(Math.max(x3, lowerBound), upperBound);
+          x3 = evenRound(x3);
+          return x3;
         }
-        if (!Number.isFinite(x2) || x2 === 0) {
+        if (!Number.isFinite(x3) || x3 === 0) {
           return 0;
         }
-        x2 = integerPart(x2);
-        if (x2 >= lowerBound && x2 <= upperBound) {
-          return x2;
+        x3 = integerPart(x3);
+        if (x3 >= lowerBound && x3 <= upperBound) {
+          return x3;
         }
-        x2 = modulo(x2, twoToTheBitLength);
-        if (!unsigned && x2 >= twoToOneLessThanTheBitLength) {
-          return x2 - twoToTheBitLength;
+        x3 = modulo(x3, twoToTheBitLength);
+        if (!unsigned && x3 >= twoToOneLessThanTheBitLength) {
+          return x3 - twoToTheBitLength;
         }
-        return x2;
+        return x3;
       };
     }
     function createLongLongConversion(bitLength, { unsigned }) {
@@ -24800,31 +25637,31 @@ var require_lib2 = __commonJS({
       const lowerBound = unsigned ? 0 : Number.MIN_SAFE_INTEGER;
       const asBigIntN = unsigned ? BigInt.asUintN : BigInt.asIntN;
       return (value, options = {}) => {
-        let x2 = toNumber(value, options);
-        x2 = censorNegativeZero(x2);
+        let x3 = toNumber(value, options);
+        x3 = censorNegativeZero(x3);
         if (options.enforceRange) {
-          if (!Number.isFinite(x2)) {
+          if (!Number.isFinite(x3)) {
             throw makeException(TypeError, "is not a finite number", options);
           }
-          x2 = integerPart(x2);
-          if (x2 < lowerBound || x2 > upperBound) {
+          x3 = integerPart(x3);
+          if (x3 < lowerBound || x3 > upperBound) {
             throw makeException(
               TypeError,
               `is outside the accepted range of ${lowerBound} to ${upperBound}, inclusive`,
               options
             );
           }
-          return x2;
+          return x3;
         }
-        if (!Number.isNaN(x2) && options.clamp) {
-          x2 = Math.min(Math.max(x2, lowerBound), upperBound);
-          x2 = evenRound(x2);
-          return x2;
+        if (!Number.isNaN(x3) && options.clamp) {
+          x3 = Math.min(Math.max(x3, lowerBound), upperBound);
+          x3 = evenRound(x3);
+          return x3;
         }
-        if (!Number.isFinite(x2) || x2 === 0) {
+        if (!Number.isFinite(x3) || x3 === 0) {
           return 0;
         }
-        let xBigInt = BigInt(integerPart(x2));
+        let xBigInt = BigInt(integerPart(x3));
         xBigInt = asBigIntN(bitLength, xBigInt);
         return Number(xBigInt);
       };
@@ -24847,39 +25684,39 @@ var require_lib2 = __commonJS({
     exports2["long long"] = createLongLongConversion(64, { unsigned: false });
     exports2["unsigned long long"] = createLongLongConversion(64, { unsigned: true });
     exports2.double = (value, options = {}) => {
-      const x2 = toNumber(value, options);
-      if (!Number.isFinite(x2)) {
+      const x3 = toNumber(value, options);
+      if (!Number.isFinite(x3)) {
         throw makeException(TypeError, "is not a finite floating-point value", options);
       }
-      return x2;
+      return x3;
     };
     exports2["unrestricted double"] = (value, options = {}) => {
-      const x2 = toNumber(value, options);
-      return x2;
+      const x3 = toNumber(value, options);
+      return x3;
     };
     exports2.float = (value, options = {}) => {
-      const x2 = toNumber(value, options);
-      if (!Number.isFinite(x2)) {
+      const x3 = toNumber(value, options);
+      if (!Number.isFinite(x3)) {
         throw makeException(TypeError, "is not a finite floating-point value", options);
       }
-      if (Object.is(x2, -0)) {
-        return x2;
+      if (Object.is(x3, -0)) {
+        return x3;
       }
-      const y4 = Math.fround(x2);
-      if (!Number.isFinite(y4)) {
+      const y5 = Math.fround(x3);
+      if (!Number.isFinite(y5)) {
         throw makeException(TypeError, "is outside the range of a single-precision floating-point value", options);
       }
-      return y4;
+      return y5;
     };
     exports2["unrestricted float"] = (value, options = {}) => {
-      const x2 = toNumber(value, options);
-      if (isNaN(x2)) {
-        return x2;
+      const x3 = toNumber(value, options);
+      if (isNaN(x3)) {
+        return x3;
       }
-      if (Object.is(x2, -0)) {
-        return x2;
+      if (Object.is(x3, -0)) {
+        return x3;
       }
-      return Math.fround(x2);
+      return Math.fround(x3);
     };
     exports2.DOMString = (value, options = {}) => {
       if (options.treatNullAsEmptyString && value === null) {
@@ -24892,40 +25729,40 @@ var require_lib2 = __commonJS({
       return StringCtor(value);
     };
     exports2.ByteString = (value, options = {}) => {
-      const x2 = exports2.DOMString(value, options);
-      let c2;
-      for (let i3 = 0; (c2 = x2.codePointAt(i3)) !== void 0; ++i3) {
-        if (c2 > 255) {
+      const x3 = exports2.DOMString(value, options);
+      let c3;
+      for (let i3 = 0; (c3 = x3.codePointAt(i3)) !== void 0; ++i3) {
+        if (c3 > 255) {
           throw makeException(TypeError, "is not a valid ByteString", options);
         }
       }
-      return x2;
+      return x3;
     };
     exports2.USVString = (value, options = {}) => {
-      const S3 = exports2.DOMString(value, options);
-      const n2 = S3.length;
-      const U5 = [];
+      const S4 = exports2.DOMString(value, options);
+      const n2 = S4.length;
+      const U6 = [];
       for (let i3 = 0; i3 < n2; ++i3) {
-        const c2 = S3.charCodeAt(i3);
-        if (c2 < 55296 || c2 > 57343) {
-          U5.push(String.fromCodePoint(c2));
-        } else if (56320 <= c2 && c2 <= 57343) {
-          U5.push(String.fromCodePoint(65533));
+        const c3 = S4.charCodeAt(i3);
+        if (c3 < 55296 || c3 > 57343) {
+          U6.push(String.fromCodePoint(c3));
+        } else if (56320 <= c3 && c3 <= 57343) {
+          U6.push(String.fromCodePoint(65533));
         } else if (i3 === n2 - 1) {
-          U5.push(String.fromCodePoint(65533));
+          U6.push(String.fromCodePoint(65533));
         } else {
-          const d5 = S3.charCodeAt(i3 + 1);
+          const d5 = S4.charCodeAt(i3 + 1);
           if (56320 <= d5 && d5 <= 57343) {
-            const a3 = c2 & 1023;
-            const b3 = d5 & 1023;
-            U5.push(String.fromCodePoint((2 << 15) + (2 << 9) * a3 + b3));
+            const a4 = c3 & 1023;
+            const b4 = d5 & 1023;
+            U6.push(String.fromCodePoint((2 << 15) + (2 << 9) * a4 + b4));
             ++i3;
           } else {
-            U5.push(String.fromCodePoint(65533));
+            U6.push(String.fromCodePoint(65533));
           }
         }
       }
-      return U5.join("");
+      return U6.join("");
     };
     exports2.object = (value, options = {}) => {
       if (value === null || typeof value !== "object" && typeof value !== "function") {
@@ -25396,20 +26233,20 @@ var require_punycode = __commonJS({
             error("overflow");
           }
           if (currentValue === n2) {
-            let q3 = delta;
+            let q4 = delta;
             for (let k4 = base; ; k4 += base) {
               const t2 = k4 <= bias ? tMin : k4 >= bias + tMax ? tMax : k4 - bias;
-              if (q3 < t2) {
+              if (q4 < t2) {
                 break;
               }
-              const qMinusT = q3 - t2;
+              const qMinusT = q4 - t2;
               const baseMinusT = base - t2;
               output.push(
                 stringFromCharCode(digitToBasic(t2 + qMinusT % baseMinusT, 0))
               );
-              q3 = floor(qMinusT / baseMinusT);
+              q4 = floor(qMinusT / baseMinusT);
             }
-            output.push(stringFromCharCode(digitToBasic(q3, 0)));
+            output.push(stringFromCharCode(digitToBasic(q4, 0)));
             bias = adapt(delta, handledCPCountPlusOne, handledCPCount === basicLength);
             delta = 0;
             ++handledCPCount;
@@ -25793,17 +26630,17 @@ var require_tr46 = __commonJS({
 var require_infra = __commonJS({
   "node_modules/whatwg-url/lib/infra.js"(exports2, module2) {
     "use strict";
-    function isASCIIDigit(c2) {
-      return c2 >= 48 && c2 <= 57;
+    function isASCIIDigit(c3) {
+      return c3 >= 48 && c3 <= 57;
     }
-    function isASCIIAlpha(c2) {
-      return c2 >= 65 && c2 <= 90 || c2 >= 97 && c2 <= 122;
+    function isASCIIAlpha(c3) {
+      return c3 >= 65 && c3 <= 90 || c3 >= 97 && c3 <= 122;
     }
-    function isASCIIAlphanumeric(c2) {
-      return isASCIIAlpha(c2) || isASCIIDigit(c2);
+    function isASCIIAlphanumeric(c3) {
+      return isASCIIAlpha(c3) || isASCIIDigit(c3);
     }
-    function isASCIIHex(c2) {
-      return isASCIIDigit(c2) || c2 >= 65 && c2 <= 70 || c2 >= 97 && c2 <= 102;
+    function isASCIIHex(c3) {
+      return isASCIIDigit(c3) || c3 >= 65 && c3 <= 70 || c3 >= 97 && c3 <= 102;
     }
     module2.exports = {
       isASCIIDigit,
@@ -25842,8 +26679,8 @@ var require_percent_encoding = __commonJS({
     function p3(char) {
       return char.codePointAt(0);
     }
-    function percentEncode(c2) {
-      let hex = c2.toString(16).toUpperCase();
+    function percentEncode(c3) {
+      let hex = c3.toString(16).toUpperCase();
       if (hex.length === 1) {
         hex = `0${hex}`;
       }
@@ -25870,35 +26707,35 @@ var require_percent_encoding = __commonJS({
       const bytes = utf8Encode(input);
       return percentDecodeBytes(bytes);
     }
-    function isC0ControlPercentEncode(c2) {
-      return c2 <= 31 || c2 > 126;
+    function isC0ControlPercentEncode(c3) {
+      return c3 <= 31 || c3 > 126;
     }
     var extraFragmentPercentEncodeSet = /* @__PURE__ */ new Set([p3(" "), p3('"'), p3("<"), p3(">"), p3("`")]);
-    function isFragmentPercentEncode(c2) {
-      return isC0ControlPercentEncode(c2) || extraFragmentPercentEncodeSet.has(c2);
+    function isFragmentPercentEncode(c3) {
+      return isC0ControlPercentEncode(c3) || extraFragmentPercentEncodeSet.has(c3);
     }
     var extraQueryPercentEncodeSet = /* @__PURE__ */ new Set([p3(" "), p3('"'), p3("#"), p3("<"), p3(">")]);
-    function isQueryPercentEncode(c2) {
-      return isC0ControlPercentEncode(c2) || extraQueryPercentEncodeSet.has(c2);
+    function isQueryPercentEncode(c3) {
+      return isC0ControlPercentEncode(c3) || extraQueryPercentEncodeSet.has(c3);
     }
-    function isSpecialQueryPercentEncode(c2) {
-      return isQueryPercentEncode(c2) || c2 === p3("'");
+    function isSpecialQueryPercentEncode(c3) {
+      return isQueryPercentEncode(c3) || c3 === p3("'");
     }
     var extraPathPercentEncodeSet = /* @__PURE__ */ new Set([p3("?"), p3("`"), p3("{"), p3("}"), p3("^")]);
-    function isPathPercentEncode(c2) {
-      return isQueryPercentEncode(c2) || extraPathPercentEncodeSet.has(c2);
+    function isPathPercentEncode(c3) {
+      return isQueryPercentEncode(c3) || extraPathPercentEncodeSet.has(c3);
     }
     var extraUserinfoPercentEncodeSet = /* @__PURE__ */ new Set([p3("/"), p3(":"), p3(";"), p3("="), p3("@"), p3("["), p3("\\"), p3("]"), p3("|")]);
-    function isUserinfoPercentEncode(c2) {
-      return isPathPercentEncode(c2) || extraUserinfoPercentEncodeSet.has(c2);
+    function isUserinfoPercentEncode(c3) {
+      return isPathPercentEncode(c3) || extraUserinfoPercentEncodeSet.has(c3);
     }
     var extraComponentPercentEncodeSet = /* @__PURE__ */ new Set([p3("$"), p3("%"), p3("&"), p3("+"), p3(",")]);
-    function isComponentPercentEncode(c2) {
-      return isUserinfoPercentEncode(c2) || extraComponentPercentEncodeSet.has(c2);
+    function isComponentPercentEncode(c3) {
+      return isUserinfoPercentEncode(c3) || extraComponentPercentEncodeSet.has(c3);
     }
     var extraURLEncodedPercentEncodeSet = /* @__PURE__ */ new Set([p3("!"), p3("'"), p3("("), p3(")"), p3("~")]);
-    function isURLEncodedPercentEncode(c2) {
-      return isComponentPercentEncode(c2) || extraURLEncodedPercentEncodeSet.has(c2);
+    function isURLEncodedPercentEncode(c3) {
+      return isComponentPercentEncode(c3) || extraURLEncodedPercentEncodeSet.has(c3);
     }
     function utf8PercentEncodeCodePointInternal(codePoint, percentEncodePredicate) {
       const bytes = utf8Encode(codePoint);
@@ -25976,8 +26813,8 @@ var require_url_state_machine = __commonJS({
       return [...str2].length;
     }
     function at2(input, idx) {
-      const c2 = input[idx];
-      return isNaN(c2) ? void 0 : String.fromCodePoint(c2);
+      const c3 = input[idx];
+      return isNaN(c3) ? void 0 : String.fromCodePoint(c3);
     }
     function isSingleDot(buffer) {
       return buffer === "." || buffer.toLowerCase() === "%2e";
@@ -26017,28 +26854,28 @@ var require_url_state_machine = __commonJS({
       if (input === "") {
         return failure;
       }
-      let R3 = 10;
+      let R4 = 10;
       if (input.length >= 2 && input.charAt(0) === "0" && input.charAt(1).toLowerCase() === "x") {
         input = input.substring(2);
-        R3 = 16;
+        R4 = 16;
       } else if (input.length >= 2 && input.charAt(0) === "0") {
         input = input.substring(1);
-        R3 = 8;
+        R4 = 8;
       }
       if (input === "") {
         return 0;
       }
       let regex = /[^0-7]/u;
-      if (R3 === 10) {
+      if (R4 === 10) {
         regex = /[^0-9]/u;
       }
-      if (R3 === 16) {
+      if (R4 === 16) {
         regex = /[^0-9A-Fa-f]/u;
       }
       if (regex.test(input)) {
         return failure;
       }
-      return parseInt(input, R3);
+      return parseInt(input, R4);
     }
     function parseIPv4(input) {
       const parts = input.split(".");
@@ -26091,7 +26928,7 @@ var require_url_state_machine = __commonJS({
       let pieceIndex = 0;
       let compress = null;
       let pointer = 0;
-      input = Array.from(input, (c2) => c2.codePointAt(0));
+      input = Array.from(input, (c3) => c3.codePointAt(0));
       if (input[pointer] === p3(":")) {
         if (input[pointer + 1] !== p3(":")) {
           return failure;
@@ -26390,11 +27227,11 @@ var require_url_state_machine = __commonJS({
       this.atFlag = false;
       this.arrFlag = false;
       this.passwordTokenSeenFlag = false;
-      this.input = Array.from(this.input, (c2) => c2.codePointAt(0));
+      this.input = Array.from(this.input, (c3) => c3.codePointAt(0));
       for (; this.pointer <= this.input.length; ++this.pointer) {
-        const c2 = this.input[this.pointer];
-        const cStr = isNaN(c2) ? void 0 : String.fromCodePoint(c2);
-        const ret = this[`parse ${this.state}`](c2, cStr);
+        const c3 = this.input[this.pointer];
+        const cStr = isNaN(c3) ? void 0 : String.fromCodePoint(c3);
+        const ret = this[`parse ${this.state}`](c3, cStr);
         if (!ret) {
           break;
         } else if (ret === failure) {
@@ -26403,8 +27240,8 @@ var require_url_state_machine = __commonJS({
         }
       }
     }
-    URLStateMachine.prototype["parse scheme start"] = function parseSchemeStart(c2, cStr) {
-      if (infra.isASCIIAlpha(c2)) {
+    URLStateMachine.prototype["parse scheme start"] = function parseSchemeStart(c3, cStr) {
+      if (infra.isASCIIAlpha(c3)) {
         this.buffer += cStr.toLowerCase();
         this.state = "scheme";
       } else if (!this.stateOverride) {
@@ -26416,10 +27253,10 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse scheme"] = function parseScheme(c2, cStr) {
-      if (infra.isASCIIAlphanumeric(c2) || c2 === p3("+") || c2 === p3("-") || c2 === p3(".")) {
+    URLStateMachine.prototype["parse scheme"] = function parseScheme(c3, cStr) {
+      if (infra.isASCIIAlphanumeric(c3) || c3 === p3("+") || c3 === p3("-") || c3 === p3(".")) {
         this.buffer += cStr.toLowerCase();
-      } else if (c2 === p3(":")) {
+      } else if (c3 === p3(":")) {
         if (this.stateOverride) {
           if (isSpecial(this.url) && !isSpecialScheme(this.buffer)) {
             return false;
@@ -26468,10 +27305,10 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse no scheme"] = function parseNoScheme(c2) {
-      if (this.base === null || hasAnOpaquePath(this.base) && c2 !== p3("#")) {
+    URLStateMachine.prototype["parse no scheme"] = function parseNoScheme(c3) {
+      if (this.base === null || hasAnOpaquePath(this.base) && c3 !== p3("#")) {
         return failure;
-      } else if (hasAnOpaquePath(this.base) && c2 === p3("#")) {
+      } else if (hasAnOpaquePath(this.base) && c3 === p3("#")) {
         this.url.scheme = this.base.scheme;
         this.url.path = this.base.path;
         this.url.query = this.base.query;
@@ -26486,8 +27323,8 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse special relative or authority"] = function parseSpecialRelativeOrAuthority(c2) {
-      if (c2 === p3("/") && this.input[this.pointer + 1] === p3("/")) {
+    URLStateMachine.prototype["parse special relative or authority"] = function parseSpecialRelativeOrAuthority(c3) {
+      if (c3 === p3("/") && this.input[this.pointer + 1] === p3("/")) {
         this.state = "special authority ignore slashes";
         ++this.pointer;
       } else {
@@ -26497,8 +27334,8 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse path or authority"] = function parsePathOrAuthority(c2) {
-      if (c2 === p3("/")) {
+    URLStateMachine.prototype["parse path or authority"] = function parsePathOrAuthority(c3) {
+      if (c3 === p3("/")) {
         this.state = "authority";
       } else {
         this.state = "path";
@@ -26506,11 +27343,11 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse relative"] = function parseRelative(c2) {
+    URLStateMachine.prototype["parse relative"] = function parseRelative(c3) {
       this.url.scheme = this.base.scheme;
-      if (c2 === p3("/")) {
+      if (c3 === p3("/")) {
         this.state = "relative slash";
-      } else if (isSpecial(this.url) && c2 === p3("\\")) {
+      } else if (isSpecial(this.url) && c3 === p3("\\")) {
         this.parseError = true;
         this.state = "relative slash";
       } else {
@@ -26520,13 +27357,13 @@ var require_url_state_machine = __commonJS({
         this.url.port = this.base.port;
         this.url.path = this.base.path.slice();
         this.url.query = this.base.query;
-        if (c2 === p3("?")) {
+        if (c3 === p3("?")) {
           this.url.query = "";
           this.state = "query";
-        } else if (c2 === p3("#")) {
+        } else if (c3 === p3("#")) {
           this.url.fragment = "";
           this.state = "fragment";
-        } else if (!isNaN(c2)) {
+        } else if (!isNaN(c3)) {
           this.url.query = null;
           this.url.path.pop();
           this.state = "path";
@@ -26535,13 +27372,13 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse relative slash"] = function parseRelativeSlash(c2) {
-      if (isSpecial(this.url) && (c2 === p3("/") || c2 === p3("\\"))) {
-        if (c2 === p3("\\")) {
+    URLStateMachine.prototype["parse relative slash"] = function parseRelativeSlash(c3) {
+      if (isSpecial(this.url) && (c3 === p3("/") || c3 === p3("\\"))) {
+        if (c3 === p3("\\")) {
           this.parseError = true;
         }
         this.state = "special authority ignore slashes";
-      } else if (c2 === p3("/")) {
+      } else if (c3 === p3("/")) {
         this.state = "authority";
       } else {
         this.url.username = this.base.username;
@@ -26553,8 +27390,8 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse special authority slashes"] = function parseSpecialAuthoritySlashes(c2) {
-      if (c2 === p3("/") && this.input[this.pointer + 1] === p3("/")) {
+    URLStateMachine.prototype["parse special authority slashes"] = function parseSpecialAuthoritySlashes(c3) {
+      if (c3 === p3("/") && this.input[this.pointer + 1] === p3("/")) {
         this.state = "special authority ignore slashes";
         ++this.pointer;
       } else {
@@ -26564,8 +27401,8 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse special authority ignore slashes"] = function parseSpecialAuthorityIgnoreSlashes(c2) {
-      if (c2 !== p3("/") && c2 !== p3("\\")) {
+    URLStateMachine.prototype["parse special authority ignore slashes"] = function parseSpecialAuthorityIgnoreSlashes(c3) {
+      if (c3 !== p3("/") && c3 !== p3("\\")) {
         this.state = "authority";
         --this.pointer;
       } else {
@@ -26573,8 +27410,8 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse authority"] = function parseAuthority(c2, cStr) {
-      if (c2 === p3("@")) {
+    URLStateMachine.prototype["parse authority"] = function parseAuthority(c3, cStr) {
+      if (c3 === p3("@")) {
         this.parseError = true;
         if (this.atFlag) {
           this.buffer = `%40${this.buffer}`;
@@ -26595,7 +27432,7 @@ var require_url_state_machine = __commonJS({
           }
         }
         this.buffer = "";
-      } else if (isNaN(c2) || c2 === p3("/") || c2 === p3("?") || c2 === p3("#") || isSpecial(this.url) && c2 === p3("\\")) {
+      } else if (isNaN(c3) || c3 === p3("/") || c3 === p3("?") || c3 === p3("#") || isSpecial(this.url) && c3 === p3("\\")) {
         if (this.atFlag && this.buffer === "") {
           this.parseError = true;
           return failure;
@@ -26608,11 +27445,11 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse hostname"] = URLStateMachine.prototype["parse host"] = function parseHostName(c2, cStr) {
+    URLStateMachine.prototype["parse hostname"] = URLStateMachine.prototype["parse host"] = function parseHostName(c3, cStr) {
       if (this.stateOverride && this.url.scheme === "file") {
         --this.pointer;
         this.state = "file host";
-      } else if (c2 === p3(":") && !this.arrFlag) {
+      } else if (c3 === p3(":") && !this.arrFlag) {
         if (this.buffer === "") {
           this.parseError = true;
           return failure;
@@ -26627,7 +27464,7 @@ var require_url_state_machine = __commonJS({
         this.url.host = host;
         this.buffer = "";
         this.state = "port";
-      } else if (isNaN(c2) || c2 === p3("/") || c2 === p3("?") || c2 === p3("#") || isSpecial(this.url) && c2 === p3("\\")) {
+      } else if (isNaN(c3) || c3 === p3("/") || c3 === p3("?") || c3 === p3("#") || isSpecial(this.url) && c3 === p3("\\")) {
         --this.pointer;
         if (isSpecial(this.url) && this.buffer === "") {
           this.parseError = true;
@@ -26647,19 +27484,19 @@ var require_url_state_machine = __commonJS({
           return false;
         }
       } else {
-        if (c2 === p3("[")) {
+        if (c3 === p3("[")) {
           this.arrFlag = true;
-        } else if (c2 === p3("]")) {
+        } else if (c3 === p3("]")) {
           this.arrFlag = false;
         }
         this.buffer += cStr;
       }
       return true;
     };
-    URLStateMachine.prototype["parse port"] = function parsePort(c2, cStr) {
-      if (infra.isASCIIDigit(c2)) {
+    URLStateMachine.prototype["parse port"] = function parsePort(c3, cStr) {
+      if (infra.isASCIIDigit(c3)) {
         this.buffer += cStr;
-      } else if (isNaN(c2) || c2 === p3("/") || c2 === p3("?") || c2 === p3("#") || isSpecial(this.url) && c2 === p3("\\") || this.stateOverride) {
+      } else if (isNaN(c3) || c3 === p3("/") || c3 === p3("?") || c3 === p3("#") || isSpecial(this.url) && c3 === p3("\\") || this.stateOverride) {
         if (this.buffer !== "") {
           const port = parseInt(this.buffer);
           if (port > 2 ** 16 - 1) {
@@ -26685,11 +27522,11 @@ var require_url_state_machine = __commonJS({
       const length = input.length - pointer;
       return length >= 2 && isWindowsDriveLetterCodePoints(input[pointer], input[pointer + 1]) && (length === 2 || fileOtherwiseCodePoints.has(input[pointer + 2]));
     }
-    URLStateMachine.prototype["parse file"] = function parseFile(c2) {
+    URLStateMachine.prototype["parse file"] = function parseFile(c3) {
       this.url.scheme = "file";
       this.url.host = "";
-      if (c2 === p3("/") || c2 === p3("\\")) {
-        if (c2 === p3("\\")) {
+      if (c3 === p3("/") || c3 === p3("\\")) {
+        if (c3 === p3("\\")) {
           this.parseError = true;
         }
         this.state = "file slash";
@@ -26697,13 +27534,13 @@ var require_url_state_machine = __commonJS({
         this.url.host = this.base.host;
         this.url.path = this.base.path.slice();
         this.url.query = this.base.query;
-        if (c2 === p3("?")) {
+        if (c3 === p3("?")) {
           this.url.query = "";
           this.state = "query";
-        } else if (c2 === p3("#")) {
+        } else if (c3 === p3("#")) {
           this.url.fragment = "";
           this.state = "fragment";
-        } else if (!isNaN(c2)) {
+        } else if (!isNaN(c3)) {
           this.url.query = null;
           if (!startsWithWindowsDriveLetter(this.input, this.pointer)) {
             shortenPath(this.url);
@@ -26720,9 +27557,9 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse file slash"] = function parseFileSlash(c2) {
-      if (c2 === p3("/") || c2 === p3("\\")) {
-        if (c2 === p3("\\")) {
+    URLStateMachine.prototype["parse file slash"] = function parseFileSlash(c3) {
+      if (c3 === p3("/") || c3 === p3("\\")) {
+        if (c3 === p3("\\")) {
           this.parseError = true;
         }
         this.state = "file host";
@@ -26738,8 +27575,8 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse file host"] = function parseFileHost(c2, cStr) {
-      if (isNaN(c2) || c2 === p3("/") || c2 === p3("\\") || c2 === p3("?") || c2 === p3("#")) {
+    URLStateMachine.prototype["parse file host"] = function parseFileHost(c3, cStr) {
+      if (isNaN(c3) || c3 === p3("/") || c3 === p3("\\") || c3 === p3("?") || c3 === p3("#")) {
         --this.pointer;
         if (!this.stateOverride && isWindowsDriveLetterString(this.buffer)) {
           this.parseError = true;
@@ -26770,24 +27607,24 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse path start"] = function parsePathStart(c2) {
+    URLStateMachine.prototype["parse path start"] = function parsePathStart(c3) {
       if (isSpecial(this.url)) {
-        if (c2 === p3("\\")) {
+        if (c3 === p3("\\")) {
           this.parseError = true;
         }
         this.state = "path";
-        if (c2 !== p3("/") && c2 !== p3("\\")) {
+        if (c3 !== p3("/") && c3 !== p3("\\")) {
           --this.pointer;
         }
-      } else if (!this.stateOverride && c2 === p3("?")) {
+      } else if (!this.stateOverride && c3 === p3("?")) {
         this.url.query = "";
         this.state = "query";
-      } else if (!this.stateOverride && c2 === p3("#")) {
+      } else if (!this.stateOverride && c3 === p3("#")) {
         this.url.fragment = "";
         this.state = "fragment";
-      } else if (c2 !== void 0) {
+      } else if (c3 !== void 0) {
         this.state = "path";
-        if (c2 !== p3("/")) {
+        if (c3 !== p3("/")) {
           --this.pointer;
         }
       } else if (this.stateOverride && this.url.host === null) {
@@ -26795,17 +27632,17 @@ var require_url_state_machine = __commonJS({
       }
       return true;
     };
-    URLStateMachine.prototype["parse path"] = function parsePath(c2) {
-      if (isNaN(c2) || c2 === p3("/") || isSpecial(this.url) && c2 === p3("\\") || !this.stateOverride && (c2 === p3("?") || c2 === p3("#"))) {
-        if (isSpecial(this.url) && c2 === p3("\\")) {
+    URLStateMachine.prototype["parse path"] = function parsePath(c3) {
+      if (isNaN(c3) || c3 === p3("/") || isSpecial(this.url) && c3 === p3("\\") || !this.stateOverride && (c3 === p3("?") || c3 === p3("#"))) {
+        if (isSpecial(this.url) && c3 === p3("\\")) {
           this.parseError = true;
         }
         if (isDoubleDot(this.buffer)) {
           shortenPath(this.url);
-          if (c2 !== p3("/") && !(isSpecial(this.url) && c2 === p3("\\"))) {
+          if (c3 !== p3("/") && !(isSpecial(this.url) && c3 === p3("\\"))) {
             this.url.path.push("");
           }
-        } else if (isSingleDot(this.buffer) && c2 !== p3("/") && !(isSpecial(this.url) && c2 === p3("\\"))) {
+        } else if (isSingleDot(this.buffer) && c3 !== p3("/") && !(isSpecial(this.url) && c3 === p3("\\"))) {
           this.url.path.push("");
         } else if (!isSingleDot(this.buffer)) {
           if (this.url.scheme === "file" && this.url.path.length === 0 && isWindowsDriveLetterString(this.buffer)) {
@@ -26814,30 +27651,30 @@ var require_url_state_machine = __commonJS({
           this.url.path.push(this.buffer);
         }
         this.buffer = "";
-        if (c2 === p3("?")) {
+        if (c3 === p3("?")) {
           this.url.query = "";
           this.state = "query";
         }
-        if (c2 === p3("#")) {
+        if (c3 === p3("#")) {
           this.url.fragment = "";
           this.state = "fragment";
         }
       } else {
-        if (c2 === p3("%") && (!infra.isASCIIHex(this.input[this.pointer + 1]) || !infra.isASCIIHex(this.input[this.pointer + 2]))) {
+        if (c3 === p3("%") && (!infra.isASCIIHex(this.input[this.pointer + 1]) || !infra.isASCIIHex(this.input[this.pointer + 2]))) {
           this.parseError = true;
         }
-        this.buffer += utf8PercentEncodeCodePoint(c2, isPathPercentEncode);
+        this.buffer += utf8PercentEncodeCodePoint(c3, isPathPercentEncode);
       }
       return true;
     };
-    URLStateMachine.prototype["parse opaque path"] = function parseOpaquePath(c2) {
-      if (c2 === p3("?")) {
+    URLStateMachine.prototype["parse opaque path"] = function parseOpaquePath(c3) {
+      if (c3 === p3("?")) {
         this.url.query = "";
         this.state = "query";
-      } else if (c2 === p3("#")) {
+      } else if (c3 === p3("#")) {
         this.url.fragment = "";
         this.state = "fragment";
-      } else if (c2 === p3(" ")) {
+      } else if (c3 === p3(" ")) {
         const remaining = this.input[this.pointer + 1];
         if (remaining === p3("?") || remaining === p3("#")) {
           this.url.path += "%20";
@@ -26845,44 +27682,44 @@ var require_url_state_machine = __commonJS({
           this.url.path += " ";
         }
       } else {
-        if (!isNaN(c2) && c2 !== p3("%")) {
+        if (!isNaN(c3) && c3 !== p3("%")) {
           this.parseError = true;
         }
-        if (c2 === p3("%") && (!infra.isASCIIHex(this.input[this.pointer + 1]) || !infra.isASCIIHex(this.input[this.pointer + 2]))) {
+        if (c3 === p3("%") && (!infra.isASCIIHex(this.input[this.pointer + 1]) || !infra.isASCIIHex(this.input[this.pointer + 2]))) {
           this.parseError = true;
         }
-        if (!isNaN(c2)) {
-          this.url.path += utf8PercentEncodeCodePoint(c2, isC0ControlPercentEncode);
+        if (!isNaN(c3)) {
+          this.url.path += utf8PercentEncodeCodePoint(c3, isC0ControlPercentEncode);
         }
       }
       return true;
     };
-    URLStateMachine.prototype["parse query"] = function parseQuery(c2, cStr) {
+    URLStateMachine.prototype["parse query"] = function parseQuery(c3, cStr) {
       if (!isSpecial(this.url) || this.url.scheme === "ws" || this.url.scheme === "wss") {
         this.encodingOverride = "utf-8";
       }
-      if (!this.stateOverride && c2 === p3("#") || isNaN(c2)) {
+      if (!this.stateOverride && c3 === p3("#") || isNaN(c3)) {
         const queryPercentEncodePredicate = isSpecial(this.url) ? isSpecialQueryPercentEncode : isQueryPercentEncode;
         this.url.query += utf8PercentEncodeString(this.buffer, queryPercentEncodePredicate);
         this.buffer = "";
-        if (c2 === p3("#")) {
+        if (c3 === p3("#")) {
           this.url.fragment = "";
           this.state = "fragment";
         }
-      } else if (!isNaN(c2)) {
-        if (c2 === p3("%") && (!infra.isASCIIHex(this.input[this.pointer + 1]) || !infra.isASCIIHex(this.input[this.pointer + 2]))) {
+      } else if (!isNaN(c3)) {
+        if (c3 === p3("%") && (!infra.isASCIIHex(this.input[this.pointer + 1]) || !infra.isASCIIHex(this.input[this.pointer + 2]))) {
           this.parseError = true;
         }
         this.buffer += cStr;
       }
       return true;
     };
-    URLStateMachine.prototype["parse fragment"] = function parseFragment(c2) {
-      if (!isNaN(c2)) {
-        if (c2 === p3("%") && (!infra.isASCIIHex(this.input[this.pointer + 1]) || !infra.isASCIIHex(this.input[this.pointer + 2]))) {
+    URLStateMachine.prototype["parse fragment"] = function parseFragment(c3) {
+      if (!isNaN(c3)) {
+        if (c3 === p3("%") && (!infra.isASCIIHex(this.input[this.pointer + 1]) || !infra.isASCIIHex(this.input[this.pointer + 2]))) {
           this.parseError = true;
         }
-        this.url.fragment += utf8PercentEncodeCodePoint(c2, isFragmentPercentEncode);
+        this.url.fragment += utf8PercentEncodeCodePoint(c3, isFragmentPercentEncode);
       }
       return true;
     };
@@ -27208,11 +28045,11 @@ var require_URLSearchParams_impl = __commonJS({
         this._updateSteps();
       }
       sort() {
-        this._list.sort((a3, b3) => {
-          if (a3[0] < b3[0]) {
+        this._list.sort((a4, b4) => {
+          if (a4[0] < b4[0]) {
             return -1;
           }
-          if (a3[0] > b3[0]) {
+          if (a4[0] > b4[0]) {
             return 1;
           }
           return 0;
@@ -27731,10 +28568,10 @@ var require_URL_impl = __commonJS({
       get href() {
         return usm.serializeURL(this._url);
       }
-      set href(v2) {
-        const parsedURL = usm.basicURLParse(v2);
+      set href(v6) {
+        const parsedURL = usm.basicURLParse(v6);
         if (parsedURL === null) {
-          throw new TypeError(`Invalid URL: ${v2}`);
+          throw new TypeError(`Invalid URL: ${v6}`);
         }
         this._url = parsedURL;
         this._query._list.splice(0);
@@ -27749,26 +28586,26 @@ var require_URL_impl = __commonJS({
       get protocol() {
         return `${this._url.scheme}:`;
       }
-      set protocol(v2) {
-        usm.basicURLParse(`${v2}:`, { url: this._url, stateOverride: "scheme start" });
+      set protocol(v6) {
+        usm.basicURLParse(`${v6}:`, { url: this._url, stateOverride: "scheme start" });
       }
       get username() {
         return this._url.username;
       }
-      set username(v2) {
+      set username(v6) {
         if (usm.cannotHaveAUsernamePasswordPort(this._url)) {
           return;
         }
-        usm.setTheUsername(this._url, v2);
+        usm.setTheUsername(this._url, v6);
       }
       get password() {
         return this._url.password;
       }
-      set password(v2) {
+      set password(v6) {
         if (usm.cannotHaveAUsernamePasswordPort(this._url)) {
           return;
         }
-        usm.setThePassword(this._url, v2);
+        usm.setThePassword(this._url, v6);
       }
       get host() {
         const url2 = this._url;
@@ -27780,11 +28617,11 @@ var require_URL_impl = __commonJS({
         }
         return `${usm.serializeHost(url2.host)}:${usm.serializeInteger(url2.port)}`;
       }
-      set host(v2) {
+      set host(v6) {
         if (usm.hasAnOpaquePath(this._url)) {
           return;
         }
-        usm.basicURLParse(v2, { url: this._url, stateOverride: "host" });
+        usm.basicURLParse(v6, { url: this._url, stateOverride: "host" });
       }
       get hostname() {
         if (this._url.host === null) {
@@ -27792,11 +28629,11 @@ var require_URL_impl = __commonJS({
         }
         return usm.serializeHost(this._url.host);
       }
-      set hostname(v2) {
+      set hostname(v6) {
         if (usm.hasAnOpaquePath(this._url)) {
           return;
         }
-        usm.basicURLParse(v2, { url: this._url, stateOverride: "hostname" });
+        usm.basicURLParse(v6, { url: this._url, stateOverride: "hostname" });
       }
       get port() {
         if (this._url.port === null) {
@@ -27804,25 +28641,25 @@ var require_URL_impl = __commonJS({
         }
         return usm.serializeInteger(this._url.port);
       }
-      set port(v2) {
+      set port(v6) {
         if (usm.cannotHaveAUsernamePasswordPort(this._url)) {
           return;
         }
-        if (v2 === "") {
+        if (v6 === "") {
           this._url.port = null;
         } else {
-          usm.basicURLParse(v2, { url: this._url, stateOverride: "port" });
+          usm.basicURLParse(v6, { url: this._url, stateOverride: "port" });
         }
       }
       get pathname() {
         return usm.serializePath(this._url);
       }
-      set pathname(v2) {
+      set pathname(v6) {
         if (usm.hasAnOpaquePath(this._url)) {
           return;
         }
         this._url.path = [];
-        usm.basicURLParse(v2, { url: this._url, stateOverride: "path start" });
+        usm.basicURLParse(v6, { url: this._url, stateOverride: "path start" });
       }
       get search() {
         if (this._url.query === null || this._url.query === "") {
@@ -27830,14 +28667,14 @@ var require_URL_impl = __commonJS({
         }
         return `?${this._url.query}`;
       }
-      set search(v2) {
+      set search(v6) {
         const url2 = this._url;
-        if (v2 === "") {
+        if (v6 === "") {
           url2.query = null;
           this._query._list = [];
           return;
         }
-        const input = v2[0] === "?" ? v2.substring(1) : v2;
+        const input = v6[0] === "?" ? v6.substring(1) : v6;
         url2.query = "";
         usm.basicURLParse(input, { url: url2, stateOverride: "query" });
         this._query._list = urlencoded.parseUrlencodedString(input);
@@ -27851,12 +28688,12 @@ var require_URL_impl = __commonJS({
         }
         return `#${this._url.fragment}`;
       }
-      set hash(v2) {
-        if (v2 === "") {
+      set hash(v6) {
+        if (v6 === "") {
           this._url.fragment = null;
           return;
         }
-        const input = v2[0] === "#" ? v2.substring(1) : v2;
+        const input = v6[0] === "#" ? v6.substring(1) : v6;
         this._url.fragment = "";
         usm.basicURLParse(input, { url: this._url, stateOverride: "fragment" });
       }
@@ -28333,10 +29170,10 @@ var require_lib3 = __commonJS({
         const buffers = [];
         let size = 0;
         if (blobParts) {
-          const a3 = blobParts;
-          const length = Number(a3.length);
+          const a4 = blobParts;
+          const length = Number(a4.length);
           for (let i3 = 0; i3 < length; i3++) {
-            const element = a3[i3];
+            const element = a4[i3];
             let buffer;
             if (element instanceof Buffer) {
               buffer = element;
@@ -29560,9 +30397,9 @@ function n(e3, t2) {
   }
 }
 function u2(e3) {
-  return new a2(e3);
+  return new a3(e3);
 }
-function c(e3) {
+function c2(e3) {
   return l2(e3);
 }
 function d4(e3) {
@@ -29571,14 +30408,14 @@ function d4(e3) {
 function f3(e3, t2, r3) {
   return i2.call(e3, t2, r3);
 }
-function b2(e3, t2, r3) {
+function b3(e3, t2, r3) {
   f3(f3(e3, t2, r3), void 0, o2);
 }
-function h2(e3, t2) {
-  b2(e3, t2);
+function h3(e3, t2) {
+  b3(e3, t2);
 }
-function _2(e3, t2) {
-  b2(e3, void 0, t2);
+function _3(e3, t2) {
+  b3(e3, void 0, t2);
 }
 function p2(e3, t2, r3) {
   return f3(e3, t2, r3);
@@ -29586,20 +30423,20 @@ function p2(e3, t2, r3) {
 function m3(e3) {
   f3(e3, void 0, o2);
 }
-function g(e3, t2, r3) {
+function g3(e3, t2, r3) {
   if ("function" != typeof e3) throw new TypeError("Argument is not a function");
   return Function.prototype.apply.call(e3, t2, r3);
 }
 function w3(e3, t2, r3) {
   try {
-    return c(g(e3, t2, r3));
+    return c2(g3(e3, t2, r3));
   } catch (e4) {
     return d4(e4);
   }
 }
 function E2(e3, t2) {
-  e3._ownerReadableStream = t2, t2._reader = e3, "readable" === t2._state ? O2(e3) : "closed" === t2._state ? function(e4) {
-    O2(e4), j3(e4);
+  e3._ownerReadableStream = t2, t2._reader = e3, "readable" === t2._state ? O3(e3) : "closed" === t2._state ? function(e4) {
+    O3(e4), j3(e4);
   }(e3) : B(e3, t2._storedError);
 }
 function P2(e3, t2) {
@@ -29607,22 +30444,22 @@ function P2(e3, t2) {
 }
 function W3(e3) {
   const t2 = e3._ownerReadableStream;
-  "readable" === t2._state ? A2(e3, new TypeError("Reader was released and can no longer be used to monitor the stream's closedness")) : function(e4, t3) {
+  "readable" === t2._state ? A3(e3, new TypeError("Reader was released and can no longer be used to monitor the stream's closedness")) : function(e4, t3) {
     B(e4, t3);
   }(e3, new TypeError("Reader was released and can no longer be used to monitor the stream's closedness")), t2._readableStreamController[C2](), t2._reader = void 0, e3._ownerReadableStream = void 0;
 }
 function k3(e3) {
   return new TypeError("Cannot " + e3 + " a stream using a released reader");
 }
-function O2(e3) {
+function O3(e3) {
   e3._closedPromise = u2((t2, r3) => {
     e3._closedPromise_resolve = t2, e3._closedPromise_reject = r3;
   });
 }
 function B(e3, t2) {
-  O2(e3), A2(e3, t2);
+  O3(e3), A3(e3, t2);
 }
-function A2(e3, t2) {
+function A3(e3, t2) {
   void 0 !== e3._closedPromise_reject && (m3(e3._closedPromise), e3._closedPromise_reject(t2), e3._closedPromise_resolve = void 0, e3._closedPromise_reject = void 0);
 }
 function j3(e3) {
@@ -29632,7 +30469,7 @@ function F2(e3, t2) {
   if (void 0 !== e3 && ("object" != typeof (r3 = e3) && "function" != typeof r3)) throw new TypeError(`${t2} is not an object.`);
   var r3;
 }
-function I(e3, t2) {
+function I2(e3, t2) {
   if ("function" != typeof e3) throw new TypeError(`${t2} is not a function.`);
 }
 function D3(e3, t2) {
@@ -29646,22 +30483,22 @@ function $3(e3, t2, r3) {
 function M3(e3, t2, r3) {
   if (void 0 === e3) throw new TypeError(`${t2} is required in '${r3}'.`);
 }
-function Y2(e3) {
+function Y4(e3) {
   return Number(e3);
 }
-function Q2(e3) {
+function Q3(e3) {
   return 0 === e3 ? 0 : e3;
 }
-function N3(e3, t2) {
+function N4(e3, t2) {
   const r3 = Number.MAX_SAFE_INTEGER;
   let o3 = Number(e3);
-  if (o3 = Q2(o3), !z2(o3)) throw new TypeError(`${t2} is not a finite number`);
+  if (o3 = Q3(o3), !z3(o3)) throw new TypeError(`${t2} is not a finite number`);
   if (o3 = function(e4) {
-    return Q2(L3(e4));
+    return Q3(L4(e4));
   }(o3), o3 < 0 || o3 > r3) throw new TypeError(`${t2} is outside the accepted range of 0 to ${r3}, inclusive`);
-  return z2(o3) && 0 !== o3 ? o3 : 0;
+  return z3(o3) && 0 !== o3 ? o3 : 0;
 }
-function H2(e3) {
+function H3(e3) {
   if (!r2(e3)) return false;
   if ("function" != typeof e3.getReader) return false;
   try {
@@ -29670,7 +30507,7 @@ function H2(e3) {
     return false;
   }
 }
-function x(e3) {
+function x2(e3) {
   if (!r2(e3)) return false;
   if ("function" != typeof e3.getWriter) return false;
   try {
@@ -29682,42 +30519,42 @@ function x(e3) {
 function V3(e3, t2) {
   if (!Vt(e3)) throw new TypeError(`${t2} is not a ReadableStream.`);
 }
-function U4(e3, t2) {
+function U5(e3, t2) {
   e3._reader._readRequests.push(t2);
 }
-function G3(e3, t2, r3) {
+function G4(e3, t2, r3) {
   const o3 = e3._reader._readRequests.shift();
   r3 ? o3._closeSteps() : o3._chunkSteps(t2);
 }
 function X3(e3) {
   return e3._reader._readRequests.length;
 }
-function J3(e3) {
+function J4(e3) {
   const t2 = e3._reader;
-  return void 0 !== t2 && !!K2(t2);
+  return void 0 !== t2 && !!K3(t2);
 }
-function K2(e3) {
+function K3(e3) {
   return !!r2(e3) && (!!Object.prototype.hasOwnProperty.call(e3, "_readRequests") && e3 instanceof ReadableStreamDefaultReader);
 }
-function Z2(e3, t2) {
+function Z3(e3, t2) {
   const r3 = e3._readRequests;
-  e3._readRequests = new S2(), r3.forEach((e4) => {
+  e3._readRequests = new S3(), r3.forEach((e4) => {
     e4._errorSteps(t2);
   });
 }
-function ee(e3) {
+function ee2(e3) {
   return new TypeError(`ReadableStreamDefaultReader.prototype.${e3} can only be used on a ReadableStreamDefaultReader`);
 }
 function oe(e3) {
   if (!r2(e3)) return false;
   if (!Object.prototype.hasOwnProperty.call(e3, "_asyncIteratorImpl")) return false;
   try {
-    return e3._asyncIteratorImpl instanceof te;
+    return e3._asyncIteratorImpl instanceof te2;
   } catch (e4) {
     return false;
   }
 }
-function ne(e3) {
+function ne2(e3) {
   return new TypeError(`ReadableStreamAsyncIterator.${e3} can only be used on a ReadableSteamAsyncIterator`);
 }
 function ie2(e3, t2, r3, o3, n2) {
@@ -29731,7 +30568,7 @@ function le2(e3) {
   }(e3.buffer, e3.byteOffset, e3.byteOffset + e3.byteLength);
   return new Uint8Array(t2);
 }
-function se(e3) {
+function se2(e3) {
   const t2 = e3._queue.shift();
   return e3._queueTotalSize -= t2.size, e3._queueTotalSize < 0 && (e3._queueTotalSize = 0), t2.value;
 }
@@ -29741,7 +30578,7 @@ function ue2(e3, t2, r3) {
   e3._queue.push({ value: t2, size: r3 }), e3._queueTotalSize += r3;
 }
 function ce2(e3) {
-  e3._queue = new S2(), e3._queueTotalSize = 0;
+  e3._queue = new S3(), e3._queueTotalSize = 0;
 }
 function de(e3) {
   return !!r2(e3) && (!!Object.prototype.hasOwnProperty.call(e3, "_controlledReadableByteStream") && e3 instanceof ReadableByteStreamController);
@@ -29755,7 +30592,7 @@ function be(e3) {
     if ("readable" !== t3._state) return false;
     if (e4._closeRequested) return false;
     if (!e4._started) return false;
-    if (J3(t3) && X3(t3) > 0) return true;
+    if (J4(t3) && X3(t3) > 0) return true;
     if (Le(t3) && ze(t3) > 0) return true;
     if (ke(e4) > 0) return true;
     return false;
@@ -29763,16 +30600,16 @@ function be(e3) {
   if (!t2) return;
   if (e3._pulling) return void (e3._pullAgain = true);
   e3._pulling = true;
-  b2(e3._pullAlgorithm(), () => (e3._pulling = false, e3._pullAgain && (e3._pullAgain = false, be(e3)), null), (t3) => (Pe(e3, t3), null));
+  b3(e3._pullAlgorithm(), () => (e3._pulling = false, e3._pullAgain && (e3._pullAgain = false, be(e3)), null), (t3) => (Pe(e3, t3), null));
 }
 function he(e3) {
-  Re(e3), e3._pendingPullIntos = new S2();
+  Re(e3), e3._pendingPullIntos = new S3();
 }
 function _e(e3, t2) {
   let r3 = false;
   "closed" === e3._state && (r3 = true);
   const o3 = pe(t2);
-  "default" === t2.readerType ? G3(e3, o3, r3) : function(e4, t3, r4) {
+  "default" === t2.readerType ? G4(e3, o3, r3) : function(e4, t3, r4) {
     const o4 = e4._reader._readIntoRequests.shift();
     r4 ? o4._closeSteps(t3) : o4._chunkSteps(t3);
   }(e3, o3, r3);
@@ -29797,7 +30634,7 @@ function ge(e3, t2) {
   t2.bytesFilled > 0 && ye(e3, t2.buffer, t2.byteOffset, t2.bytesFilled), Ce(e3);
 }
 function we(e3, t2) {
-  const r3 = t2.elementSize, o3 = t2.bytesFilled - t2.bytesFilled % r3, n2 = Math.min(e3._queueTotalSize, t2.byteLength - t2.bytesFilled), a3 = t2.bytesFilled + n2, i3 = a3 - a3 % r3;
+  const r3 = t2.elementSize, o3 = t2.bytesFilled - t2.bytesFilled % r3, n2 = Math.min(e3._queueTotalSize, t2.byteLength - t2.bytesFilled), a4 = t2.bytesFilled + n2, i3 = a4 - a4 % r3;
   let l3 = n2, s2 = false;
   i3 > o3 && (l3 = i3 - t2.bytesFilled, s2 = true);
   const u3 = e3._queue;
@@ -29864,14 +30701,14 @@ function ke(e3) {
 }
 function Oe(e3, t2, r3) {
   const o3 = Object.create(ReadableByteStreamController.prototype);
-  let n2, a3, i3;
+  let n2, a4, i3;
   n2 = void 0 !== t2.start ? () => t2.start(o3) : () => {
-  }, a3 = void 0 !== t2.pull ? () => t2.pull(o3) : () => c(void 0), i3 = void 0 !== t2.cancel ? (e4) => t2.cancel(e4) : () => c(void 0);
+  }, a4 = void 0 !== t2.pull ? () => t2.pull(o3) : () => c2(void 0), i3 = void 0 !== t2.cancel ? (e4) => t2.cancel(e4) : () => c2(void 0);
   const l3 = t2.autoAllocateChunkSize;
   if (0 === l3) throw new TypeError("autoAllocateChunkSize must be greater than 0");
-  !function(e4, t3, r4, o4, n3, a4, i4) {
-    t3._controlledReadableByteStream = e4, t3._pullAgain = false, t3._pulling = false, t3._byobRequest = null, t3._queue = t3._queueTotalSize = void 0, ce2(t3), t3._closeRequested = false, t3._started = false, t3._strategyHWM = a4, t3._pullAlgorithm = o4, t3._cancelAlgorithm = n3, t3._autoAllocateChunkSize = i4, t3._pendingPullIntos = new S2(), e4._readableStreamController = t3, b2(c(r4()), () => (t3._started = true, be(t3), null), (e5) => (Pe(t3, e5), null));
-  }(e3, o3, n2, a3, i3, r3, l3);
+  !function(e4, t3, r4, o4, n3, a5, i4) {
+    t3._controlledReadableByteStream = e4, t3._pullAgain = false, t3._pulling = false, t3._byobRequest = null, t3._queue = t3._queueTotalSize = void 0, ce2(t3), t3._closeRequested = false, t3._started = false, t3._strategyHWM = a5, t3._pullAlgorithm = o4, t3._cancelAlgorithm = n3, t3._autoAllocateChunkSize = i4, t3._pendingPullIntos = new S3(), e4._readableStreamController = t3, b3(c2(r4()), () => (t3._started = true, be(t3), null), (e5) => (Pe(t3, e5), null));
+  }(e3, o3, n2, a4, i3, r3, l3);
 }
 function Be(e3) {
   return new TypeError(`ReadableStreamBYOBRequest.prototype.${e3} can only be used on a ReadableStreamBYOBRequest`);
@@ -29894,14 +30731,14 @@ function Fe(e3) {
 }
 function Ie(e3, t2) {
   const r3 = e3._readIntoRequests;
-  e3._readIntoRequests = new S2(), r3.forEach((e4) => {
+  e3._readIntoRequests = new S3(), r3.forEach((e4) => {
     e4._errorSteps(t2);
   });
 }
 function De(e3) {
   return new TypeError(`ReadableStreamBYOBReader.prototype.${e3} can only be used on a ReadableStreamBYOBReader`);
 }
-function $e(e3, t2) {
+function $e2(e3, t2) {
   const { highWaterMark: r3 } = e3;
   if (void 0 === r3) return t2;
   if (ae2(r3) || r3 < 0) throw new RangeError("Invalid highWaterMark");
@@ -29914,22 +30751,22 @@ function Me(e3) {
 function Ye(e3, t2) {
   F2(e3, t2);
   const r3 = null == e3 ? void 0 : e3.highWaterMark, o3 = null == e3 ? void 0 : e3.size;
-  return { highWaterMark: void 0 === r3 ? void 0 : Y2(r3), size: void 0 === o3 ? void 0 : Qe(o3, `${t2} has member 'size' that`) };
+  return { highWaterMark: void 0 === r3 ? void 0 : Y4(r3), size: void 0 === o3 ? void 0 : Qe(o3, `${t2} has member 'size' that`) };
 }
 function Qe(e3, t2) {
-  return I(e3, t2), (t3) => Y2(e3(t3));
+  return I2(e3, t2), (t3) => Y4(e3(t3));
 }
 function Ne(e3, t2, r3) {
-  return I(e3, r3), (r4) => w3(e3, t2, [r4]);
+  return I2(e3, r3), (r4) => w3(e3, t2, [r4]);
 }
 function He(e3, t2, r3) {
-  return I(e3, r3), () => w3(e3, t2, []);
+  return I2(e3, r3), () => w3(e3, t2, []);
 }
 function xe(e3, t2, r3) {
-  return I(e3, r3), (r4) => g(e3, t2, [r4]);
+  return I2(e3, r3), (r4) => g3(e3, t2, [r4]);
 }
 function Ve(e3, t2, r3) {
-  return I(e3, r3), (r4, o3) => w3(e3, t2, [r4, o3]);
+  return I2(e3, r3), (r4, o3) => w3(e3, t2, [r4, o3]);
 }
 function Ge(e3) {
   return !!r2(e3) && (!!Object.prototype.hasOwnProperty.call(e3, "_writableStreamController") && e3 instanceof WritableStream);
@@ -29939,17 +30776,17 @@ function Xe(e3) {
 }
 function Je(e3, t2) {
   var r3;
-  if ("closed" === e3._state || "errored" === e3._state) return c(void 0);
+  if ("closed" === e3._state || "errored" === e3._state) return c2(void 0);
   e3._writableStreamController._abortReason = t2, null === (r3 = e3._writableStreamController._abortController) || void 0 === r3 || r3.abort(t2);
   const o3 = e3._state;
-  if ("closed" === o3 || "errored" === o3) return c(void 0);
+  if ("closed" === o3 || "errored" === o3) return c2(void 0);
   if (void 0 !== e3._pendingAbortRequest) return e3._pendingAbortRequest._promise;
   let n2 = false;
   "erroring" === o3 && (n2 = true, t2 = void 0);
-  const a3 = u2((r4, o4) => {
+  const a4 = u2((r4, o4) => {
     e3._pendingAbortRequest = { _promise: void 0, _resolve: r4, _reject: o4, _reason: t2, _wasAlreadyErroring: n2 };
   });
-  return e3._pendingAbortRequest._promise = a3, n2 || et(e3, t2), a3;
+  return e3._pendingAbortRequest._promise = a4, n2 || et(e3, t2), a4;
 }
 function Ke(e3) {
   const t2 = e3._state;
@@ -29974,14 +30811,14 @@ function et(e3, t2) {
   }(e3) && r3._started && tt(e3);
 }
 function tt(e3) {
-  e3._state = "errored", e3._writableStreamController[R2]();
+  e3._state = "errored", e3._writableStreamController[R3]();
   const t2 = e3._storedError;
   if (e3._writeRequests.forEach((e4) => {
     e4._reject(t2);
-  }), e3._writeRequests = new S2(), void 0 === e3._pendingAbortRequest) return void ot(e3);
+  }), e3._writeRequests = new S3(), void 0 === e3._pendingAbortRequest) return void ot(e3);
   const r3 = e3._pendingAbortRequest;
   if (e3._pendingAbortRequest = void 0, r3._wasAlreadyErroring) return r3._reject(t2), void ot(e3);
-  b2(e3._writableStreamController[v](r3._reason), () => (r3._resolve(), ot(e3), null), (t3) => (r3._reject(t3), ot(e3), null));
+  b3(e3._writableStreamController[v2](r3._reason), () => (r3._resolve(), ot(e3), null), (t3) => (r3._reject(t3), ot(e3), null));
 }
 function rt(e3) {
   return void 0 !== e3._closeRequest || void 0 !== e3._inFlightCloseRequest;
@@ -30025,9 +30862,9 @@ function dt(e3) {
     const t3 = e4._controlledWritableStream;
     (function(e5) {
       e5._inFlightCloseRequest = e5._closeRequest, e5._closeRequest = void 0;
-    })(t3), se(e4);
+    })(t3), se2(e4);
     const r4 = e4._closeAlgorithm();
-    ut(e4), b2(r4, () => (function(e5) {
+    ut(e4), b3(r4, () => (function(e5) {
       e5._inFlightCloseRequest._resolve(void 0), e5._inFlightCloseRequest = void 0, "erroring" === e5._state && (e5._storedError = void 0, void 0 !== e5._pendingAbortRequest && (e5._pendingAbortRequest._resolve(), e5._pendingAbortRequest = void 0)), e5._state = "closed";
       const t4 = e5._writer;
       void 0 !== t4 && vt(t4);
@@ -30039,12 +30876,12 @@ function dt(e3) {
     !function(e5) {
       e5._inFlightWriteRequest = e5._writeRequests.shift();
     }(r4);
-    b2(e4._writeAlgorithm(t3), () => {
+    b3(e4._writeAlgorithm(t3), () => {
       !function(e5) {
         e5._inFlightWriteRequest._resolve(void 0), e5._inFlightWriteRequest = void 0;
       }(r4);
       const t4 = r4._state;
-      if (se(e4), !rt(r4) && "writable" === t4) {
+      if (se2(e4), !rt(r4) && "writable" === t4) {
         const t5 = bt(e4);
         nt(r4, t5);
       }
@@ -30107,22 +30944,22 @@ function Ct(e3, t2) {
 function Et(e3) {
   void 0 !== e3._readyPromise_resolve && (e3._readyPromise_resolve(void 0), e3._readyPromise_resolve = void 0, e3._readyPromise_reject = void 0, e3._readyPromiseState = "fulfilled");
 }
-function kt(e3, t2, r3, o3, n2, a3) {
+function kt(e3, t2, r3, o3, n2, a4) {
   const i3 = e3.getReader(), l3 = t2.getWriter();
   Vt(e3) && (e3._disturbed = true);
-  let s2, _3, g2, w4 = false, S3 = false, v2 = "readable", R3 = "writable", T3 = false, q3 = false;
+  let s2, _4, g4, w4 = false, S4 = false, v6 = "readable", R4 = "writable", T3 = false, q4 = false;
   const C3 = u2((e4) => {
-    g2 = e4;
+    g4 = e4;
   });
   let E3 = Promise.resolve(void 0);
   return u2((P3, W4) => {
     let k4;
-    function O3() {
+    function O4() {
       if (w4) return;
       const e4 = u2((e5, t3) => {
         !function r4(o4) {
           o4 ? e5() : f3(function() {
-            if (w4) return c(true);
+            if (w4) return c2(true);
             return f3(l3.ready, () => f3(i3.read(), (e6) => !!e6.done || (E3 = l3.write(e6.value), m3(E3), false)));
           }(), r4, t3);
         }(false);
@@ -30130,48 +30967,48 @@ function kt(e3, t2, r3, o3, n2, a3) {
       m3(e4);
     }
     function B2() {
-      return v2 = "closed", r3 ? L4() : z3(() => (Ge(t2) && (T3 = rt(t2), R3 = t2._state), T3 || "closed" === R3 ? c(void 0) : "erroring" === R3 || "errored" === R3 ? d4(_3) : (T3 = true, l3.close())), false, void 0), null;
+      return v6 = "closed", r3 ? L5() : z4(() => (Ge(t2) && (T3 = rt(t2), R4 = t2._state), T3 || "closed" === R4 ? c2(void 0) : "erroring" === R4 || "errored" === R4 ? d4(_4) : (T3 = true, l3.close())), false, void 0), null;
     }
-    function A3(e4) {
-      return w4 || (v2 = "errored", s2 = e4, o3 ? L4(true, e4) : z3(() => l3.abort(e4), true, e4)), null;
+    function A4(e4) {
+      return w4 || (v6 = "errored", s2 = e4, o3 ? L5(true, e4) : z4(() => l3.abort(e4), true, e4)), null;
     }
     function j4(e4) {
-      return S3 || (R3 = "errored", _3 = e4, n2 ? L4(true, e4) : z3(() => i3.cancel(e4), true, e4)), null;
+      return S4 || (R4 = "errored", _4 = e4, n2 ? L5(true, e4) : z4(() => i3.cancel(e4), true, e4)), null;
     }
-    if (void 0 !== a3 && (k4 = () => {
-      const e4 = void 0 !== a3.reason ? a3.reason : new Wt("Aborted", "AbortError"), t3 = [];
-      o3 || t3.push(() => "writable" === R3 ? l3.abort(e4) : c(void 0)), n2 || t3.push(() => "readable" === v2 ? i3.cancel(e4) : c(void 0)), z3(() => Promise.all(t3.map((e5) => e5())), true, e4);
-    }, a3.aborted ? k4() : a3.addEventListener("abort", k4)), Vt(e3) && (v2 = e3._state, s2 = e3._storedError), Ge(t2) && (R3 = t2._state, _3 = t2._storedError, T3 = rt(t2)), Vt(e3) && Ge(t2) && (q3 = true, g2()), "errored" === v2) A3(s2);
-    else if ("erroring" === R3 || "errored" === R3) j4(_3);
-    else if ("closed" === v2) B2();
-    else if (T3 || "closed" === R3) {
+    if (void 0 !== a4 && (k4 = () => {
+      const e4 = void 0 !== a4.reason ? a4.reason : new Wt("Aborted", "AbortError"), t3 = [];
+      o3 || t3.push(() => "writable" === R4 ? l3.abort(e4) : c2(void 0)), n2 || t3.push(() => "readable" === v6 ? i3.cancel(e4) : c2(void 0)), z4(() => Promise.all(t3.map((e5) => e5())), true, e4);
+    }, a4.aborted ? k4() : a4.addEventListener("abort", k4)), Vt(e3) && (v6 = e3._state, s2 = e3._storedError), Ge(t2) && (R4 = t2._state, _4 = t2._storedError, T3 = rt(t2)), Vt(e3) && Ge(t2) && (q4 = true, g4()), "errored" === v6) A4(s2);
+    else if ("erroring" === R4 || "errored" === R4) j4(_4);
+    else if ("closed" === v6) B2();
+    else if (T3 || "closed" === R4) {
       const e4 = new TypeError("the destination writable stream closed before all data could be piped to it");
-      n2 ? L4(true, e4) : z3(() => i3.cancel(e4), true, e4);
+      n2 ? L5(true, e4) : z4(() => i3.cancel(e4), true, e4);
     }
-    function z3(e4, t3, r4) {
+    function z4(e4, t3, r4) {
       function o4() {
-        return "writable" !== R3 || T3 ? n3() : h2(function() {
+        return "writable" !== R4 || T3 ? n3() : h3(function() {
           let e5;
-          return c(function t4() {
+          return c2(function t4() {
             if (e5 !== E3) return e5 = E3, p2(E3, t4, t4);
           }());
         }(), n3), null;
       }
       function n3() {
-        return e4 ? b2(e4(), () => F3(t3, r4), (e5) => F3(true, e5)) : F3(t3, r4), null;
+        return e4 ? b3(e4(), () => F3(t3, r4), (e5) => F3(true, e5)) : F3(t3, r4), null;
       }
-      w4 || (w4 = true, q3 ? o4() : h2(C3, o4));
+      w4 || (w4 = true, q4 ? o4() : h3(C3, o4));
     }
-    function L4(e4, t3) {
-      z3(void 0, e4, t3);
+    function L5(e4, t3) {
+      z4(void 0, e4, t3);
     }
     function F3(e4, t3) {
-      return S3 = true, l3.releaseLock(), i3.releaseLock(), void 0 !== a3 && a3.removeEventListener("abort", k4), e4 ? W4(t3) : P3(void 0), null;
+      return S4 = true, l3.releaseLock(), i3.releaseLock(), void 0 !== a4 && a4.removeEventListener("abort", k4), e4 ? W4(t3) : P3(void 0), null;
     }
-    w4 || (b2(i3.closed, B2, A3), b2(l3.closed, function() {
-      return S3 || (R3 = "closed"), null;
-    }, j4)), q3 ? O3() : y3(() => {
-      q3 = true, g2(), O3();
+    w4 || (b3(i3.closed, B2, A4), b3(l3.closed, function() {
+      return S4 || (R4 = "closed"), null;
+    }, j4)), q4 ? O4() : y4(() => {
+      q4 = true, g4(), O4();
     });
   });
 }
@@ -30183,38 +31020,38 @@ function Ot(e3, t2) {
       return false;
     }
   }(e3) ? function(e4) {
-    let t3, r3, o3, n2, a3, i3 = e4.getReader(), l3 = false, s2 = false, d5 = false, f4 = false, h3 = false, p3 = false;
+    let t3, r3, o3, n2, a4, i3 = e4.getReader(), l3 = false, s2 = false, d5 = false, f4 = false, h4 = false, p3 = false;
     const m4 = u2((e5) => {
-      a3 = e5;
+      a4 = e5;
     });
-    function y4(e5) {
-      _2(e5.closed, (t4) => (e5 !== i3 || (o3.error(t4), n2.error(t4), h3 && p3 || a3(void 0)), null));
+    function y5(e5) {
+      _3(e5.closed, (t4) => (e5 !== i3 || (o3.error(t4), n2.error(t4), h4 && p3 || a4(void 0)), null));
     }
-    function g2() {
-      l3 && (i3.releaseLock(), i3 = e4.getReader(), y4(i3), l3 = false), b2(i3.read(), (e5) => {
+    function g4() {
+      l3 && (i3.releaseLock(), i3 = e4.getReader(), y5(i3), l3 = false), b3(i3.read(), (e5) => {
         var t4, r4;
-        if (d5 = false, f4 = false, e5.done) return h3 || o3.close(), p3 || n2.close(), null === (t4 = o3.byobRequest) || void 0 === t4 || t4.respond(0), null === (r4 = n2.byobRequest) || void 0 === r4 || r4.respond(0), h3 && p3 || a3(void 0), null;
+        if (d5 = false, f4 = false, e5.done) return h4 || o3.close(), p3 || n2.close(), null === (t4 = o3.byobRequest) || void 0 === t4 || t4.respond(0), null === (r4 = n2.byobRequest) || void 0 === r4 || r4.respond(0), h4 && p3 || a4(void 0), null;
         const l4 = e5.value, u3 = l4;
-        let c2 = l4;
-        if (!h3 && !p3) try {
-          c2 = le2(l4);
+        let c3 = l4;
+        if (!h4 && !p3) try {
+          c3 = le2(l4);
         } catch (e6) {
-          return o3.error(e6), n2.error(e6), a3(i3.cancel(e6)), null;
+          return o3.error(e6), n2.error(e6), a4(i3.cancel(e6)), null;
         }
-        return h3 || o3.enqueue(u3), p3 || n2.enqueue(c2), s2 = false, d5 ? S3() : f4 && v2(), null;
+        return h4 || o3.enqueue(u3), p3 || n2.enqueue(c3), s2 = false, d5 ? S4() : f4 && v6(), null;
       }, () => (s2 = false, null));
     }
     function w4(t4, r4) {
-      l3 || (i3.releaseLock(), i3 = e4.getReader({ mode: "byob" }), y4(i3), l3 = true);
-      const u3 = r4 ? n2 : o3, c2 = r4 ? o3 : n2;
-      b2(i3.read(t4), (e5) => {
+      l3 || (i3.releaseLock(), i3 = e4.getReader({ mode: "byob" }), y5(i3), l3 = true);
+      const u3 = r4 ? n2 : o3, c3 = r4 ? o3 : n2;
+      b3(i3.read(t4), (e5) => {
         var t5;
         d5 = false, f4 = false;
-        const o4 = r4 ? p3 : h3, n3 = r4 ? h3 : p3;
+        const o4 = r4 ? p3 : h4, n3 = r4 ? h4 : p3;
         if (e5.done) {
-          o4 || u3.close(), n3 || c2.close();
+          o4 || u3.close(), n3 || c3.close();
           const r5 = e5.value;
-          return void 0 !== r5 && (o4 || u3.byobRequest.respondWithNewView(r5), n3 || null === (t5 = c2.byobRequest) || void 0 === t5 || t5.respond(0)), o4 && n3 || a3(void 0), null;
+          return void 0 !== r5 && (o4 || u3.byobRequest.respondWithNewView(r5), n3 || null === (t5 = c3.byobRequest) || void 0 === t5 || t5.respond(0)), o4 && n3 || a4(void 0), null;
         }
         const l4 = e5.value;
         if (n3) o4 || u3.byobRequest.respondWithNewView(l4);
@@ -30223,78 +31060,78 @@ function Ot(e3, t2) {
           try {
             e6 = le2(l4);
           } catch (e7) {
-            return u3.error(e7), c2.error(e7), a3(i3.cancel(e7)), null;
+            return u3.error(e7), c3.error(e7), a4(i3.cancel(e7)), null;
           }
-          o4 || u3.byobRequest.respondWithNewView(l4), c2.enqueue(e6);
+          o4 || u3.byobRequest.respondWithNewView(l4), c3.enqueue(e6);
         }
-        return s2 = false, d5 ? S3() : f4 && v2(), null;
+        return s2 = false, d5 ? S4() : f4 && v6(), null;
       }, () => (s2 = false, null));
     }
-    function S3() {
-      if (s2) return d5 = true, c(void 0);
+    function S4() {
+      if (s2) return d5 = true, c2(void 0);
       s2 = true;
       const e5 = o3.byobRequest;
-      return null === e5 ? g2() : w4(e5.view, false), c(void 0);
+      return null === e5 ? g4() : w4(e5.view, false), c2(void 0);
     }
-    function v2() {
-      if (s2) return f4 = true, c(void 0);
+    function v6() {
+      if (s2) return f4 = true, c2(void 0);
       s2 = true;
       const e5 = n2.byobRequest;
-      return null === e5 ? g2() : w4(e5.view, true), c(void 0);
+      return null === e5 ? g4() : w4(e5.view, true), c2(void 0);
     }
-    function R3(e5) {
-      if (h3 = true, t3 = e5, p3) {
+    function R4(e5) {
+      if (h4 = true, t3 = e5, p3) {
         const e6 = [t3, r3], o4 = i3.cancel(e6);
-        a3(o4);
+        a4(o4);
       }
       return m4;
     }
     function T3(e5) {
-      if (p3 = true, r3 = e5, h3) {
+      if (p3 = true, r3 = e5, h4) {
         const e6 = [t3, r3], o4 = i3.cancel(e6);
-        a3(o4);
+        a4(o4);
       }
       return m4;
     }
-    const q3 = new ReadableStream3({ type: "bytes", start(e5) {
+    const q4 = new ReadableStream3({ type: "bytes", start(e5) {
       o3 = e5;
-    }, pull: S3, cancel: R3 }), C3 = new ReadableStream3({ type: "bytes", start(e5) {
+    }, pull: S4, cancel: R4 }), C3 = new ReadableStream3({ type: "bytes", start(e5) {
       n2 = e5;
-    }, pull: v2, cancel: T3 });
-    return y4(i3), [q3, C3];
+    }, pull: v6, cancel: T3 });
+    return y5(i3), [q4, C3];
   }(e3) : function(e4, t3) {
     const r3 = e4.getReader();
-    let o3, n2, a3, i3, l3, s2 = false, d5 = false, f4 = false, h3 = false;
+    let o3, n2, a4, i3, l3, s2 = false, d5 = false, f4 = false, h4 = false;
     const p3 = u2((e5) => {
       l3 = e5;
     });
     function m4() {
-      return s2 ? (d5 = true, c(void 0)) : (s2 = true, b2(r3.read(), (e5) => {
-        if (d5 = false, e5.done) return f4 || a3.close(), h3 || i3.close(), f4 && h3 || l3(void 0), null;
+      return s2 ? (d5 = true, c2(void 0)) : (s2 = true, b3(r3.read(), (e5) => {
+        if (d5 = false, e5.done) return f4 || a4.close(), h4 || i3.close(), f4 && h4 || l3(void 0), null;
         const t4 = e5.value, r4 = t4, o4 = t4;
-        return f4 || a3.enqueue(r4), h3 || i3.enqueue(o4), s2 = false, d5 && m4(), null;
-      }, () => (s2 = false, null)), c(void 0));
+        return f4 || a4.enqueue(r4), h4 || i3.enqueue(o4), s2 = false, d5 && m4(), null;
+      }, () => (s2 = false, null)), c2(void 0));
     }
-    function y4(e5) {
-      if (f4 = true, o3 = e5, h3) {
+    function y5(e5) {
+      if (f4 = true, o3 = e5, h4) {
         const e6 = [o3, n2], t4 = r3.cancel(e6);
         l3(t4);
       }
       return p3;
     }
-    function g2(e5) {
-      if (h3 = true, n2 = e5, f4) {
+    function g4(e5) {
+      if (h4 = true, n2 = e5, f4) {
         const e6 = [o3, n2], t4 = r3.cancel(e6);
         l3(t4);
       }
       return p3;
     }
     const w4 = new ReadableStream3({ start(e5) {
-      a3 = e5;
-    }, pull: m4, cancel: y4 }), S3 = new ReadableStream3({ start(e5) {
+      a4 = e5;
+    }, pull: m4, cancel: y5 }), S4 = new ReadableStream3({ start(e5) {
       i3 = e5;
-    }, pull: m4, cancel: g2 });
-    return _2(r3.closed, (e5) => (a3.error(e5), i3.error(e5), f4 && h3 || l3(void 0), null)), [w4, S3];
+    }, pull: m4, cancel: g4 });
+    return _3(r3.closed, (e5) => (a4.error(e5), i3.error(e5), f4 && h4 || l3(void 0), null)), [w4, S4];
   }(e3);
 }
 function Bt(e3) {
@@ -30312,7 +31149,7 @@ function At(e3) {
   if (!t2) return;
   if (e3._pulling) return void (e3._pullAgain = true);
   e3._pulling = true;
-  b2(e3._pullAlgorithm(), () => (e3._pulling = false, e3._pullAgain && (e3._pullAgain = false, At(e3)), null), (t3) => (zt(e3, t3), null));
+  b3(e3._pullAlgorithm(), () => (e3._pulling = false, e3._pullAgain && (e3._pullAgain = false, At(e3)), null), (t3) => (zt(e3, t3), null));
 }
 function jt(e3) {
   e3._pullAlgorithm = void 0, e3._cancelAlgorithm = void 0, e3._strategySizeAlgorithm = void 0;
@@ -30330,23 +31167,23 @@ function Ft(e3) {
 }
 function It(e3, t2, r3, o3) {
   const n2 = Object.create(ReadableStreamDefaultController.prototype);
-  let a3, i3, l3;
-  a3 = void 0 !== t2.start ? () => t2.start(n2) : () => {
-  }, i3 = void 0 !== t2.pull ? () => t2.pull(n2) : () => c(void 0), l3 = void 0 !== t2.cancel ? (e4) => t2.cancel(e4) : () => c(void 0), function(e4, t3, r4, o4, n3, a4, i4) {
-    t3._controlledReadableStream = e4, t3._queue = void 0, t3._queueTotalSize = void 0, ce2(t3), t3._started = false, t3._closeRequested = false, t3._pullAgain = false, t3._pulling = false, t3._strategySizeAlgorithm = i4, t3._strategyHWM = a4, t3._pullAlgorithm = o4, t3._cancelAlgorithm = n3, e4._readableStreamController = t3, b2(c(r4()), () => (t3._started = true, At(t3), null), (e5) => (zt(t3, e5), null));
-  }(e3, n2, a3, i3, l3, r3, o3);
+  let a4, i3, l3;
+  a4 = void 0 !== t2.start ? () => t2.start(n2) : () => {
+  }, i3 = void 0 !== t2.pull ? () => t2.pull(n2) : () => c2(void 0), l3 = void 0 !== t2.cancel ? (e4) => t2.cancel(e4) : () => c2(void 0), function(e4, t3, r4, o4, n3, a5, i4) {
+    t3._controlledReadableStream = e4, t3._queue = void 0, t3._queueTotalSize = void 0, ce2(t3), t3._started = false, t3._closeRequested = false, t3._pullAgain = false, t3._pulling = false, t3._strategySizeAlgorithm = i4, t3._strategyHWM = a5, t3._pullAlgorithm = o4, t3._cancelAlgorithm = n3, e4._readableStreamController = t3, b3(c2(r4()), () => (t3._started = true, At(t3), null), (e5) => (zt(t3, e5), null));
+  }(e3, n2, a4, i3, l3, r3, o3);
 }
 function Dt(e3) {
   return new TypeError(`ReadableStreamDefaultController.prototype.${e3} can only be used on a ReadableStreamDefaultController`);
 }
 function $t(e3, t2, r3) {
-  return I(e3, r3), (r4) => w3(e3, t2, [r4]);
+  return I2(e3, r3), (r4) => w3(e3, t2, [r4]);
 }
 function Mt(e3, t2, r3) {
-  return I(e3, r3), (r4) => w3(e3, t2, [r4]);
+  return I2(e3, r3), (r4) => w3(e3, t2, [r4]);
 }
 function Yt(e3, t2, r3) {
-  return I(e3, r3), (r4) => g(e3, t2, [r4]);
+  return I2(e3, r3), (r4) => g3(e3, t2, [r4]);
 }
 function Qt(e3, t2) {
   if ("bytes" !== (e3 = `${e3}`)) throw new TypeError(`${t2} '${e3}' is not a valid enumeration value for ReadableStreamType`);
@@ -30358,8 +31195,8 @@ function Nt(e3, t2) {
 }
 function Ht(e3, t2) {
   F2(e3, t2);
-  const r3 = null == e3 ? void 0 : e3.preventAbort, o3 = null == e3 ? void 0 : e3.preventCancel, n2 = null == e3 ? void 0 : e3.preventClose, a3 = null == e3 ? void 0 : e3.signal;
-  return void 0 !== a3 && function(e4, t3) {
+  const r3 = null == e3 ? void 0 : e3.preventAbort, o3 = null == e3 ? void 0 : e3.preventCancel, n2 = null == e3 ? void 0 : e3.preventClose, a4 = null == e3 ? void 0 : e3.signal;
+  return void 0 !== a4 && function(e4, t3) {
     if (!function(e5) {
       if ("object" != typeof e5 || null === e5) return false;
       try {
@@ -30368,17 +31205,17 @@ function Ht(e3, t2) {
         return false;
       }
     }(e4)) throw new TypeError(`${t3} is not an AbortSignal.`);
-  }(a3, `${t2} has member 'signal' that`), { preventAbort: Boolean(r3), preventCancel: Boolean(o3), preventClose: Boolean(n2), signal: a3 };
+  }(a4, `${t2} has member 'signal' that`), { preventAbort: Boolean(r3), preventCancel: Boolean(o3), preventClose: Boolean(n2), signal: a4 };
 }
 function xt(e3, t2) {
   F2(e3, t2);
   const r3 = null == e3 ? void 0 : e3.readable;
   M3(r3, "readable", "ReadableWritablePair"), function(e4, t3) {
-    if (!H2(e4)) throw new TypeError(`${t3} is not a ReadableStream.`);
+    if (!H3(e4)) throw new TypeError(`${t3} is not a ReadableStream.`);
   }(r3, `${t2} has member 'readable' that`);
   const o3 = null == e3 ? void 0 : e3.writable;
   return M3(o3, "writable", "ReadableWritablePair"), function(e4, t3) {
-    if (!x(e4)) throw new TypeError(`${t3} is not a WritableStream.`);
+    if (!x2(e4)) throw new TypeError(`${t3} is not a WritableStream.`);
   }(o3, `${t2} has member 'writable' that`), { readable: r3, writable: o3 };
 }
 function Vt(e3) {
@@ -30388,13 +31225,13 @@ function Ut(e3) {
   return void 0 !== e3._reader;
 }
 function Gt(e3, r3) {
-  if (e3._disturbed = true, "closed" === e3._state) return c(void 0);
+  if (e3._disturbed = true, "closed" === e3._state) return c2(void 0);
   if ("errored" === e3._state) return d4(e3._storedError);
   Xt(e3);
   const o3 = e3._reader;
   if (void 0 !== o3 && Fe(o3)) {
     const e4 = o3._readIntoRequests;
-    o3._readIntoRequests = new S2(), e4.forEach((e5) => {
+    o3._readIntoRequests = new S3(), e4.forEach((e5) => {
       e5._closeSteps(void 0);
     });
   }
@@ -30403,9 +31240,9 @@ function Gt(e3, r3) {
 function Xt(e3) {
   e3._state = "closed";
   const t2 = e3._reader;
-  if (void 0 !== t2 && (j3(t2), K2(t2))) {
+  if (void 0 !== t2 && (j3(t2), K3(t2))) {
     const e4 = t2._readRequests;
-    t2._readRequests = new S2(), e4.forEach((e5) => {
+    t2._readRequests = new S3(), e4.forEach((e5) => {
       e5._closeSteps();
     });
   }
@@ -30413,7 +31250,7 @@ function Xt(e3) {
 function Jt(e3, t2) {
   e3._state = "errored", e3._storedError = t2;
   const r3 = e3._reader;
-  void 0 !== r3 && (A2(r3, t2), K2(r3) ? Z2(r3, t2) : Ie(r3, t2));
+  void 0 !== r3 && (A3(r3, t2), K3(r3) ? Z3(r3, t2) : Ie(r3, t2));
 }
 function Kt(e3) {
   return new TypeError(`ReadableStream.prototype.${e3} can only be used on a ReadableStream`);
@@ -30421,7 +31258,7 @@ function Kt(e3) {
 function Zt(e3, t2) {
   F2(e3, t2);
   const r3 = null == e3 ? void 0 : e3.highWaterMark;
-  return M3(r3, "highWaterMark", "QueuingStrategyInit"), { highWaterMark: Y2(r3) };
+  return M3(r3, "highWaterMark", "QueuingStrategyInit"), { highWaterMark: Y4(r3) };
 }
 function tr(e3) {
   return new TypeError(`ByteLengthQueuingStrategy.prototype.${e3} can only be used on a ByteLengthQueuingStrategy`);
@@ -30436,13 +31273,13 @@ function ar(e3) {
   return !!r2(e3) && (!!Object.prototype.hasOwnProperty.call(e3, "_countQueuingStrategyHighWaterMark") && e3 instanceof CountQueuingStrategy);
 }
 function ir(e3, t2, r3) {
-  return I(e3, r3), (r4) => w3(e3, t2, [r4]);
+  return I2(e3, r3), (r4) => w3(e3, t2, [r4]);
 }
 function lr(e3, t2, r3) {
-  return I(e3, r3), (r4) => g(e3, t2, [r4]);
+  return I2(e3, r3), (r4) => g3(e3, t2, [r4]);
 }
 function sr(e3, t2, r3) {
-  return I(e3, r3), (r4, o3) => w3(e3, t2, [r4, o3]);
+  return I2(e3, r3), (r4, o3) => w3(e3, t2, [r4, o3]);
 }
 function ur(e3) {
   return !!r2(e3) && (!!Object.prototype.hasOwnProperty.call(e3, "_transformStreamController") && e3 instanceof TransformStream2);
@@ -30529,24 +31366,24 @@ function qr(e3) {
 function Cr(e3) {
   "erroring" === e3._writableState && qr(e3);
 }
-var e2, o2, a2, i2, l2, s, y3, S2, v, R2, T2, q2, C2, z2, L3, ReadableStreamDefaultReader, te, re, ae2, ReadableStreamBYOBRequest, ReadableByteStreamController, ReadableStreamBYOBReader, Ue, WritableStream, WritableStreamDefaultWriter, lt, WritableStreamDefaultController, Pt, Wt, ReadableStreamDefaultController, ReadableStream3, er, ByteLengthQueuingStrategy, or, CountQueuingStrategy, TransformStream2, TransformStreamDefaultController;
+var e2, o2, a3, i2, l2, s, y4, S3, v2, R3, T2, q3, C2, z3, L4, ReadableStreamDefaultReader, te2, re2, ae2, ReadableStreamBYOBRequest, ReadableByteStreamController, ReadableStreamBYOBReader, Ue, WritableStream, WritableStreamDefaultWriter, lt, WritableStreamDefaultController, Pt, Wt, ReadableStreamDefaultController, ReadableStream3, er, ByteLengthQueuingStrategy, or, CountQueuingStrategy, TransformStream2, TransformStreamDefaultController;
 var init_ponyfill = __esm({
   "node_modules/formdata-node/node_modules/web-streams-polyfill/dist/ponyfill.mjs"() {
     e2 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? Symbol : (e3) => `Symbol(${e3})`;
     o2 = t;
-    a2 = Promise;
+    a3 = Promise;
     i2 = Promise.prototype.then;
-    l2 = Promise.resolve.bind(a2);
-    s = Promise.reject.bind(a2);
-    y3 = (e3) => {
-      if ("function" == typeof queueMicrotask) y3 = queueMicrotask;
+    l2 = Promise.resolve.bind(a3);
+    s = Promise.reject.bind(a3);
+    y4 = (e3) => {
+      if ("function" == typeof queueMicrotask) y4 = queueMicrotask;
       else {
-        const e4 = c(void 0);
-        y3 = (t2) => f3(e4, t2);
+        const e4 = c2(void 0);
+        y4 = (t2) => f3(e4, t2);
       }
-      return y3(e3);
+      return y4(e3);
     };
-    S2 = class {
+    S3 = class {
       constructor() {
         this._cursor = 0, this._size = 0, this._front = { _elements: [], _next: void 0 }, this._back = this._front, this._cursor = 0, this._size = 0;
       }
@@ -30563,8 +31400,8 @@ var init_ponyfill = __esm({
         let t2 = e3;
         const r3 = this._cursor;
         let o3 = r3 + 1;
-        const n2 = e3._elements, a3 = n2[r3];
-        return 16384 === o3 && (t2 = e3._next, o3 = 0), --this._size, this._cursor = o3, e3 !== t2 && (this._front = t2), n2[r3] = void 0, a3;
+        const n2 = e3._elements, a4 = n2[r3];
+        return 16384 === o3 && (t2 = e3._next, o3 = 0), --this._size, this._cursor = o3, e3 !== t2 && (this._front = t2), n2[r3] = void 0, a4;
       }
       forEach(e3) {
         let t2 = this._cursor, r3 = this._front, o3 = r3._elements;
@@ -30575,30 +31412,30 @@ var init_ponyfill = __esm({
         return e3._elements[t2];
       }
     };
-    v = e2("[[AbortSteps]]");
-    R2 = e2("[[ErrorSteps]]");
+    v2 = e2("[[AbortSteps]]");
+    R3 = e2("[[ErrorSteps]]");
     T2 = e2("[[CancelSteps]]");
-    q2 = e2("[[PullSteps]]");
+    q3 = e2("[[PullSteps]]");
     C2 = e2("[[ReleaseSteps]]");
-    z2 = Number.isFinite || function(e3) {
+    z3 = Number.isFinite || function(e3) {
       return "number" == typeof e3 && isFinite(e3);
     };
-    L3 = Math.trunc || function(e3) {
+    L4 = Math.trunc || function(e3) {
       return e3 < 0 ? Math.ceil(e3) : Math.floor(e3);
     };
     ReadableStreamDefaultReader = class {
       constructor(e3) {
         if ($3(e3, 1, "ReadableStreamDefaultReader"), V3(e3, "First parameter"), Ut(e3)) throw new TypeError("This stream has already been locked for exclusive reading by another reader");
-        E2(this, e3), this._readRequests = new S2();
+        E2(this, e3), this._readRequests = new S3();
       }
       get closed() {
-        return K2(this) ? this._closedPromise : d4(ee("closed"));
+        return K3(this) ? this._closedPromise : d4(ee2("closed"));
       }
       cancel(e3) {
-        return K2(this) ? void 0 === this._ownerReadableStream ? d4(k3("cancel")) : P2(this, e3) : d4(ee("cancel"));
+        return K3(this) ? void 0 === this._ownerReadableStream ? d4(k3("cancel")) : P2(this, e3) : d4(ee2("cancel"));
       }
       read() {
-        if (!K2(this)) return d4(ee("read"));
+        if (!K3(this)) return d4(ee2("read"));
         if (void 0 === this._ownerReadableStream) return d4(k3("read from"));
         let e3, t2;
         const r3 = u2((r4, o3) => {
@@ -30606,20 +31443,20 @@ var init_ponyfill = __esm({
         });
         return function(e4, t3) {
           const r4 = e4._ownerReadableStream;
-          r4._disturbed = true, "closed" === r4._state ? t3._closeSteps() : "errored" === r4._state ? t3._errorSteps(r4._storedError) : r4._readableStreamController[q2](t3);
+          r4._disturbed = true, "closed" === r4._state ? t3._closeSteps() : "errored" === r4._state ? t3._errorSteps(r4._storedError) : r4._readableStreamController[q3](t3);
         }(this, { _chunkSteps: (t3) => e3({ value: t3, done: false }), _closeSteps: () => e3({ value: void 0, done: true }), _errorSteps: (e4) => t2(e4) }), r3;
       }
       releaseLock() {
-        if (!K2(this)) throw ee("releaseLock");
+        if (!K3(this)) throw ee2("releaseLock");
         void 0 !== this._ownerReadableStream && function(e3) {
           W3(e3);
           const t2 = new TypeError("Reader was released");
-          Z2(e3, t2);
+          Z3(e3, t2);
         }(this);
       }
     };
     Object.defineProperties(ReadableStreamDefaultReader.prototype, { cancel: { enumerable: true }, read: { enumerable: true }, releaseLock: { enumerable: true }, closed: { enumerable: true } }), n(ReadableStreamDefaultReader.prototype.cancel, "cancel"), n(ReadableStreamDefaultReader.prototype.read, "read"), n(ReadableStreamDefaultReader.prototype.releaseLock, "releaseLock"), "symbol" == typeof e2.toStringTag && Object.defineProperty(ReadableStreamDefaultReader.prototype, e2.toStringTag, { value: "ReadableStreamDefaultReader", configurable: true });
-    te = class {
+    te2 = class {
       constructor(e3, t2) {
         this._ongoingPromise = void 0, this._isFinished = false, this._reader = e3, this._preventCancel = t2;
       }
@@ -30651,15 +31488,15 @@ var init_ponyfill = __esm({
           const r3 = t2.cancel(e3);
           return t2.releaseLock(), p2(r3, () => ({ value: e3, done: true }));
         }
-        return t2.releaseLock(), c({ value: e3, done: true });
+        return t2.releaseLock(), c2({ value: e3, done: true });
       }
     };
-    re = { next() {
-      return oe(this) ? this._asyncIteratorImpl.next() : d4(ne("next"));
+    re2 = { next() {
+      return oe(this) ? this._asyncIteratorImpl.next() : d4(ne2("next"));
     }, return(e3) {
-      return oe(this) ? this._asyncIteratorImpl.return(e3) : d4(ne("return"));
+      return oe(this) ? this._asyncIteratorImpl.return(e3) : d4(ne2("return"));
     } };
-    "symbol" == typeof e2.asyncIterator && Object.defineProperty(re, e2.asyncIterator, { value() {
+    "symbol" == typeof e2.asyncIterator && Object.defineProperty(re2, e2.asyncIterator, { value() {
       return this;
     }, writable: true, configurable: true });
     ae2 = Number.isNaN || function(e3) {
@@ -30675,7 +31512,7 @@ var init_ponyfill = __esm({
       }
       respond(e3) {
         if (!fe(this)) throw Be("respond");
-        if ($3(e3, 1, "respond"), e3 = N3(e3, "First parameter"), void 0 === this._associatedReadableByteStreamController) throw new TypeError("This BYOB request has been invalidated");
+        if ($3(e3, 1, "respond"), e3 = N4(e3, "First parameter"), void 0 === this._associatedReadableByteStreamController) throw new TypeError("This BYOB request has been invalidated");
         this._view.buffer, function(e4, t2) {
           const r3 = e4._pendingPullIntos.peek();
           if ("closed" === e4._controlledReadableByteStream._state) {
@@ -30754,23 +31591,23 @@ var init_ponyfill = __esm({
         !function(e4, t3) {
           const r3 = e4._controlledReadableByteStream;
           if (e4._closeRequested || "readable" !== r3._state) return;
-          const o3 = t3.buffer, n2 = t3.byteOffset, a3 = t3.byteLength, i3 = o3;
+          const o3 = t3.buffer, n2 = t3.byteOffset, a4 = t3.byteLength, i3 = o3;
           if (e4._pendingPullIntos.length > 0) {
             const t4 = e4._pendingPullIntos.peek();
             t4.buffer, 0, Re(e4), t4.buffer = t4.buffer, "none" === t4.readerType && ge(e4, t4);
           }
-          if (J3(r3)) if (function(e5) {
+          if (J4(r3)) if (function(e5) {
             const t4 = e5._controlledReadableByteStream._reader;
             for (; t4._readRequests.length > 0; ) {
               if (0 === e5._queueTotalSize) return;
               We(e5, t4._readRequests.shift());
             }
-          }(e4), 0 === X3(r3)) me(e4, i3, n2, a3);
+          }(e4), 0 === X3(r3)) me(e4, i3, n2, a4);
           else {
             e4._pendingPullIntos.length > 0 && Ce(e4);
-            G3(r3, new Uint8Array(i3, n2, a3), false);
+            G4(r3, new Uint8Array(i3, n2, a4), false);
           }
-          else Le(r3) ? (me(e4, i3, n2, a3), Te(e4)) : me(e4, i3, n2, a3);
+          else Le(r3) ? (me(e4, i3, n2, a4), Te(e4)) : me(e4, i3, n2, a4);
           be(e4);
         }(this, e3);
       }
@@ -30783,7 +31620,7 @@ var init_ponyfill = __esm({
         const t2 = this._cancelAlgorithm(e3);
         return Ee(this), t2;
       }
-      [q2](e3) {
+      [q3](e3) {
         const t2 = this._controlledReadableByteStream;
         if (this._queueTotalSize > 0) return void We(this, e3);
         const r3 = this._autoAllocateChunkSize;
@@ -30797,12 +31634,12 @@ var init_ponyfill = __esm({
           const o3 = { buffer: t3, bufferByteLength: r3, byteOffset: 0, byteLength: r3, bytesFilled: 0, elementSize: 1, viewConstructor: Uint8Array, readerType: "default" };
           this._pendingPullIntos.push(o3);
         }
-        U4(t2, e3), be(this);
+        U5(t2, e3), be(this);
       }
       [C2]() {
         if (this._pendingPullIntos.length > 0) {
           const e3 = this._pendingPullIntos.peek();
-          e3.readerType = "none", this._pendingPullIntos = new S2(), this._pendingPullIntos.push(e3);
+          e3.readerType = "none", this._pendingPullIntos = new S3(), this._pendingPullIntos.push(e3);
         }
       }
     };
@@ -30811,7 +31648,7 @@ var init_ponyfill = __esm({
       constructor(e3) {
         if ($3(e3, 1, "ReadableStreamBYOBReader"), V3(e3, "First parameter"), Ut(e3)) throw new TypeError("This stream has already been locked for exclusive reading by another reader");
         if (!de(e3._readableStreamController)) throw new TypeError("Cannot construct a ReadableStreamBYOBReader for a stream not constructed with a byte source");
-        E2(this, e3), this._readIntoRequests = new S2();
+        E2(this, e3), this._readIntoRequests = new S3();
       }
       get closed() {
         return Fe(this) ? this._closedPromise : d4(De("closed"));
@@ -30835,7 +31672,7 @@ var init_ponyfill = __esm({
             const o5 = e5._controlledReadableByteStream;
             let n2 = 1;
             t4.constructor !== DataView && (n2 = t4.constructor.BYTES_PER_ELEMENT);
-            const a3 = t4.constructor, i3 = t4.buffer, l3 = { buffer: i3, bufferByteLength: i3.byteLength, byteOffset: t4.byteOffset, byteLength: t4.byteLength, bytesFilled: 0, elementSize: n2, viewConstructor: a3, readerType: "byob" };
+            const a4 = t4.constructor, i3 = t4.buffer, l3 = { buffer: i3, bufferByteLength: i3.byteLength, byteOffset: t4.byteOffset, byteLength: t4.byteLength, bytesFilled: 0, elementSize: n2, viewConstructor: a4, readerType: "byob" };
             if (e5._pendingPullIntos.length > 0) return e5._pendingPullIntos.push(l3), void je(o5, r5);
             if ("closed" !== o5._state) {
               if (e5._queueTotalSize > 0) {
@@ -30850,7 +31687,7 @@ var init_ponyfill = __esm({
               }
               e5._pendingPullIntos.push(l3), je(o5, r5), be(e5);
             } else {
-              const e6 = new a3(l3.buffer, l3.byteOffset, 0);
+              const e6 = new a4(l3.buffer, l3.byteOffset, 0);
               r5._closeSteps(e6);
             }
           }(o4._readableStreamController, t3, r4);
@@ -30872,31 +31709,31 @@ var init_ponyfill = __esm({
         void 0 === e3 ? e3 = null : D3(e3, "First parameter");
         const r3 = Ye(t2, "Second parameter"), o3 = function(e4, t3) {
           F2(e4, t3);
-          const r4 = null == e4 ? void 0 : e4.abort, o4 = null == e4 ? void 0 : e4.close, n3 = null == e4 ? void 0 : e4.start, a4 = null == e4 ? void 0 : e4.type, i3 = null == e4 ? void 0 : e4.write;
-          return { abort: void 0 === r4 ? void 0 : Ne(r4, e4, `${t3} has member 'abort' that`), close: void 0 === o4 ? void 0 : He(o4, e4, `${t3} has member 'close' that`), start: void 0 === n3 ? void 0 : xe(n3, e4, `${t3} has member 'start' that`), write: void 0 === i3 ? void 0 : Ve(i3, e4, `${t3} has member 'write' that`), type: a4 };
+          const r4 = null == e4 ? void 0 : e4.abort, o4 = null == e4 ? void 0 : e4.close, n3 = null == e4 ? void 0 : e4.start, a5 = null == e4 ? void 0 : e4.type, i3 = null == e4 ? void 0 : e4.write;
+          return { abort: void 0 === r4 ? void 0 : Ne(r4, e4, `${t3} has member 'abort' that`), close: void 0 === o4 ? void 0 : He(o4, e4, `${t3} has member 'close' that`), start: void 0 === n3 ? void 0 : xe(n3, e4, `${t3} has member 'start' that`), write: void 0 === i3 ? void 0 : Ve(i3, e4, `${t3} has member 'write' that`), type: a5 };
         }(e3, "First parameter");
         var n2;
-        (n2 = this)._state = "writable", n2._storedError = void 0, n2._writer = void 0, n2._writableStreamController = void 0, n2._writeRequests = new S2(), n2._inFlightWriteRequest = void 0, n2._closeRequest = void 0, n2._inFlightCloseRequest = void 0, n2._pendingAbortRequest = void 0, n2._backpressure = false;
+        (n2 = this)._state = "writable", n2._storedError = void 0, n2._writer = void 0, n2._writableStreamController = void 0, n2._writeRequests = new S3(), n2._inFlightWriteRequest = void 0, n2._closeRequest = void 0, n2._inFlightCloseRequest = void 0, n2._pendingAbortRequest = void 0, n2._backpressure = false;
         if (void 0 !== o3.type) throw new RangeError("Invalid type is specified");
-        const a3 = Me(r3);
+        const a4 = Me(r3);
         !function(e4, t3, r4, o4) {
           const n3 = Object.create(WritableStreamDefaultController.prototype);
-          let a4, i3, l3, s2;
-          a4 = void 0 !== t3.start ? () => t3.start(n3) : () => {
+          let a5, i3, l3, s2;
+          a5 = void 0 !== t3.start ? () => t3.start(n3) : () => {
           };
-          i3 = void 0 !== t3.write ? (e5) => t3.write(e5, n3) : () => c(void 0);
-          l3 = void 0 !== t3.close ? () => t3.close() : () => c(void 0);
-          s2 = void 0 !== t3.abort ? (e5) => t3.abort(e5) : () => c(void 0);
-          !function(e5, t4, r5, o5, n4, a5, i4, l4) {
+          i3 = void 0 !== t3.write ? (e5) => t3.write(e5, n3) : () => c2(void 0);
+          l3 = void 0 !== t3.close ? () => t3.close() : () => c2(void 0);
+          s2 = void 0 !== t3.abort ? (e5) => t3.abort(e5) : () => c2(void 0);
+          !function(e5, t4, r5, o5, n4, a6, i4, l4) {
             t4._controlledWritableStream = e5, e5._writableStreamController = t4, t4._queue = void 0, t4._queueTotalSize = void 0, ce2(t4), t4._abortReason = void 0, t4._abortController = function() {
               if (Ue) return new AbortController();
-            }(), t4._started = false, t4._strategySizeAlgorithm = l4, t4._strategyHWM = i4, t4._writeAlgorithm = o5, t4._closeAlgorithm = n4, t4._abortAlgorithm = a5;
+            }(), t4._started = false, t4._strategySizeAlgorithm = l4, t4._strategyHWM = i4, t4._writeAlgorithm = o5, t4._closeAlgorithm = n4, t4._abortAlgorithm = a6;
             const s3 = bt(t4);
             nt(e5, s3);
             const u3 = r5();
-            b2(c(u3), () => (t4._started = true, dt(t4), null), (r6) => (t4._started = true, Ze(e5, r6), null));
-          }(e4, n3, a4, i3, l3, s2, r4, o4);
-        }(this, o3, $e(r3, 1), a3);
+            b3(c2(u3), () => (t4._started = true, dt(t4), null), (r6) => (t4._started = true, Ze(e5, r6), null));
+          }(e4, n3, a5, i3, l3, s2, r4, o4);
+        }(this, o3, $e2(r3, 1), a4);
       }
       get locked() {
         if (!Ge(this)) throw _t("locked");
@@ -30977,10 +31814,10 @@ var init_ponyfill = __esm({
             }
           }(o3, t2);
           if (r3 !== e4._ownerWritableStream) return d4(yt("write to"));
-          const a3 = r3._state;
-          if ("errored" === a3) return d4(r3._storedError);
-          if (rt(r3) || "closed" === a3) return d4(new TypeError("The stream is closing or closed and cannot be written to"));
-          if ("erroring" === a3) return d4(r3._storedError);
+          const a4 = r3._state;
+          if ("errored" === a4) return d4(r3._storedError);
+          if (rt(r3) || "closed" === a4) return d4(new TypeError("The stream is closing or closed and cannot be written to"));
+          if ("erroring" === a4) return d4(r3._storedError);
           const i3 = function(e5) {
             return u2((t3, r4) => {
               const o4 = { _resolve: t3, _reject: r4 };
@@ -31021,11 +31858,11 @@ var init_ponyfill = __esm({
         if (!st(this)) throw pt("error");
         "writable" === this._controlledWritableStream._state && ht(this, e3);
       }
-      [v](e3) {
+      [v2](e3) {
         const t2 = this._abortAlgorithm(e3);
         return ut(this), t2;
       }
-      [R2]() {
+      [R3]() {
         ce2(this);
       }
     };
@@ -31067,7 +31904,7 @@ var init_ponyfill = __esm({
         return function(e4, t2) {
           if (!Ft(e4)) return;
           const r3 = e4._controlledReadableStream;
-          if (Ut(r3) && X3(r3) > 0) G3(r3, t2, false);
+          if (Ut(r3) && X3(r3) > 0) G4(r3, t2, false);
           else {
             let r4;
             try {
@@ -31093,12 +31930,12 @@ var init_ponyfill = __esm({
         const t2 = this._cancelAlgorithm(e3);
         return jt(this), t2;
       }
-      [q2](e3) {
+      [q3](e3) {
         const t2 = this._controlledReadableStream;
         if (this._queue.length > 0) {
-          const r3 = se(this);
+          const r3 = se2(this);
           this._closeRequested && 0 === this._queue.length ? (jt(this), Xt(t2)) : At(this), e3._chunkSteps(r3);
-        } else U4(t2, e3), At(this);
+        } else U5(t2, e3), At(this);
       }
       [C2]() {
       }
@@ -31109,16 +31946,16 @@ var init_ponyfill = __esm({
         void 0 === e3 ? e3 = null : D3(e3, "First parameter");
         const r3 = Ye(t2, "Second parameter"), o3 = function(e4, t3) {
           F2(e4, t3);
-          const r4 = e4, o4 = null == r4 ? void 0 : r4.autoAllocateChunkSize, n3 = null == r4 ? void 0 : r4.cancel, a3 = null == r4 ? void 0 : r4.pull, i3 = null == r4 ? void 0 : r4.start, l3 = null == r4 ? void 0 : r4.type;
-          return { autoAllocateChunkSize: void 0 === o4 ? void 0 : N3(o4, `${t3} has member 'autoAllocateChunkSize' that`), cancel: void 0 === n3 ? void 0 : $t(n3, r4, `${t3} has member 'cancel' that`), pull: void 0 === a3 ? void 0 : Mt(a3, r4, `${t3} has member 'pull' that`), start: void 0 === i3 ? void 0 : Yt(i3, r4, `${t3} has member 'start' that`), type: void 0 === l3 ? void 0 : Qt(l3, `${t3} has member 'type' that`) };
+          const r4 = e4, o4 = null == r4 ? void 0 : r4.autoAllocateChunkSize, n3 = null == r4 ? void 0 : r4.cancel, a4 = null == r4 ? void 0 : r4.pull, i3 = null == r4 ? void 0 : r4.start, l3 = null == r4 ? void 0 : r4.type;
+          return { autoAllocateChunkSize: void 0 === o4 ? void 0 : N4(o4, `${t3} has member 'autoAllocateChunkSize' that`), cancel: void 0 === n3 ? void 0 : $t(n3, r4, `${t3} has member 'cancel' that`), pull: void 0 === a4 ? void 0 : Mt(a4, r4, `${t3} has member 'pull' that`), start: void 0 === i3 ? void 0 : Yt(i3, r4, `${t3} has member 'start' that`), type: void 0 === l3 ? void 0 : Qt(l3, `${t3} has member 'type' that`) };
         }(e3, "First parameter");
         var n2;
         if ((n2 = this)._state = "readable", n2._reader = void 0, n2._storedError = void 0, n2._disturbed = false, "bytes" === o3.type) {
           if (void 0 !== r3.size) throw new RangeError("The strategy for a byte stream cannot have a size function");
-          Oe(this, o3, $e(r3, 0));
+          Oe(this, o3, $e2(r3, 0));
         } else {
           const e4 = Me(r3);
-          It(this, o3, $e(r3, 1), e4);
+          It(this, o3, $e2(r3, 1), e4);
         }
       }
       get locked() {
@@ -31139,7 +31976,7 @@ var init_ponyfill = __esm({
         }(this);
       }
       pipeThrough(e3, t2 = {}) {
-        if (!H2(this)) throw Kt("pipeThrough");
+        if (!H3(this)) throw Kt("pipeThrough");
         $3(e3, 1, "pipeThrough");
         const r3 = xt(e3, "First parameter"), o3 = Ht(t2, "Second parameter");
         if (this.locked) throw new TypeError("ReadableStream.prototype.pipeThrough cannot be used on a locked ReadableStream");
@@ -31147,9 +31984,9 @@ var init_ponyfill = __esm({
         return m3(kt(this, r3.writable, o3.preventClose, o3.preventAbort, o3.preventCancel, o3.signal)), r3.readable;
       }
       pipeTo(e3, t2 = {}) {
-        if (!H2(this)) return d4(Kt("pipeTo"));
+        if (!H3(this)) return d4(Kt("pipeTo"));
         if (void 0 === e3) return d4("Parameter 1 is required in 'pipeTo'.");
-        if (!x(e3)) return d4(new TypeError("ReadableStream.prototype.pipeTo's first argument must be a WritableStream"));
+        if (!x2(e3)) return d4(new TypeError("ReadableStream.prototype.pipeTo's first argument must be a WritableStream"));
         let r3;
         try {
           r3 = Ht(t2, "Second parameter");
@@ -31159,14 +31996,14 @@ var init_ponyfill = __esm({
         return this.locked ? d4(new TypeError("ReadableStream.prototype.pipeTo cannot be used on a locked ReadableStream")) : e3.locked ? d4(new TypeError("ReadableStream.prototype.pipeTo cannot be used on a locked WritableStream")) : kt(this, e3, r3.preventClose, r3.preventAbort, r3.preventCancel, r3.signal);
       }
       tee() {
-        if (!H2(this)) throw Kt("tee");
+        if (!H3(this)) throw Kt("tee");
         if (this.locked) throw new TypeError("Cannot tee a stream that already has a reader");
         return Ot(this);
       }
       values(e3) {
-        if (!H2(this)) throw Kt("values");
+        if (!H3(this)) throw Kt("values");
         return function(e4, t2) {
-          const r3 = e4.getReader(), o3 = new te(r3, t2), n2 = Object.create(re);
+          const r3 = e4.getReader(), o3 = new te2(r3, t2), n2 = Object.create(re2);
           return n2._asyncIteratorImpl = o3, n2;
         }(this, function(e4, t2) {
           F2(e4, t2);
@@ -31211,16 +32048,16 @@ var init_ponyfill = __esm({
     TransformStream2 = class {
       constructor(e3 = {}, t2 = {}, r3 = {}) {
         void 0 === e3 && (e3 = null);
-        const o3 = Ye(t2, "Second parameter"), n2 = Ye(r3, "Third parameter"), a3 = function(e4, t3) {
+        const o3 = Ye(t2, "Second parameter"), n2 = Ye(r3, "Third parameter"), a4 = function(e4, t3) {
           F2(e4, t3);
-          const r4 = null == e4 ? void 0 : e4.flush, o4 = null == e4 ? void 0 : e4.readableType, n3 = null == e4 ? void 0 : e4.start, a4 = null == e4 ? void 0 : e4.transform, i4 = null == e4 ? void 0 : e4.writableType;
-          return { flush: void 0 === r4 ? void 0 : ir(r4, e4, `${t3} has member 'flush' that`), readableType: o4, start: void 0 === n3 ? void 0 : lr(n3, e4, `${t3} has member 'start' that`), transform: void 0 === a4 ? void 0 : sr(a4, e4, `${t3} has member 'transform' that`), writableType: i4 };
+          const r4 = null == e4 ? void 0 : e4.flush, o4 = null == e4 ? void 0 : e4.readableType, n3 = null == e4 ? void 0 : e4.start, a5 = null == e4 ? void 0 : e4.transform, i4 = null == e4 ? void 0 : e4.writableType;
+          return { flush: void 0 === r4 ? void 0 : ir(r4, e4, `${t3} has member 'flush' that`), readableType: o4, start: void 0 === n3 ? void 0 : lr(n3, e4, `${t3} has member 'start' that`), transform: void 0 === a5 ? void 0 : sr(a5, e4, `${t3} has member 'transform' that`), writableType: i4 };
         }(e3, "First parameter");
-        if (void 0 !== a3.readableType) throw new RangeError("Invalid readableType specified");
-        if (void 0 !== a3.writableType) throw new RangeError("Invalid writableType specified");
-        const i3 = $e(n2, 0), l3 = Me(n2), s2 = $e(o3, 1), f4 = Me(o3);
-        let b3;
-        !function(e4, t3, r4, o4, n3, a4) {
+        if (void 0 !== a4.readableType) throw new RangeError("Invalid readableType specified");
+        if (void 0 !== a4.writableType) throw new RangeError("Invalid writableType specified");
+        const i3 = $e2(n2, 0), l3 = Me(n2), s2 = $e2(o3, 1), f4 = Me(o3);
+        let b4;
+        !function(e4, t3, r4, o4, n3, a5) {
           function i4() {
             return t3;
           }
@@ -31238,7 +32075,7 @@ var init_ponyfill = __esm({
           }
           function s3(t4) {
             return function(e5, t5) {
-              return cr(e5, t5), c(void 0);
+              return cr(e5, t5), c2(void 0);
             }(e4, t4);
           }
           function u3() {
@@ -31258,9 +32095,9 @@ var init_ponyfill = __esm({
             }(e4);
           }
           function f5(t4) {
-            return dr(e4, t4), c(void 0);
+            return dr(e4, t4), c2(void 0);
           }
-          e4._writableState = "writable", e4._writableStoredError = void 0, e4._writableHasInFlightOperation = false, e4._writableStarted = false, e4._writable = function(e5, t4, r5, o5, n4, a5, i5) {
+          e4._writableState = "writable", e4._writableStoredError = void 0, e4._writableHasInFlightOperation = false, e4._writableStarted = false, e4._writable = function(e5, t4, r5, o5, n4, a6, i5) {
             return new WritableStream({ start(r6) {
               e5._writableController = r6;
               try {
@@ -31291,31 +32128,31 @@ var init_ponyfill = __esm({
               throw function(e6, t6) {
                 e6._writableHasInFlightOperation = false, e6._writableState, Rr(e6, t6);
               }(e5, t5), t5;
-            })), abort: (t5) => (e5._writableState = "errored", e5._writableStoredError = t5, n4(t5)) }, { highWaterMark: a5, size: i5 });
-          }(e4, i4, l4, u3, s3, r4, o4), e4._readableState = "readable", e4._readableStoredError = void 0, e4._readableCloseRequested = false, e4._readablePulling = false, e4._readable = function(e5, t4, r5, o5, n4, a5) {
+            })), abort: (t5) => (e5._writableState = "errored", e5._writableStoredError = t5, n4(t5)) }, { highWaterMark: a6, size: i5 });
+          }(e4, i4, l4, u3, s3, r4, o4), e4._readableState = "readable", e4._readableStoredError = void 0, e4._readableCloseRequested = false, e4._readablePulling = false, e4._readable = function(e5, t4, r5, o5, n4, a6) {
             return new ReadableStream3({ start: (r6) => (e5._readableController = r6, t4().catch((t5) => {
               Sr(e5, t5);
             })), pull: () => (e5._readablePulling = true, r5().catch((t5) => {
               Sr(e5, t5);
-            })), cancel: (t5) => (e5._readableState = "closed", o5(t5)) }, { highWaterMark: n4, size: a5 });
-          }(e4, i4, d5, f5, n3, a4), e4._backpressure = void 0, e4._backpressureChangePromise = void 0, e4._backpressureChangePromise_resolve = void 0, fr(e4, true), e4._transformStreamController = void 0;
+            })), cancel: (t5) => (e5._readableState = "closed", o5(t5)) }, { highWaterMark: n4, size: a6 });
+          }(e4, i4, d5, f5, n3, a5), e4._backpressure = void 0, e4._backpressureChangePromise = void 0, e4._backpressureChangePromise_resolve = void 0, fr(e4, true), e4._transformStreamController = void 0;
         }(this, u2((e4) => {
-          b3 = e4;
+          b4 = e4;
         }), s2, f4, i3, l3), function(e4, t3) {
           const r4 = Object.create(TransformStreamDefaultController.prototype);
           let o4, n3;
           o4 = void 0 !== t3.transform ? (e5) => t3.transform(e5, r4) : (e5) => {
             try {
-              return _r(r4, e5), c(void 0);
+              return _r(r4, e5), c2(void 0);
             } catch (e6) {
               return d4(e6);
             }
           };
-          n3 = void 0 !== t3.flush ? () => t3.flush(r4) : () => c(void 0);
+          n3 = void 0 !== t3.flush ? () => t3.flush(r4) : () => c2(void 0);
           !function(e5, t4, r5, o5) {
             t4._controlledTransformStream = e5, e5._transformStreamController = t4, t4._transformAlgorithm = r5, t4._flushAlgorithm = o5;
           }(e4, r4, o4, n3);
-        }(this, a3), void 0 !== a3.start ? b3(a3.start(this._transformStreamController)) : b3(void 0);
+        }(this, a4), void 0 !== a4.start ? b4(a4.start(this._transformStreamController)) : b4(void 0);
       }
       get readable() {
         if (!ur(this)) throw yr("readable");
@@ -31614,10 +32451,10 @@ var require_ms = __commonJS({
   "node_modules/ms/index.js"(exports2, module2) {
     var s2 = 1e3;
     var m4 = s2 * 60;
-    var h3 = m4 * 60;
-    var d5 = h3 * 24;
+    var h4 = m4 * 60;
+    var d5 = h4 * 24;
     var w4 = d5 * 7;
-    var y4 = d5 * 365.25;
+    var y5 = d5 * 365.25;
     module2.exports = function(val, options) {
       options = options || {};
       var type2 = typeof val;
@@ -31649,7 +32486,7 @@ var require_ms = __commonJS({
         case "yrs":
         case "yr":
         case "y":
-          return n2 * y4;
+          return n2 * y5;
         case "weeks":
         case "week":
         case "w":
@@ -31663,7 +32500,7 @@ var require_ms = __commonJS({
         case "hrs":
         case "hr":
         case "h":
-          return n2 * h3;
+          return n2 * h4;
         case "minutes":
         case "minute":
         case "mins":
@@ -31691,8 +32528,8 @@ var require_ms = __commonJS({
       if (msAbs >= d5) {
         return Math.round(ms / d5) + "d";
       }
-      if (msAbs >= h3) {
-        return Math.round(ms / h3) + "h";
+      if (msAbs >= h4) {
+        return Math.round(ms / h4) + "h";
       }
       if (msAbs >= m4) {
         return Math.round(ms / m4) + "m";
@@ -31707,8 +32544,8 @@ var require_ms = __commonJS({
       if (msAbs >= d5) {
         return plural(ms, msAbs, d5, "day");
       }
-      if (msAbs >= h3) {
-        return plural(ms, msAbs, h3, "hour");
+      if (msAbs >= h4) {
+        return plural(ms, msAbs, h4, "hour");
       }
       if (msAbs >= m4) {
         return plural(ms, msAbs, m4, "minute");
@@ -32468,8 +33305,8 @@ var require_event_target_shim = __commonJS({
     var CAPTURE = 1;
     var BUBBLE = 2;
     var ATTRIBUTE = 3;
-    function isObject3(x2) {
-      return x2 !== null && typeof x2 === "object";
+    function isObject3(x3) {
+      return x3 !== null && typeof x3 === "object";
     }
     function getListeners(eventTarget) {
       const listeners = listenersMap.get(eventTarget);
@@ -32823,8 +33660,8 @@ var require_ponyfill_es2018 = __commonJS({
       function noop2() {
         return void 0;
       }
-      function typeIsObject(x2) {
-        return typeof x2 === "object" && x2 !== null || typeof x2 === "function";
+      function typeIsObject(x3) {
+        return typeof x3 === "object" && x3 !== null || typeof x3 === "function";
       }
       const rethrowAssertionErrorRejection = noop2;
       function setFunctionName(fn, name) {
@@ -33046,71 +33883,71 @@ var require_ponyfill_es2018 = __commonJS({
         reader._closedPromise_resolve = void 0;
         reader._closedPromise_reject = void 0;
       }
-      const NumberIsFinite = Number.isFinite || function(x2) {
-        return typeof x2 === "number" && isFinite(x2);
+      const NumberIsFinite = Number.isFinite || function(x3) {
+        return typeof x3 === "number" && isFinite(x3);
       };
-      const MathTrunc = Math.trunc || function(v2) {
-        return v2 < 0 ? Math.ceil(v2) : Math.floor(v2);
+      const MathTrunc = Math.trunc || function(v6) {
+        return v6 < 0 ? Math.ceil(v6) : Math.floor(v6);
       };
-      function isDictionary(x2) {
-        return typeof x2 === "object" || typeof x2 === "function";
+      function isDictionary(x3) {
+        return typeof x3 === "object" || typeof x3 === "function";
       }
       function assertDictionary(obj, context2) {
         if (obj !== void 0 && !isDictionary(obj)) {
           throw new TypeError(`${context2} is not an object.`);
         }
       }
-      function assertFunction(x2, context2) {
-        if (typeof x2 !== "function") {
+      function assertFunction(x3, context2) {
+        if (typeof x3 !== "function") {
           throw new TypeError(`${context2} is not a function.`);
         }
       }
-      function isObject3(x2) {
-        return typeof x2 === "object" && x2 !== null || typeof x2 === "function";
+      function isObject3(x3) {
+        return typeof x3 === "object" && x3 !== null || typeof x3 === "function";
       }
-      function assertObject(x2, context2) {
-        if (!isObject3(x2)) {
+      function assertObject(x3, context2) {
+        if (!isObject3(x3)) {
           throw new TypeError(`${context2} is not an object.`);
         }
       }
-      function assertRequiredArgument(x2, position, context2) {
-        if (x2 === void 0) {
+      function assertRequiredArgument(x3, position, context2) {
+        if (x3 === void 0) {
           throw new TypeError(`Parameter ${position} is required in '${context2}'.`);
         }
       }
-      function assertRequiredField(x2, field, context2) {
-        if (x2 === void 0) {
+      function assertRequiredField(x3, field, context2) {
+        if (x3 === void 0) {
           throw new TypeError(`${field} is required in '${context2}'.`);
         }
       }
       function convertUnrestrictedDouble(value) {
         return Number(value);
       }
-      function censorNegativeZero(x2) {
-        return x2 === 0 ? 0 : x2;
+      function censorNegativeZero(x3) {
+        return x3 === 0 ? 0 : x3;
       }
-      function integerPart(x2) {
-        return censorNegativeZero(MathTrunc(x2));
+      function integerPart(x3) {
+        return censorNegativeZero(MathTrunc(x3));
       }
       function convertUnsignedLongLongWithEnforceRange(value, context2) {
         const lowerBound = 0;
         const upperBound = Number.MAX_SAFE_INTEGER;
-        let x2 = Number(value);
-        x2 = censorNegativeZero(x2);
-        if (!NumberIsFinite(x2)) {
+        let x3 = Number(value);
+        x3 = censorNegativeZero(x3);
+        if (!NumberIsFinite(x3)) {
           throw new TypeError(`${context2} is not a finite number`);
         }
-        x2 = integerPart(x2);
-        if (x2 < lowerBound || x2 > upperBound) {
+        x3 = integerPart(x3);
+        if (x3 < lowerBound || x3 > upperBound) {
           throw new TypeError(`${context2} is outside the accepted range of ${lowerBound} to ${upperBound}, inclusive`);
         }
-        if (!NumberIsFinite(x2) || x2 === 0) {
+        if (!NumberIsFinite(x3) || x3 === 0) {
           return 0;
         }
-        return x2;
+        return x3;
       }
-      function assertReadableStream(x2, context2) {
-        if (!IsReadableStream(x2)) {
+      function assertReadableStream(x3, context2) {
+        if (!IsReadableStream(x3)) {
           throw new TypeError(`${context2} is not a ReadableStream.`);
         }
       }
@@ -33234,14 +34071,14 @@ var require_ponyfill_es2018 = __commonJS({
           configurable: true
         });
       }
-      function IsReadableStreamDefaultReader(x2) {
-        if (!typeIsObject(x2)) {
+      function IsReadableStreamDefaultReader(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_readRequests")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_readRequests")) {
           return false;
         }
-        return x2 instanceof ReadableStreamDefaultReader2;
+        return x3 instanceof ReadableStreamDefaultReader2;
       }
       function ReadableStreamDefaultReaderRead(reader, readRequest) {
         const stream4 = reader._ownerReadableStream;
@@ -33356,15 +34193,15 @@ var require_ponyfill_es2018 = __commonJS({
         iterator2._asyncIteratorImpl = impl;
         return iterator2;
       }
-      function IsReadableStreamAsyncIterator(x2) {
-        if (!typeIsObject(x2)) {
+      function IsReadableStreamAsyncIterator(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_asyncIteratorImpl")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_asyncIteratorImpl")) {
           return false;
         }
         try {
-          return x2._asyncIteratorImpl instanceof ReadableStreamAsyncIteratorImpl;
+          return x3._asyncIteratorImpl instanceof ReadableStreamAsyncIteratorImpl;
         } catch (_a6) {
           return false;
         }
@@ -33372,8 +34209,8 @@ var require_ponyfill_es2018 = __commonJS({
       function streamAsyncIteratorBrandCheckException(name) {
         return new TypeError(`ReadableStreamAsyncIterator.${name} can only be used on a ReadableSteamAsyncIterator`);
       }
-      const NumberIsNaN = Number.isNaN || function(x2) {
-        return x2 !== x2;
+      const NumberIsNaN = Number.isNaN || function(x3) {
+        return x3 !== x3;
       };
       var _a5, _b2, _c2;
       function CreateArrayFromList(elements) {
@@ -33382,23 +34219,23 @@ var require_ponyfill_es2018 = __commonJS({
       function CopyDataBlockBytes(dest, destOffset, src, srcOffset, n2) {
         new Uint8Array(dest).set(new Uint8Array(src, srcOffset, n2), destOffset);
       }
-      let TransferArrayBuffer = (O3) => {
-        if (typeof O3.transfer === "function") {
+      let TransferArrayBuffer = (O4) => {
+        if (typeof O4.transfer === "function") {
           TransferArrayBuffer = (buffer) => buffer.transfer();
         } else if (typeof structuredClone === "function") {
           TransferArrayBuffer = (buffer) => structuredClone(buffer, { transfer: [buffer] });
         } else {
           TransferArrayBuffer = (buffer) => buffer;
         }
-        return TransferArrayBuffer(O3);
+        return TransferArrayBuffer(O4);
       };
-      let IsDetachedBuffer = (O3) => {
-        if (typeof O3.detached === "boolean") {
+      let IsDetachedBuffer = (O4) => {
+        if (typeof O4.detached === "boolean") {
           IsDetachedBuffer = (buffer) => buffer.detached;
         } else {
           IsDetachedBuffer = (buffer) => buffer.byteLength === 0;
         }
-        return IsDetachedBuffer(O3);
+        return IsDetachedBuffer(O4);
       };
       function ArrayBufferSlice(buffer, begin, end) {
         if (buffer.slice) {
@@ -33466,20 +34303,20 @@ var require_ponyfill_es2018 = __commonJS({
       function IteratorValue(iterResult) {
         return iterResult.value;
       }
-      function IsNonNegativeNumber(v2) {
-        if (typeof v2 !== "number") {
+      function IsNonNegativeNumber(v6) {
+        if (typeof v6 !== "number") {
           return false;
         }
-        if (NumberIsNaN(v2)) {
+        if (NumberIsNaN(v6)) {
           return false;
         }
-        if (v2 < 0) {
+        if (v6 < 0) {
           return false;
         }
         return true;
       }
-      function CloneAsUint8Array(O3) {
-        const buffer = ArrayBufferSlice(O3.buffer, O3.byteOffset, O3.byteOffset + O3.byteLength);
+      function CloneAsUint8Array(O4) {
+        const buffer = ArrayBufferSlice(O4.buffer, O4.byteOffset, O4.byteOffset + O4.byteLength);
         return new Uint8Array(buffer);
       }
       function DequeueValue(container) {
@@ -33712,23 +34549,23 @@ var require_ponyfill_es2018 = __commonJS({
           configurable: true
         });
       }
-      function IsReadableByteStreamController(x2) {
-        if (!typeIsObject(x2)) {
+      function IsReadableByteStreamController(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_controlledReadableByteStream")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_controlledReadableByteStream")) {
           return false;
         }
-        return x2 instanceof ReadableByteStreamController2;
+        return x3 instanceof ReadableByteStreamController2;
       }
-      function IsReadableStreamBYOBRequest(x2) {
-        if (!typeIsObject(x2)) {
+      function IsReadableStreamBYOBRequest(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_associatedReadableByteStreamController")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_associatedReadableByteStreamController")) {
           return false;
         }
-        return x2 instanceof ReadableStreamBYOBRequest2;
+        return x3 instanceof ReadableStreamBYOBRequest2;
       }
       function ReadableByteStreamControllerCallPullIfNeeded(controller) {
         const shouldPull = ReadableByteStreamControllerShouldCallPull(controller);
@@ -34360,14 +35197,14 @@ var require_ponyfill_es2018 = __commonJS({
           configurable: true
         });
       }
-      function IsReadableStreamBYOBReader(x2) {
-        if (!typeIsObject(x2)) {
+      function IsReadableStreamBYOBReader(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_readIntoRequests")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_readIntoRequests")) {
           return false;
         }
-        return x2 instanceof ReadableStreamBYOBReader2;
+        return x3 instanceof ReadableStreamBYOBReader2;
       }
       function ReadableStreamBYOBReaderRead(reader, view, min, readIntoRequest) {
         const stream4 = reader._ownerReadableStream;
@@ -34454,8 +35291,8 @@ var require_ponyfill_es2018 = __commonJS({
         assertFunction(fn, context2);
         return (chunk, controller) => promiseCall(fn, original, [chunk, controller]);
       }
-      function assertWritableStream(x2, context2) {
-        if (!IsWritableStream(x2)) {
+      function assertWritableStream(x3, context2) {
+        if (!IsWritableStream(x3)) {
           throw new TypeError(`${context2} is not a WritableStream.`);
         }
       }
@@ -34593,14 +35430,14 @@ var require_ponyfill_es2018 = __commonJS({
         stream4._pendingAbortRequest = void 0;
         stream4._backpressure = false;
       }
-      function IsWritableStream(x2) {
-        if (!typeIsObject(x2)) {
+      function IsWritableStream(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_writableStreamController")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_writableStreamController")) {
           return false;
         }
-        return x2 instanceof WritableStream2;
+        return x3 instanceof WritableStream2;
       }
       function IsWritableStreamLocked(stream4) {
         if (stream4._writer === void 0) {
@@ -34943,14 +35780,14 @@ var require_ponyfill_es2018 = __commonJS({
           configurable: true
         });
       }
-      function IsWritableStreamDefaultWriter(x2) {
-        if (!typeIsObject(x2)) {
+      function IsWritableStreamDefaultWriter(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_ownerWritableStream")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_ownerWritableStream")) {
           return false;
         }
-        return x2 instanceof WritableStreamDefaultWriter2;
+        return x3 instanceof WritableStreamDefaultWriter2;
       }
       function WritableStreamDefaultWriterAbort(writer, reason) {
         const stream4 = writer._ownerWritableStream;
@@ -35094,14 +35931,14 @@ var require_ponyfill_es2018 = __commonJS({
           configurable: true
         });
       }
-      function IsWritableStreamDefaultController(x2) {
-        if (!typeIsObject(x2)) {
+      function IsWritableStreamDefaultController(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_controlledWritableStream")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_controlledWritableStream")) {
           return false;
         }
-        return x2 instanceof WritableStreamDefaultController2;
+        return x3 instanceof WritableStreamDefaultController2;
       }
       function SetUpWritableStreamDefaultController(stream4, controller, startAlgorithm, writeAlgorithm, closeAlgorithm, abortAlgorithm, highWaterMark, sizeAlgorithm) {
         controller._controlledWritableStream = stream4;
@@ -35644,14 +36481,14 @@ var require_ponyfill_es2018 = __commonJS({
           configurable: true
         });
       }
-      function IsReadableStreamDefaultController(x2) {
-        if (!typeIsObject(x2)) {
+      function IsReadableStreamDefaultController(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_controlledReadableStream")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_controlledReadableStream")) {
           return false;
         }
-        return x2 instanceof ReadableStreamDefaultController2;
+        return x3 instanceof ReadableStreamDefaultController2;
       }
       function ReadableStreamDefaultControllerCallPullIfNeeded(controller) {
         const shouldPull = ReadableStreamDefaultControllerShouldCallPull(controller);
@@ -36474,14 +37311,14 @@ var require_ponyfill_es2018 = __commonJS({
         stream4._storedError = void 0;
         stream4._disturbed = false;
       }
-      function IsReadableStream(x2) {
-        if (!typeIsObject(x2)) {
+      function IsReadableStream(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_readableStreamController")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_readableStreamController")) {
           return false;
         }
-        return x2 instanceof ReadableStream7;
+        return x3 instanceof ReadableStream7;
       }
       function IsReadableStreamLocked(stream4) {
         if (stream4._reader === void 0) {
@@ -36591,14 +37428,14 @@ var require_ponyfill_es2018 = __commonJS({
       function byteLengthBrandCheckException(name) {
         return new TypeError(`ByteLengthQueuingStrategy.prototype.${name} can only be used on a ByteLengthQueuingStrategy`);
       }
-      function IsByteLengthQueuingStrategy(x2) {
-        if (!typeIsObject(x2)) {
+      function IsByteLengthQueuingStrategy(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_byteLengthQueuingStrategyHighWaterMark")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_byteLengthQueuingStrategyHighWaterMark")) {
           return false;
         }
-        return x2 instanceof ByteLengthQueuingStrategy2;
+        return x3 instanceof ByteLengthQueuingStrategy2;
       }
       const countSizeFunction = () => {
         return 1;
@@ -36643,14 +37480,14 @@ var require_ponyfill_es2018 = __commonJS({
       function countBrandCheckException(name) {
         return new TypeError(`CountQueuingStrategy.prototype.${name} can only be used on a CountQueuingStrategy`);
       }
-      function IsCountQueuingStrategy(x2) {
-        if (!typeIsObject(x2)) {
+      function IsCountQueuingStrategy(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_countQueuingStrategyHighWaterMark")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_countQueuingStrategyHighWaterMark")) {
           return false;
         }
-        return x2 instanceof CountQueuingStrategy2;
+        return x3 instanceof CountQueuingStrategy2;
       }
       function convertTransformer(original, context2) {
         assertDictionary(original, context2);
@@ -36771,14 +37608,14 @@ var require_ponyfill_es2018 = __commonJS({
         TransformStreamSetBackpressure(stream4, true);
         stream4._transformStreamController = void 0;
       }
-      function IsTransformStream(x2) {
-        if (!typeIsObject(x2)) {
+      function IsTransformStream(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_transformStreamController")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_transformStreamController")) {
           return false;
         }
-        return x2 instanceof TransformStream3;
+        return x3 instanceof TransformStream3;
       }
       function TransformStreamError(stream4, e3) {
         ReadableStreamDefaultControllerError(stream4._readable._readableStreamController, e3);
@@ -36859,14 +37696,14 @@ var require_ponyfill_es2018 = __commonJS({
           configurable: true
         });
       }
-      function IsTransformStreamDefaultController(x2) {
-        if (!typeIsObject(x2)) {
+      function IsTransformStreamDefaultController(x3) {
+        if (!typeIsObject(x3)) {
           return false;
         }
-        if (!Object.prototype.hasOwnProperty.call(x2, "_controlledTransformStream")) {
+        if (!Object.prototype.hasOwnProperty.call(x3, "_controlledTransformStream")) {
           return false;
         }
-        return x2 instanceof TransformStreamDefaultController2;
+        return x3 instanceof TransformStreamDefaultController2;
       }
       function SetUpTransformStreamDefaultController(stream4, controller, transformAlgorithm, flushAlgorithm, cancelAlgorithm) {
         controller._controlledTransformStream = stream4;
@@ -46194,8 +47031,8 @@ var require_state = __commonJS({
         size: isNamedList ? Object.keys(list).length : list.length
       };
       if (sortMethod) {
-        initState.keyedList.sort(isNamedList ? sortMethod : function(a3, b3) {
-          return sortMethod(list[a3], list[b3]);
+        initState.keyedList.sort(isNamedList ? sortMethod : function(a4, b4) {
+          return sortMethod(list[a4], list[b4]);
         });
       }
       return initState;
@@ -46272,11 +47109,11 @@ var require_serialOrdered = __commonJS({
       });
       return terminator.bind(state2, callback);
     }
-    function ascending(a3, b3) {
-      return a3 < b3 ? -1 : a3 > b3 ? 1 : 0;
+    function ascending(a4, b4) {
+      return a4 < b4 ? -1 : a4 > b4 ? 1 : 0;
     }
-    function descending(a3, b3) {
-      return -1 * ascending(a3, b3);
+    function descending(a4, b4) {
+      return -1 * ascending(a4, b4);
     }
   }
 });
@@ -46783,8 +47620,8 @@ var require_common = __commonJS({
             }
             return enabledCache;
           },
-          set: (v2) => {
-            enableOverride = v2;
+          set: (v6) => {
+            enableOverride = v6;
           }
         });
         if (typeof createDebug.init === "function") {
@@ -46975,8 +47812,8 @@ var require_browser = __commonJS({
       if (!this.useColors) {
         return;
       }
-      const c2 = "color: " + this.color;
-      args.splice(1, 0, c2, "color: inherit");
+      const c3 = "color: " + this.color;
+      args.splice(1, 0, c3, "color: inherit");
       let index = 0;
       let lastC = 0;
       args[0].replace(/%[a-zA-Z%]/g, (match) => {
@@ -46988,7 +47825,7 @@ var require_browser = __commonJS({
           lastC = index;
         }
       });
-      args.splice(lastC, 0, c2);
+      args.splice(lastC, 0, c3);
     }
     exports2.log = console.debug || console.log || (() => {
     });
@@ -47021,9 +47858,9 @@ var require_browser = __commonJS({
     }
     module2.exports = require_common()(exports2);
     var { formatters } = module2.exports;
-    formatters.j = function(v2) {
+    formatters.j = function(v6) {
       try {
-        return JSON.stringify(v2);
+        return JSON.stringify(v6);
       } catch (error) {
         return "[UnexpectedJSONParseError]: " + error.message;
       }
@@ -47250,7 +48087,7 @@ var require_node = __commonJS({
     exports2.inspectOpts = Object.keys(process.env).filter((key) => {
       return /^debug_/i.test(key);
     }).reduce((obj, key) => {
-      const prop = key.substring(6).toLowerCase().replace(/_([a-z])/g, (_3, k4) => {
+      const prop = key.substring(6).toLowerCase().replace(/_([a-z])/g, (_4, k4) => {
         return k4.toUpperCase();
       });
       let val = process.env[key];
@@ -47272,8 +48109,8 @@ var require_node = __commonJS({
     function formatArgs(args) {
       const { namespace: name, useColors: useColors2 } = this;
       if (useColors2) {
-        const c2 = this.color;
-        const colorCode = "\x1B[3" + (c2 < 8 ? c2 : "8;5;" + c2);
+        const c3 = this.color;
+        const colorCode = "\x1B[3" + (c3 < 8 ? c3 : "8;5;" + c3);
         const prefix = `  ${colorCode};1m${name} \x1B[0m`;
         args[0] = prefix + args[0].split("\n").join("\n" + prefix);
         args.push(colorCode + "m+" + module2.exports.humanize(this.diff) + "\x1B[0m");
@@ -47309,13 +48146,13 @@ var require_node = __commonJS({
     }
     module2.exports = require_common()(exports2);
     var { formatters } = module2.exports;
-    formatters.o = function(v2) {
+    formatters.o = function(v6) {
       this.inspectOpts.colors = this.useColors;
-      return util4.inspect(v2, this.inspectOpts).split("\n").map((str2) => str2.trim()).join(" ");
+      return util4.inspect(v6, this.inspectOpts).split("\n").map((str2) => str2.trim()).join(" ");
     };
-    formatters.O = function(v2) {
+    formatters.O = function(v6) {
       this.inspectOpts.colors = this.useColors;
-      return util4.inspect(v2, this.inspectOpts);
+      return util4.inspect(v6, this.inspectOpts);
     };
   }
 });
@@ -47553,8 +48390,8 @@ var require_follow_redirects = __commonJS({
       "setNoDelay",
       "setSocketKeepAlive"
     ].forEach(function(method) {
-      RedirectableRequest.prototype[method] = function(a3, b3) {
-        return this._currentRequest[method](a3, b3);
+      RedirectableRequest.prototype[method] = function(a4, b4) {
+        return this._currentRequest[method](a4, b4);
       };
     });
     ["aborted", "connection", "socket"].forEach(function(property) {
@@ -47909,8 +48746,8 @@ var require_tiktoken_bg = __commonJS({
       WASM_VECTOR_LEN = offset;
       return ptr;
     }
-    function isLikeNone(x2) {
-      return x2 === void 0 || x2 === null;
+    function isLikeNone(x3) {
+      return x3 === void 0 || x3 === null;
     }
     var cachedInt32Memory0 = null;
     function getInt32Memory0() {
@@ -48032,9 +48869,9 @@ var require_tiktoken_bg = __commonJS({
           if (r3) {
             throw takeObject(r22);
           }
-          var v2 = getArrayU32FromWasm0(r0, r1).slice();
+          var v22 = getArrayU32FromWasm0(r0, r1).slice();
           wasm.__wbindgen_export_2(r0, r1 * 4, 4);
-          return v2;
+          return v22;
         } finally {
           wasm.__wbindgen_add_to_stack_pointer(16);
         }
@@ -48052,9 +48889,9 @@ var require_tiktoken_bg = __commonJS({
           wasm.tiktoken_encode_ordinary(retptr, this.__wbg_ptr, ptr0, len0);
           var r0 = getInt32Memory0()[retptr / 4 + 0];
           var r1 = getInt32Memory0()[retptr / 4 + 1];
-          var v2 = getArrayU32FromWasm0(r0, r1).slice();
+          var v22 = getArrayU32FromWasm0(r0, r1).slice();
           wasm.__wbindgen_export_2(r0, r1 * 4, 4);
-          return v2;
+          return v22;
         } finally {
           wasm.__wbindgen_add_to_stack_pointer(16);
         }
@@ -48107,9 +48944,9 @@ var require_tiktoken_bg = __commonJS({
           wasm.tiktoken_decode(retptr, this.__wbg_ptr, ptr0, len0);
           var r0 = getInt32Memory0()[retptr / 4 + 0];
           var r1 = getInt32Memory0()[retptr / 4 + 1];
-          var v2 = getArrayU8FromWasm0(r0, r1).slice();
+          var v22 = getArrayU8FromWasm0(r0, r1).slice();
           wasm.__wbindgen_export_2(r0, r1 * 1, 1);
-          return v2;
+          return v22;
         } finally {
           wasm.__wbindgen_add_to_stack_pointer(16);
         }
@@ -48186,7 +49023,7 @@ var require_tiktoken = __commonJS({
     imports["./tiktoken_bg.js"] = wasm;
     var path2 = require("path");
     var fs4 = require("fs");
-    var candidates = __dirname.split(path2.sep).reduce((memo, _3, index, array) => {
+    var candidates = __dirname.split(path2.sep).reduce((memo, _4, index, array) => {
       const prefix = array.slice(0, index + 1).join(path2.sep) + path2.sep;
       if (!prefix.includes("node_modules" + path2.sep)) {
         memo.unshift(
@@ -48235,10 +49072,10 @@ var require_helpers = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -48305,10 +49142,10 @@ var require_dist = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -48422,17 +49259,17 @@ var require_dist = __commonJS({
       get defaultPort() {
         return this[INTERNAL].defaultPort ?? (this.protocol === "https:" ? 443 : 80);
       }
-      set defaultPort(v2) {
+      set defaultPort(v6) {
         if (this[INTERNAL]) {
-          this[INTERNAL].defaultPort = v2;
+          this[INTERNAL].defaultPort = v6;
         }
       }
       get protocol() {
         return this[INTERNAL].protocol ?? (this.isSecureEndpoint() ? "https:" : "http:");
       }
-      set protocol(v2) {
+      set protocol(v6) {
         if (this[INTERNAL]) {
-          this[INTERNAL].protocol = v2;
+          this[INTERNAL].protocol = v6;
         }
       }
     };
@@ -48456,9 +49293,9 @@ var require_parse_proxy_response = __commonJS({
         let buffersLength = 0;
         const buffers = [];
         function read() {
-          const b3 = socket.read();
-          if (b3)
-            ondata(b3);
+          const b4 = socket.read();
+          if (b4)
+            ondata(b4);
           else
             socket.once("readable", read);
         }
@@ -48477,9 +49314,9 @@ var require_parse_proxy_response = __commonJS({
           debug3("onerror %o", err);
           reject(err);
         }
-        function ondata(b3) {
-          buffers.push(b3);
-          buffersLength += b3.length;
+        function ondata(b4) {
+          buffers.push(b4);
+          buffersLength += b4.length;
           const buffered = Buffer.concat(buffers, buffersLength);
           const endOfHeaders = buffered.indexOf("\r\n\r\n");
           if (endOfHeaders === -1) {
@@ -48553,10 +49390,10 @@ var require_dist2 = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -48700,10 +49537,10 @@ var require_dist3 = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -48980,13 +49817,13 @@ var require_implementation = __commonJS({
     var toStr = Object.prototype.toString;
     var max = Math.max;
     var funcType = "[object Function]";
-    var concatty = function concatty2(a3, b3) {
+    var concatty = function concatty2(a4, b4) {
       var arr = [];
-      for (var i3 = 0; i3 < a3.length; i3 += 1) {
-        arr[i3] = a3[i3];
+      for (var i3 = 0; i3 < a4.length; i3 += 1) {
+        arr[i3] = a4[i3];
       }
-      for (var j4 = 0; j4 < b3.length; j4 += 1) {
-        arr[j4 + a3.length] = b3[j4];
+      for (var j4 = 0; j4 < b4.length; j4 += 1) {
+        arr[j4 + a4.length] = b4[j4];
       }
       return arr;
     };
@@ -49112,8 +49949,8 @@ var require_get_intrinsic = __commonJS({
     }() : throwTypeError;
     var hasSymbols = require_has_symbols()();
     var hasProto = require_has_proto()();
-    var getProto = Object.getPrototypeOf || (hasProto ? function(x2) {
-      return x2.__proto__;
+    var getProto = Object.getPrototypeOf || (hasProto ? function(x3) {
+      return x3.__proto__;
     } : null);
     var needsEval = {};
     var TypedArray = typeof Uint8Array === "undefined" || !getProto ? undefined2 : getProto(Uint8Array);
@@ -49634,8 +50471,8 @@ var require_object_inspect = __commonJS({
     var hasShammedSymbols = typeof Symbol === "function" && typeof Symbol.iterator === "object";
     var toStringTag2 = typeof Symbol === "function" && Symbol.toStringTag && (typeof Symbol.toStringTag === hasShammedSymbols ? "object" : "symbol") ? Symbol.toStringTag : null;
     var isEnumerable = Object.prototype.propertyIsEnumerable;
-    var gPO = (typeof Reflect === "function" ? Reflect.getPrototypeOf : Object.getPrototypeOf) || ([].__proto__ === Array.prototype ? function(O3) {
-      return O3.__proto__;
+    var gPO = (typeof Reflect === "function" ? Reflect.getPrototypeOf : Object.getPrototypeOf) || ([].__proto__ === Array.prototype ? function(O4) {
+      return O4.__proto__;
     } : null);
     function addNumericSeparator(num, str2) {
       if (num === Infinity || num === -Infinity || num !== num || num && num > -1e3 && num < 1e3 || $test.call(/e/, str2)) {
@@ -49912,100 +50749,100 @@ var require_object_inspect = __commonJS({
       }
       return null;
     }
-    function indexOf(xs, x2) {
+    function indexOf(xs, x3) {
       if (xs.indexOf) {
-        return xs.indexOf(x2);
+        return xs.indexOf(x3);
       }
       for (var i3 = 0, l3 = xs.length; i3 < l3; i3++) {
-        if (xs[i3] === x2) {
+        if (xs[i3] === x3) {
           return i3;
         }
       }
       return -1;
     }
-    function isMap(x2) {
-      if (!mapSize || !x2 || typeof x2 !== "object") {
+    function isMap(x3) {
+      if (!mapSize || !x3 || typeof x3 !== "object") {
         return false;
       }
       try {
-        mapSize.call(x2);
+        mapSize.call(x3);
         try {
-          setSize.call(x2);
+          setSize.call(x3);
         } catch (s2) {
           return true;
         }
-        return x2 instanceof Map;
+        return x3 instanceof Map;
       } catch (e3) {
       }
       return false;
     }
-    function isWeakMap(x2) {
-      if (!weakMapHas || !x2 || typeof x2 !== "object") {
+    function isWeakMap(x3) {
+      if (!weakMapHas || !x3 || typeof x3 !== "object") {
         return false;
       }
       try {
-        weakMapHas.call(x2, weakMapHas);
+        weakMapHas.call(x3, weakMapHas);
         try {
-          weakSetHas.call(x2, weakSetHas);
+          weakSetHas.call(x3, weakSetHas);
         } catch (s2) {
           return true;
         }
-        return x2 instanceof WeakMap;
+        return x3 instanceof WeakMap;
       } catch (e3) {
       }
       return false;
     }
-    function isWeakRef(x2) {
-      if (!weakRefDeref || !x2 || typeof x2 !== "object") {
+    function isWeakRef(x3) {
+      if (!weakRefDeref || !x3 || typeof x3 !== "object") {
         return false;
       }
       try {
-        weakRefDeref.call(x2);
+        weakRefDeref.call(x3);
         return true;
       } catch (e3) {
       }
       return false;
     }
-    function isSet(x2) {
-      if (!setSize || !x2 || typeof x2 !== "object") {
+    function isSet(x3) {
+      if (!setSize || !x3 || typeof x3 !== "object") {
         return false;
       }
       try {
-        setSize.call(x2);
+        setSize.call(x3);
         try {
-          mapSize.call(x2);
+          mapSize.call(x3);
         } catch (m4) {
           return true;
         }
-        return x2 instanceof Set;
+        return x3 instanceof Set;
       } catch (e3) {
       }
       return false;
     }
-    function isWeakSet(x2) {
-      if (!weakSetHas || !x2 || typeof x2 !== "object") {
+    function isWeakSet(x3) {
+      if (!weakSetHas || !x3 || typeof x3 !== "object") {
         return false;
       }
       try {
-        weakSetHas.call(x2, weakSetHas);
+        weakSetHas.call(x3, weakSetHas);
         try {
-          weakMapHas.call(x2, weakMapHas);
+          weakMapHas.call(x3, weakMapHas);
         } catch (s2) {
           return true;
         }
-        return x2 instanceof WeakSet;
+        return x3 instanceof WeakSet;
       } catch (e3) {
       }
       return false;
     }
-    function isElement(x2) {
-      if (!x2 || typeof x2 !== "object") {
+    function isElement(x3) {
+      if (!x3 || typeof x3 !== "object") {
         return false;
       }
-      if (typeof HTMLElement !== "undefined" && x2 instanceof HTMLElement) {
+      if (typeof HTMLElement !== "undefined" && x3 instanceof HTMLElement) {
         return true;
       }
-      return typeof x2.nodeName === "string" && typeof x2.getAttribute === "function";
+      return typeof x3.nodeName === "string" && typeof x3.getAttribute === "function";
     }
     function inspectString(str2, opts) {
       if (str2.length > opts.maxStringLength) {
@@ -50016,17 +50853,17 @@ var require_object_inspect = __commonJS({
       var s2 = $replace.call($replace.call(str2, /(['\\])/g, "\\$1"), /[\x00-\x1f]/g, lowbyte);
       return wrapQuotes(s2, "single", opts);
     }
-    function lowbyte(c2) {
-      var n2 = c2.charCodeAt(0);
-      var x2 = {
+    function lowbyte(c3) {
+      var n2 = c3.charCodeAt(0);
+      var x3 = {
         8: "b",
         9: "t",
         10: "n",
         12: "f",
         13: "r"
       }[n2];
-      if (x2) {
-        return "\\" + x2;
+      if (x3) {
+        return "\\" + x3;
       }
       return "\\x" + (n2 < 16 ? "0" : "") + $toUpperCase.call(n2.toString(16));
     }
@@ -50378,26 +51215,26 @@ var require_utils6 = __commonJS({
         var segment = string.length >= limit ? string.slice(j4, j4 + limit) : string;
         var arr = [];
         for (var i3 = 0; i3 < segment.length; ++i3) {
-          var c2 = segment.charCodeAt(i3);
-          if (c2 === 45 || c2 === 46 || c2 === 95 || c2 === 126 || c2 >= 48 && c2 <= 57 || c2 >= 65 && c2 <= 90 || c2 >= 97 && c2 <= 122 || format === formats.RFC1738 && (c2 === 40 || c2 === 41)) {
+          var c3 = segment.charCodeAt(i3);
+          if (c3 === 45 || c3 === 46 || c3 === 95 || c3 === 126 || c3 >= 48 && c3 <= 57 || c3 >= 65 && c3 <= 90 || c3 >= 97 && c3 <= 122 || format === formats.RFC1738 && (c3 === 40 || c3 === 41)) {
             arr[arr.length] = segment.charAt(i3);
             continue;
           }
-          if (c2 < 128) {
-            arr[arr.length] = hexTable[c2];
+          if (c3 < 128) {
+            arr[arr.length] = hexTable[c3];
             continue;
           }
-          if (c2 < 2048) {
-            arr[arr.length] = hexTable[192 | c2 >> 6] + hexTable[128 | c2 & 63];
+          if (c3 < 2048) {
+            arr[arr.length] = hexTable[192 | c3 >> 6] + hexTable[128 | c3 & 63];
             continue;
           }
-          if (c2 < 55296 || c2 >= 57344) {
-            arr[arr.length] = hexTable[224 | c2 >> 12] + hexTable[128 | c2 >> 6 & 63] + hexTable[128 | c2 & 63];
+          if (c3 < 55296 || c3 >= 57344) {
+            arr[arr.length] = hexTable[224 | c3 >> 12] + hexTable[128 | c3 >> 6 & 63] + hexTable[128 | c3 & 63];
             continue;
           }
           i3 += 1;
-          c2 = 65536 + ((c2 & 1023) << 10 | segment.charCodeAt(i3) & 1023);
-          arr[arr.length] = hexTable[240 | c2 >> 18] + hexTable[128 | c2 >> 12 & 63] + hexTable[128 | c2 >> 6 & 63] + hexTable[128 | c2 & 63];
+          c3 = 65536 + ((c3 & 1023) << 10 | segment.charCodeAt(i3) & 1023);
+          arr[arr.length] = hexTable[240 | c3 >> 18] + hexTable[128 | c3 >> 12 & 63] + hexTable[128 | c3 >> 6 & 63] + hexTable[128 | c3 & 63];
         }
         out += arr.join("");
       }
@@ -50431,8 +51268,8 @@ var require_utils6 = __commonJS({
       }
       return !!(obj.constructor && obj.constructor.isBuffer && obj.constructor.isBuffer(obj));
     };
-    var combine = function combine2(a3, b3) {
-      return [].concat(a3, b3);
+    var combine = function combine2(a4, b4) {
+      return [].concat(a4, b4);
     };
     var maybeMap = function maybeMap2(val, fn) {
       if (isArray2(val)) {
@@ -50508,8 +51345,8 @@ var require_stringify = __commonJS({
       skipNulls: false,
       strictNullHandling: false
     };
-    var isNonNullishPrimitive = function isNonNullishPrimitive2(v2) {
-      return typeof v2 === "string" || typeof v2 === "number" || typeof v2 === "boolean" || typeof v2 === "symbol" || typeof v2 === "bigint";
+    var isNonNullishPrimitive = function isNonNullishPrimitive2(v6) {
+      return typeof v6 === "string" || typeof v6 === "number" || typeof v6 === "boolean" || typeof v6 === "symbol" || typeof v6 === "bigint";
     };
     var sentinel = {};
     var stringify3 = function stringify4(object, prefix, generateArrayPrefix, commaRoundTrip, allowEmptyArrays, strictNullHandling, skipNulls, encodeDotInKeys, encoder, filter2, sort, allowDots, serializeDate, format, formatter, encodeValuesOnly, charset, sideChannel) {
@@ -50991,7 +51828,7 @@ var require_url = __commonJS({
     function pathToFunc(pathPattern, options) {
       const paramRE = /\{([a-zA-Z0-9_]+?)\}/g;
       return function buildURLPath(params = {}) {
-        return pathPattern.replace(paramRE, function(_3, placeholder) {
+        return pathPattern.replace(paramRE, function(_4, placeholder) {
           if (!hasOwn3.call(params, placeholder)) {
             throw new Error(`Parameter '${placeholder}' is required`);
           }
@@ -51078,7 +51915,7 @@ var require_custom_user_agent = __commonJS({
     exports2.CustomUserAgentHook = void 0;
     var config_1 = require_config();
     var CustomUserAgentHook = class {
-      beforeRequest(_3, request3) {
+      beforeRequest(_4, request3) {
         const version2 = config_1.SDK_METADATA.sdkVersion;
         const ua = `mistral-client-typescript/${version2}`;
         request3.headers.set("user-agent", ua);
@@ -51100,7 +51937,7 @@ var require_deprecation_warning = __commonJS({
     exports2.DeprecationWarningHook = void 0;
     var HEADER_MODEL_DEPRECATION_TIMESTAMP = "x-model-deprecation-timestamp";
     var DeprecationWarningHook = class {
-      afterSuccess(_3, response) {
+      afterSuccess(_4, response) {
         if (response.headers.has(HEADER_MODEL_DEPRECATION_TIMESTAMP)) {
           response.clone().json().then((body) => {
             const model = body.model;
@@ -51347,7 +52184,7 @@ var require_util8 = __commonJS({
         return array.map((val) => typeof val === "string" ? `'${val}'` : val).join(separator);
       }
       util5.joinValues = joinValues;
-      util5.jsonStringifyReplacer = (_3, value) => {
+      util5.jsonStringifyReplacer = (_4, value) => {
         if (typeof value === "bigint") {
           return value.toString();
         }
@@ -51740,7 +52577,7 @@ var require_parseUtil = __commonJS({
           overrideMap,
           overrideMap === en_1.default ? void 0 : en_1.default
           // then global default map
-        ].filter((x2) => !!x2)
+        ].filter((x3) => !!x3)
       });
       ctx.common.issues.push(issue);
     }
@@ -51807,13 +52644,13 @@ var require_parseUtil = __commonJS({
     exports2.DIRTY = DIRTY;
     var OK = (value) => ({ status: "valid", value });
     exports2.OK = OK;
-    var isAborted = (x2) => x2.status === "aborted";
+    var isAborted = (x3) => x3.status === "aborted";
     exports2.isAborted = isAborted;
-    var isDirty = (x2) => x2.status === "dirty";
+    var isDirty = (x3) => x3.status === "dirty";
     exports2.isDirty = isDirty;
-    var isValid = (x2) => x2.status === "valid";
+    var isValid = (x3) => x3.status === "valid";
     exports2.isValid = isValid;
-    var isAsync = (x2) => typeof Promise !== "undefined" && x2 instanceof Promise;
+    var isAsync = (x3) => typeof Promise !== "undefined" && x3 instanceof Promise;
     exports2.isAsync = isAsync;
   }
 });
@@ -54068,17 +54905,17 @@ var require_types = __commonJS({
       }
     };
     exports2.ZodDiscriminatedUnion = ZodDiscriminatedUnion;
-    function mergeValues(a3, b3) {
-      const aType = (0, util_1.getParsedType)(a3);
-      const bType = (0, util_1.getParsedType)(b3);
-      if (a3 === b3) {
-        return { valid: true, data: a3 };
+    function mergeValues(a4, b4) {
+      const aType = (0, util_1.getParsedType)(a4);
+      const bType = (0, util_1.getParsedType)(b4);
+      if (a4 === b4) {
+        return { valid: true, data: a4 };
       } else if (aType === util_1.ZodParsedType.object && bType === util_1.ZodParsedType.object) {
-        const bKeys = util_1.util.objectKeys(b3);
-        const sharedKeys = util_1.util.objectKeys(a3).filter((key) => bKeys.indexOf(key) !== -1);
-        const newObj = { ...a3, ...b3 };
+        const bKeys = util_1.util.objectKeys(b4);
+        const sharedKeys = util_1.util.objectKeys(a4).filter((key) => bKeys.indexOf(key) !== -1);
+        const newObj = { ...a4, ...b4 };
         for (const key of sharedKeys) {
-          const sharedValue = mergeValues(a3[key], b3[key]);
+          const sharedValue = mergeValues(a4[key], b4[key]);
           if (!sharedValue.valid) {
             return { valid: false };
           }
@@ -54086,13 +54923,13 @@ var require_types = __commonJS({
         }
         return { valid: true, data: newObj };
       } else if (aType === util_1.ZodParsedType.array && bType === util_1.ZodParsedType.array) {
-        if (a3.length !== b3.length) {
+        if (a4.length !== b4.length) {
           return { valid: false };
         }
         const newArray = [];
-        for (let index = 0; index < a3.length; index++) {
-          const itemA = a3[index];
-          const itemB = b3[index];
+        for (let index = 0; index < a4.length; index++) {
+          const itemA = a4[index];
+          const itemB = b4[index];
           const sharedValue = mergeValues(itemA, itemB);
           if (!sharedValue.valid) {
             return { valid: false };
@@ -54100,8 +54937,8 @@ var require_types = __commonJS({
           newArray.push(sharedValue.data);
         }
         return { valid: true, data: newArray };
-      } else if (aType === util_1.ZodParsedType.date && bType === util_1.ZodParsedType.date && +a3 === +b3) {
-        return { valid: true, data: a3 };
+      } else if (aType === util_1.ZodParsedType.date && bType === util_1.ZodParsedType.date && +a4 === +b4) {
+        return { valid: true, data: a4 };
       } else {
         return { valid: false };
       }
@@ -54197,7 +55034,7 @@ var require_types = __commonJS({
           if (!schema)
             return null;
           return schema._parse(new ParseInputLazyPath(ctx, item, ctx.path, itemIndex));
-        }).filter((x2) => !!x2);
+        }).filter((x3) => !!x3);
         if (ctx.common.async) {
           return Promise.all(items).then((results) => {
             return parseUtil_1.ParseStatus.mergeArray(status, results);
@@ -54459,7 +55296,7 @@ var require_types = __commonJS({
               ctx.schemaErrorMap,
               (0, errors_1.getErrorMap)(),
               errors_1.defaultErrorMap
-            ].filter((x2) => !!x2),
+            ].filter((x3) => !!x3),
             issueData: {
               code: ZodError_1.ZodIssueCode.invalid_arguments,
               argumentsError: error
@@ -54475,7 +55312,7 @@ var require_types = __commonJS({
               ctx.schemaErrorMap,
               (0, errors_1.getErrorMap)(),
               errors_1.defaultErrorMap
-            ].filter((x2) => !!x2),
+            ].filter((x3) => !!x3),
             issueData: {
               code: ZodError_1.ZodIssueCode.invalid_return_type,
               returnTypeError: error
@@ -55090,10 +55927,10 @@ var require_types = __commonJS({
           }
         }
       }
-      static create(a3, b3) {
+      static create(a4, b4) {
         return new _ZodPipeline({
-          in: a3,
-          out: b3,
+          in: a4,
+          out: b4,
           typeName: ZodFirstPartyTypeKind.ZodPipeline
         });
       }
@@ -55310,10 +56147,10 @@ var require_lib5 = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -55329,10 +56166,10 @@ var require_lib5 = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.z = void 0;
-    var z3 = __importStar(require_external());
-    exports2.z = z3;
+    var z4 = __importStar(require_external());
+    exports2.z = z4;
     __exportStar(require_external(), exports2);
-    exports2.default = z3;
+    exports2.default = z4;
   }
 });
 
@@ -55353,10 +56190,10 @@ var require_base64 = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -55375,12 +56212,12 @@ var require_base64 = __commonJS({
     exports2.stringFromBytes = stringFromBytes;
     exports2.stringToBase64 = stringToBase64;
     exports2.stringFromBase64 = stringFromBase64;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     function bytesToBase64(u8arr) {
       return btoa(String.fromCodePoint(...u8arr));
     }
     function bytesFromBase64(encoded) {
-      return Uint8Array.from(atob(encoded), (c2) => c2.charCodeAt(0));
+      return Uint8Array.from(atob(encoded), (c3) => c3.charCodeAt(0));
     }
     function stringToBytes2(str2) {
       return new TextEncoder().encode(str2);
@@ -55394,8 +56231,8 @@ var require_base64 = __commonJS({
     function stringFromBase64(b64str) {
       return stringFromBytes(bytesFromBase64(b64str));
     }
-    exports2.zodOutbound = z3.instanceof(Uint8Array).or(z3.string().transform(stringToBytes2));
-    exports2.zodInbound = z3.instanceof(Uint8Array).or(z3.string().transform(bytesFromBase64));
+    exports2.zodOutbound = z4.instanceof(Uint8Array).or(z4.string().transform(stringToBytes2));
+    exports2.zodInbound = z4.instanceof(Uint8Array).or(z4.string().transform(bytesFromBase64));
   }
 });
 
@@ -55441,20 +56278,20 @@ var require_encodings = __commonJS({
     function encodeMatrix(key, value, options) {
       let out = "";
       const pairs = (options === null || options === void 0 ? void 0 : options.explode) ? explode(key, value) : [[key, value]];
-      const encodeString = (v2) => {
-        return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v2) : v2;
+      const encodeString = (v6) => {
+        return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v6) : v6;
       };
-      const encodeValue = (v2) => encodeString(serializeValue(v2));
+      const encodeValue = (v6) => encodeString(serializeValue(v6));
       pairs.forEach(([pk, pv]) => {
         let tmp = "";
         let encValue = "";
         if (pv === void 0) {
           return;
         } else if (Array.isArray(pv)) {
-          encValue = mapDefined(pv, (v2) => `${encodeValue(v2)}`).join(",");
+          encValue = mapDefined(pv, (v6) => `${encodeValue(v6)}`).join(",");
         } else if ((0, is_plain_object_js_1.isPlainObject)(pv)) {
-          encValue = mapDefinedEntries(Object.entries(pv), ([k4, v2]) => {
-            return `,${encodeString(k4)},${encodeValue(v2)}`;
+          encValue = mapDefinedEntries(Object.entries(pv), ([k4, v6]) => {
+            return `,${encodeString(k4)},${encodeValue(v6)}`;
           }).join("");
           encValue = encValue.slice(1);
         } else {
@@ -55475,19 +56312,19 @@ var require_encodings = __commonJS({
     function encodeLabel(key, value, options) {
       let out = "";
       const pairs = (options === null || options === void 0 ? void 0 : options.explode) ? explode(key, value) : [[key, value]];
-      const encodeString = (v2) => {
-        return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v2) : v2;
+      const encodeString = (v6) => {
+        return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v6) : v6;
       };
-      const encodeValue = (v2) => encodeString(serializeValue(v2));
+      const encodeValue = (v6) => encodeString(serializeValue(v6));
       pairs.forEach(([pk, pv]) => {
         let encValue = "";
         if (pv === void 0) {
           return;
         } else if (Array.isArray(pv)) {
-          encValue = mapDefined(pv, (v2) => `${encodeValue(v2)}`).join(".");
+          encValue = mapDefined(pv, (v6) => `${encodeValue(v6)}`).join(".");
         } else if ((0, is_plain_object_js_1.isPlainObject)(pv)) {
-          encValue = mapDefinedEntries(Object.entries(pv), ([k4, v2]) => {
-            return `.${encodeString(k4)}.${encodeValue(v2)}`;
+          encValue = mapDefinedEntries(Object.entries(pv), ([k4, v6]) => {
+            return `.${encodeString(k4)}.${encodeValue(v6)}`;
           }).join("");
           encValue = encValue.slice(1);
         } else {
@@ -55502,10 +56339,10 @@ var require_encodings = __commonJS({
       return (key, value, options) => {
         let out = "";
         const pairs = (options === null || options === void 0 ? void 0 : options.explode) ? explode(key, value) : [[key, value]];
-        const encodeString = (v2) => {
-          return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v2) : v2;
+        const encodeString = (v6) => {
+          return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v6) : v6;
         };
-        const encodeValue = (v2) => encodeString(serializeValue(v2));
+        const encodeValue = (v6) => encodeString(serializeValue(v6));
         const encodedSep = encodeString(sep);
         pairs.forEach(([pk, pv]) => {
           let tmp = "";
@@ -55513,10 +56350,10 @@ var require_encodings = __commonJS({
           if (pv === void 0) {
             return;
           } else if (Array.isArray(pv)) {
-            encValue = mapDefined(pv, (v2) => `${encodeValue(v2)}`).join(encodedSep);
+            encValue = mapDefined(pv, (v6) => `${encodeValue(v6)}`).join(encodedSep);
           } else if ((0, is_plain_object_js_1.isPlainObject)(pv)) {
-            encValue = mapDefinedEntries(Object.entries(pv), ([k4, v2]) => {
-              return `${encodeString(k4)}${encodedSep}${encodeValue(v2)}`;
+            encValue = mapDefinedEntries(Object.entries(pv), ([k4, v6]) => {
+              return `${encodeString(k4)}${encodedSep}${encodeValue(v6)}`;
             }).join(encodedSep);
           } else {
             encValue = `${encodeValue(pv)}`;
@@ -55536,10 +56373,10 @@ var require_encodings = __commonJS({
     function encodeBodyForm(key, value, options) {
       let out = "";
       const pairs = (options === null || options === void 0 ? void 0 : options.explode) ? explode(key, value) : [[key, value]];
-      const encodeString = (v2) => {
-        return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v2) : v2;
+      const encodeString = (v6) => {
+        return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v6) : v6;
       };
-      const encodeValue = (v2) => encodeString(serializeValue(v2));
+      const encodeValue = (v6) => encodeString(serializeValue(v6));
       pairs.forEach(([pk, pv]) => {
         let tmp = "";
         let encValue = "";
@@ -55574,8 +56411,8 @@ var require_encodings = __commonJS({
         return "";
       }
       let out = "";
-      const encodeString = (v2) => {
-        return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v2) : v2;
+      const encodeString = (v6) => {
+        return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v6) : v6;
       };
       if (!(0, is_plain_object_js_1.isPlainObject)(value)) {
         throw new EncodingError(`Expected parameter '${key}' to be an object.`);
@@ -55592,8 +56429,8 @@ var require_encodings = __commonJS({
         }
         const pairs = Array.isArray(cv) ? cv : [cv];
         let encoded = "";
-        encoded = mapDefined(pairs, (v2) => {
-          return `${encodeString(pk)}=${encodeString(serializeValue(v2))}`;
+        encoded = mapDefined(pairs, (v6) => {
+          return `${encodeString(pk)}=${encodeString(serializeValue(v6))}`;
         }).join("&");
         out += `&${encoded}`;
       });
@@ -55603,8 +56440,8 @@ var require_encodings = __commonJS({
       if (typeof value === "undefined") {
         return "";
       }
-      const encodeString = (v2) => {
-        return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v2) : v2;
+      const encodeString = (v6) => {
+        return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v6) : v6;
       };
       const encVal = encodeString(JSON.stringify(value, jsonReplacer));
       return (options === null || options === void 0 ? void 0 : options.explode) ? encVal : `${encodeString(key)}=${encVal}`;
@@ -55612,19 +56449,19 @@ var require_encodings = __commonJS({
     var encodeSimple = (key, value, options) => {
       let out = "";
       const pairs = (options === null || options === void 0 ? void 0 : options.explode) ? explode(key, value) : [[key, value]];
-      const encodeString = (v2) => {
-        return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v2) : v2;
+      const encodeString = (v6) => {
+        return (options === null || options === void 0 ? void 0 : options.charEncoding) === "percent" ? encodeURIComponent(v6) : v6;
       };
-      const encodeValue = (v2) => encodeString(serializeValue(v2));
+      const encodeValue = (v6) => encodeString(serializeValue(v6));
       pairs.forEach(([pk, pv]) => {
         let tmp = "";
         if (pv === void 0) {
           return;
         } else if (Array.isArray(pv)) {
-          tmp = mapDefined(pv, (v2) => `${encodeValue(v2)}`).join(",");
+          tmp = mapDefined(pv, (v6) => `${encodeValue(v6)}`).join(",");
         } else if ((0, is_plain_object_js_1.isPlainObject)(pv)) {
-          tmp = mapDefinedEntries(Object.entries(pv), ([k4, v2]) => {
-            return `,${encodeString(k4)},${encodeValue(v2)}`;
+          tmp = mapDefinedEntries(Object.entries(pv), ([k4, v6]) => {
+            return `,${encodeString(k4)},${encodeValue(v6)}`;
           }).join("");
           tmp = tmp.slice(1);
         } else {
@@ -55641,10 +56478,10 @@ var require_encodings = __commonJS({
     exports2.encodeSimple = encodeSimple;
     function explode(key, value) {
       if (Array.isArray(value)) {
-        return value.map((v2) => [key, v2]);
+        return value.map((v6) => [key, v6]);
       } else if ((0, is_plain_object_js_1.isPlainObject)(value)) {
         const o3 = value !== null && value !== void 0 ? value : {};
-        return Object.entries(o3).map(([k4, v2]) => [k4, v2]);
+        return Object.entries(o3).map(([k4, v6]) => [k4, v6]);
       } else {
         return [[key, value]];
       }
@@ -55663,7 +56500,7 @@ var require_encodings = __commonJS({
       }
       return `${value}`;
     }
-    function jsonReplacer(_3, value) {
+    function jsonReplacer(_4, value) {
       if (value instanceof Uint8Array) {
         return (0, base64_js_1.bytesToBase64)(value);
       } else {
@@ -55671,11 +56508,11 @@ var require_encodings = __commonJS({
       }
     }
     function mapDefined(inp, mapper) {
-      return inp.reduce((acc, v2) => {
-        if (v2 === void 0) {
+      return inp.reduce((acc, v6) => {
+        if (v6 === void 0) {
           return acc;
         }
-        const m4 = mapper(v2);
+        const m4 = mapper(v6);
         if (m4 === void 0) {
           return acc;
         }
@@ -55685,11 +56522,11 @@ var require_encodings = __commonJS({
     }
     function mapDefinedEntries(inp, mapper) {
       const acc = [];
-      for (const [k4, v2] of inp) {
-        if (v2 === void 0) {
+      for (const [k4, v6] of inp) {
+        if (v6 === void 0) {
           continue;
         }
-        const m4 = mapper([k4, v2]);
+        const m4 = mapper([k4, v6]);
         if (m4 === void 0) {
           continue;
         }
@@ -55757,10 +56594,10 @@ var require_env = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -55776,10 +56613,10 @@ var require_env = __commonJS({
     exports2.env = env2;
     exports2.resetEnv = resetEnv;
     var dlv_js_1 = require_dlv();
-    var z3 = __importStar(require_lib5());
-    exports2.envSchema = z3.object({
-      MISTRAL_API_KEY: z3.string().optional(),
-      MISTRAL_DEBUG: z3.coerce.boolean().optional()
+    var z4 = __importStar(require_lib5());
+    exports2.envSchema = z4.object({
+      MISTRAL_API_KEY: z4.string().optional(),
+      MISTRAL_DEBUG: z4.coerce.boolean().optional()
     });
     var envMemo = void 0;
     function env2() {
@@ -55867,7 +56704,7 @@ var require_http = __commonJS({
         } else {
           throw new Error(`Invalid hook type: ${args[0]}`);
         }
-        const index = target.findIndex((v2) => v2 === args[1]);
+        const index = target.findIndex((v6) => v6 === args[1]);
         if (index >= 0) {
           target.splice(index, 1);
         }
@@ -56065,7 +56902,7 @@ var require_retries = __commonJS({
     async function retryBackoff(fn, strategy) {
       const { maxElapsedTime, initialInterval, exponent, maxInterval } = strategy;
       const start = Date.now();
-      let x2 = 0;
+      let x3 = 0;
       while (true) {
         try {
           const res = await fn();
@@ -56086,11 +56923,11 @@ var require_retries = __commonJS({
             retryInterval = retryIntervalFromResponse(err.response);
           }
           if (retryInterval <= 0) {
-            retryInterval = initialInterval * Math.pow(x2, exponent) + Math.random() * 1e3;
+            retryInterval = initialInterval * Math.pow(x3, exponent) + Math.random() * 1e3;
           }
           const d5 = Math.min(retryInterval, maxInterval);
           await delay4(d5);
-          x2++;
+          x3++;
         }
       }
     }
@@ -56189,15 +57026,15 @@ var require_sdks = __commonJS({
         }
         let finalQuery = query || "";
         const secQuery = [];
-        for (const [k4, v2] of Object.entries((security === null || security === void 0 ? void 0 : security.queryParams) || {})) {
-          secQuery.push((0, encodings_js_1.encodeForm)(k4, v2, { charEncoding: "percent" }));
+        for (const [k4, v6] of Object.entries((security === null || security === void 0 ? void 0 : security.queryParams) || {})) {
+          secQuery.push((0, encodings_js_1.encodeForm)(k4, v6, { charEncoding: "percent" }));
         }
         if (secQuery.length) {
           finalQuery += `&${secQuery.join("&")}`;
         }
         if (finalQuery) {
-          const q3 = finalQuery.startsWith("&") ? finalQuery.slice(1) : finalQuery;
-          reqURL.search = `?${q3}`;
+          const q4 = finalQuery.startsWith("&") ? finalQuery.slice(1) : finalQuery;
+          reqURL.search = `?${q4}`;
         }
         const headers = new Headers(opHeaders);
         const username = security === null || security === void 0 ? void 0 : security.basic.username;
@@ -56207,18 +57044,18 @@ var require_sdks = __commonJS({
           headers.set("Authorization", `Basic ${encoded}`);
         }
         const securityHeaders = new Headers((security === null || security === void 0 ? void 0 : security.headers) || {});
-        for (const [k4, v2] of securityHeaders) {
-          headers.set(k4, v2);
+        for (const [k4, v6] of securityHeaders) {
+          headers.set(k4, v6);
         }
         let cookie = headers.get("cookie") || "";
-        for (const [k4, v2] of Object.entries((security === null || security === void 0 ? void 0 : security.cookies) || {})) {
-          cookie += `; ${k4}=${v2}`;
+        for (const [k4, v6] of Object.entries((security === null || security === void 0 ? void 0 : security.cookies) || {})) {
+          cookie += `; ${k4}=${v6}`;
         }
         cookie = cookie.startsWith("; ") ? cookie.slice(2) : cookie;
         headers.set("cookie", cookie);
         const userHeaders = new Headers((_b2 = options === null || options === void 0 ? void 0 : options.fetchOptions) === null || _b2 === void 0 ? void 0 : _b2.headers);
-        for (const [k4, v2] of userHeaders) {
-          headers.set(k4, v2);
+        for (const [k4, v6] of userHeaders) {
+          headers.set(k4, v6);
         }
         if (!isBrowserLike) {
           headers.set((_c2 = conf.uaHeader) !== null && _c2 !== void 0 ? _c2 : "user-agent", config_js_1.SDK_METADATA.userAgent);
@@ -56315,8 +57152,8 @@ var require_sdks = __commonJS({
       const ct2 = (contentType === null || contentType === void 0 ? void 0 : contentType.split(";")[0]) || "";
       logger3.group(`> Request: ${req.method} ${req.url}`);
       logger3.group("Headers:");
-      for (const [k4, v2] of req.headers.entries()) {
-        logger3.log(`${k4}: ${v2}`);
+      for (const [k4, v6] of req.headers.entries()) {
+        logger3.log(`${k4}: ${v6}`);
       }
       logger3.groupEnd();
       logger3.group("Body:");
@@ -56329,8 +57166,8 @@ var require_sdks = __commonJS({
           break;
         case ct2 === "multipart/form-data": {
           const body = await req.clone().formData();
-          for (const [k4, v2] of body) {
-            const vlabel = v2 instanceof Blob ? "<Blob>" : v2;
+          for (const [k4, v6] of body) {
+            const vlabel = v6 instanceof Blob ? "<Blob>" : v6;
             logger3.log(`${k4}: ${vlabel}`);
           }
           break;
@@ -56351,8 +57188,8 @@ var require_sdks = __commonJS({
       logger3.group(`< Response: ${req.method} ${req.url}`);
       logger3.log("Status Code:", res.status, res.statusText);
       logger3.group("Headers:");
-      for (const [k4, v2] of res.headers.entries()) {
-        logger3.log(`${k4}: ${v2}`);
+      for (const [k4, v6] of res.headers.entries()) {
+        logger3.log(`${k4}: ${v6}`);
       }
       logger3.groupEnd();
       logger3.group("Body:");
@@ -56368,8 +57205,8 @@ var require_sdks = __commonJS({
           break;
         case (0, http_js_1.matchContentType)(res, "multipart/form-data"): {
           const body = await res.clone().formData();
-          for (const [k4, v2] of body) {
-            const vlabel = v2 instanceof Blob ? "<Blob>" : v2;
+          for (const [k4, v6] of body) {
+            const vlabel = v6 instanceof Blob ? "<Blob>" : v6;
             logger3.log(`${k4}: ${vlabel}`);
           }
           break;
@@ -56610,8 +57447,8 @@ var require_event_streams = __commonJS({
         }
       });
     }
-    function id(v2) {
-      return v2;
+    function id(v6) {
+      return v6;
     }
   }
 });
@@ -56633,10 +57470,10 @@ var require_sdkvalidationerror = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -56650,7 +57487,7 @@ var require_sdkvalidationerror = __commonJS({
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.SDKValidationError = void 0;
     exports2.formatZodError = formatZodError;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var SDKValidationError = class extends Error {
       constructor(message, cause, rawValue) {
         super(`${message}: ${cause}`);
@@ -56665,7 +57502,7 @@ var require_sdkvalidationerror = __commonJS({
        * default error message.
        */
       pretty() {
-        if (this.cause instanceof z3.ZodError) {
+        if (this.cause instanceof z4.ZodError) {
           return `${this.rawMessage}
 ${formatZodError(this.cause)}`;
         } else {
@@ -56764,11 +57601,11 @@ var require_schemas = __commonJS({
           if (key in shape) {
             continue;
           }
-          const v2 = val[key];
-          if (typeof v2 === "undefined") {
+          const v6 = val[key];
+          if (typeof v6 === "undefined") {
             continue;
           }
-          extras[key] = v2;
+          extras[key] = v6;
           delete val[key];
         }
         return { ...val, [extrasKey]: extras };
@@ -56930,11 +57767,11 @@ var require_matchers = __commonJS({
           data = raw;
         }
         if ("err" in matcher) {
-          const result = (0, schemas_js_1.safeParse)(data, (v2) => matcher.schema.parse(v2), "Response validation failed");
+          const result = (0, schemas_js_1.safeParse)(data, (v6) => matcher.schema.parse(v6), "Response validation failed");
           return [result.ok ? { ok: false, error: result.value } : result, raw];
         } else {
           return [
-            (0, schemas_js_1.safeParse)(data, (v2) => matcher.schema.parse(v2), "Response validation failed"),
+            (0, schemas_js_1.safeParse)(data, (v6) => matcher.schema.parse(v6), "Response validation failed"),
             raw
           ];
         }
@@ -56943,8 +57780,8 @@ var require_matchers = __commonJS({
     var headerValRE = /, */;
     function unpackHeaders(headers) {
       const out = {};
-      for (const [k4, v2] of headers.entries()) {
-        out[k4] = v2.split(headerValRE);
+      for (const [k4, v6] of headers.entries()) {
+        out[k4] = v6.split(headerValRE);
       }
       return out;
     }
@@ -57128,12 +57965,12 @@ var require_primitives = __commonJS({
         out = inp;
         return out;
       }
-      for (const [k4, v2] of Object.entries(inp)) {
+      for (const [k4, v6] of Object.entries(inp)) {
         const j4 = mappings[k4];
         if (j4 === null) {
           continue;
         }
-        out[j4 !== null && j4 !== void 0 ? j4 : k4] = v2;
+        out[j4 !== null && j4 !== void 0 ? j4 : k4] = v6;
       }
       return out;
     }
@@ -57208,10 +58045,10 @@ var require_imageurl = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -57226,15 +58063,15 @@ var require_imageurl = __commonJS({
     exports2.ImageURL$ = exports2.ImageURL$outboundSchema = exports2.ImageURL$inboundSchema = void 0;
     exports2.imageURLToJSON = imageURLToJSON;
     exports2.imageURLFromJSON = imageURLFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
-    exports2.ImageURL$inboundSchema = z3.object({
-      url: z3.string(),
-      detail: z3.nullable(z3.string()).optional()
+    exports2.ImageURL$inboundSchema = z4.object({
+      url: z4.string(),
+      detail: z4.nullable(z4.string()).optional()
     });
-    exports2.ImageURL$outboundSchema = z3.object({
-      url: z3.string(),
-      detail: z3.nullable(z3.string()).optional()
+    exports2.ImageURL$outboundSchema = z4.object({
+      url: z4.string(),
+      detail: z4.nullable(z4.string()).optional()
     });
     var ImageURL$;
     (function(ImageURL$2) {
@@ -57245,7 +58082,7 @@ var require_imageurl = __commonJS({
       return JSON.stringify(exports2.ImageURL$outboundSchema.parse(imageURL));
     }
     function imageURLFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ImageURL$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ImageURL' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ImageURL$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ImageURL' from JSON`);
     }
   }
 });
@@ -57267,10 +58104,10 @@ var require_imageurlchunk = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -57287,15 +58124,15 @@ var require_imageurlchunk = __commonJS({
     exports2.imageURLChunkImageURLFromJSON = imageURLChunkImageURLFromJSON;
     exports2.imageURLChunkToJSON = imageURLChunkToJSON;
     exports2.imageURLChunkFromJSON = imageURLChunkFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var imageurl_js_1 = require_imageurl();
     exports2.ImageURLChunkType = {
       ImageUrl: "image_url"
     };
-    exports2.ImageURLChunkImageURL$inboundSchema = z3.union([imageurl_js_1.ImageURL$inboundSchema, z3.string()]);
-    exports2.ImageURLChunkImageURL$outboundSchema = z3.union([imageurl_js_1.ImageURL$outboundSchema, z3.string()]);
+    exports2.ImageURLChunkImageURL$inboundSchema = z4.union([imageurl_js_1.ImageURL$inboundSchema, z4.string()]);
+    exports2.ImageURLChunkImageURL$outboundSchema = z4.union([imageurl_js_1.ImageURL$outboundSchema, z4.string()]);
     var ImageURLChunkImageURL$;
     (function(ImageURLChunkImageURL$2) {
       ImageURLChunkImageURL$2.inboundSchema = exports2.ImageURLChunkImageURL$inboundSchema;
@@ -57305,28 +58142,28 @@ var require_imageurlchunk = __commonJS({
       return JSON.stringify(exports2.ImageURLChunkImageURL$outboundSchema.parse(imageURLChunkImageURL));
     }
     function imageURLChunkImageURLFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ImageURLChunkImageURL$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ImageURLChunkImageURL' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ImageURLChunkImageURL$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ImageURLChunkImageURL' from JSON`);
     }
-    exports2.ImageURLChunkType$inboundSchema = z3.nativeEnum(exports2.ImageURLChunkType);
+    exports2.ImageURLChunkType$inboundSchema = z4.nativeEnum(exports2.ImageURLChunkType);
     exports2.ImageURLChunkType$outboundSchema = exports2.ImageURLChunkType$inboundSchema;
     var ImageURLChunkType$;
     (function(ImageURLChunkType$2) {
       ImageURLChunkType$2.inboundSchema = exports2.ImageURLChunkType$inboundSchema;
       ImageURLChunkType$2.outboundSchema = exports2.ImageURLChunkType$outboundSchema;
     })(ImageURLChunkType$ || (exports2.ImageURLChunkType$ = ImageURLChunkType$ = {}));
-    exports2.ImageURLChunk$inboundSchema = z3.object({
-      image_url: z3.union([imageurl_js_1.ImageURL$inboundSchema, z3.string()]),
+    exports2.ImageURLChunk$inboundSchema = z4.object({
+      image_url: z4.union([imageurl_js_1.ImageURL$inboundSchema, z4.string()]),
       type: exports2.ImageURLChunkType$inboundSchema.default("image_url")
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "image_url": "imageUrl"
       });
     });
-    exports2.ImageURLChunk$outboundSchema = z3.object({
-      imageUrl: z3.union([imageurl_js_1.ImageURL$outboundSchema, z3.string()]),
+    exports2.ImageURLChunk$outboundSchema = z4.object({
+      imageUrl: z4.union([imageurl_js_1.ImageURL$outboundSchema, z4.string()]),
       type: exports2.ImageURLChunkType$outboundSchema.default("image_url")
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         imageUrl: "image_url"
       });
     });
@@ -57339,7 +58176,7 @@ var require_imageurlchunk = __commonJS({
       return JSON.stringify(exports2.ImageURLChunk$outboundSchema.parse(imageURLChunk));
     }
     function imageURLChunkFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ImageURLChunk$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ImageURLChunk' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ImageURLChunk$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ImageURLChunk' from JSON`);
     }
   }
 });
@@ -57361,10 +58198,10 @@ var require_referencechunk = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -57379,32 +58216,32 @@ var require_referencechunk = __commonJS({
     exports2.ReferenceChunk$ = exports2.ReferenceChunk$outboundSchema = exports2.ReferenceChunk$inboundSchema = exports2.ReferenceChunkType$ = exports2.ReferenceChunkType$outboundSchema = exports2.ReferenceChunkType$inboundSchema = exports2.ReferenceChunkType = void 0;
     exports2.referenceChunkToJSON = referenceChunkToJSON;
     exports2.referenceChunkFromJSON = referenceChunkFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     exports2.ReferenceChunkType = {
       Reference: "reference"
     };
-    exports2.ReferenceChunkType$inboundSchema = z3.nativeEnum(exports2.ReferenceChunkType);
+    exports2.ReferenceChunkType$inboundSchema = z4.nativeEnum(exports2.ReferenceChunkType);
     exports2.ReferenceChunkType$outboundSchema = exports2.ReferenceChunkType$inboundSchema;
     var ReferenceChunkType$;
     (function(ReferenceChunkType$2) {
       ReferenceChunkType$2.inboundSchema = exports2.ReferenceChunkType$inboundSchema;
       ReferenceChunkType$2.outboundSchema = exports2.ReferenceChunkType$outboundSchema;
     })(ReferenceChunkType$ || (exports2.ReferenceChunkType$ = ReferenceChunkType$ = {}));
-    exports2.ReferenceChunk$inboundSchema = z3.object({
-      reference_ids: z3.array(z3.number().int()),
+    exports2.ReferenceChunk$inboundSchema = z4.object({
+      reference_ids: z4.array(z4.number().int()),
       type: exports2.ReferenceChunkType$inboundSchema.default("reference")
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "reference_ids": "referenceIds"
       });
     });
-    exports2.ReferenceChunk$outboundSchema = z3.object({
-      referenceIds: z3.array(z3.number().int()),
+    exports2.ReferenceChunk$outboundSchema = z4.object({
+      referenceIds: z4.array(z4.number().int()),
       type: exports2.ReferenceChunkType$outboundSchema.default("reference")
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         referenceIds: "reference_ids"
       });
     });
@@ -57417,7 +58254,7 @@ var require_referencechunk = __commonJS({
       return JSON.stringify(exports2.ReferenceChunk$outboundSchema.parse(referenceChunk));
     }
     function referenceChunkFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ReferenceChunk$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ReferenceChunk' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ReferenceChunk$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ReferenceChunk' from JSON`);
     }
   }
 });
@@ -57439,10 +58276,10 @@ var require_textchunk = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -57457,24 +58294,24 @@ var require_textchunk = __commonJS({
     exports2.TextChunk$ = exports2.TextChunk$outboundSchema = exports2.TextChunk$inboundSchema = exports2.TextChunkType$ = exports2.TextChunkType$outboundSchema = exports2.TextChunkType$inboundSchema = exports2.TextChunkType = void 0;
     exports2.textChunkToJSON = textChunkToJSON;
     exports2.textChunkFromJSON = textChunkFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     exports2.TextChunkType = {
       Text: "text"
     };
-    exports2.TextChunkType$inboundSchema = z3.nativeEnum(exports2.TextChunkType);
+    exports2.TextChunkType$inboundSchema = z4.nativeEnum(exports2.TextChunkType);
     exports2.TextChunkType$outboundSchema = exports2.TextChunkType$inboundSchema;
     var TextChunkType$;
     (function(TextChunkType$2) {
       TextChunkType$2.inboundSchema = exports2.TextChunkType$inboundSchema;
       TextChunkType$2.outboundSchema = exports2.TextChunkType$outboundSchema;
     })(TextChunkType$ || (exports2.TextChunkType$ = TextChunkType$ = {}));
-    exports2.TextChunk$inboundSchema = z3.object({
-      text: z3.string(),
+    exports2.TextChunk$inboundSchema = z4.object({
+      text: z4.string(),
       type: exports2.TextChunkType$inboundSchema.default("text")
     });
-    exports2.TextChunk$outboundSchema = z3.object({
-      text: z3.string(),
+    exports2.TextChunk$outboundSchema = z4.object({
+      text: z4.string(),
       type: exports2.TextChunkType$outboundSchema.default("text")
     });
     var TextChunk$;
@@ -57486,7 +58323,7 @@ var require_textchunk = __commonJS({
       return JSON.stringify(exports2.TextChunk$outboundSchema.parse(textChunk));
     }
     function textChunkFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.TextChunk$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'TextChunk' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.TextChunk$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'TextChunk' from JSON`);
     }
   }
 });
@@ -57508,10 +58345,10 @@ var require_contentchunk = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -57526,27 +58363,27 @@ var require_contentchunk = __commonJS({
     exports2.ContentChunk$ = exports2.ContentChunk$outboundSchema = exports2.ContentChunk$inboundSchema = void 0;
     exports2.contentChunkToJSON = contentChunkToJSON;
     exports2.contentChunkFromJSON = contentChunkFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var imageurlchunk_js_1 = require_imageurlchunk();
     var referencechunk_js_1 = require_referencechunk();
     var textchunk_js_1 = require_textchunk();
-    exports2.ContentChunk$inboundSchema = z3.union([
-      imageurlchunk_js_1.ImageURLChunk$inboundSchema.and(z3.object({ type: z3.literal("image_url") }).transform((v2) => ({
-        type: v2.type
+    exports2.ContentChunk$inboundSchema = z4.union([
+      imageurlchunk_js_1.ImageURLChunk$inboundSchema.and(z4.object({ type: z4.literal("image_url") }).transform((v6) => ({
+        type: v6.type
       }))),
-      textchunk_js_1.TextChunk$inboundSchema.and(z3.object({ type: z3.literal("text") }).transform((v2) => ({ type: v2.type }))),
-      referencechunk_js_1.ReferenceChunk$inboundSchema.and(z3.object({ type: z3.literal("reference") }).transform((v2) => ({
-        type: v2.type
+      textchunk_js_1.TextChunk$inboundSchema.and(z4.object({ type: z4.literal("text") }).transform((v6) => ({ type: v6.type }))),
+      referencechunk_js_1.ReferenceChunk$inboundSchema.and(z4.object({ type: z4.literal("reference") }).transform((v6) => ({
+        type: v6.type
       })))
     ]);
-    exports2.ContentChunk$outboundSchema = z3.union([
-      imageurlchunk_js_1.ImageURLChunk$outboundSchema.and(z3.object({ type: z3.literal("image_url") }).transform((v2) => ({
-        type: v2.type
+    exports2.ContentChunk$outboundSchema = z4.union([
+      imageurlchunk_js_1.ImageURLChunk$outboundSchema.and(z4.object({ type: z4.literal("image_url") }).transform((v6) => ({
+        type: v6.type
       }))),
-      textchunk_js_1.TextChunk$outboundSchema.and(z3.object({ type: z3.literal("text") }).transform((v2) => ({ type: v2.type }))),
-      referencechunk_js_1.ReferenceChunk$outboundSchema.and(z3.object({ type: z3.literal("reference") }).transform((v2) => ({
-        type: v2.type
+      textchunk_js_1.TextChunk$outboundSchema.and(z4.object({ type: z4.literal("text") }).transform((v6) => ({ type: v6.type }))),
+      referencechunk_js_1.ReferenceChunk$outboundSchema.and(z4.object({ type: z4.literal("reference") }).transform((v6) => ({
+        type: v6.type
       })))
     ]);
     var ContentChunk$;
@@ -57558,7 +58395,7 @@ var require_contentchunk = __commonJS({
       return JSON.stringify(exports2.ContentChunk$outboundSchema.parse(contentChunk));
     }
     function contentChunkFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ContentChunk$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ContentChunk' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ContentChunk$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ContentChunk' from JSON`);
     }
   }
 });
@@ -57580,10 +58417,10 @@ var require_functioncall = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -57600,10 +58437,10 @@ var require_functioncall = __commonJS({
     exports2.argumentsFromJSON = argumentsFromJSON;
     exports2.functionCallToJSON = functionCallToJSON;
     exports2.functionCallFromJSON = functionCallFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
-    exports2.Arguments$inboundSchema = z3.union([z3.record(z3.any()), z3.string()]);
-    exports2.Arguments$outboundSchema = z3.union([z3.record(z3.any()), z3.string()]);
+    exports2.Arguments$inboundSchema = z4.union([z4.record(z4.any()), z4.string()]);
+    exports2.Arguments$outboundSchema = z4.union([z4.record(z4.any()), z4.string()]);
     var Arguments$;
     (function(Arguments$2) {
       Arguments$2.inboundSchema = exports2.Arguments$inboundSchema;
@@ -57613,15 +58450,15 @@ var require_functioncall = __commonJS({
       return JSON.stringify(exports2.Arguments$outboundSchema.parse(value));
     }
     function argumentsFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.Arguments$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'Arguments' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.Arguments$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'Arguments' from JSON`);
     }
-    exports2.FunctionCall$inboundSchema = z3.object({
-      name: z3.string(),
-      arguments: z3.union([z3.record(z3.any()), z3.string()])
+    exports2.FunctionCall$inboundSchema = z4.object({
+      name: z4.string(),
+      arguments: z4.union([z4.record(z4.any()), z4.string()])
     });
-    exports2.FunctionCall$outboundSchema = z3.object({
-      name: z3.string(),
-      arguments: z3.union([z3.record(z3.any()), z3.string()])
+    exports2.FunctionCall$outboundSchema = z4.object({
+      name: z4.string(),
+      arguments: z4.union([z4.record(z4.any()), z4.string()])
     });
     var FunctionCall$;
     (function(FunctionCall$2) {
@@ -57632,7 +58469,7 @@ var require_functioncall = __commonJS({
       return JSON.stringify(exports2.FunctionCall$outboundSchema.parse(functionCall));
     }
     function functionCallFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FunctionCall$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FunctionCall' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FunctionCall$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FunctionCall' from JSON`);
     }
   }
 });
@@ -57666,10 +58503,10 @@ var require_tooltypes = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -57682,18 +58519,18 @@ var require_tooltypes = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.ToolTypes$ = exports2.ToolTypes$outboundSchema = exports2.ToolTypes$inboundSchema = exports2.ToolTypes = void 0;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var enums_js_1 = require_enums();
     exports2.ToolTypes = {
       Function: "function"
     };
-    exports2.ToolTypes$inboundSchema = z3.union([
-      z3.nativeEnum(exports2.ToolTypes),
-      z3.string().transform(enums_js_1.catchUnrecognizedEnum)
+    exports2.ToolTypes$inboundSchema = z4.union([
+      z4.nativeEnum(exports2.ToolTypes),
+      z4.string().transform(enums_js_1.catchUnrecognizedEnum)
     ]);
-    exports2.ToolTypes$outboundSchema = z3.union([
-      z3.nativeEnum(exports2.ToolTypes),
-      z3.string().and(z3.custom())
+    exports2.ToolTypes$outboundSchema = z4.union([
+      z4.nativeEnum(exports2.ToolTypes),
+      z4.string().and(z4.custom())
     ]);
     var ToolTypes$;
     (function(ToolTypes$2) {
@@ -57720,10 +58557,10 @@ var require_toolcall = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -57738,17 +58575,17 @@ var require_toolcall = __commonJS({
     exports2.ToolCall$ = exports2.ToolCall$outboundSchema = exports2.ToolCall$inboundSchema = void 0;
     exports2.toolCallToJSON = toolCallToJSON;
     exports2.toolCallFromJSON = toolCallFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var functioncall_js_1 = require_functioncall();
     var tooltypes_js_1 = require_tooltypes();
-    exports2.ToolCall$inboundSchema = z3.object({
-      id: z3.string().default("null"),
+    exports2.ToolCall$inboundSchema = z4.object({
+      id: z4.string().default("null"),
       type: tooltypes_js_1.ToolTypes$inboundSchema.optional(),
       function: functioncall_js_1.FunctionCall$inboundSchema
     });
-    exports2.ToolCall$outboundSchema = z3.object({
-      id: z3.string().default("null"),
+    exports2.ToolCall$outboundSchema = z4.object({
+      id: z4.string().default("null"),
       type: tooltypes_js_1.ToolTypes$outboundSchema.optional(),
       function: functioncall_js_1.FunctionCall$outboundSchema
     });
@@ -57761,7 +58598,7 @@ var require_toolcall = __commonJS({
       return JSON.stringify(exports2.ToolCall$outboundSchema.parse(toolCall));
     }
     function toolCallFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ToolCall$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ToolCall' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ToolCall$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ToolCall' from JSON`);
     }
   }
 });
@@ -57783,10 +58620,10 @@ var require_assistantmessage = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -57803,7 +58640,7 @@ var require_assistantmessage = __commonJS({
     exports2.assistantMessageContentFromJSON = assistantMessageContentFromJSON;
     exports2.assistantMessageToJSON = assistantMessageToJSON;
     exports2.assistantMessageFromJSON = assistantMessageFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var contentchunk_js_1 = require_contentchunk();
@@ -57811,8 +58648,8 @@ var require_assistantmessage = __commonJS({
     exports2.AssistantMessageRole = {
       Assistant: "assistant"
     };
-    exports2.AssistantMessageContent$inboundSchema = z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$inboundSchema)]);
-    exports2.AssistantMessageContent$outboundSchema = z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$outboundSchema)]);
+    exports2.AssistantMessageContent$inboundSchema = z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$inboundSchema)]);
+    exports2.AssistantMessageContent$outboundSchema = z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$outboundSchema)]);
     var AssistantMessageContent$;
     (function(AssistantMessageContent$2) {
       AssistantMessageContent$2.inboundSchema = exports2.AssistantMessageContent$inboundSchema;
@@ -57822,32 +58659,32 @@ var require_assistantmessage = __commonJS({
       return JSON.stringify(exports2.AssistantMessageContent$outboundSchema.parse(assistantMessageContent));
     }
     function assistantMessageContentFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.AssistantMessageContent$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'AssistantMessageContent' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.AssistantMessageContent$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'AssistantMessageContent' from JSON`);
     }
-    exports2.AssistantMessageRole$inboundSchema = z3.nativeEnum(exports2.AssistantMessageRole);
+    exports2.AssistantMessageRole$inboundSchema = z4.nativeEnum(exports2.AssistantMessageRole);
     exports2.AssistantMessageRole$outboundSchema = exports2.AssistantMessageRole$inboundSchema;
     var AssistantMessageRole$;
     (function(AssistantMessageRole$2) {
       AssistantMessageRole$2.inboundSchema = exports2.AssistantMessageRole$inboundSchema;
       AssistantMessageRole$2.outboundSchema = exports2.AssistantMessageRole$outboundSchema;
     })(AssistantMessageRole$ || (exports2.AssistantMessageRole$ = AssistantMessageRole$ = {}));
-    exports2.AssistantMessage$inboundSchema = z3.object({
-      content: z3.nullable(z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$inboundSchema)])).optional(),
-      tool_calls: z3.nullable(z3.array(toolcall_js_1.ToolCall$inboundSchema)).optional(),
-      prefix: z3.boolean().default(false),
+    exports2.AssistantMessage$inboundSchema = z4.object({
+      content: z4.nullable(z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$inboundSchema)])).optional(),
+      tool_calls: z4.nullable(z4.array(toolcall_js_1.ToolCall$inboundSchema)).optional(),
+      prefix: z4.boolean().default(false),
       role: exports2.AssistantMessageRole$inboundSchema.default("assistant")
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "tool_calls": "toolCalls"
       });
     });
-    exports2.AssistantMessage$outboundSchema = z3.object({
-      content: z3.nullable(z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$outboundSchema)])).optional(),
-      toolCalls: z3.nullable(z3.array(toolcall_js_1.ToolCall$outboundSchema)).optional(),
-      prefix: z3.boolean().default(false),
+    exports2.AssistantMessage$outboundSchema = z4.object({
+      content: z4.nullable(z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$outboundSchema)])).optional(),
+      toolCalls: z4.nullable(z4.array(toolcall_js_1.ToolCall$outboundSchema)).optional(),
+      prefix: z4.boolean().default(false),
       role: exports2.AssistantMessageRole$outboundSchema.default("assistant")
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         toolCalls: "tool_calls"
       });
     });
@@ -57860,7 +58697,7 @@ var require_assistantmessage = __commonJS({
       return JSON.stringify(exports2.AssistantMessage$outboundSchema.parse(assistantMessage));
     }
     function assistantMessageFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.AssistantMessage$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'AssistantMessage' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.AssistantMessage$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'AssistantMessage' from JSON`);
     }
   }
 });
@@ -57882,10 +58719,10 @@ var require_responseformats = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -57898,12 +58735,12 @@ var require_responseformats = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.ResponseFormats$ = exports2.ResponseFormats$outboundSchema = exports2.ResponseFormats$inboundSchema = exports2.ResponseFormats = void 0;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     exports2.ResponseFormats = {
       Text: "text",
       JsonObject: "json_object"
     };
-    exports2.ResponseFormats$inboundSchema = z3.nativeEnum(exports2.ResponseFormats);
+    exports2.ResponseFormats$inboundSchema = z4.nativeEnum(exports2.ResponseFormats);
     exports2.ResponseFormats$outboundSchema = exports2.ResponseFormats$inboundSchema;
     var ResponseFormats$;
     (function(ResponseFormats$2) {
@@ -57930,10 +58767,10 @@ var require_responseformat = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -57948,13 +58785,13 @@ var require_responseformat = __commonJS({
     exports2.ResponseFormat$ = exports2.ResponseFormat$outboundSchema = exports2.ResponseFormat$inboundSchema = void 0;
     exports2.responseFormatToJSON = responseFormatToJSON;
     exports2.responseFormatFromJSON = responseFormatFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var responseformats_js_1 = require_responseformats();
-    exports2.ResponseFormat$inboundSchema = z3.object({
+    exports2.ResponseFormat$inboundSchema = z4.object({
       type: responseformats_js_1.ResponseFormats$inboundSchema.optional()
     });
-    exports2.ResponseFormat$outboundSchema = z3.object({
+    exports2.ResponseFormat$outboundSchema = z4.object({
       type: responseformats_js_1.ResponseFormats$outboundSchema.optional()
     });
     var ResponseFormat$;
@@ -57966,7 +58803,7 @@ var require_responseformat = __commonJS({
       return JSON.stringify(exports2.ResponseFormat$outboundSchema.parse(responseFormat));
     }
     function responseFormatFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ResponseFormat$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ResponseFormat' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ResponseFormat$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ResponseFormat' from JSON`);
     }
   }
 });
@@ -57988,10 +58825,10 @@ var require_systemmessage = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -58008,14 +58845,14 @@ var require_systemmessage = __commonJS({
     exports2.systemMessageContentFromJSON = systemMessageContentFromJSON;
     exports2.systemMessageToJSON = systemMessageToJSON;
     exports2.systemMessageFromJSON = systemMessageFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var textchunk_js_1 = require_textchunk();
     exports2.Role = {
       System: "system"
     };
-    exports2.SystemMessageContent$inboundSchema = z3.union([z3.string(), z3.array(textchunk_js_1.TextChunk$inboundSchema)]);
-    exports2.SystemMessageContent$outboundSchema = z3.union([z3.string(), z3.array(textchunk_js_1.TextChunk$outboundSchema)]);
+    exports2.SystemMessageContent$inboundSchema = z4.union([z4.string(), z4.array(textchunk_js_1.TextChunk$inboundSchema)]);
+    exports2.SystemMessageContent$outboundSchema = z4.union([z4.string(), z4.array(textchunk_js_1.TextChunk$outboundSchema)]);
     var SystemMessageContent$;
     (function(SystemMessageContent$2) {
       SystemMessageContent$2.inboundSchema = exports2.SystemMessageContent$inboundSchema;
@@ -58025,21 +58862,21 @@ var require_systemmessage = __commonJS({
       return JSON.stringify(exports2.SystemMessageContent$outboundSchema.parse(systemMessageContent));
     }
     function systemMessageContentFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.SystemMessageContent$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'SystemMessageContent' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.SystemMessageContent$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'SystemMessageContent' from JSON`);
     }
-    exports2.Role$inboundSchema = z3.nativeEnum(exports2.Role);
+    exports2.Role$inboundSchema = z4.nativeEnum(exports2.Role);
     exports2.Role$outboundSchema = exports2.Role$inboundSchema;
     var Role$;
     (function(Role$2) {
       Role$2.inboundSchema = exports2.Role$inboundSchema;
       Role$2.outboundSchema = exports2.Role$outboundSchema;
     })(Role$ || (exports2.Role$ = Role$ = {}));
-    exports2.SystemMessage$inboundSchema = z3.object({
-      content: z3.union([z3.string(), z3.array(textchunk_js_1.TextChunk$inboundSchema)]),
+    exports2.SystemMessage$inboundSchema = z4.object({
+      content: z4.union([z4.string(), z4.array(textchunk_js_1.TextChunk$inboundSchema)]),
       role: exports2.Role$inboundSchema.default("system")
     });
-    exports2.SystemMessage$outboundSchema = z3.object({
-      content: z3.union([z3.string(), z3.array(textchunk_js_1.TextChunk$outboundSchema)]),
+    exports2.SystemMessage$outboundSchema = z4.object({
+      content: z4.union([z4.string(), z4.array(textchunk_js_1.TextChunk$outboundSchema)]),
       role: exports2.Role$outboundSchema.default("system")
     });
     var SystemMessage$;
@@ -58051,7 +58888,7 @@ var require_systemmessage = __commonJS({
       return JSON.stringify(exports2.SystemMessage$outboundSchema.parse(systemMessage));
     }
     function systemMessageFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.SystemMessage$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'SystemMessage' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.SystemMessage$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'SystemMessage' from JSON`);
     }
   }
 });
@@ -58073,10 +58910,10 @@ var require_function = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -58091,17 +58928,17 @@ var require_function = __commonJS({
     exports2.FunctionT$ = exports2.FunctionT$outboundSchema = exports2.FunctionT$inboundSchema = void 0;
     exports2.functionToJSON = functionToJSON;
     exports2.functionFromJSON = functionFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
-    exports2.FunctionT$inboundSchema = z3.object({
-      name: z3.string(),
-      description: z3.string().default(""),
-      parameters: z3.record(z3.any())
+    exports2.FunctionT$inboundSchema = z4.object({
+      name: z4.string(),
+      description: z4.string().default(""),
+      parameters: z4.record(z4.any())
     });
-    exports2.FunctionT$outboundSchema = z3.object({
-      name: z3.string(),
-      description: z3.string().default(""),
-      parameters: z3.record(z3.any())
+    exports2.FunctionT$outboundSchema = z4.object({
+      name: z4.string(),
+      description: z4.string().default(""),
+      parameters: z4.record(z4.any())
     });
     var FunctionT$;
     (function(FunctionT$2) {
@@ -58112,7 +58949,7 @@ var require_function = __commonJS({
       return JSON.stringify(exports2.FunctionT$outboundSchema.parse(functionT));
     }
     function functionFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FunctionT$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FunctionT' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FunctionT$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FunctionT' from JSON`);
     }
   }
 });
@@ -58134,10 +58971,10 @@ var require_tool = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -58152,15 +58989,15 @@ var require_tool = __commonJS({
     exports2.Tool$ = exports2.Tool$outboundSchema = exports2.Tool$inboundSchema = void 0;
     exports2.toolToJSON = toolToJSON;
     exports2.toolFromJSON = toolFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var function_js_1 = require_function();
     var tooltypes_js_1 = require_tooltypes();
-    exports2.Tool$inboundSchema = z3.object({
+    exports2.Tool$inboundSchema = z4.object({
       type: tooltypes_js_1.ToolTypes$inboundSchema.optional(),
       function: function_js_1.FunctionT$inboundSchema
     });
-    exports2.Tool$outboundSchema = z3.object({
+    exports2.Tool$outboundSchema = z4.object({
       type: tooltypes_js_1.ToolTypes$outboundSchema.optional(),
       function: function_js_1.FunctionT$outboundSchema
     });
@@ -58173,7 +59010,7 @@ var require_tool = __commonJS({
       return JSON.stringify(exports2.Tool$outboundSchema.parse(tool));
     }
     function toolFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.Tool$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'Tool' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.Tool$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'Tool' from JSON`);
     }
   }
 });
@@ -58195,10 +59032,10 @@ var require_functionname = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -58213,13 +59050,13 @@ var require_functionname = __commonJS({
     exports2.FunctionName$ = exports2.FunctionName$outboundSchema = exports2.FunctionName$inboundSchema = void 0;
     exports2.functionNameToJSON = functionNameToJSON;
     exports2.functionNameFromJSON = functionNameFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
-    exports2.FunctionName$inboundSchema = z3.object({
-      name: z3.string()
+    exports2.FunctionName$inboundSchema = z4.object({
+      name: z4.string()
     });
-    exports2.FunctionName$outboundSchema = z3.object({
-      name: z3.string()
+    exports2.FunctionName$outboundSchema = z4.object({
+      name: z4.string()
     });
     var FunctionName$;
     (function(FunctionName$2) {
@@ -58230,7 +59067,7 @@ var require_functionname = __commonJS({
       return JSON.stringify(exports2.FunctionName$outboundSchema.parse(functionName));
     }
     function functionNameFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FunctionName$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FunctionName' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FunctionName$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FunctionName' from JSON`);
     }
   }
 });
@@ -58252,10 +59089,10 @@ var require_toolchoice = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -58270,15 +59107,15 @@ var require_toolchoice = __commonJS({
     exports2.ToolChoice$ = exports2.ToolChoice$outboundSchema = exports2.ToolChoice$inboundSchema = void 0;
     exports2.toolChoiceToJSON = toolChoiceToJSON;
     exports2.toolChoiceFromJSON = toolChoiceFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var functionname_js_1 = require_functionname();
     var tooltypes_js_1 = require_tooltypes();
-    exports2.ToolChoice$inboundSchema = z3.object({
+    exports2.ToolChoice$inboundSchema = z4.object({
       type: tooltypes_js_1.ToolTypes$inboundSchema.optional(),
       function: functionname_js_1.FunctionName$inboundSchema
     });
-    exports2.ToolChoice$outboundSchema = z3.object({
+    exports2.ToolChoice$outboundSchema = z4.object({
       type: tooltypes_js_1.ToolTypes$outboundSchema.optional(),
       function: functionname_js_1.FunctionName$outboundSchema
     });
@@ -58291,7 +59128,7 @@ var require_toolchoice = __commonJS({
       return JSON.stringify(exports2.ToolChoice$outboundSchema.parse(toolChoice));
     }
     function toolChoiceFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ToolChoice$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ToolChoice' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ToolChoice$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ToolChoice' from JSON`);
     }
   }
 });
@@ -58313,10 +59150,10 @@ var require_toolchoiceenum = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -58329,14 +59166,14 @@ var require_toolchoiceenum = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.ToolChoiceEnum$ = exports2.ToolChoiceEnum$outboundSchema = exports2.ToolChoiceEnum$inboundSchema = exports2.ToolChoiceEnum = void 0;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     exports2.ToolChoiceEnum = {
       Auto: "auto",
       None: "none",
       Any: "any",
       Required: "required"
     };
-    exports2.ToolChoiceEnum$inboundSchema = z3.nativeEnum(exports2.ToolChoiceEnum);
+    exports2.ToolChoiceEnum$inboundSchema = z4.nativeEnum(exports2.ToolChoiceEnum);
     exports2.ToolChoiceEnum$outboundSchema = exports2.ToolChoiceEnum$inboundSchema;
     var ToolChoiceEnum$;
     (function(ToolChoiceEnum$2) {
@@ -58363,10 +59200,10 @@ var require_toolmessage = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -58383,15 +59220,15 @@ var require_toolmessage = __commonJS({
     exports2.toolMessageContentFromJSON = toolMessageContentFromJSON;
     exports2.toolMessageToJSON = toolMessageToJSON;
     exports2.toolMessageFromJSON = toolMessageFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var contentchunk_js_1 = require_contentchunk();
     exports2.ToolMessageRole = {
       Tool: "tool"
     };
-    exports2.ToolMessageContent$inboundSchema = z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$inboundSchema)]);
-    exports2.ToolMessageContent$outboundSchema = z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$outboundSchema)]);
+    exports2.ToolMessageContent$inboundSchema = z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$inboundSchema)]);
+    exports2.ToolMessageContent$outboundSchema = z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$outboundSchema)]);
     var ToolMessageContent$;
     (function(ToolMessageContent$2) {
       ToolMessageContent$2.inboundSchema = exports2.ToolMessageContent$inboundSchema;
@@ -58401,32 +59238,32 @@ var require_toolmessage = __commonJS({
       return JSON.stringify(exports2.ToolMessageContent$outboundSchema.parse(toolMessageContent));
     }
     function toolMessageContentFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ToolMessageContent$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ToolMessageContent' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ToolMessageContent$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ToolMessageContent' from JSON`);
     }
-    exports2.ToolMessageRole$inboundSchema = z3.nativeEnum(exports2.ToolMessageRole);
+    exports2.ToolMessageRole$inboundSchema = z4.nativeEnum(exports2.ToolMessageRole);
     exports2.ToolMessageRole$outboundSchema = exports2.ToolMessageRole$inboundSchema;
     var ToolMessageRole$;
     (function(ToolMessageRole$2) {
       ToolMessageRole$2.inboundSchema = exports2.ToolMessageRole$inboundSchema;
       ToolMessageRole$2.outboundSchema = exports2.ToolMessageRole$outboundSchema;
     })(ToolMessageRole$ || (exports2.ToolMessageRole$ = ToolMessageRole$ = {}));
-    exports2.ToolMessage$inboundSchema = z3.object({
-      content: z3.nullable(z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$inboundSchema)])),
-      tool_call_id: z3.nullable(z3.string()).optional(),
-      name: z3.nullable(z3.string()).optional(),
+    exports2.ToolMessage$inboundSchema = z4.object({
+      content: z4.nullable(z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$inboundSchema)])),
+      tool_call_id: z4.nullable(z4.string()).optional(),
+      name: z4.nullable(z4.string()).optional(),
       role: exports2.ToolMessageRole$inboundSchema.default("tool")
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "tool_call_id": "toolCallId"
       });
     });
-    exports2.ToolMessage$outboundSchema = z3.object({
-      content: z3.nullable(z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$outboundSchema)])),
-      toolCallId: z3.nullable(z3.string()).optional(),
-      name: z3.nullable(z3.string()).optional(),
+    exports2.ToolMessage$outboundSchema = z4.object({
+      content: z4.nullable(z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$outboundSchema)])),
+      toolCallId: z4.nullable(z4.string()).optional(),
+      name: z4.nullable(z4.string()).optional(),
       role: exports2.ToolMessageRole$outboundSchema.default("tool")
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         toolCallId: "tool_call_id"
       });
     });
@@ -58439,7 +59276,7 @@ var require_toolmessage = __commonJS({
       return JSON.stringify(exports2.ToolMessage$outboundSchema.parse(toolMessage));
     }
     function toolMessageFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ToolMessage$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ToolMessage' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ToolMessage$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ToolMessage' from JSON`);
     }
   }
 });
@@ -58461,10 +59298,10 @@ var require_usermessage = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -58481,14 +59318,14 @@ var require_usermessage = __commonJS({
     exports2.userMessageContentFromJSON = userMessageContentFromJSON;
     exports2.userMessageToJSON = userMessageToJSON;
     exports2.userMessageFromJSON = userMessageFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var contentchunk_js_1 = require_contentchunk();
     exports2.UserMessageRole = {
       User: "user"
     };
-    exports2.UserMessageContent$inboundSchema = z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$inboundSchema)]);
-    exports2.UserMessageContent$outboundSchema = z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$outboundSchema)]);
+    exports2.UserMessageContent$inboundSchema = z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$inboundSchema)]);
+    exports2.UserMessageContent$outboundSchema = z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$outboundSchema)]);
     var UserMessageContent$;
     (function(UserMessageContent$2) {
       UserMessageContent$2.inboundSchema = exports2.UserMessageContent$inboundSchema;
@@ -58498,21 +59335,21 @@ var require_usermessage = __commonJS({
       return JSON.stringify(exports2.UserMessageContent$outboundSchema.parse(userMessageContent));
     }
     function userMessageContentFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.UserMessageContent$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'UserMessageContent' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.UserMessageContent$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'UserMessageContent' from JSON`);
     }
-    exports2.UserMessageRole$inboundSchema = z3.nativeEnum(exports2.UserMessageRole);
+    exports2.UserMessageRole$inboundSchema = z4.nativeEnum(exports2.UserMessageRole);
     exports2.UserMessageRole$outboundSchema = exports2.UserMessageRole$inboundSchema;
     var UserMessageRole$;
     (function(UserMessageRole$2) {
       UserMessageRole$2.inboundSchema = exports2.UserMessageRole$inboundSchema;
       UserMessageRole$2.outboundSchema = exports2.UserMessageRole$outboundSchema;
     })(UserMessageRole$ || (exports2.UserMessageRole$ = UserMessageRole$ = {}));
-    exports2.UserMessage$inboundSchema = z3.object({
-      content: z3.nullable(z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$inboundSchema)])),
+    exports2.UserMessage$inboundSchema = z4.object({
+      content: z4.nullable(z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$inboundSchema)])),
       role: exports2.UserMessageRole$inboundSchema.default("user")
     });
-    exports2.UserMessage$outboundSchema = z3.object({
-      content: z3.nullable(z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$outboundSchema)])),
+    exports2.UserMessage$outboundSchema = z4.object({
+      content: z4.nullable(z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$outboundSchema)])),
       role: exports2.UserMessageRole$outboundSchema.default("user")
     });
     var UserMessage$;
@@ -58524,7 +59361,7 @@ var require_usermessage = __commonJS({
       return JSON.stringify(exports2.UserMessage$outboundSchema.parse(userMessage));
     }
     function userMessageFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.UserMessage$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'UserMessage' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.UserMessage$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'UserMessage' from JSON`);
     }
   }
 });
@@ -58546,10 +59383,10 @@ var require_agentscompletionrequest = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -58570,7 +59407,7 @@ var require_agentscompletionrequest = __commonJS({
     exports2.agentsCompletionRequestToolChoiceFromJSON = agentsCompletionRequestToolChoiceFromJSON;
     exports2.agentsCompletionRequestToJSON = agentsCompletionRequestToJSON;
     exports2.agentsCompletionRequestFromJSON = agentsCompletionRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var assistantmessage_js_1 = require_assistantmessage();
@@ -58581,8 +59418,8 @@ var require_agentscompletionrequest = __commonJS({
     var toolchoiceenum_js_1 = require_toolchoiceenum();
     var toolmessage_js_1 = require_toolmessage();
     var usermessage_js_1 = require_usermessage();
-    exports2.AgentsCompletionRequestStop$inboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
-    exports2.AgentsCompletionRequestStop$outboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
+    exports2.AgentsCompletionRequestStop$inboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
+    exports2.AgentsCompletionRequestStop$outboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
     var AgentsCompletionRequestStop$;
     (function(AgentsCompletionRequestStop$2) {
       AgentsCompletionRequestStop$2.inboundSchema = exports2.AgentsCompletionRequestStop$inboundSchema;
@@ -58592,27 +59429,27 @@ var require_agentscompletionrequest = __commonJS({
       return JSON.stringify(exports2.AgentsCompletionRequestStop$outboundSchema.parse(agentsCompletionRequestStop));
     }
     function agentsCompletionRequestStopFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.AgentsCompletionRequestStop$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'AgentsCompletionRequestStop' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.AgentsCompletionRequestStop$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'AgentsCompletionRequestStop' from JSON`);
     }
-    exports2.AgentsCompletionRequestMessages$inboundSchema = z3.union([
-      systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-        role: v2.role
+    exports2.AgentsCompletionRequestMessages$inboundSchema = z4.union([
+      systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+        role: v6.role
       }))),
-      usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({ role: v2.role }))),
-      assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-        role: v2.role
+      usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({ role: v6.role }))),
+      assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+        role: v6.role
       }))),
-      toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({ role: v2.role })))
+      toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({ role: v6.role })))
     ]);
-    exports2.AgentsCompletionRequestMessages$outboundSchema = z3.union([
-      systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-        role: v2.role
+    exports2.AgentsCompletionRequestMessages$outboundSchema = z4.union([
+      systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+        role: v6.role
       }))),
-      usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({ role: v2.role }))),
-      assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-        role: v2.role
+      usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({ role: v6.role }))),
+      assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+        role: v6.role
       }))),
-      toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({ role: v2.role })))
+      toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({ role: v6.role })))
     ]);
     var AgentsCompletionRequestMessages$;
     (function(AgentsCompletionRequestMessages$2) {
@@ -58623,10 +59460,10 @@ var require_agentscompletionrequest = __commonJS({
       return JSON.stringify(exports2.AgentsCompletionRequestMessages$outboundSchema.parse(agentsCompletionRequestMessages));
     }
     function agentsCompletionRequestMessagesFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.AgentsCompletionRequestMessages$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'AgentsCompletionRequestMessages' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.AgentsCompletionRequestMessages$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'AgentsCompletionRequestMessages' from JSON`);
     }
-    exports2.AgentsCompletionRequestToolChoice$inboundSchema = z3.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]);
-    exports2.AgentsCompletionRequestToolChoice$outboundSchema = z3.union([toolchoice_js_1.ToolChoice$outboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$outboundSchema]);
+    exports2.AgentsCompletionRequestToolChoice$inboundSchema = z4.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]);
+    exports2.AgentsCompletionRequestToolChoice$outboundSchema = z4.union([toolchoice_js_1.ToolChoice$outboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$outboundSchema]);
     var AgentsCompletionRequestToolChoice$;
     (function(AgentsCompletionRequestToolChoice$2) {
       AgentsCompletionRequestToolChoice$2.inboundSchema = exports2.AgentsCompletionRequestToolChoice$inboundSchema;
@@ -58636,36 +59473,36 @@ var require_agentscompletionrequest = __commonJS({
       return JSON.stringify(exports2.AgentsCompletionRequestToolChoice$outboundSchema.parse(agentsCompletionRequestToolChoice));
     }
     function agentsCompletionRequestToolChoiceFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.AgentsCompletionRequestToolChoice$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'AgentsCompletionRequestToolChoice' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.AgentsCompletionRequestToolChoice$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'AgentsCompletionRequestToolChoice' from JSON`);
     }
-    exports2.AgentsCompletionRequest$inboundSchema = z3.object({
-      max_tokens: z3.nullable(z3.number().int()).optional(),
-      stream: z3.boolean().default(false),
-      stop: z3.union([z3.string(), z3.array(z3.string())]).optional(),
-      random_seed: z3.nullable(z3.number().int()).optional(),
-      messages: z3.array(z3.union([
-        systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-          role: v2.role
+    exports2.AgentsCompletionRequest$inboundSchema = z4.object({
+      max_tokens: z4.nullable(z4.number().int()).optional(),
+      stream: z4.boolean().default(false),
+      stop: z4.union([z4.string(), z4.array(z4.string())]).optional(),
+      random_seed: z4.nullable(z4.number().int()).optional(),
+      messages: z4.array(z4.union([
+        systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+          role: v6.role
         }))),
-        usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-          role: v2.role
+        usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+          role: v6.role
         }))),
-        assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-          role: v2.role
+        assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+          role: v6.role
         }))),
-        toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-          role: v2.role
+        toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+          role: v6.role
         })))
       ])),
       response_format: responseformat_js_1.ResponseFormat$inboundSchema.optional(),
-      tools: z3.nullable(z3.array(tool_js_1.Tool$inboundSchema)).optional(),
-      tool_choice: z3.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]).optional(),
-      presence_penalty: z3.number().optional(),
-      frequency_penalty: z3.number().optional(),
-      n: z3.nullable(z3.number().int()).optional(),
-      agent_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      tools: z4.nullable(z4.array(tool_js_1.Tool$inboundSchema)).optional(),
+      tool_choice: z4.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]).optional(),
+      presence_penalty: z4.number().optional(),
+      frequency_penalty: z4.number().optional(),
+      n: z4.nullable(z4.number().int()).optional(),
+      agent_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "max_tokens": "maxTokens",
         "random_seed": "randomSeed",
         "response_format": "responseFormat",
@@ -58675,37 +59512,37 @@ var require_agentscompletionrequest = __commonJS({
         "agent_id": "agentId"
       });
     });
-    exports2.AgentsCompletionRequest$outboundSchema = z3.object({
-      maxTokens: z3.nullable(z3.number().int()).optional(),
-      stream: z3.boolean().default(false),
-      stop: z3.union([z3.string(), z3.array(z3.string())]).optional(),
-      randomSeed: z3.nullable(z3.number().int()).optional(),
-      messages: z3.array(z3.union([
-        systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-          role: v2.role
+    exports2.AgentsCompletionRequest$outboundSchema = z4.object({
+      maxTokens: z4.nullable(z4.number().int()).optional(),
+      stream: z4.boolean().default(false),
+      stop: z4.union([z4.string(), z4.array(z4.string())]).optional(),
+      randomSeed: z4.nullable(z4.number().int()).optional(),
+      messages: z4.array(z4.union([
+        systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+          role: v6.role
         }))),
-        usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-          role: v2.role
+        usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+          role: v6.role
         }))),
-        assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-          role: v2.role
+        assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+          role: v6.role
         }))),
-        toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-          role: v2.role
+        toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+          role: v6.role
         })))
       ])),
       responseFormat: responseformat_js_1.ResponseFormat$outboundSchema.optional(),
-      tools: z3.nullable(z3.array(tool_js_1.Tool$outboundSchema)).optional(),
-      toolChoice: z3.union([
+      tools: z4.nullable(z4.array(tool_js_1.Tool$outboundSchema)).optional(),
+      toolChoice: z4.union([
         toolchoice_js_1.ToolChoice$outboundSchema,
         toolchoiceenum_js_1.ToolChoiceEnum$outboundSchema
       ]).optional(),
-      presencePenalty: z3.number().optional(),
-      frequencyPenalty: z3.number().optional(),
-      n: z3.nullable(z3.number().int()).optional(),
-      agentId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      presencePenalty: z4.number().optional(),
+      frequencyPenalty: z4.number().optional(),
+      n: z4.nullable(z4.number().int()).optional(),
+      agentId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         maxTokens: "max_tokens",
         randomSeed: "random_seed",
         responseFormat: "response_format",
@@ -58724,7 +59561,7 @@ var require_agentscompletionrequest = __commonJS({
       return JSON.stringify(exports2.AgentsCompletionRequest$outboundSchema.parse(agentsCompletionRequest));
     }
     function agentsCompletionRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.AgentsCompletionRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'AgentsCompletionRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.AgentsCompletionRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'AgentsCompletionRequest' from JSON`);
     }
   }
 });
@@ -58746,10 +59583,10 @@ var require_agentscompletionstreamrequest = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -58770,7 +59607,7 @@ var require_agentscompletionstreamrequest = __commonJS({
     exports2.agentsCompletionStreamRequestToolChoiceFromJSON = agentsCompletionStreamRequestToolChoiceFromJSON;
     exports2.agentsCompletionStreamRequestToJSON = agentsCompletionStreamRequestToJSON;
     exports2.agentsCompletionStreamRequestFromJSON = agentsCompletionStreamRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var assistantmessage_js_1 = require_assistantmessage();
@@ -58781,8 +59618,8 @@ var require_agentscompletionstreamrequest = __commonJS({
     var toolchoiceenum_js_1 = require_toolchoiceenum();
     var toolmessage_js_1 = require_toolmessage();
     var usermessage_js_1 = require_usermessage();
-    exports2.AgentsCompletionStreamRequestStop$inboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
-    exports2.AgentsCompletionStreamRequestStop$outboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
+    exports2.AgentsCompletionStreamRequestStop$inboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
+    exports2.AgentsCompletionStreamRequestStop$outboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
     var AgentsCompletionStreamRequestStop$;
     (function(AgentsCompletionStreamRequestStop$2) {
       AgentsCompletionStreamRequestStop$2.inboundSchema = exports2.AgentsCompletionStreamRequestStop$inboundSchema;
@@ -58792,27 +59629,27 @@ var require_agentscompletionstreamrequest = __commonJS({
       return JSON.stringify(exports2.AgentsCompletionStreamRequestStop$outboundSchema.parse(agentsCompletionStreamRequestStop));
     }
     function agentsCompletionStreamRequestStopFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.AgentsCompletionStreamRequestStop$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'AgentsCompletionStreamRequestStop' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.AgentsCompletionStreamRequestStop$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'AgentsCompletionStreamRequestStop' from JSON`);
     }
-    exports2.AgentsCompletionStreamRequestMessages$inboundSchema = z3.union([
-      systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-        role: v2.role
+    exports2.AgentsCompletionStreamRequestMessages$inboundSchema = z4.union([
+      systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+        role: v6.role
       }))),
-      usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({ role: v2.role }))),
-      assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-        role: v2.role
+      usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({ role: v6.role }))),
+      assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+        role: v6.role
       }))),
-      toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({ role: v2.role })))
+      toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({ role: v6.role })))
     ]);
-    exports2.AgentsCompletionStreamRequestMessages$outboundSchema = z3.union([
-      systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-        role: v2.role
+    exports2.AgentsCompletionStreamRequestMessages$outboundSchema = z4.union([
+      systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+        role: v6.role
       }))),
-      usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({ role: v2.role }))),
-      assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-        role: v2.role
+      usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({ role: v6.role }))),
+      assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+        role: v6.role
       }))),
-      toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({ role: v2.role })))
+      toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({ role: v6.role })))
     ]);
     var AgentsCompletionStreamRequestMessages$;
     (function(AgentsCompletionStreamRequestMessages$2) {
@@ -58823,10 +59660,10 @@ var require_agentscompletionstreamrequest = __commonJS({
       return JSON.stringify(exports2.AgentsCompletionStreamRequestMessages$outboundSchema.parse(agentsCompletionStreamRequestMessages));
     }
     function agentsCompletionStreamRequestMessagesFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.AgentsCompletionStreamRequestMessages$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'AgentsCompletionStreamRequestMessages' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.AgentsCompletionStreamRequestMessages$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'AgentsCompletionStreamRequestMessages' from JSON`);
     }
-    exports2.AgentsCompletionStreamRequestToolChoice$inboundSchema = z3.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]);
-    exports2.AgentsCompletionStreamRequestToolChoice$outboundSchema = z3.union([toolchoice_js_1.ToolChoice$outboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$outboundSchema]);
+    exports2.AgentsCompletionStreamRequestToolChoice$inboundSchema = z4.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]);
+    exports2.AgentsCompletionStreamRequestToolChoice$outboundSchema = z4.union([toolchoice_js_1.ToolChoice$outboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$outboundSchema]);
     var AgentsCompletionStreamRequestToolChoice$;
     (function(AgentsCompletionStreamRequestToolChoice$2) {
       AgentsCompletionStreamRequestToolChoice$2.inboundSchema = exports2.AgentsCompletionStreamRequestToolChoice$inboundSchema;
@@ -58836,36 +59673,36 @@ var require_agentscompletionstreamrequest = __commonJS({
       return JSON.stringify(exports2.AgentsCompletionStreamRequestToolChoice$outboundSchema.parse(agentsCompletionStreamRequestToolChoice));
     }
     function agentsCompletionStreamRequestToolChoiceFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.AgentsCompletionStreamRequestToolChoice$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'AgentsCompletionStreamRequestToolChoice' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.AgentsCompletionStreamRequestToolChoice$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'AgentsCompletionStreamRequestToolChoice' from JSON`);
     }
-    exports2.AgentsCompletionStreamRequest$inboundSchema = z3.object({
-      max_tokens: z3.nullable(z3.number().int()).optional(),
-      stream: z3.boolean().default(true),
-      stop: z3.union([z3.string(), z3.array(z3.string())]).optional(),
-      random_seed: z3.nullable(z3.number().int()).optional(),
-      messages: z3.array(z3.union([
-        systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-          role: v2.role
+    exports2.AgentsCompletionStreamRequest$inboundSchema = z4.object({
+      max_tokens: z4.nullable(z4.number().int()).optional(),
+      stream: z4.boolean().default(true),
+      stop: z4.union([z4.string(), z4.array(z4.string())]).optional(),
+      random_seed: z4.nullable(z4.number().int()).optional(),
+      messages: z4.array(z4.union([
+        systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+          role: v6.role
         }))),
-        usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-          role: v2.role
+        usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+          role: v6.role
         }))),
-        assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-          role: v2.role
+        assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+          role: v6.role
         }))),
-        toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-          role: v2.role
+        toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+          role: v6.role
         })))
       ])),
       response_format: responseformat_js_1.ResponseFormat$inboundSchema.optional(),
-      tools: z3.nullable(z3.array(tool_js_1.Tool$inboundSchema)).optional(),
-      tool_choice: z3.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]).optional(),
-      presence_penalty: z3.number().optional(),
-      frequency_penalty: z3.number().optional(),
-      n: z3.nullable(z3.number().int()).optional(),
-      agent_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      tools: z4.nullable(z4.array(tool_js_1.Tool$inboundSchema)).optional(),
+      tool_choice: z4.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]).optional(),
+      presence_penalty: z4.number().optional(),
+      frequency_penalty: z4.number().optional(),
+      n: z4.nullable(z4.number().int()).optional(),
+      agent_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "max_tokens": "maxTokens",
         "random_seed": "randomSeed",
         "response_format": "responseFormat",
@@ -58875,37 +59712,37 @@ var require_agentscompletionstreamrequest = __commonJS({
         "agent_id": "agentId"
       });
     });
-    exports2.AgentsCompletionStreamRequest$outboundSchema = z3.object({
-      maxTokens: z3.nullable(z3.number().int()).optional(),
-      stream: z3.boolean().default(true),
-      stop: z3.union([z3.string(), z3.array(z3.string())]).optional(),
-      randomSeed: z3.nullable(z3.number().int()).optional(),
-      messages: z3.array(z3.union([
-        systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-          role: v2.role
+    exports2.AgentsCompletionStreamRequest$outboundSchema = z4.object({
+      maxTokens: z4.nullable(z4.number().int()).optional(),
+      stream: z4.boolean().default(true),
+      stop: z4.union([z4.string(), z4.array(z4.string())]).optional(),
+      randomSeed: z4.nullable(z4.number().int()).optional(),
+      messages: z4.array(z4.union([
+        systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+          role: v6.role
         }))),
-        usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-          role: v2.role
+        usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+          role: v6.role
         }))),
-        assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-          role: v2.role
+        assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+          role: v6.role
         }))),
-        toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-          role: v2.role
+        toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+          role: v6.role
         })))
       ])),
       responseFormat: responseformat_js_1.ResponseFormat$outboundSchema.optional(),
-      tools: z3.nullable(z3.array(tool_js_1.Tool$outboundSchema)).optional(),
-      toolChoice: z3.union([
+      tools: z4.nullable(z4.array(tool_js_1.Tool$outboundSchema)).optional(),
+      toolChoice: z4.union([
         toolchoice_js_1.ToolChoice$outboundSchema,
         toolchoiceenum_js_1.ToolChoiceEnum$outboundSchema
       ]).optional(),
-      presencePenalty: z3.number().optional(),
-      frequencyPenalty: z3.number().optional(),
-      n: z3.nullable(z3.number().int()).optional(),
-      agentId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      presencePenalty: z4.number().optional(),
+      frequencyPenalty: z4.number().optional(),
+      n: z4.nullable(z4.number().int()).optional(),
+      agentId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         maxTokens: "max_tokens",
         randomSeed: "random_seed",
         responseFormat: "response_format",
@@ -58924,7 +59761,7 @@ var require_agentscompletionstreamrequest = __commonJS({
       return JSON.stringify(exports2.AgentsCompletionStreamRequest$outboundSchema.parse(agentsCompletionStreamRequest));
     }
     function agentsCompletionStreamRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.AgentsCompletionStreamRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'AgentsCompletionStreamRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.AgentsCompletionStreamRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'AgentsCompletionStreamRequest' from JSON`);
     }
   }
 });
@@ -58946,10 +59783,10 @@ var require_apiendpoint = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -58962,7 +59799,7 @@ var require_apiendpoint = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.ApiEndpoint$ = exports2.ApiEndpoint$outboundSchema = exports2.ApiEndpoint$inboundSchema = exports2.ApiEndpoint = void 0;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var enums_js_1 = require_enums();
     exports2.ApiEndpoint = {
       RootV1ChatCompletions: "/v1/chat/completions",
@@ -58971,13 +59808,13 @@ var require_apiendpoint = __commonJS({
       RootV1Moderations: "/v1/moderations",
       RootV1ChatModerations: "/v1/chat/moderations"
     };
-    exports2.ApiEndpoint$inboundSchema = z3.union([
-      z3.nativeEnum(exports2.ApiEndpoint),
-      z3.string().transform(enums_js_1.catchUnrecognizedEnum)
+    exports2.ApiEndpoint$inboundSchema = z4.union([
+      z4.nativeEnum(exports2.ApiEndpoint),
+      z4.string().transform(enums_js_1.catchUnrecognizedEnum)
     ]);
-    exports2.ApiEndpoint$outboundSchema = z3.union([
-      z3.nativeEnum(exports2.ApiEndpoint),
-      z3.string().and(z3.custom())
+    exports2.ApiEndpoint$outboundSchema = z4.union([
+      z4.nativeEnum(exports2.ApiEndpoint),
+      z4.string().and(z4.custom())
     ]);
     var ApiEndpoint$;
     (function(ApiEndpoint$2) {
@@ -59004,10 +59841,10 @@ var require_archiveftmodelout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -59022,27 +59859,27 @@ var require_archiveftmodelout = __commonJS({
     exports2.ArchiveFTModelOut$ = exports2.ArchiveFTModelOut$outboundSchema = exports2.ArchiveFTModelOut$inboundSchema = exports2.ArchiveFTModelOutObject$ = exports2.ArchiveFTModelOutObject$outboundSchema = exports2.ArchiveFTModelOutObject$inboundSchema = exports2.ArchiveFTModelOutObject = void 0;
     exports2.archiveFTModelOutToJSON = archiveFTModelOutToJSON;
     exports2.archiveFTModelOutFromJSON = archiveFTModelOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     exports2.ArchiveFTModelOutObject = {
       Model: "model"
     };
-    exports2.ArchiveFTModelOutObject$inboundSchema = z3.nativeEnum(exports2.ArchiveFTModelOutObject);
+    exports2.ArchiveFTModelOutObject$inboundSchema = z4.nativeEnum(exports2.ArchiveFTModelOutObject);
     exports2.ArchiveFTModelOutObject$outboundSchema = exports2.ArchiveFTModelOutObject$inboundSchema;
     var ArchiveFTModelOutObject$;
     (function(ArchiveFTModelOutObject$2) {
       ArchiveFTModelOutObject$2.inboundSchema = exports2.ArchiveFTModelOutObject$inboundSchema;
       ArchiveFTModelOutObject$2.outboundSchema = exports2.ArchiveFTModelOutObject$outboundSchema;
     })(ArchiveFTModelOutObject$ || (exports2.ArchiveFTModelOutObject$ = ArchiveFTModelOutObject$ = {}));
-    exports2.ArchiveFTModelOut$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.literal("model").default("model"),
-      archived: z3.boolean().default(true)
+    exports2.ArchiveFTModelOut$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.literal("model").default("model"),
+      archived: z4.boolean().default(true)
     });
-    exports2.ArchiveFTModelOut$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.literal("model").default("model"),
-      archived: z3.boolean().default(true)
+    exports2.ArchiveFTModelOut$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.literal("model").default("model"),
+      archived: z4.boolean().default(true)
     });
     var ArchiveFTModelOut$;
     (function(ArchiveFTModelOut$2) {
@@ -59053,7 +59890,7 @@ var require_archiveftmodelout = __commonJS({
       return JSON.stringify(exports2.ArchiveFTModelOut$outboundSchema.parse(archiveFTModelOut));
     }
     function archiveFTModelOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ArchiveFTModelOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ArchiveFTModelOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ArchiveFTModelOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ArchiveFTModelOut' from JSON`);
     }
   }
 });
@@ -59075,10 +59912,10 @@ var require_modelcapabilities = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -59093,31 +59930,31 @@ var require_modelcapabilities = __commonJS({
     exports2.ModelCapabilities$ = exports2.ModelCapabilities$outboundSchema = exports2.ModelCapabilities$inboundSchema = void 0;
     exports2.modelCapabilitiesToJSON = modelCapabilitiesToJSON;
     exports2.modelCapabilitiesFromJSON = modelCapabilitiesFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.ModelCapabilities$inboundSchema = z3.object({
-      completion_chat: z3.boolean().default(true),
-      completion_fim: z3.boolean().default(false),
-      function_calling: z3.boolean().default(true),
-      fine_tuning: z3.boolean().default(false),
-      vision: z3.boolean().default(false)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.ModelCapabilities$inboundSchema = z4.object({
+      completion_chat: z4.boolean().default(true),
+      completion_fim: z4.boolean().default(false),
+      function_calling: z4.boolean().default(true),
+      fine_tuning: z4.boolean().default(false),
+      vision: z4.boolean().default(false)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "completion_chat": "completionChat",
         "completion_fim": "completionFim",
         "function_calling": "functionCalling",
         "fine_tuning": "fineTuning"
       });
     });
-    exports2.ModelCapabilities$outboundSchema = z3.object({
-      completionChat: z3.boolean().default(true),
-      completionFim: z3.boolean().default(false),
-      functionCalling: z3.boolean().default(true),
-      fineTuning: z3.boolean().default(false),
-      vision: z3.boolean().default(false)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.ModelCapabilities$outboundSchema = z4.object({
+      completionChat: z4.boolean().default(true),
+      completionFim: z4.boolean().default(false),
+      functionCalling: z4.boolean().default(true),
+      fineTuning: z4.boolean().default(false),
+      vision: z4.boolean().default(false)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         completionChat: "completion_chat",
         completionFim: "completion_fim",
         functionCalling: "function_calling",
@@ -59133,7 +59970,7 @@ var require_modelcapabilities = __commonJS({
       return JSON.stringify(exports2.ModelCapabilities$outboundSchema.parse(modelCapabilities));
     }
     function modelCapabilitiesFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ModelCapabilities$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ModelCapabilities' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ModelCapabilities$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ModelCapabilities' from JSON`);
     }
   }
 });
@@ -59155,10 +59992,10 @@ var require_basemodelcard = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -59173,55 +60010,55 @@ var require_basemodelcard = __commonJS({
     exports2.BaseModelCard$ = exports2.BaseModelCard$outboundSchema = exports2.BaseModelCard$inboundSchema = exports2.Type$ = exports2.Type$outboundSchema = exports2.Type$inboundSchema = exports2.Type = void 0;
     exports2.baseModelCardToJSON = baseModelCardToJSON;
     exports2.baseModelCardFromJSON = baseModelCardFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var modelcapabilities_js_1 = require_modelcapabilities();
     exports2.Type = {
       Base: "base"
     };
-    exports2.Type$inboundSchema = z3.nativeEnum(exports2.Type);
+    exports2.Type$inboundSchema = z4.nativeEnum(exports2.Type);
     exports2.Type$outboundSchema = exports2.Type$inboundSchema;
     var Type$;
     (function(Type$2) {
       Type$2.inboundSchema = exports2.Type$inboundSchema;
       Type$2.outboundSchema = exports2.Type$outboundSchema;
     })(Type$ || (exports2.Type$ = Type$ = {}));
-    exports2.BaseModelCard$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string().default("model"),
-      created: z3.number().int().optional(),
-      owned_by: z3.string().default("mistralai"),
+    exports2.BaseModelCard$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string().default("model"),
+      created: z4.number().int().optional(),
+      owned_by: z4.string().default("mistralai"),
       capabilities: modelcapabilities_js_1.ModelCapabilities$inboundSchema,
-      name: z3.nullable(z3.string()).optional(),
-      description: z3.nullable(z3.string()).optional(),
-      max_context_length: z3.number().int().default(32768),
-      aliases: z3.array(z3.string()).optional(),
-      deprecation: z3.nullable(z3.string().datetime({ offset: true }).transform((v2) => new Date(v2))).optional(),
-      default_model_temperature: z3.nullable(z3.number()).optional(),
-      type: z3.literal("base").default("base")
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      name: z4.nullable(z4.string()).optional(),
+      description: z4.nullable(z4.string()).optional(),
+      max_context_length: z4.number().int().default(32768),
+      aliases: z4.array(z4.string()).optional(),
+      deprecation: z4.nullable(z4.string().datetime({ offset: true }).transform((v6) => new Date(v6))).optional(),
+      default_model_temperature: z4.nullable(z4.number()).optional(),
+      type: z4.literal("base").default("base")
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "owned_by": "ownedBy",
         "max_context_length": "maxContextLength",
         "default_model_temperature": "defaultModelTemperature"
       });
     });
-    exports2.BaseModelCard$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string().default("model"),
-      created: z3.number().int().optional(),
-      ownedBy: z3.string().default("mistralai"),
+    exports2.BaseModelCard$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string().default("model"),
+      created: z4.number().int().optional(),
+      ownedBy: z4.string().default("mistralai"),
       capabilities: modelcapabilities_js_1.ModelCapabilities$outboundSchema,
-      name: z3.nullable(z3.string()).optional(),
-      description: z3.nullable(z3.string()).optional(),
-      maxContextLength: z3.number().int().default(32768),
-      aliases: z3.array(z3.string()).optional(),
-      deprecation: z3.nullable(z3.date().transform((v2) => v2.toISOString())).optional(),
-      defaultModelTemperature: z3.nullable(z3.number()).optional(),
-      type: z3.literal("base").default("base")
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      name: z4.nullable(z4.string()).optional(),
+      description: z4.nullable(z4.string()).optional(),
+      maxContextLength: z4.number().int().default(32768),
+      aliases: z4.array(z4.string()).optional(),
+      deprecation: z4.nullable(z4.date().transform((v6) => v6.toISOString())).optional(),
+      defaultModelTemperature: z4.nullable(z4.number()).optional(),
+      type: z4.literal("base").default("base")
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         ownedBy: "owned_by",
         maxContextLength: "max_context_length",
         defaultModelTemperature: "default_model_temperature"
@@ -59236,7 +60073,7 @@ var require_basemodelcard = __commonJS({
       return JSON.stringify(exports2.BaseModelCard$outboundSchema.parse(baseModelCard));
     }
     function baseModelCardFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.BaseModelCard$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'BaseModelCard' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.BaseModelCard$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'BaseModelCard' from JSON`);
     }
   }
 });
@@ -59258,10 +60095,10 @@ var require_batcherror = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -59276,15 +60113,15 @@ var require_batcherror = __commonJS({
     exports2.BatchError$ = exports2.BatchError$outboundSchema = exports2.BatchError$inboundSchema = void 0;
     exports2.batchErrorToJSON = batchErrorToJSON;
     exports2.batchErrorFromJSON = batchErrorFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
-    exports2.BatchError$inboundSchema = z3.object({
-      message: z3.string(),
-      count: z3.number().int().default(1)
+    exports2.BatchError$inboundSchema = z4.object({
+      message: z4.string(),
+      count: z4.number().int().default(1)
     });
-    exports2.BatchError$outboundSchema = z3.object({
-      message: z3.string(),
-      count: z3.number().int().default(1)
+    exports2.BatchError$outboundSchema = z4.object({
+      message: z4.string(),
+      count: z4.number().int().default(1)
     });
     var BatchError$;
     (function(BatchError$2) {
@@ -59295,7 +60132,7 @@ var require_batcherror = __commonJS({
       return JSON.stringify(exports2.BatchError$outboundSchema.parse(batchError));
     }
     function batchErrorFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.BatchError$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'BatchError' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.BatchError$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'BatchError' from JSON`);
     }
   }
 });
@@ -59317,10 +60154,10 @@ var require_batchjobin = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -59335,30 +60172,30 @@ var require_batchjobin = __commonJS({
     exports2.BatchJobIn$ = exports2.BatchJobIn$outboundSchema = exports2.BatchJobIn$inboundSchema = void 0;
     exports2.batchJobInToJSON = batchJobInToJSON;
     exports2.batchJobInFromJSON = batchJobInFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var apiendpoint_js_1 = require_apiendpoint();
-    exports2.BatchJobIn$inboundSchema = z3.object({
-      input_files: z3.array(z3.string()),
+    exports2.BatchJobIn$inboundSchema = z4.object({
+      input_files: z4.array(z4.string()),
       endpoint: apiendpoint_js_1.ApiEndpoint$inboundSchema,
-      model: z3.string(),
-      metadata: z3.nullable(z3.record(z3.string())).optional(),
-      timeout_hours: z3.number().int().default(24)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      model: z4.string(),
+      metadata: z4.nullable(z4.record(z4.string())).optional(),
+      timeout_hours: z4.number().int().default(24)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "input_files": "inputFiles",
         "timeout_hours": "timeoutHours"
       });
     });
-    exports2.BatchJobIn$outboundSchema = z3.object({
-      inputFiles: z3.array(z3.string()),
+    exports2.BatchJobIn$outboundSchema = z4.object({
+      inputFiles: z4.array(z4.string()),
       endpoint: apiendpoint_js_1.ApiEndpoint$outboundSchema,
-      model: z3.string(),
-      metadata: z3.nullable(z3.record(z3.string())).optional(),
-      timeoutHours: z3.number().int().default(24)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      model: z4.string(),
+      metadata: z4.nullable(z4.record(z4.string())).optional(),
+      timeoutHours: z4.number().int().default(24)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         inputFiles: "input_files",
         timeoutHours: "timeout_hours"
       });
@@ -59372,7 +60209,7 @@ var require_batchjobin = __commonJS({
       return JSON.stringify(exports2.BatchJobIn$outboundSchema.parse(batchJobIn));
     }
     function batchJobInFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.BatchJobIn$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'BatchJobIn' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.BatchJobIn$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'BatchJobIn' from JSON`);
     }
   }
 });
@@ -59394,10 +60231,10 @@ var require_batchjobstatus = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -59410,7 +60247,7 @@ var require_batchjobstatus = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.BatchJobStatus$ = exports2.BatchJobStatus$outboundSchema = exports2.BatchJobStatus$inboundSchema = exports2.BatchJobStatus = void 0;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     exports2.BatchJobStatus = {
       Queued: "QUEUED",
       Running: "RUNNING",
@@ -59420,7 +60257,7 @@ var require_batchjobstatus = __commonJS({
       CancellationRequested: "CANCELLATION_REQUESTED",
       Cancelled: "CANCELLED"
     };
-    exports2.BatchJobStatus$inboundSchema = z3.nativeEnum(exports2.BatchJobStatus);
+    exports2.BatchJobStatus$inboundSchema = z4.nativeEnum(exports2.BatchJobStatus);
     exports2.BatchJobStatus$outboundSchema = exports2.BatchJobStatus$inboundSchema;
     var BatchJobStatus$;
     (function(BatchJobStatus$2) {
@@ -59447,10 +60284,10 @@ var require_batchjobout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -59465,7 +60302,7 @@ var require_batchjobout = __commonJS({
     exports2.BatchJobOut$ = exports2.BatchJobOut$outboundSchema = exports2.BatchJobOut$inboundSchema = exports2.BatchJobOutObject$ = exports2.BatchJobOutObject$outboundSchema = exports2.BatchJobOutObject$inboundSchema = exports2.BatchJobOutObject = void 0;
     exports2.batchJobOutToJSON = batchJobOutToJSON;
     exports2.batchJobOutFromJSON = batchJobOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var batcherror_js_1 = require_batcherror();
@@ -59473,33 +60310,33 @@ var require_batchjobout = __commonJS({
     exports2.BatchJobOutObject = {
       Batch: "batch"
     };
-    exports2.BatchJobOutObject$inboundSchema = z3.nativeEnum(exports2.BatchJobOutObject);
+    exports2.BatchJobOutObject$inboundSchema = z4.nativeEnum(exports2.BatchJobOutObject);
     exports2.BatchJobOutObject$outboundSchema = exports2.BatchJobOutObject$inboundSchema;
     var BatchJobOutObject$;
     (function(BatchJobOutObject$2) {
       BatchJobOutObject$2.inboundSchema = exports2.BatchJobOutObject$inboundSchema;
       BatchJobOutObject$2.outboundSchema = exports2.BatchJobOutObject$outboundSchema;
     })(BatchJobOutObject$ || (exports2.BatchJobOutObject$ = BatchJobOutObject$ = {}));
-    exports2.BatchJobOut$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.literal("batch").default("batch"),
-      input_files: z3.array(z3.string()),
-      metadata: z3.nullable(z3.record(z3.any())).optional(),
-      endpoint: z3.string(),
-      model: z3.string(),
-      output_file: z3.nullable(z3.string()).optional(),
-      error_file: z3.nullable(z3.string()).optional(),
-      errors: z3.array(batcherror_js_1.BatchError$inboundSchema),
+    exports2.BatchJobOut$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.literal("batch").default("batch"),
+      input_files: z4.array(z4.string()),
+      metadata: z4.nullable(z4.record(z4.any())).optional(),
+      endpoint: z4.string(),
+      model: z4.string(),
+      output_file: z4.nullable(z4.string()).optional(),
+      error_file: z4.nullable(z4.string()).optional(),
+      errors: z4.array(batcherror_js_1.BatchError$inboundSchema),
       status: batchjobstatus_js_1.BatchJobStatus$inboundSchema,
-      created_at: z3.number().int(),
-      total_requests: z3.number().int(),
-      completed_requests: z3.number().int(),
-      succeeded_requests: z3.number().int(),
-      failed_requests: z3.number().int(),
-      started_at: z3.nullable(z3.number().int()).optional(),
-      completed_at: z3.nullable(z3.number().int()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      created_at: z4.number().int(),
+      total_requests: z4.number().int(),
+      completed_requests: z4.number().int(),
+      succeeded_requests: z4.number().int(),
+      failed_requests: z4.number().int(),
+      started_at: z4.nullable(z4.number().int()).optional(),
+      completed_at: z4.nullable(z4.number().int()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "input_files": "inputFiles",
         "output_file": "outputFile",
         "error_file": "errorFile",
@@ -59512,26 +60349,26 @@ var require_batchjobout = __commonJS({
         "completed_at": "completedAt"
       });
     });
-    exports2.BatchJobOut$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.literal("batch").default("batch"),
-      inputFiles: z3.array(z3.string()),
-      metadata: z3.nullable(z3.record(z3.any())).optional(),
-      endpoint: z3.string(),
-      model: z3.string(),
-      outputFile: z3.nullable(z3.string()).optional(),
-      errorFile: z3.nullable(z3.string()).optional(),
-      errors: z3.array(batcherror_js_1.BatchError$outboundSchema),
+    exports2.BatchJobOut$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.literal("batch").default("batch"),
+      inputFiles: z4.array(z4.string()),
+      metadata: z4.nullable(z4.record(z4.any())).optional(),
+      endpoint: z4.string(),
+      model: z4.string(),
+      outputFile: z4.nullable(z4.string()).optional(),
+      errorFile: z4.nullable(z4.string()).optional(),
+      errors: z4.array(batcherror_js_1.BatchError$outboundSchema),
       status: batchjobstatus_js_1.BatchJobStatus$outboundSchema,
-      createdAt: z3.number().int(),
-      totalRequests: z3.number().int(),
-      completedRequests: z3.number().int(),
-      succeededRequests: z3.number().int(),
-      failedRequests: z3.number().int(),
-      startedAt: z3.nullable(z3.number().int()).optional(),
-      completedAt: z3.nullable(z3.number().int()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      createdAt: z4.number().int(),
+      totalRequests: z4.number().int(),
+      completedRequests: z4.number().int(),
+      succeededRequests: z4.number().int(),
+      failedRequests: z4.number().int(),
+      startedAt: z4.nullable(z4.number().int()).optional(),
+      completedAt: z4.nullable(z4.number().int()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         inputFiles: "input_files",
         outputFile: "output_file",
         errorFile: "error_file",
@@ -59553,7 +60390,7 @@ var require_batchjobout = __commonJS({
       return JSON.stringify(exports2.BatchJobOut$outboundSchema.parse(batchJobOut));
     }
     function batchJobOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.BatchJobOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'BatchJobOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.BatchJobOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'BatchJobOut' from JSON`);
     }
   }
 });
@@ -59575,10 +60412,10 @@ var require_batchjobsout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -59593,28 +60430,28 @@ var require_batchjobsout = __commonJS({
     exports2.BatchJobsOut$ = exports2.BatchJobsOut$outboundSchema = exports2.BatchJobsOut$inboundSchema = exports2.BatchJobsOutObject$ = exports2.BatchJobsOutObject$outboundSchema = exports2.BatchJobsOutObject$inboundSchema = exports2.BatchJobsOutObject = void 0;
     exports2.batchJobsOutToJSON = batchJobsOutToJSON;
     exports2.batchJobsOutFromJSON = batchJobsOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var batchjobout_js_1 = require_batchjobout();
     exports2.BatchJobsOutObject = {
       List: "list"
     };
-    exports2.BatchJobsOutObject$inboundSchema = z3.nativeEnum(exports2.BatchJobsOutObject);
+    exports2.BatchJobsOutObject$inboundSchema = z4.nativeEnum(exports2.BatchJobsOutObject);
     exports2.BatchJobsOutObject$outboundSchema = exports2.BatchJobsOutObject$inboundSchema;
     var BatchJobsOutObject$;
     (function(BatchJobsOutObject$2) {
       BatchJobsOutObject$2.inboundSchema = exports2.BatchJobsOutObject$inboundSchema;
       BatchJobsOutObject$2.outboundSchema = exports2.BatchJobsOutObject$outboundSchema;
     })(BatchJobsOutObject$ || (exports2.BatchJobsOutObject$ = BatchJobsOutObject$ = {}));
-    exports2.BatchJobsOut$inboundSchema = z3.object({
-      data: z3.array(batchjobout_js_1.BatchJobOut$inboundSchema).optional(),
-      object: z3.literal("list").default("list"),
-      total: z3.number().int()
+    exports2.BatchJobsOut$inboundSchema = z4.object({
+      data: z4.array(batchjobout_js_1.BatchJobOut$inboundSchema).optional(),
+      object: z4.literal("list").default("list"),
+      total: z4.number().int()
     });
-    exports2.BatchJobsOut$outboundSchema = z3.object({
-      data: z3.array(batchjobout_js_1.BatchJobOut$outboundSchema).optional(),
-      object: z3.literal("list").default("list"),
-      total: z3.number().int()
+    exports2.BatchJobsOut$outboundSchema = z4.object({
+      data: z4.array(batchjobout_js_1.BatchJobOut$outboundSchema).optional(),
+      object: z4.literal("list").default("list"),
+      total: z4.number().int()
     });
     var BatchJobsOut$;
     (function(BatchJobsOut$2) {
@@ -59625,7 +60462,7 @@ var require_batchjobsout = __commonJS({
       return JSON.stringify(exports2.BatchJobsOut$outboundSchema.parse(batchJobsOut));
     }
     function batchJobsOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.BatchJobsOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'BatchJobsOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.BatchJobsOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'BatchJobsOut' from JSON`);
     }
   }
 });
@@ -59647,10 +60484,10 @@ var require_chatclassificationrequest = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -59671,39 +60508,39 @@ var require_chatclassificationrequest = __commonJS({
     exports2.chatClassificationRequestInputsFromJSON = chatClassificationRequestInputsFromJSON;
     exports2.chatClassificationRequestToJSON = chatClassificationRequestToJSON;
     exports2.chatClassificationRequestFromJSON = chatClassificationRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var assistantmessage_js_1 = require_assistantmessage();
     var systemmessage_js_1 = require_systemmessage();
     var toolmessage_js_1 = require_toolmessage();
     var usermessage_js_1 = require_usermessage();
-    exports2.Two$inboundSchema = z3.union([
-      systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-        role: v2.role
+    exports2.Two$inboundSchema = z4.union([
+      systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+        role: v6.role
       }))),
-      usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-        role: v2.role
+      usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+        role: v6.role
       }))),
-      assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-        role: v2.role
+      assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+        role: v6.role
       }))),
-      toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-        role: v2.role
+      toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+        role: v6.role
       })))
     ]);
-    exports2.Two$outboundSchema = z3.union([
-      systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-        role: v2.role
+    exports2.Two$outboundSchema = z4.union([
+      systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+        role: v6.role
       }))),
-      usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-        role: v2.role
+      usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+        role: v6.role
       }))),
-      assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-        role: v2.role
+      assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+        role: v6.role
       }))),
-      toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-        role: v2.role
+      toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+        role: v6.role
       })))
     ]);
     var Two$;
@@ -59715,34 +60552,34 @@ var require_chatclassificationrequest = __commonJS({
       return JSON.stringify(exports2.Two$outboundSchema.parse(two));
     }
     function twoFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.Two$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'Two' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.Two$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'Two' from JSON`);
     }
-    exports2.One$inboundSchema = z3.union([
-      systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-        role: v2.role
+    exports2.One$inboundSchema = z4.union([
+      systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+        role: v6.role
       }))),
-      usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-        role: v2.role
+      usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+        role: v6.role
       }))),
-      assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-        role: v2.role
+      assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+        role: v6.role
       }))),
-      toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-        role: v2.role
+      toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+        role: v6.role
       })))
     ]);
-    exports2.One$outboundSchema = z3.union([
-      systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-        role: v2.role
+    exports2.One$outboundSchema = z4.union([
+      systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+        role: v6.role
       }))),
-      usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-        role: v2.role
+      usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+        role: v6.role
       }))),
-      assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-        role: v2.role
+      assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+        role: v6.role
       }))),
-      toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-        role: v2.role
+      toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+        role: v6.role
       })))
     ]);
     var One$;
@@ -59754,65 +60591,65 @@ var require_chatclassificationrequest = __commonJS({
       return JSON.stringify(exports2.One$outboundSchema.parse(one));
     }
     function oneFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.One$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'One' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.One$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'One' from JSON`);
     }
-    exports2.ChatClassificationRequestInputs$inboundSchema = z3.union([
-      z3.array(z3.union([
-        systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-          role: v2.role
+    exports2.ChatClassificationRequestInputs$inboundSchema = z4.union([
+      z4.array(z4.union([
+        systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+          role: v6.role
         }))),
-        usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-          role: v2.role
+        usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+          role: v6.role
         }))),
-        assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-          role: v2.role
+        assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+          role: v6.role
         }))),
-        toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-          role: v2.role
+        toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+          role: v6.role
         })))
       ])),
-      z3.array(z3.array(z3.union([
-        systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-          role: v2.role
+      z4.array(z4.array(z4.union([
+        systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+          role: v6.role
         }))),
-        usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-          role: v2.role
+        usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+          role: v6.role
         }))),
-        assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-          role: v2.role
+        assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+          role: v6.role
         }))),
-        toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-          role: v2.role
+        toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+          role: v6.role
         })))
       ])))
     ]);
-    exports2.ChatClassificationRequestInputs$outboundSchema = z3.union([
-      z3.array(z3.union([
-        systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-          role: v2.role
+    exports2.ChatClassificationRequestInputs$outboundSchema = z4.union([
+      z4.array(z4.union([
+        systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+          role: v6.role
         }))),
-        usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-          role: v2.role
+        usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+          role: v6.role
         }))),
-        assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-          role: v2.role
+        assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+          role: v6.role
         }))),
-        toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-          role: v2.role
+        toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+          role: v6.role
         })))
       ])),
-      z3.array(z3.array(z3.union([
-        systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-          role: v2.role
+      z4.array(z4.array(z4.union([
+        systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+          role: v6.role
         }))),
-        usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-          role: v2.role
+        usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+          role: v6.role
         }))),
-        assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-          role: v2.role
+        assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+          role: v6.role
         }))),
-        toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-          role: v2.role
+        toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+          role: v6.role
         })))
       ])))
     ]);
@@ -59825,79 +60662,79 @@ var require_chatclassificationrequest = __commonJS({
       return JSON.stringify(exports2.ChatClassificationRequestInputs$outboundSchema.parse(chatClassificationRequestInputs));
     }
     function chatClassificationRequestInputsFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ChatClassificationRequestInputs$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ChatClassificationRequestInputs' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ChatClassificationRequestInputs$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ChatClassificationRequestInputs' from JSON`);
     }
-    exports2.ChatClassificationRequest$inboundSchema = z3.object({
-      input: z3.union([
-        z3.array(z3.union([
-          systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-            role: v2.role
+    exports2.ChatClassificationRequest$inboundSchema = z4.object({
+      input: z4.union([
+        z4.array(z4.union([
+          systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+            role: v6.role
           }))),
-          usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-            role: v2.role
+          usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+            role: v6.role
           }))),
-          assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-            role: v2.role
+          assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+            role: v6.role
           }))),
-          toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-            role: v2.role
+          toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+            role: v6.role
           })))
         ])),
-        z3.array(z3.array(z3.union([
-          systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-            role: v2.role
+        z4.array(z4.array(z4.union([
+          systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+            role: v6.role
           }))),
-          usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-            role: v2.role
+          usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+            role: v6.role
           }))),
-          assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-            role: v2.role
+          assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+            role: v6.role
           }))),
-          toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-            role: v2.role
+          toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+            role: v6.role
           })))
         ])))
       ]),
-      model: z3.nullable(z3.string())
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      model: z4.nullable(z4.string())
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "input": "inputs"
       });
     });
-    exports2.ChatClassificationRequest$outboundSchema = z3.object({
-      inputs: z3.union([
-        z3.array(z3.union([
-          systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-            role: v2.role
+    exports2.ChatClassificationRequest$outboundSchema = z4.object({
+      inputs: z4.union([
+        z4.array(z4.union([
+          systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+            role: v6.role
           }))),
-          usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-            role: v2.role
+          usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+            role: v6.role
           }))),
-          assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-            role: v2.role
+          assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+            role: v6.role
           }))),
-          toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-            role: v2.role
+          toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+            role: v6.role
           })))
         ])),
-        z3.array(z3.array(z3.union([
-          systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-            role: v2.role
+        z4.array(z4.array(z4.union([
+          systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+            role: v6.role
           }))),
-          usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-            role: v2.role
+          usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+            role: v6.role
           }))),
-          assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-            role: v2.role
+          assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+            role: v6.role
           }))),
-          toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-            role: v2.role
+          toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+            role: v6.role
           })))
         ])))
       ]),
-      model: z3.nullable(z3.string())
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      model: z4.nullable(z4.string())
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         inputs: "input"
       });
     });
@@ -59910,7 +60747,7 @@ var require_chatclassificationrequest = __commonJS({
       return JSON.stringify(exports2.ChatClassificationRequest$outboundSchema.parse(chatClassificationRequest));
     }
     function chatClassificationRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ChatClassificationRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ChatClassificationRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ChatClassificationRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ChatClassificationRequest' from JSON`);
     }
   }
 });
@@ -59932,10 +60769,10 @@ var require_chatcompletionchoice = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -59950,7 +60787,7 @@ var require_chatcompletionchoice = __commonJS({
     exports2.ChatCompletionChoice$ = exports2.ChatCompletionChoice$outboundSchema = exports2.ChatCompletionChoice$inboundSchema = exports2.FinishReason$ = exports2.FinishReason$outboundSchema = exports2.FinishReason$inboundSchema = exports2.FinishReason = void 0;
     exports2.chatCompletionChoiceToJSON = chatCompletionChoiceToJSON;
     exports2.chatCompletionChoiceFromJSON = chatCompletionChoiceFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var enums_js_1 = require_enums();
@@ -59962,34 +60799,34 @@ var require_chatcompletionchoice = __commonJS({
       Error: "error",
       ToolCalls: "tool_calls"
     };
-    exports2.FinishReason$inboundSchema = z3.union([
-      z3.nativeEnum(exports2.FinishReason),
-      z3.string().transform(enums_js_1.catchUnrecognizedEnum)
+    exports2.FinishReason$inboundSchema = z4.union([
+      z4.nativeEnum(exports2.FinishReason),
+      z4.string().transform(enums_js_1.catchUnrecognizedEnum)
     ]);
-    exports2.FinishReason$outboundSchema = z3.union([
-      z3.nativeEnum(exports2.FinishReason),
-      z3.string().and(z3.custom())
+    exports2.FinishReason$outboundSchema = z4.union([
+      z4.nativeEnum(exports2.FinishReason),
+      z4.string().and(z4.custom())
     ]);
     var FinishReason$;
     (function(FinishReason$2) {
       FinishReason$2.inboundSchema = exports2.FinishReason$inboundSchema;
       FinishReason$2.outboundSchema = exports2.FinishReason$outboundSchema;
     })(FinishReason$ || (exports2.FinishReason$ = FinishReason$ = {}));
-    exports2.ChatCompletionChoice$inboundSchema = z3.object({
-      index: z3.number().int(),
+    exports2.ChatCompletionChoice$inboundSchema = z4.object({
+      index: z4.number().int(),
       message: assistantmessage_js_1.AssistantMessage$inboundSchema,
       finish_reason: exports2.FinishReason$inboundSchema
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "finish_reason": "finishReason"
       });
     });
-    exports2.ChatCompletionChoice$outboundSchema = z3.object({
-      index: z3.number().int(),
+    exports2.ChatCompletionChoice$outboundSchema = z4.object({
+      index: z4.number().int(),
       message: assistantmessage_js_1.AssistantMessage$outboundSchema,
       finishReason: exports2.FinishReason$outboundSchema
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         finishReason: "finish_reason"
       });
     });
@@ -60002,7 +60839,7 @@ var require_chatcompletionchoice = __commonJS({
       return JSON.stringify(exports2.ChatCompletionChoice$outboundSchema.parse(chatCompletionChoice));
     }
     function chatCompletionChoiceFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ChatCompletionChoice$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ChatCompletionChoice' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ChatCompletionChoice$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ChatCompletionChoice' from JSON`);
     }
   }
 });
@@ -60024,10 +60861,10 @@ var require_chatcompletionrequest = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -60048,7 +60885,7 @@ var require_chatcompletionrequest = __commonJS({
     exports2.chatCompletionRequestToolChoiceFromJSON = chatCompletionRequestToolChoiceFromJSON;
     exports2.chatCompletionRequestToJSON = chatCompletionRequestToJSON;
     exports2.chatCompletionRequestFromJSON = chatCompletionRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var assistantmessage_js_1 = require_assistantmessage();
@@ -60059,8 +60896,8 @@ var require_chatcompletionrequest = __commonJS({
     var toolchoiceenum_js_1 = require_toolchoiceenum();
     var toolmessage_js_1 = require_toolmessage();
     var usermessage_js_1 = require_usermessage();
-    exports2.Stop$inboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
-    exports2.Stop$outboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
+    exports2.Stop$inboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
+    exports2.Stop$outboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
     var Stop$;
     (function(Stop$2) {
       Stop$2.inboundSchema = exports2.Stop$inboundSchema;
@@ -60070,27 +60907,27 @@ var require_chatcompletionrequest = __commonJS({
       return JSON.stringify(exports2.Stop$outboundSchema.parse(stop));
     }
     function stopFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.Stop$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'Stop' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.Stop$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'Stop' from JSON`);
     }
-    exports2.Messages$inboundSchema = z3.union([
-      systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-        role: v2.role
+    exports2.Messages$inboundSchema = z4.union([
+      systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+        role: v6.role
       }))),
-      usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({ role: v2.role }))),
-      assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-        role: v2.role
+      usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({ role: v6.role }))),
+      assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+        role: v6.role
       }))),
-      toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({ role: v2.role })))
+      toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({ role: v6.role })))
     ]);
-    exports2.Messages$outboundSchema = z3.union([
-      systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-        role: v2.role
+    exports2.Messages$outboundSchema = z4.union([
+      systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+        role: v6.role
       }))),
-      usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({ role: v2.role }))),
-      assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-        role: v2.role
+      usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({ role: v6.role }))),
+      assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+        role: v6.role
       }))),
-      toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({ role: v2.role })))
+      toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({ role: v6.role })))
     ]);
     var Messages$;
     (function(Messages$2) {
@@ -60101,10 +60938,10 @@ var require_chatcompletionrequest = __commonJS({
       return JSON.stringify(exports2.Messages$outboundSchema.parse(messages));
     }
     function messagesFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.Messages$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'Messages' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.Messages$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'Messages' from JSON`);
     }
-    exports2.ChatCompletionRequestToolChoice$inboundSchema = z3.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]);
-    exports2.ChatCompletionRequestToolChoice$outboundSchema = z3.union([toolchoice_js_1.ToolChoice$outboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$outboundSchema]);
+    exports2.ChatCompletionRequestToolChoice$inboundSchema = z4.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]);
+    exports2.ChatCompletionRequestToolChoice$outboundSchema = z4.union([toolchoice_js_1.ToolChoice$outboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$outboundSchema]);
     var ChatCompletionRequestToolChoice$;
     (function(ChatCompletionRequestToolChoice$2) {
       ChatCompletionRequestToolChoice$2.inboundSchema = exports2.ChatCompletionRequestToolChoice$inboundSchema;
@@ -60114,39 +60951,39 @@ var require_chatcompletionrequest = __commonJS({
       return JSON.stringify(exports2.ChatCompletionRequestToolChoice$outboundSchema.parse(chatCompletionRequestToolChoice));
     }
     function chatCompletionRequestToolChoiceFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ChatCompletionRequestToolChoice$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ChatCompletionRequestToolChoice' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ChatCompletionRequestToolChoice$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ChatCompletionRequestToolChoice' from JSON`);
     }
-    exports2.ChatCompletionRequest$inboundSchema = z3.object({
-      model: z3.nullable(z3.string()),
-      temperature: z3.nullable(z3.number()).optional(),
-      top_p: z3.number().default(1),
-      max_tokens: z3.nullable(z3.number().int()).optional(),
-      stream: z3.boolean().default(false),
-      stop: z3.union([z3.string(), z3.array(z3.string())]).optional(),
-      random_seed: z3.nullable(z3.number().int()).optional(),
-      messages: z3.array(z3.union([
-        systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-          role: v2.role
+    exports2.ChatCompletionRequest$inboundSchema = z4.object({
+      model: z4.nullable(z4.string()),
+      temperature: z4.nullable(z4.number()).optional(),
+      top_p: z4.number().default(1),
+      max_tokens: z4.nullable(z4.number().int()).optional(),
+      stream: z4.boolean().default(false),
+      stop: z4.union([z4.string(), z4.array(z4.string())]).optional(),
+      random_seed: z4.nullable(z4.number().int()).optional(),
+      messages: z4.array(z4.union([
+        systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+          role: v6.role
         }))),
-        usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-          role: v2.role
+        usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+          role: v6.role
         }))),
-        assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-          role: v2.role
+        assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+          role: v6.role
         }))),
-        toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-          role: v2.role
+        toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+          role: v6.role
         })))
       ])),
       response_format: responseformat_js_1.ResponseFormat$inboundSchema.optional(),
-      tools: z3.nullable(z3.array(tool_js_1.Tool$inboundSchema)).optional(),
-      tool_choice: z3.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]).optional(),
-      presence_penalty: z3.number().optional(),
-      frequency_penalty: z3.number().optional(),
-      n: z3.nullable(z3.number().int()).optional(),
-      safe_prompt: z3.boolean().default(false)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      tools: z4.nullable(z4.array(tool_js_1.Tool$inboundSchema)).optional(),
+      tool_choice: z4.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]).optional(),
+      presence_penalty: z4.number().optional(),
+      frequency_penalty: z4.number().optional(),
+      n: z4.nullable(z4.number().int()).optional(),
+      safe_prompt: z4.boolean().default(false)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "top_p": "topP",
         "max_tokens": "maxTokens",
         "random_seed": "randomSeed",
@@ -60157,40 +60994,40 @@ var require_chatcompletionrequest = __commonJS({
         "safe_prompt": "safePrompt"
       });
     });
-    exports2.ChatCompletionRequest$outboundSchema = z3.object({
-      model: z3.nullable(z3.string()),
-      temperature: z3.nullable(z3.number()).optional(),
-      topP: z3.number().default(1),
-      maxTokens: z3.nullable(z3.number().int()).optional(),
-      stream: z3.boolean().default(false),
-      stop: z3.union([z3.string(), z3.array(z3.string())]).optional(),
-      randomSeed: z3.nullable(z3.number().int()).optional(),
-      messages: z3.array(z3.union([
-        systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-          role: v2.role
+    exports2.ChatCompletionRequest$outboundSchema = z4.object({
+      model: z4.nullable(z4.string()),
+      temperature: z4.nullable(z4.number()).optional(),
+      topP: z4.number().default(1),
+      maxTokens: z4.nullable(z4.number().int()).optional(),
+      stream: z4.boolean().default(false),
+      stop: z4.union([z4.string(), z4.array(z4.string())]).optional(),
+      randomSeed: z4.nullable(z4.number().int()).optional(),
+      messages: z4.array(z4.union([
+        systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+          role: v6.role
         }))),
-        usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-          role: v2.role
+        usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+          role: v6.role
         }))),
-        assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-          role: v2.role
+        assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+          role: v6.role
         }))),
-        toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-          role: v2.role
+        toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+          role: v6.role
         })))
       ])),
       responseFormat: responseformat_js_1.ResponseFormat$outboundSchema.optional(),
-      tools: z3.nullable(z3.array(tool_js_1.Tool$outboundSchema)).optional(),
-      toolChoice: z3.union([
+      tools: z4.nullable(z4.array(tool_js_1.Tool$outboundSchema)).optional(),
+      toolChoice: z4.union([
         toolchoice_js_1.ToolChoice$outboundSchema,
         toolchoiceenum_js_1.ToolChoiceEnum$outboundSchema
       ]).optional(),
-      presencePenalty: z3.number().optional(),
-      frequencyPenalty: z3.number().optional(),
-      n: z3.nullable(z3.number().int()).optional(),
-      safePrompt: z3.boolean().default(false)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      presencePenalty: z4.number().optional(),
+      frequencyPenalty: z4.number().optional(),
+      n: z4.nullable(z4.number().int()).optional(),
+      safePrompt: z4.boolean().default(false)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         topP: "top_p",
         maxTokens: "max_tokens",
         randomSeed: "random_seed",
@@ -60210,7 +61047,7 @@ var require_chatcompletionrequest = __commonJS({
       return JSON.stringify(exports2.ChatCompletionRequest$outboundSchema.parse(chatCompletionRequest));
     }
     function chatCompletionRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ChatCompletionRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ChatCompletionRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ChatCompletionRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ChatCompletionRequest' from JSON`);
     }
   }
 });
@@ -60232,10 +61069,10 @@ var require_usageinfo = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -60250,26 +61087,26 @@ var require_usageinfo = __commonJS({
     exports2.UsageInfo$ = exports2.UsageInfo$outboundSchema = exports2.UsageInfo$inboundSchema = void 0;
     exports2.usageInfoToJSON = usageInfoToJSON;
     exports2.usageInfoFromJSON = usageInfoFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.UsageInfo$inboundSchema = z3.object({
-      prompt_tokens: z3.number().int(),
-      completion_tokens: z3.number().int(),
-      total_tokens: z3.number().int()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.UsageInfo$inboundSchema = z4.object({
+      prompt_tokens: z4.number().int(),
+      completion_tokens: z4.number().int(),
+      total_tokens: z4.number().int()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "prompt_tokens": "promptTokens",
         "completion_tokens": "completionTokens",
         "total_tokens": "totalTokens"
       });
     });
-    exports2.UsageInfo$outboundSchema = z3.object({
-      promptTokens: z3.number().int(),
-      completionTokens: z3.number().int(),
-      totalTokens: z3.number().int()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.UsageInfo$outboundSchema = z4.object({
+      promptTokens: z4.number().int(),
+      completionTokens: z4.number().int(),
+      totalTokens: z4.number().int()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         promptTokens: "prompt_tokens",
         completionTokens: "completion_tokens",
         totalTokens: "total_tokens"
@@ -60284,7 +61121,7 @@ var require_usageinfo = __commonJS({
       return JSON.stringify(exports2.UsageInfo$outboundSchema.parse(usageInfo));
     }
     function usageInfoFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.UsageInfo$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'UsageInfo' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.UsageInfo$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'UsageInfo' from JSON`);
     }
   }
 });
@@ -60306,10 +61143,10 @@ var require_chatcompletionresponse = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -60324,25 +61161,25 @@ var require_chatcompletionresponse = __commonJS({
     exports2.ChatCompletionResponse$ = exports2.ChatCompletionResponse$outboundSchema = exports2.ChatCompletionResponse$inboundSchema = void 0;
     exports2.chatCompletionResponseToJSON = chatCompletionResponseToJSON;
     exports2.chatCompletionResponseFromJSON = chatCompletionResponseFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var chatcompletionchoice_js_1 = require_chatcompletionchoice();
     var usageinfo_js_1 = require_usageinfo();
-    exports2.ChatCompletionResponse$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      model: z3.string(),
+    exports2.ChatCompletionResponse$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      model: z4.string(),
       usage: usageinfo_js_1.UsageInfo$inboundSchema,
-      created: z3.number().int().optional(),
-      choices: z3.array(chatcompletionchoice_js_1.ChatCompletionChoice$inboundSchema).optional()
+      created: z4.number().int().optional(),
+      choices: z4.array(chatcompletionchoice_js_1.ChatCompletionChoice$inboundSchema).optional()
     });
-    exports2.ChatCompletionResponse$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      model: z3.string(),
+    exports2.ChatCompletionResponse$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      model: z4.string(),
       usage: usageinfo_js_1.UsageInfo$outboundSchema,
-      created: z3.number().int().optional(),
-      choices: z3.array(chatcompletionchoice_js_1.ChatCompletionChoice$outboundSchema).optional()
+      created: z4.number().int().optional(),
+      choices: z4.array(chatcompletionchoice_js_1.ChatCompletionChoice$outboundSchema).optional()
     });
     var ChatCompletionResponse$;
     (function(ChatCompletionResponse$2) {
@@ -60353,7 +61190,7 @@ var require_chatcompletionresponse = __commonJS({
       return JSON.stringify(exports2.ChatCompletionResponse$outboundSchema.parse(chatCompletionResponse));
     }
     function chatCompletionResponseFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ChatCompletionResponse$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ChatCompletionResponse' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ChatCompletionResponse$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ChatCompletionResponse' from JSON`);
     }
   }
 });
@@ -60375,10 +61212,10 @@ var require_chatcompletionstreamrequest = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -60399,7 +61236,7 @@ var require_chatcompletionstreamrequest = __commonJS({
     exports2.chatCompletionStreamRequestToolChoiceFromJSON = chatCompletionStreamRequestToolChoiceFromJSON;
     exports2.chatCompletionStreamRequestToJSON = chatCompletionStreamRequestToJSON;
     exports2.chatCompletionStreamRequestFromJSON = chatCompletionStreamRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var assistantmessage_js_1 = require_assistantmessage();
@@ -60410,8 +61247,8 @@ var require_chatcompletionstreamrequest = __commonJS({
     var toolchoiceenum_js_1 = require_toolchoiceenum();
     var toolmessage_js_1 = require_toolmessage();
     var usermessage_js_1 = require_usermessage();
-    exports2.ChatCompletionStreamRequestStop$inboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
-    exports2.ChatCompletionStreamRequestStop$outboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
+    exports2.ChatCompletionStreamRequestStop$inboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
+    exports2.ChatCompletionStreamRequestStop$outboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
     var ChatCompletionStreamRequestStop$;
     (function(ChatCompletionStreamRequestStop$2) {
       ChatCompletionStreamRequestStop$2.inboundSchema = exports2.ChatCompletionStreamRequestStop$inboundSchema;
@@ -60421,27 +61258,27 @@ var require_chatcompletionstreamrequest = __commonJS({
       return JSON.stringify(exports2.ChatCompletionStreamRequestStop$outboundSchema.parse(chatCompletionStreamRequestStop));
     }
     function chatCompletionStreamRequestStopFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ChatCompletionStreamRequestStop$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ChatCompletionStreamRequestStop' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ChatCompletionStreamRequestStop$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ChatCompletionStreamRequestStop' from JSON`);
     }
-    exports2.ChatCompletionStreamRequestMessages$inboundSchema = z3.union([
-      systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-        role: v2.role
+    exports2.ChatCompletionStreamRequestMessages$inboundSchema = z4.union([
+      systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+        role: v6.role
       }))),
-      usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({ role: v2.role }))),
-      assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-        role: v2.role
+      usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({ role: v6.role }))),
+      assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+        role: v6.role
       }))),
-      toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({ role: v2.role })))
+      toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({ role: v6.role })))
     ]);
-    exports2.ChatCompletionStreamRequestMessages$outboundSchema = z3.union([
-      systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-        role: v2.role
+    exports2.ChatCompletionStreamRequestMessages$outboundSchema = z4.union([
+      systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+        role: v6.role
       }))),
-      usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({ role: v2.role }))),
-      assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-        role: v2.role
+      usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({ role: v6.role }))),
+      assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+        role: v6.role
       }))),
-      toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({ role: v2.role })))
+      toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({ role: v6.role })))
     ]);
     var ChatCompletionStreamRequestMessages$;
     (function(ChatCompletionStreamRequestMessages$2) {
@@ -60452,10 +61289,10 @@ var require_chatcompletionstreamrequest = __commonJS({
       return JSON.stringify(exports2.ChatCompletionStreamRequestMessages$outboundSchema.parse(chatCompletionStreamRequestMessages));
     }
     function chatCompletionStreamRequestMessagesFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ChatCompletionStreamRequestMessages$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ChatCompletionStreamRequestMessages' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ChatCompletionStreamRequestMessages$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ChatCompletionStreamRequestMessages' from JSON`);
     }
-    exports2.ChatCompletionStreamRequestToolChoice$inboundSchema = z3.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]);
-    exports2.ChatCompletionStreamRequestToolChoice$outboundSchema = z3.union([toolchoice_js_1.ToolChoice$outboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$outboundSchema]);
+    exports2.ChatCompletionStreamRequestToolChoice$inboundSchema = z4.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]);
+    exports2.ChatCompletionStreamRequestToolChoice$outboundSchema = z4.union([toolchoice_js_1.ToolChoice$outboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$outboundSchema]);
     var ChatCompletionStreamRequestToolChoice$;
     (function(ChatCompletionStreamRequestToolChoice$2) {
       ChatCompletionStreamRequestToolChoice$2.inboundSchema = exports2.ChatCompletionStreamRequestToolChoice$inboundSchema;
@@ -60465,39 +61302,39 @@ var require_chatcompletionstreamrequest = __commonJS({
       return JSON.stringify(exports2.ChatCompletionStreamRequestToolChoice$outboundSchema.parse(chatCompletionStreamRequestToolChoice));
     }
     function chatCompletionStreamRequestToolChoiceFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ChatCompletionStreamRequestToolChoice$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ChatCompletionStreamRequestToolChoice' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ChatCompletionStreamRequestToolChoice$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ChatCompletionStreamRequestToolChoice' from JSON`);
     }
-    exports2.ChatCompletionStreamRequest$inboundSchema = z3.object({
-      model: z3.nullable(z3.string()),
-      temperature: z3.nullable(z3.number()).optional(),
-      top_p: z3.number().default(1),
-      max_tokens: z3.nullable(z3.number().int()).optional(),
-      stream: z3.boolean().default(true),
-      stop: z3.union([z3.string(), z3.array(z3.string())]).optional(),
-      random_seed: z3.nullable(z3.number().int()).optional(),
-      messages: z3.array(z3.union([
-        systemmessage_js_1.SystemMessage$inboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-          role: v2.role
+    exports2.ChatCompletionStreamRequest$inboundSchema = z4.object({
+      model: z4.nullable(z4.string()),
+      temperature: z4.nullable(z4.number()).optional(),
+      top_p: z4.number().default(1),
+      max_tokens: z4.nullable(z4.number().int()).optional(),
+      stream: z4.boolean().default(true),
+      stop: z4.union([z4.string(), z4.array(z4.string())]).optional(),
+      random_seed: z4.nullable(z4.number().int()).optional(),
+      messages: z4.array(z4.union([
+        systemmessage_js_1.SystemMessage$inboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+          role: v6.role
         }))),
-        usermessage_js_1.UserMessage$inboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-          role: v2.role
+        usermessage_js_1.UserMessage$inboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+          role: v6.role
         }))),
-        assistantmessage_js_1.AssistantMessage$inboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-          role: v2.role
+        assistantmessage_js_1.AssistantMessage$inboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+          role: v6.role
         }))),
-        toolmessage_js_1.ToolMessage$inboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-          role: v2.role
+        toolmessage_js_1.ToolMessage$inboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+          role: v6.role
         })))
       ])),
       response_format: responseformat_js_1.ResponseFormat$inboundSchema.optional(),
-      tools: z3.nullable(z3.array(tool_js_1.Tool$inboundSchema)).optional(),
-      tool_choice: z3.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]).optional(),
-      presence_penalty: z3.number().optional(),
-      frequency_penalty: z3.number().optional(),
-      n: z3.nullable(z3.number().int()).optional(),
-      safe_prompt: z3.boolean().default(false)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      tools: z4.nullable(z4.array(tool_js_1.Tool$inboundSchema)).optional(),
+      tool_choice: z4.union([toolchoice_js_1.ToolChoice$inboundSchema, toolchoiceenum_js_1.ToolChoiceEnum$inboundSchema]).optional(),
+      presence_penalty: z4.number().optional(),
+      frequency_penalty: z4.number().optional(),
+      n: z4.nullable(z4.number().int()).optional(),
+      safe_prompt: z4.boolean().default(false)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "top_p": "topP",
         "max_tokens": "maxTokens",
         "random_seed": "randomSeed",
@@ -60508,40 +61345,40 @@ var require_chatcompletionstreamrequest = __commonJS({
         "safe_prompt": "safePrompt"
       });
     });
-    exports2.ChatCompletionStreamRequest$outboundSchema = z3.object({
-      model: z3.nullable(z3.string()),
-      temperature: z3.nullable(z3.number()).optional(),
-      topP: z3.number().default(1),
-      maxTokens: z3.nullable(z3.number().int()).optional(),
-      stream: z3.boolean().default(true),
-      stop: z3.union([z3.string(), z3.array(z3.string())]).optional(),
-      randomSeed: z3.nullable(z3.number().int()).optional(),
-      messages: z3.array(z3.union([
-        systemmessage_js_1.SystemMessage$outboundSchema.and(z3.object({ role: z3.literal("system") }).transform((v2) => ({
-          role: v2.role
+    exports2.ChatCompletionStreamRequest$outboundSchema = z4.object({
+      model: z4.nullable(z4.string()),
+      temperature: z4.nullable(z4.number()).optional(),
+      topP: z4.number().default(1),
+      maxTokens: z4.nullable(z4.number().int()).optional(),
+      stream: z4.boolean().default(true),
+      stop: z4.union([z4.string(), z4.array(z4.string())]).optional(),
+      randomSeed: z4.nullable(z4.number().int()).optional(),
+      messages: z4.array(z4.union([
+        systemmessage_js_1.SystemMessage$outboundSchema.and(z4.object({ role: z4.literal("system") }).transform((v6) => ({
+          role: v6.role
         }))),
-        usermessage_js_1.UserMessage$outboundSchema.and(z3.object({ role: z3.literal("user") }).transform((v2) => ({
-          role: v2.role
+        usermessage_js_1.UserMessage$outboundSchema.and(z4.object({ role: z4.literal("user") }).transform((v6) => ({
+          role: v6.role
         }))),
-        assistantmessage_js_1.AssistantMessage$outboundSchema.and(z3.object({ role: z3.literal("assistant") }).transform((v2) => ({
-          role: v2.role
+        assistantmessage_js_1.AssistantMessage$outboundSchema.and(z4.object({ role: z4.literal("assistant") }).transform((v6) => ({
+          role: v6.role
         }))),
-        toolmessage_js_1.ToolMessage$outboundSchema.and(z3.object({ role: z3.literal("tool") }).transform((v2) => ({
-          role: v2.role
+        toolmessage_js_1.ToolMessage$outboundSchema.and(z4.object({ role: z4.literal("tool") }).transform((v6) => ({
+          role: v6.role
         })))
       ])),
       responseFormat: responseformat_js_1.ResponseFormat$outboundSchema.optional(),
-      tools: z3.nullable(z3.array(tool_js_1.Tool$outboundSchema)).optional(),
-      toolChoice: z3.union([
+      tools: z4.nullable(z4.array(tool_js_1.Tool$outboundSchema)).optional(),
+      toolChoice: z4.union([
         toolchoice_js_1.ToolChoice$outboundSchema,
         toolchoiceenum_js_1.ToolChoiceEnum$outboundSchema
       ]).optional(),
-      presencePenalty: z3.number().optional(),
-      frequencyPenalty: z3.number().optional(),
-      n: z3.nullable(z3.number().int()).optional(),
-      safePrompt: z3.boolean().default(false)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      presencePenalty: z4.number().optional(),
+      frequencyPenalty: z4.number().optional(),
+      n: z4.nullable(z4.number().int()).optional(),
+      safePrompt: z4.boolean().default(false)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         topP: "top_p",
         maxTokens: "max_tokens",
         randomSeed: "random_seed",
@@ -60561,7 +61398,7 @@ var require_chatcompletionstreamrequest = __commonJS({
       return JSON.stringify(exports2.ChatCompletionStreamRequest$outboundSchema.parse(chatCompletionStreamRequest));
     }
     function chatCompletionStreamRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ChatCompletionStreamRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ChatCompletionStreamRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ChatCompletionStreamRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ChatCompletionStreamRequest' from JSON`);
     }
   }
 });
@@ -60583,10 +61420,10 @@ var require_metricout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -60601,26 +61438,26 @@ var require_metricout = __commonJS({
     exports2.MetricOut$ = exports2.MetricOut$outboundSchema = exports2.MetricOut$inboundSchema = void 0;
     exports2.metricOutToJSON = metricOutToJSON;
     exports2.metricOutFromJSON = metricOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.MetricOut$inboundSchema = z3.object({
-      train_loss: z3.nullable(z3.number()).optional(),
-      valid_loss: z3.nullable(z3.number()).optional(),
-      valid_mean_token_accuracy: z3.nullable(z3.number()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.MetricOut$inboundSchema = z4.object({
+      train_loss: z4.nullable(z4.number()).optional(),
+      valid_loss: z4.nullable(z4.number()).optional(),
+      valid_mean_token_accuracy: z4.nullable(z4.number()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "train_loss": "trainLoss",
         "valid_loss": "validLoss",
         "valid_mean_token_accuracy": "validMeanTokenAccuracy"
       });
     });
-    exports2.MetricOut$outboundSchema = z3.object({
-      trainLoss: z3.nullable(z3.number()).optional(),
-      validLoss: z3.nullable(z3.number()).optional(),
-      validMeanTokenAccuracy: z3.nullable(z3.number()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.MetricOut$outboundSchema = z4.object({
+      trainLoss: z4.nullable(z4.number()).optional(),
+      validLoss: z4.nullable(z4.number()).optional(),
+      validMeanTokenAccuracy: z4.nullable(z4.number()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         trainLoss: "train_loss",
         validLoss: "valid_loss",
         validMeanTokenAccuracy: "valid_mean_token_accuracy"
@@ -60635,7 +61472,7 @@ var require_metricout = __commonJS({
       return JSON.stringify(exports2.MetricOut$outboundSchema.parse(metricOut));
     }
     function metricOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.MetricOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'MetricOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.MetricOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'MetricOut' from JSON`);
     }
   }
 });
@@ -60657,10 +61494,10 @@ var require_checkpointout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -60675,26 +61512,26 @@ var require_checkpointout = __commonJS({
     exports2.CheckpointOut$ = exports2.CheckpointOut$outboundSchema = exports2.CheckpointOut$inboundSchema = void 0;
     exports2.checkpointOutToJSON = checkpointOutToJSON;
     exports2.checkpointOutFromJSON = checkpointOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var metricout_js_1 = require_metricout();
-    exports2.CheckpointOut$inboundSchema = z3.object({
+    exports2.CheckpointOut$inboundSchema = z4.object({
       metrics: metricout_js_1.MetricOut$inboundSchema,
-      step_number: z3.number().int(),
-      created_at: z3.number().int()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      step_number: z4.number().int(),
+      created_at: z4.number().int()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "step_number": "stepNumber",
         "created_at": "createdAt"
       });
     });
-    exports2.CheckpointOut$outboundSchema = z3.object({
+    exports2.CheckpointOut$outboundSchema = z4.object({
       metrics: metricout_js_1.MetricOut$outboundSchema,
-      stepNumber: z3.number().int(),
-      createdAt: z3.number().int()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      stepNumber: z4.number().int(),
+      createdAt: z4.number().int()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         stepNumber: "step_number",
         createdAt: "created_at"
       });
@@ -60708,7 +61545,7 @@ var require_checkpointout = __commonJS({
       return JSON.stringify(exports2.CheckpointOut$outboundSchema.parse(checkpointOut));
     }
     function checkpointOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.CheckpointOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'CheckpointOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.CheckpointOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'CheckpointOut' from JSON`);
     }
   }
 });
@@ -60730,10 +61567,10 @@ var require_classificationobject = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -60748,22 +61585,22 @@ var require_classificationobject = __commonJS({
     exports2.ClassificationObject$ = exports2.ClassificationObject$outboundSchema = exports2.ClassificationObject$inboundSchema = void 0;
     exports2.classificationObjectToJSON = classificationObjectToJSON;
     exports2.classificationObjectFromJSON = classificationObjectFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.ClassificationObject$inboundSchema = z3.object({
-      categories: z3.record(z3.boolean()).optional(),
-      category_scores: z3.record(z3.number()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.ClassificationObject$inboundSchema = z4.object({
+      categories: z4.record(z4.boolean()).optional(),
+      category_scores: z4.record(z4.number()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "category_scores": "categoryScores"
       });
     });
-    exports2.ClassificationObject$outboundSchema = z3.object({
-      categories: z3.record(z3.boolean()).optional(),
-      categoryScores: z3.record(z3.number()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.ClassificationObject$outboundSchema = z4.object({
+      categories: z4.record(z4.boolean()).optional(),
+      categoryScores: z4.record(z4.number()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         categoryScores: "category_scores"
       });
     });
@@ -60776,7 +61613,7 @@ var require_classificationobject = __commonJS({
       return JSON.stringify(exports2.ClassificationObject$outboundSchema.parse(classificationObject));
     }
     function classificationObjectFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ClassificationObject$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ClassificationObject' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ClassificationObject$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ClassificationObject' from JSON`);
     }
   }
 });
@@ -60798,10 +61635,10 @@ var require_classificationrequest = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -60818,11 +61655,11 @@ var require_classificationrequest = __commonJS({
     exports2.classificationRequestInputsFromJSON = classificationRequestInputsFromJSON;
     exports2.classificationRequestToJSON = classificationRequestToJSON;
     exports2.classificationRequestFromJSON = classificationRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.ClassificationRequestInputs$inboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
-    exports2.ClassificationRequestInputs$outboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
+    exports2.ClassificationRequestInputs$inboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
+    exports2.ClassificationRequestInputs$outboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
     var ClassificationRequestInputs$;
     (function(ClassificationRequestInputs$2) {
       ClassificationRequestInputs$2.inboundSchema = exports2.ClassificationRequestInputs$inboundSchema;
@@ -60832,21 +61669,21 @@ var require_classificationrequest = __commonJS({
       return JSON.stringify(exports2.ClassificationRequestInputs$outboundSchema.parse(classificationRequestInputs));
     }
     function classificationRequestInputsFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ClassificationRequestInputs$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ClassificationRequestInputs' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ClassificationRequestInputs$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ClassificationRequestInputs' from JSON`);
     }
-    exports2.ClassificationRequest$inboundSchema = z3.object({
-      input: z3.union([z3.string(), z3.array(z3.string())]),
-      model: z3.nullable(z3.string()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.ClassificationRequest$inboundSchema = z4.object({
+      input: z4.union([z4.string(), z4.array(z4.string())]),
+      model: z4.nullable(z4.string()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "input": "inputs"
       });
     });
-    exports2.ClassificationRequest$outboundSchema = z3.object({
-      inputs: z3.union([z3.string(), z3.array(z3.string())]),
-      model: z3.nullable(z3.string()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.ClassificationRequest$outboundSchema = z4.object({
+      inputs: z4.union([z4.string(), z4.array(z4.string())]),
+      model: z4.nullable(z4.string()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         inputs: "input"
       });
     });
@@ -60859,7 +61696,7 @@ var require_classificationrequest = __commonJS({
       return JSON.stringify(exports2.ClassificationRequest$outboundSchema.parse(classificationRequest));
     }
     function classificationRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ClassificationRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ClassificationRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ClassificationRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ClassificationRequest' from JSON`);
     }
   }
 });
@@ -60881,10 +61718,10 @@ var require_classificationresponse = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -60899,18 +61736,18 @@ var require_classificationresponse = __commonJS({
     exports2.ClassificationResponse$ = exports2.ClassificationResponse$outboundSchema = exports2.ClassificationResponse$inboundSchema = void 0;
     exports2.classificationResponseToJSON = classificationResponseToJSON;
     exports2.classificationResponseFromJSON = classificationResponseFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var classificationobject_js_1 = require_classificationobject();
-    exports2.ClassificationResponse$inboundSchema = z3.object({
-      id: z3.string().optional(),
-      model: z3.string().optional(),
-      results: z3.array(classificationobject_js_1.ClassificationObject$inboundSchema).optional()
+    exports2.ClassificationResponse$inboundSchema = z4.object({
+      id: z4.string().optional(),
+      model: z4.string().optional(),
+      results: z4.array(classificationobject_js_1.ClassificationObject$inboundSchema).optional()
     });
-    exports2.ClassificationResponse$outboundSchema = z3.object({
-      id: z3.string().optional(),
-      model: z3.string().optional(),
-      results: z3.array(classificationobject_js_1.ClassificationObject$outboundSchema).optional()
+    exports2.ClassificationResponse$outboundSchema = z4.object({
+      id: z4.string().optional(),
+      model: z4.string().optional(),
+      results: z4.array(classificationobject_js_1.ClassificationObject$outboundSchema).optional()
     });
     var ClassificationResponse$;
     (function(ClassificationResponse$2) {
@@ -60921,7 +61758,7 @@ var require_classificationresponse = __commonJS({
       return JSON.stringify(exports2.ClassificationResponse$outboundSchema.parse(classificationResponse));
     }
     function classificationResponseFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ClassificationResponse$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ClassificationResponse' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ClassificationResponse$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ClassificationResponse' from JSON`);
     }
   }
 });
@@ -60943,10 +61780,10 @@ var require_deltamessage = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -60963,13 +61800,13 @@ var require_deltamessage = __commonJS({
     exports2.contentFromJSON = contentFromJSON;
     exports2.deltaMessageToJSON = deltaMessageToJSON;
     exports2.deltaMessageFromJSON = deltaMessageFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var contentchunk_js_1 = require_contentchunk();
     var toolcall_js_1 = require_toolcall();
-    exports2.Content$inboundSchema = z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$inboundSchema)]);
-    exports2.Content$outboundSchema = z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$outboundSchema)]);
+    exports2.Content$inboundSchema = z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$inboundSchema)]);
+    exports2.Content$outboundSchema = z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$outboundSchema)]);
     var Content$;
     (function(Content$2) {
       Content$2.inboundSchema = exports2.Content$inboundSchema;
@@ -60979,23 +61816,23 @@ var require_deltamessage = __commonJS({
       return JSON.stringify(exports2.Content$outboundSchema.parse(content));
     }
     function contentFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.Content$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'Content' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.Content$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'Content' from JSON`);
     }
-    exports2.DeltaMessage$inboundSchema = z3.object({
-      role: z3.nullable(z3.string()).optional(),
-      content: z3.nullable(z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$inboundSchema)])).optional(),
-      tool_calls: z3.nullable(z3.array(toolcall_js_1.ToolCall$inboundSchema)).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.DeltaMessage$inboundSchema = z4.object({
+      role: z4.nullable(z4.string()).optional(),
+      content: z4.nullable(z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$inboundSchema)])).optional(),
+      tool_calls: z4.nullable(z4.array(toolcall_js_1.ToolCall$inboundSchema)).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "tool_calls": "toolCalls"
       });
     });
-    exports2.DeltaMessage$outboundSchema = z3.object({
-      role: z3.nullable(z3.string()).optional(),
-      content: z3.nullable(z3.union([z3.string(), z3.array(contentchunk_js_1.ContentChunk$outboundSchema)])).optional(),
-      toolCalls: z3.nullable(z3.array(toolcall_js_1.ToolCall$outboundSchema)).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.DeltaMessage$outboundSchema = z4.object({
+      role: z4.nullable(z4.string()).optional(),
+      content: z4.nullable(z4.union([z4.string(), z4.array(contentchunk_js_1.ContentChunk$outboundSchema)])).optional(),
+      toolCalls: z4.nullable(z4.array(toolcall_js_1.ToolCall$outboundSchema)).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         toolCalls: "tool_calls"
       });
     });
@@ -61008,7 +61845,7 @@ var require_deltamessage = __commonJS({
       return JSON.stringify(exports2.DeltaMessage$outboundSchema.parse(deltaMessage));
     }
     function deltaMessageFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.DeltaMessage$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'DeltaMessage' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.DeltaMessage$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'DeltaMessage' from JSON`);
     }
   }
 });
@@ -61030,10 +61867,10 @@ var require_completionresponsestreamchoice = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -61048,7 +61885,7 @@ var require_completionresponsestreamchoice = __commonJS({
     exports2.CompletionResponseStreamChoice$ = exports2.CompletionResponseStreamChoice$outboundSchema = exports2.CompletionResponseStreamChoice$inboundSchema = exports2.CompletionResponseStreamChoiceFinishReason$ = exports2.CompletionResponseStreamChoiceFinishReason$outboundSchema = exports2.CompletionResponseStreamChoiceFinishReason$inboundSchema = exports2.CompletionResponseStreamChoiceFinishReason = void 0;
     exports2.completionResponseStreamChoiceToJSON = completionResponseStreamChoiceToJSON;
     exports2.completionResponseStreamChoiceFromJSON = completionResponseStreamChoiceFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var enums_js_1 = require_enums();
@@ -61059,34 +61896,34 @@ var require_completionresponsestreamchoice = __commonJS({
       Error: "error",
       ToolCalls: "tool_calls"
     };
-    exports2.CompletionResponseStreamChoiceFinishReason$inboundSchema = z3.union([
-      z3.nativeEnum(exports2.CompletionResponseStreamChoiceFinishReason),
-      z3.string().transform(enums_js_1.catchUnrecognizedEnum)
+    exports2.CompletionResponseStreamChoiceFinishReason$inboundSchema = z4.union([
+      z4.nativeEnum(exports2.CompletionResponseStreamChoiceFinishReason),
+      z4.string().transform(enums_js_1.catchUnrecognizedEnum)
     ]);
-    exports2.CompletionResponseStreamChoiceFinishReason$outboundSchema = z3.union([
-      z3.nativeEnum(exports2.CompletionResponseStreamChoiceFinishReason),
-      z3.string().and(z3.custom())
+    exports2.CompletionResponseStreamChoiceFinishReason$outboundSchema = z4.union([
+      z4.nativeEnum(exports2.CompletionResponseStreamChoiceFinishReason),
+      z4.string().and(z4.custom())
     ]);
     var CompletionResponseStreamChoiceFinishReason$;
     (function(CompletionResponseStreamChoiceFinishReason$2) {
       CompletionResponseStreamChoiceFinishReason$2.inboundSchema = exports2.CompletionResponseStreamChoiceFinishReason$inboundSchema;
       CompletionResponseStreamChoiceFinishReason$2.outboundSchema = exports2.CompletionResponseStreamChoiceFinishReason$outboundSchema;
     })(CompletionResponseStreamChoiceFinishReason$ || (exports2.CompletionResponseStreamChoiceFinishReason$ = CompletionResponseStreamChoiceFinishReason$ = {}));
-    exports2.CompletionResponseStreamChoice$inboundSchema = z3.object({
-      index: z3.number().int(),
+    exports2.CompletionResponseStreamChoice$inboundSchema = z4.object({
+      index: z4.number().int(),
       delta: deltamessage_js_1.DeltaMessage$inboundSchema,
-      finish_reason: z3.nullable(exports2.CompletionResponseStreamChoiceFinishReason$inboundSchema)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      finish_reason: z4.nullable(exports2.CompletionResponseStreamChoiceFinishReason$inboundSchema)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "finish_reason": "finishReason"
       });
     });
-    exports2.CompletionResponseStreamChoice$outboundSchema = z3.object({
-      index: z3.number().int(),
+    exports2.CompletionResponseStreamChoice$outboundSchema = z4.object({
+      index: z4.number().int(),
       delta: deltamessage_js_1.DeltaMessage$outboundSchema,
-      finishReason: z3.nullable(exports2.CompletionResponseStreamChoiceFinishReason$outboundSchema)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      finishReason: z4.nullable(exports2.CompletionResponseStreamChoiceFinishReason$outboundSchema)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         finishReason: "finish_reason"
       });
     });
@@ -61099,7 +61936,7 @@ var require_completionresponsestreamchoice = __commonJS({
       return JSON.stringify(exports2.CompletionResponseStreamChoice$outboundSchema.parse(completionResponseStreamChoice));
     }
     function completionResponseStreamChoiceFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.CompletionResponseStreamChoice$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'CompletionResponseStreamChoice' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.CompletionResponseStreamChoice$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'CompletionResponseStreamChoice' from JSON`);
     }
   }
 });
@@ -61121,10 +61958,10 @@ var require_completionchunk = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -61139,25 +61976,25 @@ var require_completionchunk = __commonJS({
     exports2.CompletionChunk$ = exports2.CompletionChunk$outboundSchema = exports2.CompletionChunk$inboundSchema = void 0;
     exports2.completionChunkToJSON = completionChunkToJSON;
     exports2.completionChunkFromJSON = completionChunkFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var completionresponsestreamchoice_js_1 = require_completionresponsestreamchoice();
     var usageinfo_js_1 = require_usageinfo();
-    exports2.CompletionChunk$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string().optional(),
-      created: z3.number().int().optional(),
-      model: z3.string(),
+    exports2.CompletionChunk$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string().optional(),
+      created: z4.number().int().optional(),
+      model: z4.string(),
       usage: usageinfo_js_1.UsageInfo$inboundSchema.optional(),
-      choices: z3.array(completionresponsestreamchoice_js_1.CompletionResponseStreamChoice$inboundSchema)
+      choices: z4.array(completionresponsestreamchoice_js_1.CompletionResponseStreamChoice$inboundSchema)
     });
-    exports2.CompletionChunk$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string().optional(),
-      created: z3.number().int().optional(),
-      model: z3.string(),
+    exports2.CompletionChunk$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string().optional(),
+      created: z4.number().int().optional(),
+      model: z4.string(),
       usage: usageinfo_js_1.UsageInfo$outboundSchema.optional(),
-      choices: z3.array(completionresponsestreamchoice_js_1.CompletionResponseStreamChoice$outboundSchema)
+      choices: z4.array(completionresponsestreamchoice_js_1.CompletionResponseStreamChoice$outboundSchema)
     });
     var CompletionChunk$;
     (function(CompletionChunk$2) {
@@ -61168,7 +62005,7 @@ var require_completionchunk = __commonJS({
       return JSON.stringify(exports2.CompletionChunk$outboundSchema.parse(completionChunk));
     }
     function completionChunkFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.CompletionChunk$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'CompletionChunk' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.CompletionChunk$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'CompletionChunk' from JSON`);
     }
   }
 });
@@ -61190,10 +62027,10 @@ var require_completionevent = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -61208,23 +62045,23 @@ var require_completionevent = __commonJS({
     exports2.CompletionEvent$ = exports2.CompletionEvent$outboundSchema = exports2.CompletionEvent$inboundSchema = void 0;
     exports2.completionEventToJSON = completionEventToJSON;
     exports2.completionEventFromJSON = completionEventFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var completionchunk_js_1 = require_completionchunk();
-    exports2.CompletionEvent$inboundSchema = z3.object({
-      data: z3.string().transform((v2, ctx) => {
+    exports2.CompletionEvent$inboundSchema = z4.object({
+      data: z4.string().transform((v6, ctx) => {
         try {
-          return JSON.parse(v2);
+          return JSON.parse(v6);
         } catch (err) {
           ctx.addIssue({
-            code: z3.ZodIssueCode.custom,
+            code: z4.ZodIssueCode.custom,
             message: `malformed json: ${err}`
           });
-          return z3.NEVER;
+          return z4.NEVER;
         }
       }).pipe(completionchunk_js_1.CompletionChunk$inboundSchema)
     });
-    exports2.CompletionEvent$outboundSchema = z3.object({
+    exports2.CompletionEvent$outboundSchema = z4.object({
       data: completionchunk_js_1.CompletionChunk$outboundSchema
     });
     var CompletionEvent$;
@@ -61236,7 +62073,7 @@ var require_completionevent = __commonJS({
       return JSON.stringify(exports2.CompletionEvent$outboundSchema.parse(completionEvent));
     }
     function completionEventFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.CompletionEvent$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'CompletionEvent' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.CompletionEvent$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'CompletionEvent' from JSON`);
     }
   }
 });
@@ -61258,10 +62095,10 @@ var require_deletefileout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -61276,17 +62113,17 @@ var require_deletefileout = __commonJS({
     exports2.DeleteFileOut$ = exports2.DeleteFileOut$outboundSchema = exports2.DeleteFileOut$inboundSchema = void 0;
     exports2.deleteFileOutToJSON = deleteFileOutToJSON;
     exports2.deleteFileOutFromJSON = deleteFileOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
-    exports2.DeleteFileOut$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      deleted: z3.boolean()
+    exports2.DeleteFileOut$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      deleted: z4.boolean()
     });
-    exports2.DeleteFileOut$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      deleted: z3.boolean()
+    exports2.DeleteFileOut$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      deleted: z4.boolean()
     });
     var DeleteFileOut$;
     (function(DeleteFileOut$2) {
@@ -61297,7 +62134,7 @@ var require_deletefileout = __commonJS({
       return JSON.stringify(exports2.DeleteFileOut$outboundSchema.parse(deleteFileOut));
     }
     function deleteFileOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.DeleteFileOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'DeleteFileOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.DeleteFileOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'DeleteFileOut' from JSON`);
     }
   }
 });
@@ -61319,10 +62156,10 @@ var require_deletemodelout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -61337,17 +62174,17 @@ var require_deletemodelout = __commonJS({
     exports2.DeleteModelOut$ = exports2.DeleteModelOut$outboundSchema = exports2.DeleteModelOut$inboundSchema = void 0;
     exports2.deleteModelOutToJSON = deleteModelOutToJSON;
     exports2.deleteModelOutFromJSON = deleteModelOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
-    exports2.DeleteModelOut$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string().default("model"),
-      deleted: z3.boolean().default(true)
+    exports2.DeleteModelOut$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string().default("model"),
+      deleted: z4.boolean().default(true)
     });
-    exports2.DeleteModelOut$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string().default("model"),
-      deleted: z3.boolean().default(true)
+    exports2.DeleteModelOut$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string().default("model"),
+      deleted: z4.boolean().default(true)
     });
     var DeleteModelOut$;
     (function(DeleteModelOut$2) {
@@ -61358,7 +62195,7 @@ var require_deletemodelout = __commonJS({
       return JSON.stringify(exports2.DeleteModelOut$outboundSchema.parse(deleteModelOut));
     }
     function deleteModelOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.DeleteModelOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'DeleteModelOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.DeleteModelOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'DeleteModelOut' from JSON`);
     }
   }
 });
@@ -61380,10 +62217,10 @@ var require_eventout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -61398,24 +62235,24 @@ var require_eventout = __commonJS({
     exports2.EventOut$ = exports2.EventOut$outboundSchema = exports2.EventOut$inboundSchema = void 0;
     exports2.eventOutToJSON = eventOutToJSON;
     exports2.eventOutFromJSON = eventOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.EventOut$inboundSchema = z3.object({
-      name: z3.string(),
-      data: z3.nullable(z3.record(z3.any())).optional(),
-      created_at: z3.number().int()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.EventOut$inboundSchema = z4.object({
+      name: z4.string(),
+      data: z4.nullable(z4.record(z4.any())).optional(),
+      created_at: z4.number().int()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "created_at": "createdAt"
       });
     });
-    exports2.EventOut$outboundSchema = z3.object({
-      name: z3.string(),
-      data: z3.nullable(z3.record(z3.any())).optional(),
-      createdAt: z3.number().int()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.EventOut$outboundSchema = z4.object({
+      name: z4.string(),
+      data: z4.nullable(z4.record(z4.any())).optional(),
+      createdAt: z4.number().int()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         createdAt: "created_at"
       });
     });
@@ -61428,7 +62265,7 @@ var require_eventout = __commonJS({
       return JSON.stringify(exports2.EventOut$outboundSchema.parse(eventOut));
     }
     function eventOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.EventOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'EventOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.EventOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'EventOut' from JSON`);
     }
   }
 });
@@ -61450,10 +62287,10 @@ var require_githubrepositoryout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -61468,40 +62305,40 @@ var require_githubrepositoryout = __commonJS({
     exports2.GithubRepositoryOut$ = exports2.GithubRepositoryOut$outboundSchema = exports2.GithubRepositoryOut$inboundSchema = exports2.GithubRepositoryOutType$ = exports2.GithubRepositoryOutType$outboundSchema = exports2.GithubRepositoryOutType$inboundSchema = exports2.GithubRepositoryOutType = void 0;
     exports2.githubRepositoryOutToJSON = githubRepositoryOutToJSON;
     exports2.githubRepositoryOutFromJSON = githubRepositoryOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     exports2.GithubRepositoryOutType = {
       Github: "github"
     };
-    exports2.GithubRepositoryOutType$inboundSchema = z3.nativeEnum(exports2.GithubRepositoryOutType);
+    exports2.GithubRepositoryOutType$inboundSchema = z4.nativeEnum(exports2.GithubRepositoryOutType);
     exports2.GithubRepositoryOutType$outboundSchema = exports2.GithubRepositoryOutType$inboundSchema;
     var GithubRepositoryOutType$;
     (function(GithubRepositoryOutType$2) {
       GithubRepositoryOutType$2.inboundSchema = exports2.GithubRepositoryOutType$inboundSchema;
       GithubRepositoryOutType$2.outboundSchema = exports2.GithubRepositoryOutType$outboundSchema;
     })(GithubRepositoryOutType$ || (exports2.GithubRepositoryOutType$ = GithubRepositoryOutType$ = {}));
-    exports2.GithubRepositoryOut$inboundSchema = z3.object({
-      type: z3.literal("github").default("github"),
-      name: z3.string(),
-      owner: z3.string(),
-      ref: z3.nullable(z3.string()).optional(),
-      weight: z3.number().default(1),
-      commit_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.GithubRepositoryOut$inboundSchema = z4.object({
+      type: z4.literal("github").default("github"),
+      name: z4.string(),
+      owner: z4.string(),
+      ref: z4.nullable(z4.string()).optional(),
+      weight: z4.number().default(1),
+      commit_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "commit_id": "commitId"
       });
     });
-    exports2.GithubRepositoryOut$outboundSchema = z3.object({
-      type: z3.literal("github").default("github"),
-      name: z3.string(),
-      owner: z3.string(),
-      ref: z3.nullable(z3.string()).optional(),
-      weight: z3.number().default(1),
-      commitId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.GithubRepositoryOut$outboundSchema = z4.object({
+      type: z4.literal("github").default("github"),
+      name: z4.string(),
+      owner: z4.string(),
+      ref: z4.nullable(z4.string()).optional(),
+      weight: z4.number().default(1),
+      commitId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         commitId: "commit_id"
       });
     });
@@ -61514,7 +62351,7 @@ var require_githubrepositoryout = __commonJS({
       return JSON.stringify(exports2.GithubRepositoryOut$outboundSchema.parse(githubRepositoryOut));
     }
     function githubRepositoryOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.GithubRepositoryOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'GithubRepositoryOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.GithubRepositoryOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'GithubRepositoryOut' from JSON`);
     }
   }
 });
@@ -61536,10 +62373,10 @@ var require_jobmetadataout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -61554,19 +62391,19 @@ var require_jobmetadataout = __commonJS({
     exports2.JobMetadataOut$ = exports2.JobMetadataOut$outboundSchema = exports2.JobMetadataOut$inboundSchema = void 0;
     exports2.jobMetadataOutToJSON = jobMetadataOutToJSON;
     exports2.jobMetadataOutFromJSON = jobMetadataOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.JobMetadataOut$inboundSchema = z3.object({
-      expected_duration_seconds: z3.nullable(z3.number().int()).optional(),
-      cost: z3.nullable(z3.number()).optional(),
-      cost_currency: z3.nullable(z3.string()).optional(),
-      train_tokens_per_step: z3.nullable(z3.number().int()).optional(),
-      train_tokens: z3.nullable(z3.number().int()).optional(),
-      data_tokens: z3.nullable(z3.number().int()).optional(),
-      estimated_start_time: z3.nullable(z3.number().int()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobMetadataOut$inboundSchema = z4.object({
+      expected_duration_seconds: z4.nullable(z4.number().int()).optional(),
+      cost: z4.nullable(z4.number()).optional(),
+      cost_currency: z4.nullable(z4.string()).optional(),
+      train_tokens_per_step: z4.nullable(z4.number().int()).optional(),
+      train_tokens: z4.nullable(z4.number().int()).optional(),
+      data_tokens: z4.nullable(z4.number().int()).optional(),
+      estimated_start_time: z4.nullable(z4.number().int()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "expected_duration_seconds": "expectedDurationSeconds",
         "cost_currency": "costCurrency",
         "train_tokens_per_step": "trainTokensPerStep",
@@ -61575,16 +62412,16 @@ var require_jobmetadataout = __commonJS({
         "estimated_start_time": "estimatedStartTime"
       });
     });
-    exports2.JobMetadataOut$outboundSchema = z3.object({
-      expectedDurationSeconds: z3.nullable(z3.number().int()).optional(),
-      cost: z3.nullable(z3.number()).optional(),
-      costCurrency: z3.nullable(z3.string()).optional(),
-      trainTokensPerStep: z3.nullable(z3.number().int()).optional(),
-      trainTokens: z3.nullable(z3.number().int()).optional(),
-      dataTokens: z3.nullable(z3.number().int()).optional(),
-      estimatedStartTime: z3.nullable(z3.number().int()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobMetadataOut$outboundSchema = z4.object({
+      expectedDurationSeconds: z4.nullable(z4.number().int()).optional(),
+      cost: z4.nullable(z4.number()).optional(),
+      costCurrency: z4.nullable(z4.string()).optional(),
+      trainTokensPerStep: z4.nullable(z4.number().int()).optional(),
+      trainTokens: z4.nullable(z4.number().int()).optional(),
+      dataTokens: z4.nullable(z4.number().int()).optional(),
+      estimatedStartTime: z4.nullable(z4.number().int()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         expectedDurationSeconds: "expected_duration_seconds",
         costCurrency: "cost_currency",
         trainTokensPerStep: "train_tokens_per_step",
@@ -61602,7 +62439,7 @@ var require_jobmetadataout = __commonJS({
       return JSON.stringify(exports2.JobMetadataOut$outboundSchema.parse(jobMetadataOut));
     }
     function jobMetadataOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobMetadataOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobMetadataOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobMetadataOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobMetadataOut' from JSON`);
     }
   }
 });
@@ -61624,10 +62461,10 @@ var require_trainingparameters = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -61642,19 +62479,19 @@ var require_trainingparameters = __commonJS({
     exports2.TrainingParameters$ = exports2.TrainingParameters$outboundSchema = exports2.TrainingParameters$inboundSchema = void 0;
     exports2.trainingParametersToJSON = trainingParametersToJSON;
     exports2.trainingParametersFromJSON = trainingParametersFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.TrainingParameters$inboundSchema = z3.object({
-      training_steps: z3.nullable(z3.number().int()).optional(),
-      learning_rate: z3.number().default(1e-4),
-      weight_decay: z3.nullable(z3.number()).optional(),
-      warmup_fraction: z3.nullable(z3.number()).optional(),
-      epochs: z3.nullable(z3.number()).optional(),
-      fim_ratio: z3.nullable(z3.number()).optional(),
-      seq_len: z3.nullable(z3.number().int()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.TrainingParameters$inboundSchema = z4.object({
+      training_steps: z4.nullable(z4.number().int()).optional(),
+      learning_rate: z4.number().default(1e-4),
+      weight_decay: z4.nullable(z4.number()).optional(),
+      warmup_fraction: z4.nullable(z4.number()).optional(),
+      epochs: z4.nullable(z4.number()).optional(),
+      fim_ratio: z4.nullable(z4.number()).optional(),
+      seq_len: z4.nullable(z4.number().int()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "training_steps": "trainingSteps",
         "learning_rate": "learningRate",
         "weight_decay": "weightDecay",
@@ -61663,16 +62500,16 @@ var require_trainingparameters = __commonJS({
         "seq_len": "seqLen"
       });
     });
-    exports2.TrainingParameters$outboundSchema = z3.object({
-      trainingSteps: z3.nullable(z3.number().int()).optional(),
-      learningRate: z3.number().default(1e-4),
-      weightDecay: z3.nullable(z3.number()).optional(),
-      warmupFraction: z3.nullable(z3.number()).optional(),
-      epochs: z3.nullable(z3.number()).optional(),
-      fimRatio: z3.nullable(z3.number()).optional(),
-      seqLen: z3.nullable(z3.number().int()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.TrainingParameters$outboundSchema = z4.object({
+      trainingSteps: z4.nullable(z4.number().int()).optional(),
+      learningRate: z4.number().default(1e-4),
+      weightDecay: z4.nullable(z4.number()).optional(),
+      warmupFraction: z4.nullable(z4.number()).optional(),
+      epochs: z4.nullable(z4.number()).optional(),
+      fimRatio: z4.nullable(z4.number()).optional(),
+      seqLen: z4.nullable(z4.number().int()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         trainingSteps: "training_steps",
         learningRate: "learning_rate",
         weightDecay: "weight_decay",
@@ -61690,7 +62527,7 @@ var require_trainingparameters = __commonJS({
       return JSON.stringify(exports2.TrainingParameters$outboundSchema.parse(trainingParameters));
     }
     function trainingParametersFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.TrainingParameters$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'TrainingParameters' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.TrainingParameters$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'TrainingParameters' from JSON`);
     }
   }
 });
@@ -61712,10 +62549,10 @@ var require_wandbintegrationout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -61730,36 +62567,36 @@ var require_wandbintegrationout = __commonJS({
     exports2.WandbIntegrationOut$ = exports2.WandbIntegrationOut$outboundSchema = exports2.WandbIntegrationOut$inboundSchema = exports2.WandbIntegrationOutType$ = exports2.WandbIntegrationOutType$outboundSchema = exports2.WandbIntegrationOutType$inboundSchema = exports2.WandbIntegrationOutType = void 0;
     exports2.wandbIntegrationOutToJSON = wandbIntegrationOutToJSON;
     exports2.wandbIntegrationOutFromJSON = wandbIntegrationOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     exports2.WandbIntegrationOutType = {
       Wandb: "wandb"
     };
-    exports2.WandbIntegrationOutType$inboundSchema = z3.nativeEnum(exports2.WandbIntegrationOutType);
+    exports2.WandbIntegrationOutType$inboundSchema = z4.nativeEnum(exports2.WandbIntegrationOutType);
     exports2.WandbIntegrationOutType$outboundSchema = exports2.WandbIntegrationOutType$inboundSchema;
     var WandbIntegrationOutType$;
     (function(WandbIntegrationOutType$2) {
       WandbIntegrationOutType$2.inboundSchema = exports2.WandbIntegrationOutType$inboundSchema;
       WandbIntegrationOutType$2.outboundSchema = exports2.WandbIntegrationOutType$outboundSchema;
     })(WandbIntegrationOutType$ || (exports2.WandbIntegrationOutType$ = WandbIntegrationOutType$ = {}));
-    exports2.WandbIntegrationOut$inboundSchema = z3.object({
-      type: z3.literal("wandb").default("wandb"),
-      project: z3.string(),
-      name: z3.nullable(z3.string()).optional(),
-      run_name: z3.nullable(z3.string()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.WandbIntegrationOut$inboundSchema = z4.object({
+      type: z4.literal("wandb").default("wandb"),
+      project: z4.string(),
+      name: z4.nullable(z4.string()).optional(),
+      run_name: z4.nullable(z4.string()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "run_name": "runName"
       });
     });
-    exports2.WandbIntegrationOut$outboundSchema = z3.object({
-      type: z3.literal("wandb").default("wandb"),
-      project: z3.string(),
-      name: z3.nullable(z3.string()).optional(),
-      runName: z3.nullable(z3.string()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.WandbIntegrationOut$outboundSchema = z4.object({
+      type: z4.literal("wandb").default("wandb"),
+      project: z4.string(),
+      name: z4.nullable(z4.string()).optional(),
+      runName: z4.nullable(z4.string()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         runName: "run_name"
       });
     });
@@ -61772,7 +62609,7 @@ var require_wandbintegrationout = __commonJS({
       return JSON.stringify(exports2.WandbIntegrationOut$outboundSchema.parse(wandbIntegrationOut));
     }
     function wandbIntegrationOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.WandbIntegrationOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'WandbIntegrationOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.WandbIntegrationOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'WandbIntegrationOut' from JSON`);
     }
   }
 });
@@ -61794,10 +62631,10 @@ var require_detailedjobout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -61816,7 +62653,7 @@ var require_detailedjobout = __commonJS({
     exports2.detailedJobOutRepositoriesFromJSON = detailedJobOutRepositoriesFromJSON;
     exports2.detailedJobOutToJSON = detailedJobOutToJSON;
     exports2.detailedJobOutFromJSON = detailedJobOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var checkpointout_js_1 = require_checkpointout();
@@ -61840,14 +62677,14 @@ var require_detailedjobout = __commonJS({
     exports2.DetailedJobOutObject = {
       Job: "job"
     };
-    exports2.DetailedJobOutStatus$inboundSchema = z3.nativeEnum(exports2.DetailedJobOutStatus);
+    exports2.DetailedJobOutStatus$inboundSchema = z4.nativeEnum(exports2.DetailedJobOutStatus);
     exports2.DetailedJobOutStatus$outboundSchema = exports2.DetailedJobOutStatus$inboundSchema;
     var DetailedJobOutStatus$;
     (function(DetailedJobOutStatus$2) {
       DetailedJobOutStatus$2.inboundSchema = exports2.DetailedJobOutStatus$inboundSchema;
       DetailedJobOutStatus$2.outboundSchema = exports2.DetailedJobOutStatus$outboundSchema;
     })(DetailedJobOutStatus$ || (exports2.DetailedJobOutStatus$ = DetailedJobOutStatus$ = {}));
-    exports2.DetailedJobOutObject$inboundSchema = z3.nativeEnum(exports2.DetailedJobOutObject);
+    exports2.DetailedJobOutObject$inboundSchema = z4.nativeEnum(exports2.DetailedJobOutObject);
     exports2.DetailedJobOutObject$outboundSchema = exports2.DetailedJobOutObject$inboundSchema;
     var DetailedJobOutObject$;
     (function(DetailedJobOutObject$2) {
@@ -61865,7 +62702,7 @@ var require_detailedjobout = __commonJS({
       return JSON.stringify(exports2.DetailedJobOutIntegrations$outboundSchema.parse(detailedJobOutIntegrations));
     }
     function detailedJobOutIntegrationsFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.DetailedJobOutIntegrations$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'DetailedJobOutIntegrations' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.DetailedJobOutIntegrations$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'DetailedJobOutIntegrations' from JSON`);
     }
     exports2.DetailedJobOutRepositories$inboundSchema = githubrepositoryout_js_1.GithubRepositoryOut$inboundSchema;
     exports2.DetailedJobOutRepositories$outboundSchema = githubrepositoryout_js_1.GithubRepositoryOut$outboundSchema;
@@ -61878,30 +62715,30 @@ var require_detailedjobout = __commonJS({
       return JSON.stringify(exports2.DetailedJobOutRepositories$outboundSchema.parse(detailedJobOutRepositories));
     }
     function detailedJobOutRepositoriesFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.DetailedJobOutRepositories$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'DetailedJobOutRepositories' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.DetailedJobOutRepositories$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'DetailedJobOutRepositories' from JSON`);
     }
-    exports2.DetailedJobOut$inboundSchema = z3.object({
-      id: z3.string(),
-      auto_start: z3.boolean(),
+    exports2.DetailedJobOut$inboundSchema = z4.object({
+      id: z4.string(),
+      auto_start: z4.boolean(),
       hyperparameters: trainingparameters_js_1.TrainingParameters$inboundSchema,
-      model: z3.string(),
+      model: z4.string(),
       status: exports2.DetailedJobOutStatus$inboundSchema,
-      job_type: z3.string(),
-      created_at: z3.number().int(),
-      modified_at: z3.number().int(),
-      training_files: z3.array(z3.string()),
-      validation_files: z3.nullable(z3.array(z3.string())).optional(),
-      object: z3.literal("job").default("job"),
-      fine_tuned_model: z3.nullable(z3.string()).optional(),
-      suffix: z3.nullable(z3.string()).optional(),
-      integrations: z3.nullable(z3.array(wandbintegrationout_js_1.WandbIntegrationOut$inboundSchema)).optional(),
-      trained_tokens: z3.nullable(z3.number().int()).optional(),
-      repositories: z3.array(githubrepositoryout_js_1.GithubRepositoryOut$inboundSchema).optional(),
-      metadata: z3.nullable(jobmetadataout_js_1.JobMetadataOut$inboundSchema).optional(),
-      events: z3.array(eventout_js_1.EventOut$inboundSchema).optional(),
-      checkpoints: z3.array(checkpointout_js_1.CheckpointOut$inboundSchema).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      job_type: z4.string(),
+      created_at: z4.number().int(),
+      modified_at: z4.number().int(),
+      training_files: z4.array(z4.string()),
+      validation_files: z4.nullable(z4.array(z4.string())).optional(),
+      object: z4.literal("job").default("job"),
+      fine_tuned_model: z4.nullable(z4.string()).optional(),
+      suffix: z4.nullable(z4.string()).optional(),
+      integrations: z4.nullable(z4.array(wandbintegrationout_js_1.WandbIntegrationOut$inboundSchema)).optional(),
+      trained_tokens: z4.nullable(z4.number().int()).optional(),
+      repositories: z4.array(githubrepositoryout_js_1.GithubRepositoryOut$inboundSchema).optional(),
+      metadata: z4.nullable(jobmetadataout_js_1.JobMetadataOut$inboundSchema).optional(),
+      events: z4.array(eventout_js_1.EventOut$inboundSchema).optional(),
+      checkpoints: z4.array(checkpointout_js_1.CheckpointOut$inboundSchema).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "auto_start": "autoStart",
         "job_type": "jobType",
         "created_at": "createdAt",
@@ -61912,28 +62749,28 @@ var require_detailedjobout = __commonJS({
         "trained_tokens": "trainedTokens"
       });
     });
-    exports2.DetailedJobOut$outboundSchema = z3.object({
-      id: z3.string(),
-      autoStart: z3.boolean(),
+    exports2.DetailedJobOut$outboundSchema = z4.object({
+      id: z4.string(),
+      autoStart: z4.boolean(),
       hyperparameters: trainingparameters_js_1.TrainingParameters$outboundSchema,
-      model: z3.string(),
+      model: z4.string(),
       status: exports2.DetailedJobOutStatus$outboundSchema,
-      jobType: z3.string(),
-      createdAt: z3.number().int(),
-      modifiedAt: z3.number().int(),
-      trainingFiles: z3.array(z3.string()),
-      validationFiles: z3.nullable(z3.array(z3.string())).optional(),
-      object: z3.literal("job").default("job"),
-      fineTunedModel: z3.nullable(z3.string()).optional(),
-      suffix: z3.nullable(z3.string()).optional(),
-      integrations: z3.nullable(z3.array(wandbintegrationout_js_1.WandbIntegrationOut$outboundSchema)).optional(),
-      trainedTokens: z3.nullable(z3.number().int()).optional(),
-      repositories: z3.array(githubrepositoryout_js_1.GithubRepositoryOut$outboundSchema).optional(),
-      metadata: z3.nullable(jobmetadataout_js_1.JobMetadataOut$outboundSchema).optional(),
-      events: z3.array(eventout_js_1.EventOut$outboundSchema).optional(),
-      checkpoints: z3.array(checkpointout_js_1.CheckpointOut$outboundSchema).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      jobType: z4.string(),
+      createdAt: z4.number().int(),
+      modifiedAt: z4.number().int(),
+      trainingFiles: z4.array(z4.string()),
+      validationFiles: z4.nullable(z4.array(z4.string())).optional(),
+      object: z4.literal("job").default("job"),
+      fineTunedModel: z4.nullable(z4.string()).optional(),
+      suffix: z4.nullable(z4.string()).optional(),
+      integrations: z4.nullable(z4.array(wandbintegrationout_js_1.WandbIntegrationOut$outboundSchema)).optional(),
+      trainedTokens: z4.nullable(z4.number().int()).optional(),
+      repositories: z4.array(githubrepositoryout_js_1.GithubRepositoryOut$outboundSchema).optional(),
+      metadata: z4.nullable(jobmetadataout_js_1.JobMetadataOut$outboundSchema).optional(),
+      events: z4.array(eventout_js_1.EventOut$outboundSchema).optional(),
+      checkpoints: z4.array(checkpointout_js_1.CheckpointOut$outboundSchema).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         autoStart: "auto_start",
         jobType: "job_type",
         createdAt: "created_at",
@@ -61953,7 +62790,7 @@ var require_detailedjobout = __commonJS({
       return JSON.stringify(exports2.DetailedJobOut$outboundSchema.parse(detailedJobOut));
     }
     function detailedJobOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.DetailedJobOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'DetailedJobOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.DetailedJobOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'DetailedJobOut' from JSON`);
     }
   }
 });
@@ -61975,10 +62812,10 @@ var require_embeddingrequest = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -61995,11 +62832,11 @@ var require_embeddingrequest = __commonJS({
     exports2.inputsFromJSON = inputsFromJSON;
     exports2.embeddingRequestToJSON = embeddingRequestToJSON;
     exports2.embeddingRequestFromJSON = embeddingRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.Inputs$inboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
-    exports2.Inputs$outboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
+    exports2.Inputs$inboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
+    exports2.Inputs$outboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
     var Inputs$;
     (function(Inputs$2) {
       Inputs$2.inboundSchema = exports2.Inputs$inboundSchema;
@@ -62009,24 +62846,24 @@ var require_embeddingrequest = __commonJS({
       return JSON.stringify(exports2.Inputs$outboundSchema.parse(inputs));
     }
     function inputsFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.Inputs$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'Inputs' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.Inputs$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'Inputs' from JSON`);
     }
-    exports2.EmbeddingRequest$inboundSchema = z3.object({
-      input: z3.union([z3.string(), z3.array(z3.string())]),
-      model: z3.string().default("mistral-embed"),
-      encoding_format: z3.nullable(z3.string()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.EmbeddingRequest$inboundSchema = z4.object({
+      input: z4.union([z4.string(), z4.array(z4.string())]),
+      model: z4.string().default("mistral-embed"),
+      encoding_format: z4.nullable(z4.string()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "input": "inputs",
         "encoding_format": "encodingFormat"
       });
     });
-    exports2.EmbeddingRequest$outboundSchema = z3.object({
-      inputs: z3.union([z3.string(), z3.array(z3.string())]),
-      model: z3.string().default("mistral-embed"),
-      encodingFormat: z3.nullable(z3.string()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.EmbeddingRequest$outboundSchema = z4.object({
+      inputs: z4.union([z4.string(), z4.array(z4.string())]),
+      model: z4.string().default("mistral-embed"),
+      encodingFormat: z4.nullable(z4.string()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         inputs: "input",
         encodingFormat: "encoding_format"
       });
@@ -62040,7 +62877,7 @@ var require_embeddingrequest = __commonJS({
       return JSON.stringify(exports2.EmbeddingRequest$outboundSchema.parse(embeddingRequest));
     }
     function embeddingRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.EmbeddingRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'EmbeddingRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.EmbeddingRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'EmbeddingRequest' from JSON`);
     }
   }
 });
@@ -62062,10 +62899,10 @@ var require_embeddingresponsedata = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -62080,17 +62917,17 @@ var require_embeddingresponsedata = __commonJS({
     exports2.EmbeddingResponseData$ = exports2.EmbeddingResponseData$outboundSchema = exports2.EmbeddingResponseData$inboundSchema = void 0;
     exports2.embeddingResponseDataToJSON = embeddingResponseDataToJSON;
     exports2.embeddingResponseDataFromJSON = embeddingResponseDataFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
-    exports2.EmbeddingResponseData$inboundSchema = z3.object({
-      object: z3.string().optional(),
-      embedding: z3.array(z3.number()).optional(),
-      index: z3.number().int().optional()
+    exports2.EmbeddingResponseData$inboundSchema = z4.object({
+      object: z4.string().optional(),
+      embedding: z4.array(z4.number()).optional(),
+      index: z4.number().int().optional()
     });
-    exports2.EmbeddingResponseData$outboundSchema = z3.object({
-      object: z3.string().optional(),
-      embedding: z3.array(z3.number()).optional(),
-      index: z3.number().int().optional()
+    exports2.EmbeddingResponseData$outboundSchema = z4.object({
+      object: z4.string().optional(),
+      embedding: z4.array(z4.number()).optional(),
+      index: z4.number().int().optional()
     });
     var EmbeddingResponseData$;
     (function(EmbeddingResponseData$2) {
@@ -62101,7 +62938,7 @@ var require_embeddingresponsedata = __commonJS({
       return JSON.stringify(exports2.EmbeddingResponseData$outboundSchema.parse(embeddingResponseData));
     }
     function embeddingResponseDataFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.EmbeddingResponseData$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'EmbeddingResponseData' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.EmbeddingResponseData$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'EmbeddingResponseData' from JSON`);
     }
   }
 });
@@ -62123,10 +62960,10 @@ var require_embeddingresponse = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -62141,23 +62978,23 @@ var require_embeddingresponse = __commonJS({
     exports2.EmbeddingResponse$ = exports2.EmbeddingResponse$outboundSchema = exports2.EmbeddingResponse$inboundSchema = void 0;
     exports2.embeddingResponseToJSON = embeddingResponseToJSON;
     exports2.embeddingResponseFromJSON = embeddingResponseFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var embeddingresponsedata_js_1 = require_embeddingresponsedata();
     var usageinfo_js_1 = require_usageinfo();
-    exports2.EmbeddingResponse$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      model: z3.string(),
+    exports2.EmbeddingResponse$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      model: z4.string(),
       usage: usageinfo_js_1.UsageInfo$inboundSchema,
-      data: z3.array(embeddingresponsedata_js_1.EmbeddingResponseData$inboundSchema)
+      data: z4.array(embeddingresponsedata_js_1.EmbeddingResponseData$inboundSchema)
     });
-    exports2.EmbeddingResponse$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      model: z3.string(),
+    exports2.EmbeddingResponse$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      model: z4.string(),
       usage: usageinfo_js_1.UsageInfo$outboundSchema,
-      data: z3.array(embeddingresponsedata_js_1.EmbeddingResponseData$outboundSchema)
+      data: z4.array(embeddingresponsedata_js_1.EmbeddingResponseData$outboundSchema)
     });
     var EmbeddingResponse$;
     (function(EmbeddingResponse$2) {
@@ -62168,7 +63005,7 @@ var require_embeddingresponse = __commonJS({
       return JSON.stringify(exports2.EmbeddingResponse$outboundSchema.parse(embeddingResponse));
     }
     function embeddingResponseFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.EmbeddingResponse$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'EmbeddingResponse' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.EmbeddingResponse$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'EmbeddingResponse' from JSON`);
     }
   }
 });
@@ -62190,10 +63027,10 @@ var require_filepurpose = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -62206,19 +63043,19 @@ var require_filepurpose = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.FilePurpose$ = exports2.FilePurpose$outboundSchema = exports2.FilePurpose$inboundSchema = exports2.FilePurpose = void 0;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var enums_js_1 = require_enums();
     exports2.FilePurpose = {
       FineTune: "fine-tune",
       Batch: "batch"
     };
-    exports2.FilePurpose$inboundSchema = z3.union([
-      z3.nativeEnum(exports2.FilePurpose),
-      z3.string().transform(enums_js_1.catchUnrecognizedEnum)
+    exports2.FilePurpose$inboundSchema = z4.union([
+      z4.nativeEnum(exports2.FilePurpose),
+      z4.string().transform(enums_js_1.catchUnrecognizedEnum)
     ]);
-    exports2.FilePurpose$outboundSchema = z3.union([
-      z3.nativeEnum(exports2.FilePurpose),
-      z3.string().and(z3.custom())
+    exports2.FilePurpose$outboundSchema = z4.union([
+      z4.nativeEnum(exports2.FilePurpose),
+      z4.string().and(z4.custom())
     ]);
     var FilePurpose$;
     (function(FilePurpose$2) {
@@ -62245,10 +63082,10 @@ var require_sampletype = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -62261,7 +63098,7 @@ var require_sampletype = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.SampleType$ = exports2.SampleType$outboundSchema = exports2.SampleType$inboundSchema = exports2.SampleType = void 0;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var enums_js_1 = require_enums();
     exports2.SampleType = {
       Pretrain: "pretrain",
@@ -62270,13 +63107,13 @@ var require_sampletype = __commonJS({
       BatchResult: "batch_result",
       BatchError: "batch_error"
     };
-    exports2.SampleType$inboundSchema = z3.union([
-      z3.nativeEnum(exports2.SampleType),
-      z3.string().transform(enums_js_1.catchUnrecognizedEnum)
+    exports2.SampleType$inboundSchema = z4.union([
+      z4.nativeEnum(exports2.SampleType),
+      z4.string().transform(enums_js_1.catchUnrecognizedEnum)
     ]);
-    exports2.SampleType$outboundSchema = z3.union([
-      z3.nativeEnum(exports2.SampleType),
-      z3.string().and(z3.custom())
+    exports2.SampleType$outboundSchema = z4.union([
+      z4.nativeEnum(exports2.SampleType),
+      z4.string().and(z4.custom())
     ]);
     var SampleType$;
     (function(SampleType$2) {
@@ -62303,10 +63140,10 @@ var require_source = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -62319,20 +63156,20 @@ var require_source = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.Source$ = exports2.Source$outboundSchema = exports2.Source$inboundSchema = exports2.Source = void 0;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var enums_js_1 = require_enums();
     exports2.Source = {
       Upload: "upload",
       Repository: "repository",
       Mistral: "mistral"
     };
-    exports2.Source$inboundSchema = z3.union([
-      z3.nativeEnum(exports2.Source),
-      z3.string().transform(enums_js_1.catchUnrecognizedEnum)
+    exports2.Source$inboundSchema = z4.union([
+      z4.nativeEnum(exports2.Source),
+      z4.string().transform(enums_js_1.catchUnrecognizedEnum)
     ]);
-    exports2.Source$outboundSchema = z3.union([
-      z3.nativeEnum(exports2.Source),
-      z3.string().and(z3.custom())
+    exports2.Source$outboundSchema = z4.union([
+      z4.nativeEnum(exports2.Source),
+      z4.string().and(z4.custom())
     ]);
     var Source$;
     (function(Source$2) {
@@ -62359,10 +63196,10 @@ var require_fileschema = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -62377,41 +63214,41 @@ var require_fileschema = __commonJS({
     exports2.FileSchema$ = exports2.FileSchema$outboundSchema = exports2.FileSchema$inboundSchema = void 0;
     exports2.fileSchemaToJSON = fileSchemaToJSON;
     exports2.fileSchemaFromJSON = fileSchemaFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var filepurpose_js_1 = require_filepurpose();
     var sampletype_js_1 = require_sampletype();
     var source_js_1 = require_source();
-    exports2.FileSchema$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      bytes: z3.number().int(),
-      created_at: z3.number().int(),
-      filename: z3.string(),
+    exports2.FileSchema$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      bytes: z4.number().int(),
+      created_at: z4.number().int(),
+      filename: z4.string(),
       purpose: filepurpose_js_1.FilePurpose$inboundSchema,
       sample_type: sampletype_js_1.SampleType$inboundSchema,
-      num_lines: z3.nullable(z3.number().int()).optional(),
+      num_lines: z4.nullable(z4.number().int()).optional(),
       source: source_js_1.Source$inboundSchema
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "created_at": "createdAt",
         "sample_type": "sampleType",
         "num_lines": "numLines"
       });
     });
-    exports2.FileSchema$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      bytes: z3.number().int(),
-      createdAt: z3.number().int(),
-      filename: z3.string(),
+    exports2.FileSchema$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      bytes: z4.number().int(),
+      createdAt: z4.number().int(),
+      filename: z4.string(),
       purpose: filepurpose_js_1.FilePurpose$outboundSchema,
       sampleType: sampletype_js_1.SampleType$outboundSchema,
-      numLines: z3.nullable(z3.number().int()).optional(),
+      numLines: z4.nullable(z4.number().int()).optional(),
       source: source_js_1.Source$outboundSchema
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         createdAt: "created_at",
         sampleType: "sample_type",
         numLines: "num_lines"
@@ -62426,7 +63263,7 @@ var require_fileschema = __commonJS({
       return JSON.stringify(exports2.FileSchema$outboundSchema.parse(fileSchema));
     }
     function fileSchemaFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FileSchema$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FileSchema' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FileSchema$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FileSchema' from JSON`);
     }
   }
 });
@@ -62448,10 +63285,10 @@ var require_filesignedurl = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -62466,13 +63303,13 @@ var require_filesignedurl = __commonJS({
     exports2.FileSignedURL$ = exports2.FileSignedURL$outboundSchema = exports2.FileSignedURL$inboundSchema = void 0;
     exports2.fileSignedURLToJSON = fileSignedURLToJSON;
     exports2.fileSignedURLFromJSON = fileSignedURLFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
-    exports2.FileSignedURL$inboundSchema = z3.object({
-      url: z3.string()
+    exports2.FileSignedURL$inboundSchema = z4.object({
+      url: z4.string()
     });
-    exports2.FileSignedURL$outboundSchema = z3.object({
-      url: z3.string()
+    exports2.FileSignedURL$outboundSchema = z4.object({
+      url: z4.string()
     });
     var FileSignedURL$;
     (function(FileSignedURL$2) {
@@ -62483,7 +63320,7 @@ var require_filesignedurl = __commonJS({
       return JSON.stringify(exports2.FileSignedURL$outboundSchema.parse(fileSignedURL));
     }
     function fileSignedURLFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FileSignedURL$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FileSignedURL' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FileSignedURL$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FileSignedURL' from JSON`);
     }
   }
 });
@@ -62505,10 +63342,10 @@ var require_fimcompletionrequest = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -62525,11 +63362,11 @@ var require_fimcompletionrequest = __commonJS({
     exports2.fimCompletionRequestStopFromJSON = fimCompletionRequestStopFromJSON;
     exports2.fimCompletionRequestToJSON = fimCompletionRequestToJSON;
     exports2.fimCompletionRequestFromJSON = fimCompletionRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.FIMCompletionRequestStop$inboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
-    exports2.FIMCompletionRequestStop$outboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
+    exports2.FIMCompletionRequestStop$inboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
+    exports2.FIMCompletionRequestStop$outboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
     var FIMCompletionRequestStop$;
     (function(FIMCompletionRequestStop$2) {
       FIMCompletionRequestStop$2.inboundSchema = exports2.FIMCompletionRequestStop$inboundSchema;
@@ -62539,40 +63376,40 @@ var require_fimcompletionrequest = __commonJS({
       return JSON.stringify(exports2.FIMCompletionRequestStop$outboundSchema.parse(fimCompletionRequestStop));
     }
     function fimCompletionRequestStopFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FIMCompletionRequestStop$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FIMCompletionRequestStop' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FIMCompletionRequestStop$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FIMCompletionRequestStop' from JSON`);
     }
-    exports2.FIMCompletionRequest$inboundSchema = z3.object({
-      model: z3.nullable(z3.string()),
-      temperature: z3.nullable(z3.number()).optional(),
-      top_p: z3.number().default(1),
-      max_tokens: z3.nullable(z3.number().int()).optional(),
-      stream: z3.boolean().default(false),
-      stop: z3.union([z3.string(), z3.array(z3.string())]).optional(),
-      random_seed: z3.nullable(z3.number().int()).optional(),
-      prompt: z3.string(),
-      suffix: z3.nullable(z3.string()).optional(),
-      min_tokens: z3.nullable(z3.number().int()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FIMCompletionRequest$inboundSchema = z4.object({
+      model: z4.nullable(z4.string()),
+      temperature: z4.nullable(z4.number()).optional(),
+      top_p: z4.number().default(1),
+      max_tokens: z4.nullable(z4.number().int()).optional(),
+      stream: z4.boolean().default(false),
+      stop: z4.union([z4.string(), z4.array(z4.string())]).optional(),
+      random_seed: z4.nullable(z4.number().int()).optional(),
+      prompt: z4.string(),
+      suffix: z4.nullable(z4.string()).optional(),
+      min_tokens: z4.nullable(z4.number().int()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "top_p": "topP",
         "max_tokens": "maxTokens",
         "random_seed": "randomSeed",
         "min_tokens": "minTokens"
       });
     });
-    exports2.FIMCompletionRequest$outboundSchema = z3.object({
-      model: z3.nullable(z3.string()),
-      temperature: z3.nullable(z3.number()).optional(),
-      topP: z3.number().default(1),
-      maxTokens: z3.nullable(z3.number().int()).optional(),
-      stream: z3.boolean().default(false),
-      stop: z3.union([z3.string(), z3.array(z3.string())]).optional(),
-      randomSeed: z3.nullable(z3.number().int()).optional(),
-      prompt: z3.string(),
-      suffix: z3.nullable(z3.string()).optional(),
-      minTokens: z3.nullable(z3.number().int()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FIMCompletionRequest$outboundSchema = z4.object({
+      model: z4.nullable(z4.string()),
+      temperature: z4.nullable(z4.number()).optional(),
+      topP: z4.number().default(1),
+      maxTokens: z4.nullable(z4.number().int()).optional(),
+      stream: z4.boolean().default(false),
+      stop: z4.union([z4.string(), z4.array(z4.string())]).optional(),
+      randomSeed: z4.nullable(z4.number().int()).optional(),
+      prompt: z4.string(),
+      suffix: z4.nullable(z4.string()).optional(),
+      minTokens: z4.nullable(z4.number().int()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         topP: "top_p",
         maxTokens: "max_tokens",
         randomSeed: "random_seed",
@@ -62588,7 +63425,7 @@ var require_fimcompletionrequest = __commonJS({
       return JSON.stringify(exports2.FIMCompletionRequest$outboundSchema.parse(fimCompletionRequest));
     }
     function fimCompletionRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FIMCompletionRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FIMCompletionRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FIMCompletionRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FIMCompletionRequest' from JSON`);
     }
   }
 });
@@ -62610,10 +63447,10 @@ var require_fimcompletionresponse = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -62628,25 +63465,25 @@ var require_fimcompletionresponse = __commonJS({
     exports2.FIMCompletionResponse$ = exports2.FIMCompletionResponse$outboundSchema = exports2.FIMCompletionResponse$inboundSchema = void 0;
     exports2.fimCompletionResponseToJSON = fimCompletionResponseToJSON;
     exports2.fimCompletionResponseFromJSON = fimCompletionResponseFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var chatcompletionchoice_js_1 = require_chatcompletionchoice();
     var usageinfo_js_1 = require_usageinfo();
-    exports2.FIMCompletionResponse$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      model: z3.string(),
+    exports2.FIMCompletionResponse$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      model: z4.string(),
       usage: usageinfo_js_1.UsageInfo$inboundSchema,
-      created: z3.number().int().optional(),
-      choices: z3.array(chatcompletionchoice_js_1.ChatCompletionChoice$inboundSchema).optional()
+      created: z4.number().int().optional(),
+      choices: z4.array(chatcompletionchoice_js_1.ChatCompletionChoice$inboundSchema).optional()
     });
-    exports2.FIMCompletionResponse$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      model: z3.string(),
+    exports2.FIMCompletionResponse$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      model: z4.string(),
       usage: usageinfo_js_1.UsageInfo$outboundSchema,
-      created: z3.number().int().optional(),
-      choices: z3.array(chatcompletionchoice_js_1.ChatCompletionChoice$outboundSchema).optional()
+      created: z4.number().int().optional(),
+      choices: z4.array(chatcompletionchoice_js_1.ChatCompletionChoice$outboundSchema).optional()
     });
     var FIMCompletionResponse$;
     (function(FIMCompletionResponse$2) {
@@ -62657,7 +63494,7 @@ var require_fimcompletionresponse = __commonJS({
       return JSON.stringify(exports2.FIMCompletionResponse$outboundSchema.parse(fimCompletionResponse));
     }
     function fimCompletionResponseFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FIMCompletionResponse$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FIMCompletionResponse' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FIMCompletionResponse$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FIMCompletionResponse' from JSON`);
     }
   }
 });
@@ -62679,10 +63516,10 @@ var require_fimcompletionstreamrequest = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -62699,11 +63536,11 @@ var require_fimcompletionstreamrequest = __commonJS({
     exports2.fimCompletionStreamRequestStopFromJSON = fimCompletionStreamRequestStopFromJSON;
     exports2.fimCompletionStreamRequestToJSON = fimCompletionStreamRequestToJSON;
     exports2.fimCompletionStreamRequestFromJSON = fimCompletionStreamRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.FIMCompletionStreamRequestStop$inboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
-    exports2.FIMCompletionStreamRequestStop$outboundSchema = z3.union([z3.string(), z3.array(z3.string())]);
+    exports2.FIMCompletionStreamRequestStop$inboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
+    exports2.FIMCompletionStreamRequestStop$outboundSchema = z4.union([z4.string(), z4.array(z4.string())]);
     var FIMCompletionStreamRequestStop$;
     (function(FIMCompletionStreamRequestStop$2) {
       FIMCompletionStreamRequestStop$2.inboundSchema = exports2.FIMCompletionStreamRequestStop$inboundSchema;
@@ -62713,40 +63550,40 @@ var require_fimcompletionstreamrequest = __commonJS({
       return JSON.stringify(exports2.FIMCompletionStreamRequestStop$outboundSchema.parse(fimCompletionStreamRequestStop));
     }
     function fimCompletionStreamRequestStopFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FIMCompletionStreamRequestStop$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FIMCompletionStreamRequestStop' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FIMCompletionStreamRequestStop$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FIMCompletionStreamRequestStop' from JSON`);
     }
-    exports2.FIMCompletionStreamRequest$inboundSchema = z3.object({
-      model: z3.nullable(z3.string()),
-      temperature: z3.nullable(z3.number()).optional(),
-      top_p: z3.number().default(1),
-      max_tokens: z3.nullable(z3.number().int()).optional(),
-      stream: z3.boolean().default(true),
-      stop: z3.union([z3.string(), z3.array(z3.string())]).optional(),
-      random_seed: z3.nullable(z3.number().int()).optional(),
-      prompt: z3.string(),
-      suffix: z3.nullable(z3.string()).optional(),
-      min_tokens: z3.nullable(z3.number().int()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FIMCompletionStreamRequest$inboundSchema = z4.object({
+      model: z4.nullable(z4.string()),
+      temperature: z4.nullable(z4.number()).optional(),
+      top_p: z4.number().default(1),
+      max_tokens: z4.nullable(z4.number().int()).optional(),
+      stream: z4.boolean().default(true),
+      stop: z4.union([z4.string(), z4.array(z4.string())]).optional(),
+      random_seed: z4.nullable(z4.number().int()).optional(),
+      prompt: z4.string(),
+      suffix: z4.nullable(z4.string()).optional(),
+      min_tokens: z4.nullable(z4.number().int()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "top_p": "topP",
         "max_tokens": "maxTokens",
         "random_seed": "randomSeed",
         "min_tokens": "minTokens"
       });
     });
-    exports2.FIMCompletionStreamRequest$outboundSchema = z3.object({
-      model: z3.nullable(z3.string()),
-      temperature: z3.nullable(z3.number()).optional(),
-      topP: z3.number().default(1),
-      maxTokens: z3.nullable(z3.number().int()).optional(),
-      stream: z3.boolean().default(true),
-      stop: z3.union([z3.string(), z3.array(z3.string())]).optional(),
-      randomSeed: z3.nullable(z3.number().int()).optional(),
-      prompt: z3.string(),
-      suffix: z3.nullable(z3.string()).optional(),
-      minTokens: z3.nullable(z3.number().int()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FIMCompletionStreamRequest$outboundSchema = z4.object({
+      model: z4.nullable(z4.string()),
+      temperature: z4.nullable(z4.number()).optional(),
+      topP: z4.number().default(1),
+      maxTokens: z4.nullable(z4.number().int()).optional(),
+      stream: z4.boolean().default(true),
+      stop: z4.union([z4.string(), z4.array(z4.string())]).optional(),
+      randomSeed: z4.nullable(z4.number().int()).optional(),
+      prompt: z4.string(),
+      suffix: z4.nullable(z4.string()).optional(),
+      minTokens: z4.nullable(z4.number().int()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         topP: "top_p",
         maxTokens: "max_tokens",
         randomSeed: "random_seed",
@@ -62762,7 +63599,7 @@ var require_fimcompletionstreamrequest = __commonJS({
       return JSON.stringify(exports2.FIMCompletionStreamRequest$outboundSchema.parse(fimCompletionStreamRequest));
     }
     function fimCompletionStreamRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FIMCompletionStreamRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FIMCompletionStreamRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FIMCompletionStreamRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FIMCompletionStreamRequest' from JSON`);
     }
   }
 });
@@ -62784,10 +63621,10 @@ var require_ftmodelcapabilitiesout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -62802,29 +63639,29 @@ var require_ftmodelcapabilitiesout = __commonJS({
     exports2.FTModelCapabilitiesOut$ = exports2.FTModelCapabilitiesOut$outboundSchema = exports2.FTModelCapabilitiesOut$inboundSchema = void 0;
     exports2.ftModelCapabilitiesOutToJSON = ftModelCapabilitiesOutToJSON;
     exports2.ftModelCapabilitiesOutFromJSON = ftModelCapabilitiesOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.FTModelCapabilitiesOut$inboundSchema = z3.object({
-      completion_chat: z3.boolean().default(true),
-      completion_fim: z3.boolean().default(false),
-      function_calling: z3.boolean().default(false),
-      fine_tuning: z3.boolean().default(false)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FTModelCapabilitiesOut$inboundSchema = z4.object({
+      completion_chat: z4.boolean().default(true),
+      completion_fim: z4.boolean().default(false),
+      function_calling: z4.boolean().default(false),
+      fine_tuning: z4.boolean().default(false)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "completion_chat": "completionChat",
         "completion_fim": "completionFim",
         "function_calling": "functionCalling",
         "fine_tuning": "fineTuning"
       });
     });
-    exports2.FTModelCapabilitiesOut$outboundSchema = z3.object({
-      completionChat: z3.boolean().default(true),
-      completionFim: z3.boolean().default(false),
-      functionCalling: z3.boolean().default(false),
-      fineTuning: z3.boolean().default(false)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FTModelCapabilitiesOut$outboundSchema = z4.object({
+      completionChat: z4.boolean().default(true),
+      completionFim: z4.boolean().default(false),
+      functionCalling: z4.boolean().default(false),
+      fineTuning: z4.boolean().default(false)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         completionChat: "completion_chat",
         completionFim: "completion_fim",
         functionCalling: "function_calling",
@@ -62840,7 +63677,7 @@ var require_ftmodelcapabilitiesout = __commonJS({
       return JSON.stringify(exports2.FTModelCapabilitiesOut$outboundSchema.parse(ftModelCapabilitiesOut));
     }
     function ftModelCapabilitiesOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FTModelCapabilitiesOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FTModelCapabilitiesOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FTModelCapabilitiesOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FTModelCapabilitiesOut' from JSON`);
     }
   }
 });
@@ -62862,10 +63699,10 @@ var require_ftmodelcard = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -62880,61 +63717,61 @@ var require_ftmodelcard = __commonJS({
     exports2.FTModelCard$ = exports2.FTModelCard$outboundSchema = exports2.FTModelCard$inboundSchema = exports2.FTModelCardType$ = exports2.FTModelCardType$outboundSchema = exports2.FTModelCardType$inboundSchema = exports2.FTModelCardType = void 0;
     exports2.ftModelCardToJSON = ftModelCardToJSON;
     exports2.ftModelCardFromJSON = ftModelCardFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var modelcapabilities_js_1 = require_modelcapabilities();
     exports2.FTModelCardType = {
       FineTuned: "fine-tuned"
     };
-    exports2.FTModelCardType$inboundSchema = z3.nativeEnum(exports2.FTModelCardType);
+    exports2.FTModelCardType$inboundSchema = z4.nativeEnum(exports2.FTModelCardType);
     exports2.FTModelCardType$outboundSchema = exports2.FTModelCardType$inboundSchema;
     var FTModelCardType$;
     (function(FTModelCardType$2) {
       FTModelCardType$2.inboundSchema = exports2.FTModelCardType$inboundSchema;
       FTModelCardType$2.outboundSchema = exports2.FTModelCardType$outboundSchema;
     })(FTModelCardType$ || (exports2.FTModelCardType$ = FTModelCardType$ = {}));
-    exports2.FTModelCard$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string().default("model"),
-      created: z3.number().int().optional(),
-      owned_by: z3.string().default("mistralai"),
+    exports2.FTModelCard$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string().default("model"),
+      created: z4.number().int().optional(),
+      owned_by: z4.string().default("mistralai"),
       capabilities: modelcapabilities_js_1.ModelCapabilities$inboundSchema,
-      name: z3.nullable(z3.string()).optional(),
-      description: z3.nullable(z3.string()).optional(),
-      max_context_length: z3.number().int().default(32768),
-      aliases: z3.array(z3.string()).optional(),
-      deprecation: z3.nullable(z3.string().datetime({ offset: true }).transform((v2) => new Date(v2))).optional(),
-      default_model_temperature: z3.nullable(z3.number()).optional(),
-      type: z3.literal("fine-tuned").default("fine-tuned"),
-      job: z3.string(),
-      root: z3.string(),
-      archived: z3.boolean().default(false)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      name: z4.nullable(z4.string()).optional(),
+      description: z4.nullable(z4.string()).optional(),
+      max_context_length: z4.number().int().default(32768),
+      aliases: z4.array(z4.string()).optional(),
+      deprecation: z4.nullable(z4.string().datetime({ offset: true }).transform((v6) => new Date(v6))).optional(),
+      default_model_temperature: z4.nullable(z4.number()).optional(),
+      type: z4.literal("fine-tuned").default("fine-tuned"),
+      job: z4.string(),
+      root: z4.string(),
+      archived: z4.boolean().default(false)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "owned_by": "ownedBy",
         "max_context_length": "maxContextLength",
         "default_model_temperature": "defaultModelTemperature"
       });
     });
-    exports2.FTModelCard$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string().default("model"),
-      created: z3.number().int().optional(),
-      ownedBy: z3.string().default("mistralai"),
+    exports2.FTModelCard$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string().default("model"),
+      created: z4.number().int().optional(),
+      ownedBy: z4.string().default("mistralai"),
       capabilities: modelcapabilities_js_1.ModelCapabilities$outboundSchema,
-      name: z3.nullable(z3.string()).optional(),
-      description: z3.nullable(z3.string()).optional(),
-      maxContextLength: z3.number().int().default(32768),
-      aliases: z3.array(z3.string()).optional(),
-      deprecation: z3.nullable(z3.date().transform((v2) => v2.toISOString())).optional(),
-      defaultModelTemperature: z3.nullable(z3.number()).optional(),
-      type: z3.literal("fine-tuned").default("fine-tuned"),
-      job: z3.string(),
-      root: z3.string(),
-      archived: z3.boolean().default(false)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      name: z4.nullable(z4.string()).optional(),
+      description: z4.nullable(z4.string()).optional(),
+      maxContextLength: z4.number().int().default(32768),
+      aliases: z4.array(z4.string()).optional(),
+      deprecation: z4.nullable(z4.date().transform((v6) => v6.toISOString())).optional(),
+      defaultModelTemperature: z4.nullable(z4.number()).optional(),
+      type: z4.literal("fine-tuned").default("fine-tuned"),
+      job: z4.string(),
+      root: z4.string(),
+      archived: z4.boolean().default(false)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         ownedBy: "owned_by",
         maxContextLength: "max_context_length",
         defaultModelTemperature: "default_model_temperature"
@@ -62949,7 +63786,7 @@ var require_ftmodelcard = __commonJS({
       return JSON.stringify(exports2.FTModelCard$outboundSchema.parse(ftModelCard));
     }
     function ftModelCardFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FTModelCard$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FTModelCard' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FTModelCard$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FTModelCard' from JSON`);
     }
   }
 });
@@ -62971,10 +63808,10 @@ var require_ftmodelout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -62989,54 +63826,54 @@ var require_ftmodelout = __commonJS({
     exports2.FTModelOut$ = exports2.FTModelOut$outboundSchema = exports2.FTModelOut$inboundSchema = exports2.FTModelOutObject$ = exports2.FTModelOutObject$outboundSchema = exports2.FTModelOutObject$inboundSchema = exports2.FTModelOutObject = void 0;
     exports2.ftModelOutToJSON = ftModelOutToJSON;
     exports2.ftModelOutFromJSON = ftModelOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var ftmodelcapabilitiesout_js_1 = require_ftmodelcapabilitiesout();
     exports2.FTModelOutObject = {
       Model: "model"
     };
-    exports2.FTModelOutObject$inboundSchema = z3.nativeEnum(exports2.FTModelOutObject);
+    exports2.FTModelOutObject$inboundSchema = z4.nativeEnum(exports2.FTModelOutObject);
     exports2.FTModelOutObject$outboundSchema = exports2.FTModelOutObject$inboundSchema;
     var FTModelOutObject$;
     (function(FTModelOutObject$2) {
       FTModelOutObject$2.inboundSchema = exports2.FTModelOutObject$inboundSchema;
       FTModelOutObject$2.outboundSchema = exports2.FTModelOutObject$outboundSchema;
     })(FTModelOutObject$ || (exports2.FTModelOutObject$ = FTModelOutObject$ = {}));
-    exports2.FTModelOut$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.literal("model").default("model"),
-      created: z3.number().int(),
-      owned_by: z3.string(),
-      root: z3.string(),
-      archived: z3.boolean(),
-      name: z3.nullable(z3.string()).optional(),
-      description: z3.nullable(z3.string()).optional(),
+    exports2.FTModelOut$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.literal("model").default("model"),
+      created: z4.number().int(),
+      owned_by: z4.string(),
+      root: z4.string(),
+      archived: z4.boolean(),
+      name: z4.nullable(z4.string()).optional(),
+      description: z4.nullable(z4.string()).optional(),
       capabilities: ftmodelcapabilitiesout_js_1.FTModelCapabilitiesOut$inboundSchema,
-      max_context_length: z3.number().int().default(32768),
-      aliases: z3.array(z3.string()).optional(),
-      job: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      max_context_length: z4.number().int().default(32768),
+      aliases: z4.array(z4.string()).optional(),
+      job: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "owned_by": "ownedBy",
         "max_context_length": "maxContextLength"
       });
     });
-    exports2.FTModelOut$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.literal("model").default("model"),
-      created: z3.number().int(),
-      ownedBy: z3.string(),
-      root: z3.string(),
-      archived: z3.boolean(),
-      name: z3.nullable(z3.string()).optional(),
-      description: z3.nullable(z3.string()).optional(),
+    exports2.FTModelOut$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.literal("model").default("model"),
+      created: z4.number().int(),
+      ownedBy: z4.string(),
+      root: z4.string(),
+      archived: z4.boolean(),
+      name: z4.nullable(z4.string()).optional(),
+      description: z4.nullable(z4.string()).optional(),
       capabilities: ftmodelcapabilitiesout_js_1.FTModelCapabilitiesOut$outboundSchema,
-      maxContextLength: z3.number().int().default(32768),
-      aliases: z3.array(z3.string()).optional(),
-      job: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      maxContextLength: z4.number().int().default(32768),
+      aliases: z4.array(z4.string()).optional(),
+      job: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         ownedBy: "owned_by",
         maxContextLength: "max_context_length"
       });
@@ -63050,7 +63887,7 @@ var require_ftmodelout = __commonJS({
       return JSON.stringify(exports2.FTModelOut$outboundSchema.parse(ftModelOut));
     }
     function ftModelOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FTModelOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FTModelOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FTModelOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FTModelOut' from JSON`);
     }
   }
 });
@@ -63072,10 +63909,10 @@ var require_githubrepositoryin = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -63090,33 +63927,33 @@ var require_githubrepositoryin = __commonJS({
     exports2.GithubRepositoryIn$ = exports2.GithubRepositoryIn$outboundSchema = exports2.GithubRepositoryIn$inboundSchema = exports2.GithubRepositoryInType$ = exports2.GithubRepositoryInType$outboundSchema = exports2.GithubRepositoryInType$inboundSchema = exports2.GithubRepositoryInType = void 0;
     exports2.githubRepositoryInToJSON = githubRepositoryInToJSON;
     exports2.githubRepositoryInFromJSON = githubRepositoryInFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     exports2.GithubRepositoryInType = {
       Github: "github"
     };
-    exports2.GithubRepositoryInType$inboundSchema = z3.nativeEnum(exports2.GithubRepositoryInType);
+    exports2.GithubRepositoryInType$inboundSchema = z4.nativeEnum(exports2.GithubRepositoryInType);
     exports2.GithubRepositoryInType$outboundSchema = exports2.GithubRepositoryInType$inboundSchema;
     var GithubRepositoryInType$;
     (function(GithubRepositoryInType$2) {
       GithubRepositoryInType$2.inboundSchema = exports2.GithubRepositoryInType$inboundSchema;
       GithubRepositoryInType$2.outboundSchema = exports2.GithubRepositoryInType$outboundSchema;
     })(GithubRepositoryInType$ || (exports2.GithubRepositoryInType$ = GithubRepositoryInType$ = {}));
-    exports2.GithubRepositoryIn$inboundSchema = z3.object({
-      type: z3.literal("github").default("github"),
-      name: z3.string(),
-      owner: z3.string(),
-      ref: z3.nullable(z3.string()).optional(),
-      weight: z3.number().default(1),
-      token: z3.string()
+    exports2.GithubRepositoryIn$inboundSchema = z4.object({
+      type: z4.literal("github").default("github"),
+      name: z4.string(),
+      owner: z4.string(),
+      ref: z4.nullable(z4.string()).optional(),
+      weight: z4.number().default(1),
+      token: z4.string()
     });
-    exports2.GithubRepositoryIn$outboundSchema = z3.object({
-      type: z3.literal("github").default("github"),
-      name: z3.string(),
-      owner: z3.string(),
-      ref: z3.nullable(z3.string()).optional(),
-      weight: z3.number().default(1),
-      token: z3.string()
+    exports2.GithubRepositoryIn$outboundSchema = z4.object({
+      type: z4.literal("github").default("github"),
+      name: z4.string(),
+      owner: z4.string(),
+      ref: z4.nullable(z4.string()).optional(),
+      weight: z4.number().default(1),
+      token: z4.string()
     });
     var GithubRepositoryIn$;
     (function(GithubRepositoryIn$2) {
@@ -63127,7 +63964,7 @@ var require_githubrepositoryin = __commonJS({
       return JSON.stringify(exports2.GithubRepositoryIn$outboundSchema.parse(githubRepositoryIn));
     }
     function githubRepositoryInFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.GithubRepositoryIn$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'GithubRepositoryIn' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.GithubRepositoryIn$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'GithubRepositoryIn' from JSON`);
     }
   }
 });
@@ -63149,10 +63986,10 @@ var require_trainingfile = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -63167,22 +64004,22 @@ var require_trainingfile = __commonJS({
     exports2.TrainingFile$ = exports2.TrainingFile$outboundSchema = exports2.TrainingFile$inboundSchema = void 0;
     exports2.trainingFileToJSON = trainingFileToJSON;
     exports2.trainingFileFromJSON = trainingFileFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.TrainingFile$inboundSchema = z3.object({
-      file_id: z3.string(),
-      weight: z3.number().default(1)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.TrainingFile$inboundSchema = z4.object({
+      file_id: z4.string(),
+      weight: z4.number().default(1)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "file_id": "fileId"
       });
     });
-    exports2.TrainingFile$outboundSchema = z3.object({
-      fileId: z3.string(),
-      weight: z3.number().default(1)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.TrainingFile$outboundSchema = z4.object({
+      fileId: z4.string(),
+      weight: z4.number().default(1)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         fileId: "file_id"
       });
     });
@@ -63195,7 +64032,7 @@ var require_trainingfile = __commonJS({
       return JSON.stringify(exports2.TrainingFile$outboundSchema.parse(trainingFile));
     }
     function trainingFileFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.TrainingFile$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'TrainingFile' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.TrainingFile$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'TrainingFile' from JSON`);
     }
   }
 });
@@ -63217,10 +64054,10 @@ var require_trainingparametersin = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -63235,19 +64072,19 @@ var require_trainingparametersin = __commonJS({
     exports2.TrainingParametersIn$ = exports2.TrainingParametersIn$outboundSchema = exports2.TrainingParametersIn$inboundSchema = void 0;
     exports2.trainingParametersInToJSON = trainingParametersInToJSON;
     exports2.trainingParametersInFromJSON = trainingParametersInFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.TrainingParametersIn$inboundSchema = z3.object({
-      training_steps: z3.nullable(z3.number().int()).optional(),
-      learning_rate: z3.number().default(1e-4),
-      weight_decay: z3.nullable(z3.number()).optional(),
-      warmup_fraction: z3.nullable(z3.number()).optional(),
-      epochs: z3.nullable(z3.number()).optional(),
-      fim_ratio: z3.nullable(z3.number()).optional(),
-      seq_len: z3.nullable(z3.number().int()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.TrainingParametersIn$inboundSchema = z4.object({
+      training_steps: z4.nullable(z4.number().int()).optional(),
+      learning_rate: z4.number().default(1e-4),
+      weight_decay: z4.nullable(z4.number()).optional(),
+      warmup_fraction: z4.nullable(z4.number()).optional(),
+      epochs: z4.nullable(z4.number()).optional(),
+      fim_ratio: z4.nullable(z4.number()).optional(),
+      seq_len: z4.nullable(z4.number().int()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "training_steps": "trainingSteps",
         "learning_rate": "learningRate",
         "weight_decay": "weightDecay",
@@ -63256,16 +64093,16 @@ var require_trainingparametersin = __commonJS({
         "seq_len": "seqLen"
       });
     });
-    exports2.TrainingParametersIn$outboundSchema = z3.object({
-      trainingSteps: z3.nullable(z3.number().int()).optional(),
-      learningRate: z3.number().default(1e-4),
-      weightDecay: z3.nullable(z3.number()).optional(),
-      warmupFraction: z3.nullable(z3.number()).optional(),
-      epochs: z3.nullable(z3.number()).optional(),
-      fimRatio: z3.nullable(z3.number()).optional(),
-      seqLen: z3.nullable(z3.number().int()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.TrainingParametersIn$outboundSchema = z4.object({
+      trainingSteps: z4.nullable(z4.number().int()).optional(),
+      learningRate: z4.number().default(1e-4),
+      weightDecay: z4.nullable(z4.number()).optional(),
+      warmupFraction: z4.nullable(z4.number()).optional(),
+      epochs: z4.nullable(z4.number()).optional(),
+      fimRatio: z4.nullable(z4.number()).optional(),
+      seqLen: z4.nullable(z4.number().int()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         trainingSteps: "training_steps",
         learningRate: "learning_rate",
         weightDecay: "weight_decay",
@@ -63283,7 +64120,7 @@ var require_trainingparametersin = __commonJS({
       return JSON.stringify(exports2.TrainingParametersIn$outboundSchema.parse(trainingParametersIn));
     }
     function trainingParametersInFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.TrainingParametersIn$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'TrainingParametersIn' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.TrainingParametersIn$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'TrainingParametersIn' from JSON`);
     }
   }
 });
@@ -63305,10 +64142,10 @@ var require_wandbintegration = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -63323,39 +64160,39 @@ var require_wandbintegration = __commonJS({
     exports2.WandbIntegration$ = exports2.WandbIntegration$outboundSchema = exports2.WandbIntegration$inboundSchema = exports2.WandbIntegrationType$ = exports2.WandbIntegrationType$outboundSchema = exports2.WandbIntegrationType$inboundSchema = exports2.WandbIntegrationType = void 0;
     exports2.wandbIntegrationToJSON = wandbIntegrationToJSON;
     exports2.wandbIntegrationFromJSON = wandbIntegrationFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     exports2.WandbIntegrationType = {
       Wandb: "wandb"
     };
-    exports2.WandbIntegrationType$inboundSchema = z3.nativeEnum(exports2.WandbIntegrationType);
+    exports2.WandbIntegrationType$inboundSchema = z4.nativeEnum(exports2.WandbIntegrationType);
     exports2.WandbIntegrationType$outboundSchema = exports2.WandbIntegrationType$inboundSchema;
     var WandbIntegrationType$;
     (function(WandbIntegrationType$2) {
       WandbIntegrationType$2.inboundSchema = exports2.WandbIntegrationType$inboundSchema;
       WandbIntegrationType$2.outboundSchema = exports2.WandbIntegrationType$outboundSchema;
     })(WandbIntegrationType$ || (exports2.WandbIntegrationType$ = WandbIntegrationType$ = {}));
-    exports2.WandbIntegration$inboundSchema = z3.object({
-      type: z3.literal("wandb").default("wandb"),
-      project: z3.string(),
-      name: z3.nullable(z3.string()).optional(),
-      api_key: z3.string(),
-      run_name: z3.nullable(z3.string()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.WandbIntegration$inboundSchema = z4.object({
+      type: z4.literal("wandb").default("wandb"),
+      project: z4.string(),
+      name: z4.nullable(z4.string()).optional(),
+      api_key: z4.string(),
+      run_name: z4.nullable(z4.string()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "api_key": "apiKey",
         "run_name": "runName"
       });
     });
-    exports2.WandbIntegration$outboundSchema = z3.object({
-      type: z3.literal("wandb").default("wandb"),
-      project: z3.string(),
-      name: z3.nullable(z3.string()).optional(),
-      apiKey: z3.string(),
-      runName: z3.nullable(z3.string()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.WandbIntegration$outboundSchema = z4.object({
+      type: z4.literal("wandb").default("wandb"),
+      project: z4.string(),
+      name: z4.nullable(z4.string()).optional(),
+      apiKey: z4.string(),
+      runName: z4.nullable(z4.string()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         apiKey: "api_key",
         runName: "run_name"
       });
@@ -63369,7 +64206,7 @@ var require_wandbintegration = __commonJS({
       return JSON.stringify(exports2.WandbIntegration$outboundSchema.parse(wandbIntegration));
     }
     function wandbIntegrationFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.WandbIntegration$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'WandbIntegration' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.WandbIntegration$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'WandbIntegration' from JSON`);
     }
   }
 });
@@ -63391,10 +64228,10 @@ var require_jobin = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -63413,7 +64250,7 @@ var require_jobin = __commonJS({
     exports2.jobInRepositoriesFromJSON = jobInRepositoriesFromJSON;
     exports2.jobInToJSON = jobInToJSON;
     exports2.jobInFromJSON = jobInFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var githubrepositoryin_js_1 = require_githubrepositoryin();
@@ -63431,7 +64268,7 @@ var require_jobin = __commonJS({
       return JSON.stringify(exports2.JobInIntegrations$outboundSchema.parse(jobInIntegrations));
     }
     function jobInIntegrationsFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobInIntegrations$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobInIntegrations' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobInIntegrations$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobInIntegrations' from JSON`);
     }
     exports2.JobInRepositories$inboundSchema = githubrepositoryin_js_1.GithubRepositoryIn$inboundSchema;
     exports2.JobInRepositories$outboundSchema = githubrepositoryin_js_1.GithubRepositoryIn$outboundSchema;
@@ -63444,35 +64281,35 @@ var require_jobin = __commonJS({
       return JSON.stringify(exports2.JobInRepositories$outboundSchema.parse(jobInRepositories));
     }
     function jobInRepositoriesFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobInRepositories$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobInRepositories' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobInRepositories$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobInRepositories' from JSON`);
     }
-    exports2.JobIn$inboundSchema = z3.object({
-      model: z3.string(),
-      training_files: z3.array(trainingfile_js_1.TrainingFile$inboundSchema).optional(),
-      validation_files: z3.nullable(z3.array(z3.string())).optional(),
+    exports2.JobIn$inboundSchema = z4.object({
+      model: z4.string(),
+      training_files: z4.array(trainingfile_js_1.TrainingFile$inboundSchema).optional(),
+      validation_files: z4.nullable(z4.array(z4.string())).optional(),
       hyperparameters: trainingparametersin_js_1.TrainingParametersIn$inboundSchema,
-      suffix: z3.nullable(z3.string()).optional(),
-      integrations: z3.nullable(z3.array(wandbintegration_js_1.WandbIntegration$inboundSchema)).optional(),
-      repositories: z3.array(githubrepositoryin_js_1.GithubRepositoryIn$inboundSchema).optional(),
-      auto_start: z3.boolean().optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      suffix: z4.nullable(z4.string()).optional(),
+      integrations: z4.nullable(z4.array(wandbintegration_js_1.WandbIntegration$inboundSchema)).optional(),
+      repositories: z4.array(githubrepositoryin_js_1.GithubRepositoryIn$inboundSchema).optional(),
+      auto_start: z4.boolean().optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "training_files": "trainingFiles",
         "validation_files": "validationFiles",
         "auto_start": "autoStart"
       });
     });
-    exports2.JobIn$outboundSchema = z3.object({
-      model: z3.string(),
-      trainingFiles: z3.array(trainingfile_js_1.TrainingFile$outboundSchema).optional(),
-      validationFiles: z3.nullable(z3.array(z3.string())).optional(),
+    exports2.JobIn$outboundSchema = z4.object({
+      model: z4.string(),
+      trainingFiles: z4.array(trainingfile_js_1.TrainingFile$outboundSchema).optional(),
+      validationFiles: z4.nullable(z4.array(z4.string())).optional(),
       hyperparameters: trainingparametersin_js_1.TrainingParametersIn$outboundSchema,
-      suffix: z3.nullable(z3.string()).optional(),
-      integrations: z3.nullable(z3.array(wandbintegration_js_1.WandbIntegration$outboundSchema)).optional(),
-      repositories: z3.array(githubrepositoryin_js_1.GithubRepositoryIn$outboundSchema).optional(),
-      autoStart: z3.boolean().optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      suffix: z4.nullable(z4.string()).optional(),
+      integrations: z4.nullable(z4.array(wandbintegration_js_1.WandbIntegration$outboundSchema)).optional(),
+      repositories: z4.array(githubrepositoryin_js_1.GithubRepositoryIn$outboundSchema).optional(),
+      autoStart: z4.boolean().optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         trainingFiles: "training_files",
         validationFiles: "validation_files",
         autoStart: "auto_start"
@@ -63487,7 +64324,7 @@ var require_jobin = __commonJS({
       return JSON.stringify(exports2.JobIn$outboundSchema.parse(jobIn));
     }
     function jobInFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobIn$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobIn' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobIn$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobIn' from JSON`);
     }
   }
 });
@@ -63509,10 +64346,10 @@ var require_jobout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -63531,7 +64368,7 @@ var require_jobout = __commonJS({
     exports2.repositoriesFromJSON = repositoriesFromJSON;
     exports2.jobOutToJSON = jobOutToJSON;
     exports2.jobOutFromJSON = jobOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var githubrepositoryout_js_1 = require_githubrepositoryout();
@@ -63553,14 +64390,14 @@ var require_jobout = __commonJS({
     exports2.ObjectT = {
       Job: "job"
     };
-    exports2.Status$inboundSchema = z3.nativeEnum(exports2.Status);
+    exports2.Status$inboundSchema = z4.nativeEnum(exports2.Status);
     exports2.Status$outboundSchema = exports2.Status$inboundSchema;
     var Status$;
     (function(Status$2) {
       Status$2.inboundSchema = exports2.Status$inboundSchema;
       Status$2.outboundSchema = exports2.Status$outboundSchema;
     })(Status$ || (exports2.Status$ = Status$ = {}));
-    exports2.ObjectT$inboundSchema = z3.nativeEnum(exports2.ObjectT);
+    exports2.ObjectT$inboundSchema = z4.nativeEnum(exports2.ObjectT);
     exports2.ObjectT$outboundSchema = exports2.ObjectT$inboundSchema;
     var ObjectT$;
     (function(ObjectT$2) {
@@ -63578,7 +64415,7 @@ var require_jobout = __commonJS({
       return JSON.stringify(exports2.Integrations$outboundSchema.parse(integrations));
     }
     function integrationsFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.Integrations$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'Integrations' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.Integrations$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'Integrations' from JSON`);
     }
     exports2.Repositories$inboundSchema = githubrepositoryout_js_1.GithubRepositoryOut$inboundSchema;
     exports2.Repositories$outboundSchema = githubrepositoryout_js_1.GithubRepositoryOut$outboundSchema;
@@ -63591,28 +64428,28 @@ var require_jobout = __commonJS({
       return JSON.stringify(exports2.Repositories$outboundSchema.parse(repositories));
     }
     function repositoriesFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.Repositories$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'Repositories' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.Repositories$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'Repositories' from JSON`);
     }
-    exports2.JobOut$inboundSchema = z3.object({
-      id: z3.string(),
-      auto_start: z3.boolean(),
+    exports2.JobOut$inboundSchema = z4.object({
+      id: z4.string(),
+      auto_start: z4.boolean(),
       hyperparameters: trainingparameters_js_1.TrainingParameters$inboundSchema,
-      model: z3.string(),
+      model: z4.string(),
       status: exports2.Status$inboundSchema,
-      job_type: z3.string(),
-      created_at: z3.number().int(),
-      modified_at: z3.number().int(),
-      training_files: z3.array(z3.string()),
-      validation_files: z3.nullable(z3.array(z3.string())).optional(),
-      object: z3.literal("job").default("job"),
-      fine_tuned_model: z3.nullable(z3.string()).optional(),
-      suffix: z3.nullable(z3.string()).optional(),
-      integrations: z3.nullable(z3.array(wandbintegrationout_js_1.WandbIntegrationOut$inboundSchema)).optional(),
-      trained_tokens: z3.nullable(z3.number().int()).optional(),
-      repositories: z3.array(githubrepositoryout_js_1.GithubRepositoryOut$inboundSchema).optional(),
-      metadata: z3.nullable(jobmetadataout_js_1.JobMetadataOut$inboundSchema).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      job_type: z4.string(),
+      created_at: z4.number().int(),
+      modified_at: z4.number().int(),
+      training_files: z4.array(z4.string()),
+      validation_files: z4.nullable(z4.array(z4.string())).optional(),
+      object: z4.literal("job").default("job"),
+      fine_tuned_model: z4.nullable(z4.string()).optional(),
+      suffix: z4.nullable(z4.string()).optional(),
+      integrations: z4.nullable(z4.array(wandbintegrationout_js_1.WandbIntegrationOut$inboundSchema)).optional(),
+      trained_tokens: z4.nullable(z4.number().int()).optional(),
+      repositories: z4.array(githubrepositoryout_js_1.GithubRepositoryOut$inboundSchema).optional(),
+      metadata: z4.nullable(jobmetadataout_js_1.JobMetadataOut$inboundSchema).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "auto_start": "autoStart",
         "job_type": "jobType",
         "created_at": "createdAt",
@@ -63623,26 +64460,26 @@ var require_jobout = __commonJS({
         "trained_tokens": "trainedTokens"
       });
     });
-    exports2.JobOut$outboundSchema = z3.object({
-      id: z3.string(),
-      autoStart: z3.boolean(),
+    exports2.JobOut$outboundSchema = z4.object({
+      id: z4.string(),
+      autoStart: z4.boolean(),
       hyperparameters: trainingparameters_js_1.TrainingParameters$outboundSchema,
-      model: z3.string(),
+      model: z4.string(),
       status: exports2.Status$outboundSchema,
-      jobType: z3.string(),
-      createdAt: z3.number().int(),
-      modifiedAt: z3.number().int(),
-      trainingFiles: z3.array(z3.string()),
-      validationFiles: z3.nullable(z3.array(z3.string())).optional(),
-      object: z3.literal("job").default("job"),
-      fineTunedModel: z3.nullable(z3.string()).optional(),
-      suffix: z3.nullable(z3.string()).optional(),
-      integrations: z3.nullable(z3.array(wandbintegrationout_js_1.WandbIntegrationOut$outboundSchema)).optional(),
-      trainedTokens: z3.nullable(z3.number().int()).optional(),
-      repositories: z3.array(githubrepositoryout_js_1.GithubRepositoryOut$outboundSchema).optional(),
-      metadata: z3.nullable(jobmetadataout_js_1.JobMetadataOut$outboundSchema).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      jobType: z4.string(),
+      createdAt: z4.number().int(),
+      modifiedAt: z4.number().int(),
+      trainingFiles: z4.array(z4.string()),
+      validationFiles: z4.nullable(z4.array(z4.string())).optional(),
+      object: z4.literal("job").default("job"),
+      fineTunedModel: z4.nullable(z4.string()).optional(),
+      suffix: z4.nullable(z4.string()).optional(),
+      integrations: z4.nullable(z4.array(wandbintegrationout_js_1.WandbIntegrationOut$outboundSchema)).optional(),
+      trainedTokens: z4.nullable(z4.number().int()).optional(),
+      repositories: z4.array(githubrepositoryout_js_1.GithubRepositoryOut$outboundSchema).optional(),
+      metadata: z4.nullable(jobmetadataout_js_1.JobMetadataOut$outboundSchema).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         autoStart: "auto_start",
         jobType: "job_type",
         createdAt: "created_at",
@@ -63662,7 +64499,7 @@ var require_jobout = __commonJS({
       return JSON.stringify(exports2.JobOut$outboundSchema.parse(jobOut));
     }
     function jobOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobOut' from JSON`);
     }
   }
 });
@@ -63684,10 +64521,10 @@ var require_jobsout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -63702,28 +64539,28 @@ var require_jobsout = __commonJS({
     exports2.JobsOut$ = exports2.JobsOut$outboundSchema = exports2.JobsOut$inboundSchema = exports2.JobsOutObject$ = exports2.JobsOutObject$outboundSchema = exports2.JobsOutObject$inboundSchema = exports2.JobsOutObject = void 0;
     exports2.jobsOutToJSON = jobsOutToJSON;
     exports2.jobsOutFromJSON = jobsOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var jobout_js_1 = require_jobout();
     exports2.JobsOutObject = {
       List: "list"
     };
-    exports2.JobsOutObject$inboundSchema = z3.nativeEnum(exports2.JobsOutObject);
+    exports2.JobsOutObject$inboundSchema = z4.nativeEnum(exports2.JobsOutObject);
     exports2.JobsOutObject$outboundSchema = exports2.JobsOutObject$inboundSchema;
     var JobsOutObject$;
     (function(JobsOutObject$2) {
       JobsOutObject$2.inboundSchema = exports2.JobsOutObject$inboundSchema;
       JobsOutObject$2.outboundSchema = exports2.JobsOutObject$outboundSchema;
     })(JobsOutObject$ || (exports2.JobsOutObject$ = JobsOutObject$ = {}));
-    exports2.JobsOut$inboundSchema = z3.object({
-      data: z3.array(jobout_js_1.JobOut$inboundSchema).optional(),
-      object: z3.literal("list").default("list"),
-      total: z3.number().int()
+    exports2.JobsOut$inboundSchema = z4.object({
+      data: z4.array(jobout_js_1.JobOut$inboundSchema).optional(),
+      object: z4.literal("list").default("list"),
+      total: z4.number().int()
     });
-    exports2.JobsOut$outboundSchema = z3.object({
-      data: z3.array(jobout_js_1.JobOut$outboundSchema).optional(),
-      object: z3.literal("list").default("list"),
-      total: z3.number().int()
+    exports2.JobsOut$outboundSchema = z4.object({
+      data: z4.array(jobout_js_1.JobOut$outboundSchema).optional(),
+      object: z4.literal("list").default("list"),
+      total: z4.number().int()
     });
     var JobsOut$;
     (function(JobsOut$2) {
@@ -63734,7 +64571,7 @@ var require_jobsout = __commonJS({
       return JSON.stringify(exports2.JobsOut$outboundSchema.parse(jobsOut));
     }
     function jobsOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobsOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobsOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobsOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobsOut' from JSON`);
     }
   }
 });
@@ -63756,10 +64593,10 @@ var require_legacyjobmetadataout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -63774,34 +64611,34 @@ var require_legacyjobmetadataout = __commonJS({
     exports2.LegacyJobMetadataOut$ = exports2.LegacyJobMetadataOut$outboundSchema = exports2.LegacyJobMetadataOut$inboundSchema = exports2.LegacyJobMetadataOutObject$ = exports2.LegacyJobMetadataOutObject$outboundSchema = exports2.LegacyJobMetadataOutObject$inboundSchema = exports2.LegacyJobMetadataOutObject = void 0;
     exports2.legacyJobMetadataOutToJSON = legacyJobMetadataOutToJSON;
     exports2.legacyJobMetadataOutFromJSON = legacyJobMetadataOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     exports2.LegacyJobMetadataOutObject = {
       JobMetadata: "job.metadata"
     };
-    exports2.LegacyJobMetadataOutObject$inboundSchema = z3.nativeEnum(exports2.LegacyJobMetadataOutObject);
+    exports2.LegacyJobMetadataOutObject$inboundSchema = z4.nativeEnum(exports2.LegacyJobMetadataOutObject);
     exports2.LegacyJobMetadataOutObject$outboundSchema = exports2.LegacyJobMetadataOutObject$inboundSchema;
     var LegacyJobMetadataOutObject$;
     (function(LegacyJobMetadataOutObject$2) {
       LegacyJobMetadataOutObject$2.inboundSchema = exports2.LegacyJobMetadataOutObject$inboundSchema;
       LegacyJobMetadataOutObject$2.outboundSchema = exports2.LegacyJobMetadataOutObject$outboundSchema;
     })(LegacyJobMetadataOutObject$ || (exports2.LegacyJobMetadataOutObject$ = LegacyJobMetadataOutObject$ = {}));
-    exports2.LegacyJobMetadataOut$inboundSchema = z3.object({
-      expected_duration_seconds: z3.nullable(z3.number().int()).optional(),
-      cost: z3.nullable(z3.number()).optional(),
-      cost_currency: z3.nullable(z3.string()).optional(),
-      train_tokens_per_step: z3.nullable(z3.number().int()).optional(),
-      train_tokens: z3.nullable(z3.number().int()).optional(),
-      data_tokens: z3.nullable(z3.number().int()).optional(),
-      estimated_start_time: z3.nullable(z3.number().int()).optional(),
-      deprecated: z3.boolean().default(true),
-      details: z3.string(),
-      epochs: z3.nullable(z3.number()).optional(),
-      training_steps: z3.nullable(z3.number().int()).optional(),
-      object: z3.literal("job.metadata").default("job.metadata")
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.LegacyJobMetadataOut$inboundSchema = z4.object({
+      expected_duration_seconds: z4.nullable(z4.number().int()).optional(),
+      cost: z4.nullable(z4.number()).optional(),
+      cost_currency: z4.nullable(z4.string()).optional(),
+      train_tokens_per_step: z4.nullable(z4.number().int()).optional(),
+      train_tokens: z4.nullable(z4.number().int()).optional(),
+      data_tokens: z4.nullable(z4.number().int()).optional(),
+      estimated_start_time: z4.nullable(z4.number().int()).optional(),
+      deprecated: z4.boolean().default(true),
+      details: z4.string(),
+      epochs: z4.nullable(z4.number()).optional(),
+      training_steps: z4.nullable(z4.number().int()).optional(),
+      object: z4.literal("job.metadata").default("job.metadata")
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "expected_duration_seconds": "expectedDurationSeconds",
         "cost_currency": "costCurrency",
         "train_tokens_per_step": "trainTokensPerStep",
@@ -63811,21 +64648,21 @@ var require_legacyjobmetadataout = __commonJS({
         "training_steps": "trainingSteps"
       });
     });
-    exports2.LegacyJobMetadataOut$outboundSchema = z3.object({
-      expectedDurationSeconds: z3.nullable(z3.number().int()).optional(),
-      cost: z3.nullable(z3.number()).optional(),
-      costCurrency: z3.nullable(z3.string()).optional(),
-      trainTokensPerStep: z3.nullable(z3.number().int()).optional(),
-      trainTokens: z3.nullable(z3.number().int()).optional(),
-      dataTokens: z3.nullable(z3.number().int()).optional(),
-      estimatedStartTime: z3.nullable(z3.number().int()).optional(),
-      deprecated: z3.boolean().default(true),
-      details: z3.string(),
-      epochs: z3.nullable(z3.number()).optional(),
-      trainingSteps: z3.nullable(z3.number().int()).optional(),
-      object: z3.literal("job.metadata").default("job.metadata")
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.LegacyJobMetadataOut$outboundSchema = z4.object({
+      expectedDurationSeconds: z4.nullable(z4.number().int()).optional(),
+      cost: z4.nullable(z4.number()).optional(),
+      costCurrency: z4.nullable(z4.string()).optional(),
+      trainTokensPerStep: z4.nullable(z4.number().int()).optional(),
+      trainTokens: z4.nullable(z4.number().int()).optional(),
+      dataTokens: z4.nullable(z4.number().int()).optional(),
+      estimatedStartTime: z4.nullable(z4.number().int()).optional(),
+      deprecated: z4.boolean().default(true),
+      details: z4.string(),
+      epochs: z4.nullable(z4.number()).optional(),
+      trainingSteps: z4.nullable(z4.number().int()).optional(),
+      object: z4.literal("job.metadata").default("job.metadata")
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         expectedDurationSeconds: "expected_duration_seconds",
         costCurrency: "cost_currency",
         trainTokensPerStep: "train_tokens_per_step",
@@ -63844,7 +64681,7 @@ var require_legacyjobmetadataout = __commonJS({
       return JSON.stringify(exports2.LegacyJobMetadataOut$outboundSchema.parse(legacyJobMetadataOut));
     }
     function legacyJobMetadataOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.LegacyJobMetadataOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'LegacyJobMetadataOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.LegacyJobMetadataOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'LegacyJobMetadataOut' from JSON`);
     }
   }
 });
@@ -63866,10 +64703,10 @@ var require_listfilesout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -63884,18 +64721,18 @@ var require_listfilesout = __commonJS({
     exports2.ListFilesOut$ = exports2.ListFilesOut$outboundSchema = exports2.ListFilesOut$inboundSchema = void 0;
     exports2.listFilesOutToJSON = listFilesOutToJSON;
     exports2.listFilesOutFromJSON = listFilesOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var fileschema_js_1 = require_fileschema();
-    exports2.ListFilesOut$inboundSchema = z3.object({
-      data: z3.array(fileschema_js_1.FileSchema$inboundSchema),
-      object: z3.string(),
-      total: z3.number().int()
+    exports2.ListFilesOut$inboundSchema = z4.object({
+      data: z4.array(fileschema_js_1.FileSchema$inboundSchema),
+      object: z4.string(),
+      total: z4.number().int()
     });
-    exports2.ListFilesOut$outboundSchema = z3.object({
-      data: z3.array(fileschema_js_1.FileSchema$outboundSchema),
-      object: z3.string(),
-      total: z3.number().int()
+    exports2.ListFilesOut$outboundSchema = z4.object({
+      data: z4.array(fileschema_js_1.FileSchema$outboundSchema),
+      object: z4.string(),
+      total: z4.number().int()
     });
     var ListFilesOut$;
     (function(ListFilesOut$2) {
@@ -63906,7 +64743,7 @@ var require_listfilesout = __commonJS({
       return JSON.stringify(exports2.ListFilesOut$outboundSchema.parse(listFilesOut));
     }
     function listFilesOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ListFilesOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ListFilesOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ListFilesOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ListFilesOut' from JSON`);
     }
   }
 });
@@ -63928,10 +64765,10 @@ var require_modellist = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -63948,24 +64785,24 @@ var require_modellist = __commonJS({
     exports2.dataFromJSON = dataFromJSON;
     exports2.modelListToJSON = modelListToJSON;
     exports2.modelListFromJSON = modelListFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var basemodelcard_js_1 = require_basemodelcard();
     var ftmodelcard_js_1 = require_ftmodelcard();
-    exports2.Data$inboundSchema = z3.union([
-      basemodelcard_js_1.BaseModelCard$inboundSchema.and(z3.object({ type: z3.literal("base") }).transform((v2) => ({
-        type: v2.type
+    exports2.Data$inboundSchema = z4.union([
+      basemodelcard_js_1.BaseModelCard$inboundSchema.and(z4.object({ type: z4.literal("base") }).transform((v6) => ({
+        type: v6.type
       }))),
-      ftmodelcard_js_1.FTModelCard$inboundSchema.and(z3.object({ type: z3.literal("fine-tuned") }).transform((v2) => ({
-        type: v2.type
+      ftmodelcard_js_1.FTModelCard$inboundSchema.and(z4.object({ type: z4.literal("fine-tuned") }).transform((v6) => ({
+        type: v6.type
       })))
     ]);
-    exports2.Data$outboundSchema = z3.union([
-      basemodelcard_js_1.BaseModelCard$outboundSchema.and(z3.object({ type: z3.literal("base") }).transform((v2) => ({
-        type: v2.type
+    exports2.Data$outboundSchema = z4.union([
+      basemodelcard_js_1.BaseModelCard$outboundSchema.and(z4.object({ type: z4.literal("base") }).transform((v6) => ({
+        type: v6.type
       }))),
-      ftmodelcard_js_1.FTModelCard$outboundSchema.and(z3.object({ type: z3.literal("fine-tuned") }).transform((v2) => ({
-        type: v2.type
+      ftmodelcard_js_1.FTModelCard$outboundSchema.and(z4.object({ type: z4.literal("fine-tuned") }).transform((v6) => ({
+        type: v6.type
       })))
     ]);
     var Data$;
@@ -63977,27 +64814,27 @@ var require_modellist = __commonJS({
       return JSON.stringify(exports2.Data$outboundSchema.parse(data));
     }
     function dataFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.Data$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'Data' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.Data$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'Data' from JSON`);
     }
-    exports2.ModelList$inboundSchema = z3.object({
-      object: z3.string().default("list"),
-      data: z3.array(z3.union([
-        basemodelcard_js_1.BaseModelCard$inboundSchema.and(z3.object({ type: z3.literal("base") }).transform((v2) => ({
-          type: v2.type
+    exports2.ModelList$inboundSchema = z4.object({
+      object: z4.string().default("list"),
+      data: z4.array(z4.union([
+        basemodelcard_js_1.BaseModelCard$inboundSchema.and(z4.object({ type: z4.literal("base") }).transform((v6) => ({
+          type: v6.type
         }))),
-        ftmodelcard_js_1.FTModelCard$inboundSchema.and(z3.object({ type: z3.literal("fine-tuned") }).transform((v2) => ({
-          type: v2.type
+        ftmodelcard_js_1.FTModelCard$inboundSchema.and(z4.object({ type: z4.literal("fine-tuned") }).transform((v6) => ({
+          type: v6.type
         })))
       ])).optional()
     });
-    exports2.ModelList$outboundSchema = z3.object({
-      object: z3.string().default("list"),
-      data: z3.array(z3.union([
-        basemodelcard_js_1.BaseModelCard$outboundSchema.and(z3.object({ type: z3.literal("base") }).transform((v2) => ({
-          type: v2.type
+    exports2.ModelList$outboundSchema = z4.object({
+      object: z4.string().default("list"),
+      data: z4.array(z4.union([
+        basemodelcard_js_1.BaseModelCard$outboundSchema.and(z4.object({ type: z4.literal("base") }).transform((v6) => ({
+          type: v6.type
         }))),
-        ftmodelcard_js_1.FTModelCard$outboundSchema.and(z3.object({ type: z3.literal("fine-tuned") }).transform((v2) => ({
-          type: v2.type
+        ftmodelcard_js_1.FTModelCard$outboundSchema.and(z4.object({ type: z4.literal("fine-tuned") }).transform((v6) => ({
+          type: v6.type
         })))
       ])).optional()
     });
@@ -64010,7 +64847,7 @@ var require_modellist = __commonJS({
       return JSON.stringify(exports2.ModelList$outboundSchema.parse(modelList));
     }
     function modelListFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ModelList$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ModelList' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ModelList$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ModelList' from JSON`);
     }
   }
 });
@@ -64032,10 +64869,10 @@ var require_retrievefileout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -64050,43 +64887,43 @@ var require_retrievefileout = __commonJS({
     exports2.RetrieveFileOut$ = exports2.RetrieveFileOut$outboundSchema = exports2.RetrieveFileOut$inboundSchema = void 0;
     exports2.retrieveFileOutToJSON = retrieveFileOutToJSON;
     exports2.retrieveFileOutFromJSON = retrieveFileOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var filepurpose_js_1 = require_filepurpose();
     var sampletype_js_1 = require_sampletype();
     var source_js_1 = require_source();
-    exports2.RetrieveFileOut$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      bytes: z3.number().int(),
-      created_at: z3.number().int(),
-      filename: z3.string(),
+    exports2.RetrieveFileOut$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      bytes: z4.number().int(),
+      created_at: z4.number().int(),
+      filename: z4.string(),
       purpose: filepurpose_js_1.FilePurpose$inboundSchema,
       sample_type: sampletype_js_1.SampleType$inboundSchema,
-      num_lines: z3.nullable(z3.number().int()).optional(),
+      num_lines: z4.nullable(z4.number().int()).optional(),
       source: source_js_1.Source$inboundSchema,
-      deleted: z3.boolean()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      deleted: z4.boolean()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "created_at": "createdAt",
         "sample_type": "sampleType",
         "num_lines": "numLines"
       });
     });
-    exports2.RetrieveFileOut$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      bytes: z3.number().int(),
-      createdAt: z3.number().int(),
-      filename: z3.string(),
+    exports2.RetrieveFileOut$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      bytes: z4.number().int(),
+      createdAt: z4.number().int(),
+      filename: z4.string(),
       purpose: filepurpose_js_1.FilePurpose$outboundSchema,
       sampleType: sampletype_js_1.SampleType$outboundSchema,
-      numLines: z3.nullable(z3.number().int()).optional(),
+      numLines: z4.nullable(z4.number().int()).optional(),
       source: source_js_1.Source$outboundSchema,
-      deleted: z3.boolean()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+      deleted: z4.boolean()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         createdAt: "created_at",
         sampleType: "sample_type",
         numLines: "num_lines"
@@ -64101,7 +64938,7 @@ var require_retrievefileout = __commonJS({
       return JSON.stringify(exports2.RetrieveFileOut$outboundSchema.parse(retrieveFileOut));
     }
     function retrieveFileOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.RetrieveFileOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'RetrieveFileOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.RetrieveFileOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'RetrieveFileOut' from JSON`);
     }
   }
 });
@@ -64123,10 +64960,10 @@ var require_security2 = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -64141,20 +64978,20 @@ var require_security2 = __commonJS({
     exports2.Security$ = exports2.Security$outboundSchema = exports2.Security$inboundSchema = void 0;
     exports2.securityToJSON = securityToJSON;
     exports2.securityFromJSON = securityFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.Security$inboundSchema = z3.object({
-      ApiKey: z3.string().optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.Security$inboundSchema = z4.object({
+      ApiKey: z4.string().optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "ApiKey": "apiKey"
       });
     });
-    exports2.Security$outboundSchema = z3.object({
-      apiKey: z3.string().optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.Security$outboundSchema = z4.object({
+      apiKey: z4.string().optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         apiKey: "ApiKey"
       });
     });
@@ -64167,7 +65004,7 @@ var require_security2 = __commonJS({
       return JSON.stringify(exports2.Security$outboundSchema.parse(security));
     }
     function securityFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.Security$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'Security' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.Security$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'Security' from JSON`);
     }
   }
 });
@@ -64189,10 +65026,10 @@ var require_unarchiveftmodelout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -64207,27 +65044,27 @@ var require_unarchiveftmodelout = __commonJS({
     exports2.UnarchiveFTModelOut$ = exports2.UnarchiveFTModelOut$outboundSchema = exports2.UnarchiveFTModelOut$inboundSchema = exports2.UnarchiveFTModelOutObject$ = exports2.UnarchiveFTModelOutObject$outboundSchema = exports2.UnarchiveFTModelOutObject$inboundSchema = exports2.UnarchiveFTModelOutObject = void 0;
     exports2.unarchiveFTModelOutToJSON = unarchiveFTModelOutToJSON;
     exports2.unarchiveFTModelOutFromJSON = unarchiveFTModelOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     exports2.UnarchiveFTModelOutObject = {
       Model: "model"
     };
-    exports2.UnarchiveFTModelOutObject$inboundSchema = z3.nativeEnum(exports2.UnarchiveFTModelOutObject);
+    exports2.UnarchiveFTModelOutObject$inboundSchema = z4.nativeEnum(exports2.UnarchiveFTModelOutObject);
     exports2.UnarchiveFTModelOutObject$outboundSchema = exports2.UnarchiveFTModelOutObject$inboundSchema;
     var UnarchiveFTModelOutObject$;
     (function(UnarchiveFTModelOutObject$2) {
       UnarchiveFTModelOutObject$2.inboundSchema = exports2.UnarchiveFTModelOutObject$inboundSchema;
       UnarchiveFTModelOutObject$2.outboundSchema = exports2.UnarchiveFTModelOutObject$outboundSchema;
     })(UnarchiveFTModelOutObject$ || (exports2.UnarchiveFTModelOutObject$ = UnarchiveFTModelOutObject$ = {}));
-    exports2.UnarchiveFTModelOut$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.literal("model").default("model"),
-      archived: z3.boolean().default(false)
+    exports2.UnarchiveFTModelOut$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.literal("model").default("model"),
+      archived: z4.boolean().default(false)
     });
-    exports2.UnarchiveFTModelOut$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.literal("model").default("model"),
-      archived: z3.boolean().default(false)
+    exports2.UnarchiveFTModelOut$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.literal("model").default("model"),
+      archived: z4.boolean().default(false)
     });
     var UnarchiveFTModelOut$;
     (function(UnarchiveFTModelOut$2) {
@@ -64238,7 +65075,7 @@ var require_unarchiveftmodelout = __commonJS({
       return JSON.stringify(exports2.UnarchiveFTModelOut$outboundSchema.parse(unarchiveFTModelOut));
     }
     function unarchiveFTModelOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.UnarchiveFTModelOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'UnarchiveFTModelOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.UnarchiveFTModelOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'UnarchiveFTModelOut' from JSON`);
     }
   }
 });
@@ -64260,10 +65097,10 @@ var require_updateftmodelin = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -64278,15 +65115,15 @@ var require_updateftmodelin = __commonJS({
     exports2.UpdateFTModelIn$ = exports2.UpdateFTModelIn$outboundSchema = exports2.UpdateFTModelIn$inboundSchema = void 0;
     exports2.updateFTModelInToJSON = updateFTModelInToJSON;
     exports2.updateFTModelInFromJSON = updateFTModelInFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
-    exports2.UpdateFTModelIn$inboundSchema = z3.object({
-      name: z3.nullable(z3.string()).optional(),
-      description: z3.nullable(z3.string()).optional()
+    exports2.UpdateFTModelIn$inboundSchema = z4.object({
+      name: z4.nullable(z4.string()).optional(),
+      description: z4.nullable(z4.string()).optional()
     });
-    exports2.UpdateFTModelIn$outboundSchema = z3.object({
-      name: z3.nullable(z3.string()).optional(),
-      description: z3.nullable(z3.string()).optional()
+    exports2.UpdateFTModelIn$outboundSchema = z4.object({
+      name: z4.nullable(z4.string()).optional(),
+      description: z4.nullable(z4.string()).optional()
     });
     var UpdateFTModelIn$;
     (function(UpdateFTModelIn$2) {
@@ -64297,7 +65134,7 @@ var require_updateftmodelin = __commonJS({
       return JSON.stringify(exports2.UpdateFTModelIn$outboundSchema.parse(updateFTModelIn));
     }
     function updateFTModelInFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.UpdateFTModelIn$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'UpdateFTModelIn' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.UpdateFTModelIn$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'UpdateFTModelIn' from JSON`);
     }
   }
 });
@@ -64319,10 +65156,10 @@ var require_uploadfileout = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -64337,41 +65174,41 @@ var require_uploadfileout = __commonJS({
     exports2.UploadFileOut$ = exports2.UploadFileOut$outboundSchema = exports2.UploadFileOut$inboundSchema = void 0;
     exports2.uploadFileOutToJSON = uploadFileOutToJSON;
     exports2.uploadFileOutFromJSON = uploadFileOutFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var filepurpose_js_1 = require_filepurpose();
     var sampletype_js_1 = require_sampletype();
     var source_js_1 = require_source();
-    exports2.UploadFileOut$inboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      bytes: z3.number().int(),
-      created_at: z3.number().int(),
-      filename: z3.string(),
+    exports2.UploadFileOut$inboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      bytes: z4.number().int(),
+      created_at: z4.number().int(),
+      filename: z4.string(),
       purpose: filepurpose_js_1.FilePurpose$inboundSchema,
       sample_type: sampletype_js_1.SampleType$inboundSchema,
-      num_lines: z3.nullable(z3.number().int()).optional(),
+      num_lines: z4.nullable(z4.number().int()).optional(),
       source: source_js_1.Source$inboundSchema
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "created_at": "createdAt",
         "sample_type": "sampleType",
         "num_lines": "numLines"
       });
     });
-    exports2.UploadFileOut$outboundSchema = z3.object({
-      id: z3.string(),
-      object: z3.string(),
-      bytes: z3.number().int(),
-      createdAt: z3.number().int(),
-      filename: z3.string(),
+    exports2.UploadFileOut$outboundSchema = z4.object({
+      id: z4.string(),
+      object: z4.string(),
+      bytes: z4.number().int(),
+      createdAt: z4.number().int(),
+      filename: z4.string(),
       purpose: filepurpose_js_1.FilePurpose$outboundSchema,
       sampleType: sampletype_js_1.SampleType$outboundSchema,
-      numLines: z3.nullable(z3.number().int()).optional(),
+      numLines: z4.nullable(z4.number().int()).optional(),
       source: source_js_1.Source$outboundSchema
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         createdAt: "created_at",
         sampleType: "sample_type",
         numLines: "num_lines"
@@ -64386,7 +65223,7 @@ var require_uploadfileout = __commonJS({
       return JSON.stringify(exports2.UploadFileOut$outboundSchema.parse(uploadFileOut));
     }
     function uploadFileOutFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.UploadFileOut$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'UploadFileOut' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.UploadFileOut$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'UploadFileOut' from JSON`);
     }
   }
 });
@@ -64408,10 +65245,10 @@ var require_validationerror = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -64428,10 +65265,10 @@ var require_validationerror = __commonJS({
     exports2.locFromJSON = locFromJSON;
     exports2.validationErrorToJSON = validationErrorToJSON;
     exports2.validationErrorFromJSON = validationErrorFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
-    exports2.Loc$inboundSchema = z3.union([z3.string(), z3.number().int()]);
-    exports2.Loc$outboundSchema = z3.union([z3.string(), z3.number().int()]);
+    exports2.Loc$inboundSchema = z4.union([z4.string(), z4.number().int()]);
+    exports2.Loc$outboundSchema = z4.union([z4.string(), z4.number().int()]);
     var Loc$;
     (function(Loc$2) {
       Loc$2.inboundSchema = exports2.Loc$inboundSchema;
@@ -64441,17 +65278,17 @@ var require_validationerror = __commonJS({
       return JSON.stringify(exports2.Loc$outboundSchema.parse(loc));
     }
     function locFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.Loc$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'Loc' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.Loc$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'Loc' from JSON`);
     }
-    exports2.ValidationError$inboundSchema = z3.object({
-      loc: z3.array(z3.union([z3.string(), z3.number().int()])),
-      msg: z3.string(),
-      type: z3.string()
+    exports2.ValidationError$inboundSchema = z4.object({
+      loc: z4.array(z4.union([z4.string(), z4.number().int()])),
+      msg: z4.string(),
+      type: z4.string()
     });
-    exports2.ValidationError$outboundSchema = z3.object({
-      loc: z3.array(z3.union([z3.string(), z3.number().int()])),
-      msg: z3.string(),
-      type: z3.string()
+    exports2.ValidationError$outboundSchema = z4.object({
+      loc: z4.array(z4.union([z4.string(), z4.number().int()])),
+      msg: z4.string(),
+      type: z4.string()
     });
     var ValidationError$;
     (function(ValidationError$2) {
@@ -64462,7 +65299,7 @@ var require_validationerror = __commonJS({
       return JSON.stringify(exports2.ValidationError$outboundSchema.parse(validationError));
     }
     function validationErrorFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.ValidationError$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'ValidationError' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.ValidationError$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'ValidationError' from JSON`);
     }
   }
 });
@@ -64591,10 +65428,10 @@ var require_httpvalidationerror = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -64607,7 +65444,7 @@ var require_httpvalidationerror = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.HTTPValidationError$ = exports2.HTTPValidationError$outboundSchema = exports2.HTTPValidationError$inboundSchema = exports2.HTTPValidationError = void 0;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var components = __importStar(require_components());
     var HTTPValidationError = class extends Error {
       constructor(err) {
@@ -64620,13 +65457,13 @@ var require_httpvalidationerror = __commonJS({
       }
     };
     exports2.HTTPValidationError = HTTPValidationError;
-    exports2.HTTPValidationError$inboundSchema = z3.object({
-      detail: z3.array(components.ValidationError$inboundSchema).optional()
-    }).transform((v2) => {
-      return new HTTPValidationError(v2);
+    exports2.HTTPValidationError$inboundSchema = z4.object({
+      detail: z4.array(components.ValidationError$inboundSchema).optional()
+    }).transform((v6) => {
+      return new HTTPValidationError(v6);
     });
-    exports2.HTTPValidationError$outboundSchema = z3.instanceof(HTTPValidationError).transform((v2) => v2.data$).pipe(z3.object({
-      detail: z3.array(components.ValidationError$outboundSchema).optional()
+    exports2.HTTPValidationError$outboundSchema = z4.instanceof(HTTPValidationError).transform((v6) => v6.data$).pipe(z4.object({
+      detail: z4.array(components.ValidationError$outboundSchema).optional()
     }));
     var HTTPValidationError$;
     (function(HTTPValidationError$2) {
@@ -64681,10 +65518,10 @@ var require_agentsComplete = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -64778,10 +65615,10 @@ var require_agentsStream = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -64794,7 +65631,7 @@ var require_agentsStream = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.agentsStream = agentsStream;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var encodings_js_1 = require_encodings();
     var event_streams_js_1 = require_event_streams();
     var M4 = __importStar(require_matchers());
@@ -64851,7 +65688,7 @@ var require_agentsStream = __commonJS({
       const responseFields = {
         HttpMeta: { Response: response, Request: req }
       };
-      const [result] = await M4.match(M4.sse(200, z3.instanceof(ReadableStream).transform((stream4) => {
+      const [result] = await M4.match(M4.sse(200, z4.instanceof(ReadableStream).transform((stream4) => {
         return new event_streams_js_1.EventStream({
           stream: stream4,
           decoder(rawEvent) {
@@ -64916,10 +65753,10 @@ var require_deletemodelv1modelsmodeliddelete = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -64934,20 +65771,20 @@ var require_deletemodelv1modelsmodeliddelete = __commonJS({
     exports2.DeleteModelV1ModelsModelIdDeleteRequest$ = exports2.DeleteModelV1ModelsModelIdDeleteRequest$outboundSchema = exports2.DeleteModelV1ModelsModelIdDeleteRequest$inboundSchema = void 0;
     exports2.deleteModelV1ModelsModelIdDeleteRequestToJSON = deleteModelV1ModelsModelIdDeleteRequestToJSON;
     exports2.deleteModelV1ModelsModelIdDeleteRequestFromJSON = deleteModelV1ModelsModelIdDeleteRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.DeleteModelV1ModelsModelIdDeleteRequest$inboundSchema = z3.object({
-      model_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.DeleteModelV1ModelsModelIdDeleteRequest$inboundSchema = z4.object({
+      model_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "model_id": "modelId"
       });
     });
-    exports2.DeleteModelV1ModelsModelIdDeleteRequest$outboundSchema = z3.object({
-      modelId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.DeleteModelV1ModelsModelIdDeleteRequest$outboundSchema = z4.object({
+      modelId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         modelId: "model_id"
       });
     });
@@ -64960,7 +65797,7 @@ var require_deletemodelv1modelsmodeliddelete = __commonJS({
       return JSON.stringify(exports2.DeleteModelV1ModelsModelIdDeleteRequest$outboundSchema.parse(deleteModelV1ModelsModelIdDeleteRequest));
     }
     function deleteModelV1ModelsModelIdDeleteRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.DeleteModelV1ModelsModelIdDeleteRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'DeleteModelV1ModelsModelIdDeleteRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.DeleteModelV1ModelsModelIdDeleteRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'DeleteModelV1ModelsModelIdDeleteRequest' from JSON`);
     }
   }
 });
@@ -64982,10 +65819,10 @@ var require_filesapiroutesdeletefile = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65000,20 +65837,20 @@ var require_filesapiroutesdeletefile = __commonJS({
     exports2.FilesApiRoutesDeleteFileRequest$ = exports2.FilesApiRoutesDeleteFileRequest$outboundSchema = exports2.FilesApiRoutesDeleteFileRequest$inboundSchema = void 0;
     exports2.filesApiRoutesDeleteFileRequestToJSON = filesApiRoutesDeleteFileRequestToJSON;
     exports2.filesApiRoutesDeleteFileRequestFromJSON = filesApiRoutesDeleteFileRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.FilesApiRoutesDeleteFileRequest$inboundSchema = z3.object({
-      file_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FilesApiRoutesDeleteFileRequest$inboundSchema = z4.object({
+      file_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "file_id": "fileId"
       });
     });
-    exports2.FilesApiRoutesDeleteFileRequest$outboundSchema = z3.object({
-      fileId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FilesApiRoutesDeleteFileRequest$outboundSchema = z4.object({
+      fileId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         fileId: "file_id"
       });
     });
@@ -65026,7 +65863,7 @@ var require_filesapiroutesdeletefile = __commonJS({
       return JSON.stringify(exports2.FilesApiRoutesDeleteFileRequest$outboundSchema.parse(filesApiRoutesDeleteFileRequest));
     }
     function filesApiRoutesDeleteFileRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FilesApiRoutesDeleteFileRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FilesApiRoutesDeleteFileRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FilesApiRoutesDeleteFileRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FilesApiRoutesDeleteFileRequest' from JSON`);
     }
   }
 });
@@ -65048,10 +65885,10 @@ var require_filesapiroutesdownloadfile = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65066,20 +65903,20 @@ var require_filesapiroutesdownloadfile = __commonJS({
     exports2.FilesApiRoutesDownloadFileRequest$ = exports2.FilesApiRoutesDownloadFileRequest$outboundSchema = exports2.FilesApiRoutesDownloadFileRequest$inboundSchema = void 0;
     exports2.filesApiRoutesDownloadFileRequestToJSON = filesApiRoutesDownloadFileRequestToJSON;
     exports2.filesApiRoutesDownloadFileRequestFromJSON = filesApiRoutesDownloadFileRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.FilesApiRoutesDownloadFileRequest$inboundSchema = z3.object({
-      file_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FilesApiRoutesDownloadFileRequest$inboundSchema = z4.object({
+      file_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "file_id": "fileId"
       });
     });
-    exports2.FilesApiRoutesDownloadFileRequest$outboundSchema = z3.object({
-      fileId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FilesApiRoutesDownloadFileRequest$outboundSchema = z4.object({
+      fileId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         fileId: "file_id"
       });
     });
@@ -65092,7 +65929,7 @@ var require_filesapiroutesdownloadfile = __commonJS({
       return JSON.stringify(exports2.FilesApiRoutesDownloadFileRequest$outboundSchema.parse(filesApiRoutesDownloadFileRequest));
     }
     function filesApiRoutesDownloadFileRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FilesApiRoutesDownloadFileRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FilesApiRoutesDownloadFileRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FilesApiRoutesDownloadFileRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FilesApiRoutesDownloadFileRequest' from JSON`);
     }
   }
 });
@@ -65114,10 +65951,10 @@ var require_filesapiroutesgetsignedurl = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65132,22 +65969,22 @@ var require_filesapiroutesgetsignedurl = __commonJS({
     exports2.FilesApiRoutesGetSignedUrlRequest$ = exports2.FilesApiRoutesGetSignedUrlRequest$outboundSchema = exports2.FilesApiRoutesGetSignedUrlRequest$inboundSchema = void 0;
     exports2.filesApiRoutesGetSignedUrlRequestToJSON = filesApiRoutesGetSignedUrlRequestToJSON;
     exports2.filesApiRoutesGetSignedUrlRequestFromJSON = filesApiRoutesGetSignedUrlRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.FilesApiRoutesGetSignedUrlRequest$inboundSchema = z3.object({
-      file_id: z3.string(),
-      expiry: z3.number().int().default(24)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FilesApiRoutesGetSignedUrlRequest$inboundSchema = z4.object({
+      file_id: z4.string(),
+      expiry: z4.number().int().default(24)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "file_id": "fileId"
       });
     });
-    exports2.FilesApiRoutesGetSignedUrlRequest$outboundSchema = z3.object({
-      fileId: z3.string(),
-      expiry: z3.number().int().default(24)
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FilesApiRoutesGetSignedUrlRequest$outboundSchema = z4.object({
+      fileId: z4.string(),
+      expiry: z4.number().int().default(24)
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         fileId: "file_id"
       });
     });
@@ -65160,7 +65997,7 @@ var require_filesapiroutesgetsignedurl = __commonJS({
       return JSON.stringify(exports2.FilesApiRoutesGetSignedUrlRequest$outboundSchema.parse(filesApiRoutesGetSignedUrlRequest));
     }
     function filesApiRoutesGetSignedUrlRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FilesApiRoutesGetSignedUrlRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FilesApiRoutesGetSignedUrlRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FilesApiRoutesGetSignedUrlRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FilesApiRoutesGetSignedUrlRequest' from JSON`);
     }
   }
 });
@@ -65182,10 +66019,10 @@ var require_filesapirouteslistfiles = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65200,32 +66037,32 @@ var require_filesapirouteslistfiles = __commonJS({
     exports2.FilesApiRoutesListFilesRequest$ = exports2.FilesApiRoutesListFilesRequest$outboundSchema = exports2.FilesApiRoutesListFilesRequest$inboundSchema = void 0;
     exports2.filesApiRoutesListFilesRequestToJSON = filesApiRoutesListFilesRequestToJSON;
     exports2.filesApiRoutesListFilesRequestFromJSON = filesApiRoutesListFilesRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var components = __importStar(require_components());
-    exports2.FilesApiRoutesListFilesRequest$inboundSchema = z3.object({
-      page: z3.number().int().default(0),
-      page_size: z3.number().int().default(100),
-      sample_type: z3.nullable(z3.array(components.SampleType$inboundSchema)).optional(),
-      source: z3.nullable(z3.array(components.Source$inboundSchema)).optional(),
-      search: z3.nullable(z3.string()).optional(),
-      purpose: z3.nullable(components.FilePurpose$inboundSchema).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FilesApiRoutesListFilesRequest$inboundSchema = z4.object({
+      page: z4.number().int().default(0),
+      page_size: z4.number().int().default(100),
+      sample_type: z4.nullable(z4.array(components.SampleType$inboundSchema)).optional(),
+      source: z4.nullable(z4.array(components.Source$inboundSchema)).optional(),
+      search: z4.nullable(z4.string()).optional(),
+      purpose: z4.nullable(components.FilePurpose$inboundSchema).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "page_size": "pageSize",
         "sample_type": "sampleType"
       });
     });
-    exports2.FilesApiRoutesListFilesRequest$outboundSchema = z3.object({
-      page: z3.number().int().default(0),
-      pageSize: z3.number().int().default(100),
-      sampleType: z3.nullable(z3.array(components.SampleType$outboundSchema)).optional(),
-      source: z3.nullable(z3.array(components.Source$outboundSchema)).optional(),
-      search: z3.nullable(z3.string()).optional(),
-      purpose: z3.nullable(components.FilePurpose$outboundSchema).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FilesApiRoutesListFilesRequest$outboundSchema = z4.object({
+      page: z4.number().int().default(0),
+      pageSize: z4.number().int().default(100),
+      sampleType: z4.nullable(z4.array(components.SampleType$outboundSchema)).optional(),
+      source: z4.nullable(z4.array(components.Source$outboundSchema)).optional(),
+      search: z4.nullable(z4.string()).optional(),
+      purpose: z4.nullable(components.FilePurpose$outboundSchema).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         pageSize: "page_size",
         sampleType: "sample_type"
       });
@@ -65239,7 +66076,7 @@ var require_filesapirouteslistfiles = __commonJS({
       return JSON.stringify(exports2.FilesApiRoutesListFilesRequest$outboundSchema.parse(filesApiRoutesListFilesRequest));
     }
     function filesApiRoutesListFilesRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FilesApiRoutesListFilesRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FilesApiRoutesListFilesRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FilesApiRoutesListFilesRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FilesApiRoutesListFilesRequest' from JSON`);
     }
   }
 });
@@ -65261,10 +66098,10 @@ var require_filesapiroutesretrievefile = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65279,20 +66116,20 @@ var require_filesapiroutesretrievefile = __commonJS({
     exports2.FilesApiRoutesRetrieveFileRequest$ = exports2.FilesApiRoutesRetrieveFileRequest$outboundSchema = exports2.FilesApiRoutesRetrieveFileRequest$inboundSchema = void 0;
     exports2.filesApiRoutesRetrieveFileRequestToJSON = filesApiRoutesRetrieveFileRequestToJSON;
     exports2.filesApiRoutesRetrieveFileRequestFromJSON = filesApiRoutesRetrieveFileRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.FilesApiRoutesRetrieveFileRequest$inboundSchema = z3.object({
-      file_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FilesApiRoutesRetrieveFileRequest$inboundSchema = z4.object({
+      file_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "file_id": "fileId"
       });
     });
-    exports2.FilesApiRoutesRetrieveFileRequest$outboundSchema = z3.object({
-      fileId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.FilesApiRoutesRetrieveFileRequest$outboundSchema = z4.object({
+      fileId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         fileId: "file_id"
       });
     });
@@ -65305,7 +66142,7 @@ var require_filesapiroutesretrievefile = __commonJS({
       return JSON.stringify(exports2.FilesApiRoutesRetrieveFileRequest$outboundSchema.parse(filesApiRoutesRetrieveFileRequest));
     }
     function filesApiRoutesRetrieveFileRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FilesApiRoutesRetrieveFileRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FilesApiRoutesRetrieveFileRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FilesApiRoutesRetrieveFileRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FilesApiRoutesRetrieveFileRequest' from JSON`);
     }
   }
 });
@@ -65327,10 +66164,10 @@ var require_blobs = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65344,8 +66181,8 @@ var require_blobs = __commonJS({
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.blobLikeSchema = void 0;
     exports2.isBlobLike = isBlobLike3;
-    var z3 = __importStar(require_lib5());
-    exports2.blobLikeSchema = z3.custom(isBlobLike3, {
+    var z4 = __importStar(require_lib5());
+    exports2.blobLikeSchema = z4.custom(isBlobLike3, {
       message: "expected a Blob, File or Blob-like object",
       fatal: true
     });
@@ -65385,10 +66222,10 @@ var require_filesapiroutesuploadfile = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65405,26 +66242,26 @@ var require_filesapiroutesuploadfile = __commonJS({
     exports2.fileFromJSON = fileFromJSON;
     exports2.filesApiRoutesUploadFileMultiPartBodyParamsToJSON = filesApiRoutesUploadFileMultiPartBodyParamsToJSON;
     exports2.filesApiRoutesUploadFileMultiPartBodyParamsFromJSON = filesApiRoutesUploadFileMultiPartBodyParamsFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var blobs_js_1 = require_blobs();
     var components = __importStar(require_components());
-    exports2.FileT$inboundSchema = z3.object({
-      fileName: z3.string(),
-      content: z3.union([
-        z3.instanceof(ReadableStream),
-        z3.instanceof(Blob),
-        z3.instanceof(ArrayBuffer),
-        z3.instanceof(Uint8Array)
+    exports2.FileT$inboundSchema = z4.object({
+      fileName: z4.string(),
+      content: z4.union([
+        z4.instanceof(ReadableStream),
+        z4.instanceof(Blob),
+        z4.instanceof(ArrayBuffer),
+        z4.instanceof(Uint8Array)
       ])
     });
-    exports2.FileT$outboundSchema = z3.object({
-      fileName: z3.string(),
-      content: z3.union([
-        z3.instanceof(ReadableStream),
-        z3.instanceof(Blob),
-        z3.instanceof(ArrayBuffer),
-        z3.instanceof(Uint8Array)
+    exports2.FileT$outboundSchema = z4.object({
+      fileName: z4.string(),
+      content: z4.union([
+        z4.instanceof(ReadableStream),
+        z4.instanceof(Blob),
+        z4.instanceof(ArrayBuffer),
+        z4.instanceof(Uint8Array)
       ])
     });
     var FileT$;
@@ -65436,14 +66273,14 @@ var require_filesapiroutesuploadfile = __commonJS({
       return JSON.stringify(exports2.FileT$outboundSchema.parse(fileT));
     }
     function fileFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FileT$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FileT' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FileT$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FileT' from JSON`);
     }
-    exports2.FilesApiRoutesUploadFileMultiPartBodyParams$inboundSchema = z3.object({
-      file: z3.lazy(() => exports2.FileT$inboundSchema),
+    exports2.FilesApiRoutesUploadFileMultiPartBodyParams$inboundSchema = z4.object({
+      file: z4.lazy(() => exports2.FileT$inboundSchema),
       purpose: components.FilePurpose$inboundSchema.optional()
     });
-    exports2.FilesApiRoutesUploadFileMultiPartBodyParams$outboundSchema = z3.object({
-      file: z3.lazy(() => exports2.FileT$outboundSchema).or(blobs_js_1.blobLikeSchema),
+    exports2.FilesApiRoutesUploadFileMultiPartBodyParams$outboundSchema = z4.object({
+      file: z4.lazy(() => exports2.FileT$outboundSchema).or(blobs_js_1.blobLikeSchema),
       purpose: components.FilePurpose$outboundSchema.optional()
     });
     var FilesApiRoutesUploadFileMultiPartBodyParams$;
@@ -65455,7 +66292,7 @@ var require_filesapiroutesuploadfile = __commonJS({
       return JSON.stringify(exports2.FilesApiRoutesUploadFileMultiPartBodyParams$outboundSchema.parse(filesApiRoutesUploadFileMultiPartBodyParams));
     }
     function filesApiRoutesUploadFileMultiPartBodyParamsFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.FilesApiRoutesUploadFileMultiPartBodyParams$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'FilesApiRoutesUploadFileMultiPartBodyParams' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.FilesApiRoutesUploadFileMultiPartBodyParams$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'FilesApiRoutesUploadFileMultiPartBodyParams' from JSON`);
     }
   }
 });
@@ -65477,10 +66314,10 @@ var require_jobsapiroutesbatchcancelbatchjob = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65495,20 +66332,20 @@ var require_jobsapiroutesbatchcancelbatchjob = __commonJS({
     exports2.JobsApiRoutesBatchCancelBatchJobRequest$ = exports2.JobsApiRoutesBatchCancelBatchJobRequest$outboundSchema = exports2.JobsApiRoutesBatchCancelBatchJobRequest$inboundSchema = void 0;
     exports2.jobsApiRoutesBatchCancelBatchJobRequestToJSON = jobsApiRoutesBatchCancelBatchJobRequestToJSON;
     exports2.jobsApiRoutesBatchCancelBatchJobRequestFromJSON = jobsApiRoutesBatchCancelBatchJobRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.JobsApiRoutesBatchCancelBatchJobRequest$inboundSchema = z3.object({
-      job_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesBatchCancelBatchJobRequest$inboundSchema = z4.object({
+      job_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "job_id": "jobId"
       });
     });
-    exports2.JobsApiRoutesBatchCancelBatchJobRequest$outboundSchema = z3.object({
-      jobId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesBatchCancelBatchJobRequest$outboundSchema = z4.object({
+      jobId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         jobId: "job_id"
       });
     });
@@ -65521,7 +66358,7 @@ var require_jobsapiroutesbatchcancelbatchjob = __commonJS({
       return JSON.stringify(exports2.JobsApiRoutesBatchCancelBatchJobRequest$outboundSchema.parse(jobsApiRoutesBatchCancelBatchJobRequest));
     }
     function jobsApiRoutesBatchCancelBatchJobRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobsApiRoutesBatchCancelBatchJobRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobsApiRoutesBatchCancelBatchJobRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobsApiRoutesBatchCancelBatchJobRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobsApiRoutesBatchCancelBatchJobRequest' from JSON`);
     }
   }
 });
@@ -65543,10 +66380,10 @@ var require_jobsapiroutesbatchgetbatchjob = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65561,20 +66398,20 @@ var require_jobsapiroutesbatchgetbatchjob = __commonJS({
     exports2.JobsApiRoutesBatchGetBatchJobRequest$ = exports2.JobsApiRoutesBatchGetBatchJobRequest$outboundSchema = exports2.JobsApiRoutesBatchGetBatchJobRequest$inboundSchema = void 0;
     exports2.jobsApiRoutesBatchGetBatchJobRequestToJSON = jobsApiRoutesBatchGetBatchJobRequestToJSON;
     exports2.jobsApiRoutesBatchGetBatchJobRequestFromJSON = jobsApiRoutesBatchGetBatchJobRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.JobsApiRoutesBatchGetBatchJobRequest$inboundSchema = z3.object({
-      job_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesBatchGetBatchJobRequest$inboundSchema = z4.object({
+      job_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "job_id": "jobId"
       });
     });
-    exports2.JobsApiRoutesBatchGetBatchJobRequest$outboundSchema = z3.object({
-      jobId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesBatchGetBatchJobRequest$outboundSchema = z4.object({
+      jobId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         jobId: "job_id"
       });
     });
@@ -65587,7 +66424,7 @@ var require_jobsapiroutesbatchgetbatchjob = __commonJS({
       return JSON.stringify(exports2.JobsApiRoutesBatchGetBatchJobRequest$outboundSchema.parse(jobsApiRoutesBatchGetBatchJobRequest));
     }
     function jobsApiRoutesBatchGetBatchJobRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobsApiRoutesBatchGetBatchJobRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobsApiRoutesBatchGetBatchJobRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobsApiRoutesBatchGetBatchJobRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobsApiRoutesBatchGetBatchJobRequest' from JSON`);
     }
   }
 });
@@ -65609,10 +66446,10 @@ var require_jobsapiroutesbatchgetbatchjobs = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65627,35 +66464,35 @@ var require_jobsapiroutesbatchgetbatchjobs = __commonJS({
     exports2.JobsApiRoutesBatchGetBatchJobsRequest$ = exports2.JobsApiRoutesBatchGetBatchJobsRequest$outboundSchema = exports2.JobsApiRoutesBatchGetBatchJobsRequest$inboundSchema = void 0;
     exports2.jobsApiRoutesBatchGetBatchJobsRequestToJSON = jobsApiRoutesBatchGetBatchJobsRequestToJSON;
     exports2.jobsApiRoutesBatchGetBatchJobsRequestFromJSON = jobsApiRoutesBatchGetBatchJobsRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var components = __importStar(require_components());
-    exports2.JobsApiRoutesBatchGetBatchJobsRequest$inboundSchema = z3.object({
-      page: z3.number().int().default(0),
-      page_size: z3.number().int().default(100),
-      model: z3.nullable(z3.string()).optional(),
-      metadata: z3.nullable(z3.record(z3.any())).optional(),
-      created_after: z3.nullable(z3.string().datetime({ offset: true }).transform((v2) => new Date(v2))).optional(),
-      created_by_me: z3.boolean().default(false),
-      status: z3.nullable(components.BatchJobStatus$inboundSchema).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesBatchGetBatchJobsRequest$inboundSchema = z4.object({
+      page: z4.number().int().default(0),
+      page_size: z4.number().int().default(100),
+      model: z4.nullable(z4.string()).optional(),
+      metadata: z4.nullable(z4.record(z4.any())).optional(),
+      created_after: z4.nullable(z4.string().datetime({ offset: true }).transform((v6) => new Date(v6))).optional(),
+      created_by_me: z4.boolean().default(false),
+      status: z4.nullable(components.BatchJobStatus$inboundSchema).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "page_size": "pageSize",
         "created_after": "createdAfter",
         "created_by_me": "createdByMe"
       });
     });
-    exports2.JobsApiRoutesBatchGetBatchJobsRequest$outboundSchema = z3.object({
-      page: z3.number().int().default(0),
-      pageSize: z3.number().int().default(100),
-      model: z3.nullable(z3.string()).optional(),
-      metadata: z3.nullable(z3.record(z3.any())).optional(),
-      createdAfter: z3.nullable(z3.date().transform((v2) => v2.toISOString())).optional(),
-      createdByMe: z3.boolean().default(false),
-      status: z3.nullable(components.BatchJobStatus$outboundSchema).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesBatchGetBatchJobsRequest$outboundSchema = z4.object({
+      page: z4.number().int().default(0),
+      pageSize: z4.number().int().default(100),
+      model: z4.nullable(z4.string()).optional(),
+      metadata: z4.nullable(z4.record(z4.any())).optional(),
+      createdAfter: z4.nullable(z4.date().transform((v6) => v6.toISOString())).optional(),
+      createdByMe: z4.boolean().default(false),
+      status: z4.nullable(components.BatchJobStatus$outboundSchema).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         pageSize: "page_size",
         createdAfter: "created_after",
         createdByMe: "created_by_me"
@@ -65670,7 +66507,7 @@ var require_jobsapiroutesbatchgetbatchjobs = __commonJS({
       return JSON.stringify(exports2.JobsApiRoutesBatchGetBatchJobsRequest$outboundSchema.parse(jobsApiRoutesBatchGetBatchJobsRequest));
     }
     function jobsApiRoutesBatchGetBatchJobsRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobsApiRoutesBatchGetBatchJobsRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobsApiRoutesBatchGetBatchJobsRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobsApiRoutesBatchGetBatchJobsRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobsApiRoutesBatchGetBatchJobsRequest' from JSON`);
     }
   }
 });
@@ -65692,10 +66529,10 @@ var require_jobsapiroutesfinetuningarchivefinetunedmodel = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65710,20 +66547,20 @@ var require_jobsapiroutesfinetuningarchivefinetunedmodel = __commonJS({
     exports2.JobsApiRoutesFineTuningArchiveFineTunedModelRequest$ = exports2.JobsApiRoutesFineTuningArchiveFineTunedModelRequest$outboundSchema = exports2.JobsApiRoutesFineTuningArchiveFineTunedModelRequest$inboundSchema = void 0;
     exports2.jobsApiRoutesFineTuningArchiveFineTunedModelRequestToJSON = jobsApiRoutesFineTuningArchiveFineTunedModelRequestToJSON;
     exports2.jobsApiRoutesFineTuningArchiveFineTunedModelRequestFromJSON = jobsApiRoutesFineTuningArchiveFineTunedModelRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.JobsApiRoutesFineTuningArchiveFineTunedModelRequest$inboundSchema = z3.object({
-      model_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesFineTuningArchiveFineTunedModelRequest$inboundSchema = z4.object({
+      model_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "model_id": "modelId"
       });
     });
-    exports2.JobsApiRoutesFineTuningArchiveFineTunedModelRequest$outboundSchema = z3.object({
-      modelId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesFineTuningArchiveFineTunedModelRequest$outboundSchema = z4.object({
+      modelId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         modelId: "model_id"
       });
     });
@@ -65736,7 +66573,7 @@ var require_jobsapiroutesfinetuningarchivefinetunedmodel = __commonJS({
       return JSON.stringify(exports2.JobsApiRoutesFineTuningArchiveFineTunedModelRequest$outboundSchema.parse(jobsApiRoutesFineTuningArchiveFineTunedModelRequest));
     }
     function jobsApiRoutesFineTuningArchiveFineTunedModelRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobsApiRoutesFineTuningArchiveFineTunedModelRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobsApiRoutesFineTuningArchiveFineTunedModelRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobsApiRoutesFineTuningArchiveFineTunedModelRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobsApiRoutesFineTuningArchiveFineTunedModelRequest' from JSON`);
     }
   }
 });
@@ -65758,10 +66595,10 @@ var require_jobsapiroutesfinetuningcancelfinetuningjob = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65776,20 +66613,20 @@ var require_jobsapiroutesfinetuningcancelfinetuningjob = __commonJS({
     exports2.JobsApiRoutesFineTuningCancelFineTuningJobRequest$ = exports2.JobsApiRoutesFineTuningCancelFineTuningJobRequest$outboundSchema = exports2.JobsApiRoutesFineTuningCancelFineTuningJobRequest$inboundSchema = void 0;
     exports2.jobsApiRoutesFineTuningCancelFineTuningJobRequestToJSON = jobsApiRoutesFineTuningCancelFineTuningJobRequestToJSON;
     exports2.jobsApiRoutesFineTuningCancelFineTuningJobRequestFromJSON = jobsApiRoutesFineTuningCancelFineTuningJobRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.JobsApiRoutesFineTuningCancelFineTuningJobRequest$inboundSchema = z3.object({
-      job_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesFineTuningCancelFineTuningJobRequest$inboundSchema = z4.object({
+      job_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "job_id": "jobId"
       });
     });
-    exports2.JobsApiRoutesFineTuningCancelFineTuningJobRequest$outboundSchema = z3.object({
-      jobId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesFineTuningCancelFineTuningJobRequest$outboundSchema = z4.object({
+      jobId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         jobId: "job_id"
       });
     });
@@ -65802,7 +66639,7 @@ var require_jobsapiroutesfinetuningcancelfinetuningjob = __commonJS({
       return JSON.stringify(exports2.JobsApiRoutesFineTuningCancelFineTuningJobRequest$outboundSchema.parse(jobsApiRoutesFineTuningCancelFineTuningJobRequest));
     }
     function jobsApiRoutesFineTuningCancelFineTuningJobRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobsApiRoutesFineTuningCancelFineTuningJobRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobsApiRoutesFineTuningCancelFineTuningJobRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobsApiRoutesFineTuningCancelFineTuningJobRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobsApiRoutesFineTuningCancelFineTuningJobRequest' from JSON`);
     }
   }
 });
@@ -65824,10 +66661,10 @@ var require_jobsapiroutesfinetuningcreatefinetuningjob = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65842,14 +66679,14 @@ var require_jobsapiroutesfinetuningcreatefinetuningjob = __commonJS({
     exports2.JobsApiRoutesFineTuningCreateFineTuningJobResponse$ = exports2.JobsApiRoutesFineTuningCreateFineTuningJobResponse$outboundSchema = exports2.JobsApiRoutesFineTuningCreateFineTuningJobResponse$inboundSchema = void 0;
     exports2.jobsApiRoutesFineTuningCreateFineTuningJobResponseToJSON = jobsApiRoutesFineTuningCreateFineTuningJobResponseToJSON;
     exports2.jobsApiRoutesFineTuningCreateFineTuningJobResponseFromJSON = jobsApiRoutesFineTuningCreateFineTuningJobResponseFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var schemas_js_1 = require_schemas();
     var components = __importStar(require_components());
-    exports2.JobsApiRoutesFineTuningCreateFineTuningJobResponse$inboundSchema = z3.union([
+    exports2.JobsApiRoutesFineTuningCreateFineTuningJobResponse$inboundSchema = z4.union([
       components.LegacyJobMetadataOut$inboundSchema,
       components.JobOut$inboundSchema
     ]);
-    exports2.JobsApiRoutesFineTuningCreateFineTuningJobResponse$outboundSchema = z3.union([
+    exports2.JobsApiRoutesFineTuningCreateFineTuningJobResponse$outboundSchema = z4.union([
       components.LegacyJobMetadataOut$outboundSchema,
       components.JobOut$outboundSchema
     ]);
@@ -65862,7 +66699,7 @@ var require_jobsapiroutesfinetuningcreatefinetuningjob = __commonJS({
       return JSON.stringify(exports2.JobsApiRoutesFineTuningCreateFineTuningJobResponse$outboundSchema.parse(jobsApiRoutesFineTuningCreateFineTuningJobResponse));
     }
     function jobsApiRoutesFineTuningCreateFineTuningJobResponseFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobsApiRoutesFineTuningCreateFineTuningJobResponse$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobsApiRoutesFineTuningCreateFineTuningJobResponse' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobsApiRoutesFineTuningCreateFineTuningJobResponse$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobsApiRoutesFineTuningCreateFineTuningJobResponse' from JSON`);
     }
   }
 });
@@ -65884,10 +66721,10 @@ var require_jobsapiroutesfinetuninggetfinetuningjob = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65902,20 +66739,20 @@ var require_jobsapiroutesfinetuninggetfinetuningjob = __commonJS({
     exports2.JobsApiRoutesFineTuningGetFineTuningJobRequest$ = exports2.JobsApiRoutesFineTuningGetFineTuningJobRequest$outboundSchema = exports2.JobsApiRoutesFineTuningGetFineTuningJobRequest$inboundSchema = void 0;
     exports2.jobsApiRoutesFineTuningGetFineTuningJobRequestToJSON = jobsApiRoutesFineTuningGetFineTuningJobRequestToJSON;
     exports2.jobsApiRoutesFineTuningGetFineTuningJobRequestFromJSON = jobsApiRoutesFineTuningGetFineTuningJobRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.JobsApiRoutesFineTuningGetFineTuningJobRequest$inboundSchema = z3.object({
-      job_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesFineTuningGetFineTuningJobRequest$inboundSchema = z4.object({
+      job_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "job_id": "jobId"
       });
     });
-    exports2.JobsApiRoutesFineTuningGetFineTuningJobRequest$outboundSchema = z3.object({
-      jobId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesFineTuningGetFineTuningJobRequest$outboundSchema = z4.object({
+      jobId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         jobId: "job_id"
       });
     });
@@ -65928,7 +66765,7 @@ var require_jobsapiroutesfinetuninggetfinetuningjob = __commonJS({
       return JSON.stringify(exports2.JobsApiRoutesFineTuningGetFineTuningJobRequest$outboundSchema.parse(jobsApiRoutesFineTuningGetFineTuningJobRequest));
     }
     function jobsApiRoutesFineTuningGetFineTuningJobRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobsApiRoutesFineTuningGetFineTuningJobRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobsApiRoutesFineTuningGetFineTuningJobRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobsApiRoutesFineTuningGetFineTuningJobRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobsApiRoutesFineTuningGetFineTuningJobRequest' from JSON`);
     }
   }
 });
@@ -65950,10 +66787,10 @@ var require_jobsapiroutesfinetuninggetfinetuningjobs = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -65968,7 +66805,7 @@ var require_jobsapiroutesfinetuninggetfinetuningjobs = __commonJS({
     exports2.JobsApiRoutesFineTuningGetFineTuningJobsRequest$ = exports2.JobsApiRoutesFineTuningGetFineTuningJobsRequest$outboundSchema = exports2.JobsApiRoutesFineTuningGetFineTuningJobsRequest$inboundSchema = exports2.Status$ = exports2.Status$outboundSchema = exports2.Status$inboundSchema = exports2.Status = void 0;
     exports2.jobsApiRoutesFineTuningGetFineTuningJobsRequestToJSON = jobsApiRoutesFineTuningGetFineTuningJobsRequestToJSON;
     exports2.jobsApiRoutesFineTuningGetFineTuningJobsRequestFromJSON = jobsApiRoutesFineTuningGetFineTuningJobsRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     exports2.Status = {
@@ -65983,25 +66820,25 @@ var require_jobsapiroutesfinetuninggetfinetuningjobs = __commonJS({
       Cancelled: "CANCELLED",
       CancellationRequested: "CANCELLATION_REQUESTED"
     };
-    exports2.Status$inboundSchema = z3.nativeEnum(exports2.Status);
+    exports2.Status$inboundSchema = z4.nativeEnum(exports2.Status);
     exports2.Status$outboundSchema = exports2.Status$inboundSchema;
     var Status$;
     (function(Status$2) {
       Status$2.inboundSchema = exports2.Status$inboundSchema;
       Status$2.outboundSchema = exports2.Status$outboundSchema;
     })(Status$ || (exports2.Status$ = Status$ = {}));
-    exports2.JobsApiRoutesFineTuningGetFineTuningJobsRequest$inboundSchema = z3.object({
-      page: z3.number().int().default(0),
-      page_size: z3.number().int().default(100),
-      model: z3.nullable(z3.string()).optional(),
-      created_after: z3.nullable(z3.string().datetime({ offset: true }).transform((v2) => new Date(v2))).optional(),
-      created_by_me: z3.boolean().default(false),
-      status: z3.nullable(exports2.Status$inboundSchema).optional(),
-      wandb_project: z3.nullable(z3.string()).optional(),
-      wandb_name: z3.nullable(z3.string()).optional(),
-      suffix: z3.nullable(z3.string()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesFineTuningGetFineTuningJobsRequest$inboundSchema = z4.object({
+      page: z4.number().int().default(0),
+      page_size: z4.number().int().default(100),
+      model: z4.nullable(z4.string()).optional(),
+      created_after: z4.nullable(z4.string().datetime({ offset: true }).transform((v6) => new Date(v6))).optional(),
+      created_by_me: z4.boolean().default(false),
+      status: z4.nullable(exports2.Status$inboundSchema).optional(),
+      wandb_project: z4.nullable(z4.string()).optional(),
+      wandb_name: z4.nullable(z4.string()).optional(),
+      suffix: z4.nullable(z4.string()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "page_size": "pageSize",
         "created_after": "createdAfter",
         "created_by_me": "createdByMe",
@@ -66009,18 +66846,18 @@ var require_jobsapiroutesfinetuninggetfinetuningjobs = __commonJS({
         "wandb_name": "wandbName"
       });
     });
-    exports2.JobsApiRoutesFineTuningGetFineTuningJobsRequest$outboundSchema = z3.object({
-      page: z3.number().int().default(0),
-      pageSize: z3.number().int().default(100),
-      model: z3.nullable(z3.string()).optional(),
-      createdAfter: z3.nullable(z3.date().transform((v2) => v2.toISOString())).optional(),
-      createdByMe: z3.boolean().default(false),
-      status: z3.nullable(exports2.Status$outboundSchema).optional(),
-      wandbProject: z3.nullable(z3.string()).optional(),
-      wandbName: z3.nullable(z3.string()).optional(),
-      suffix: z3.nullable(z3.string()).optional()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesFineTuningGetFineTuningJobsRequest$outboundSchema = z4.object({
+      page: z4.number().int().default(0),
+      pageSize: z4.number().int().default(100),
+      model: z4.nullable(z4.string()).optional(),
+      createdAfter: z4.nullable(z4.date().transform((v6) => v6.toISOString())).optional(),
+      createdByMe: z4.boolean().default(false),
+      status: z4.nullable(exports2.Status$outboundSchema).optional(),
+      wandbProject: z4.nullable(z4.string()).optional(),
+      wandbName: z4.nullable(z4.string()).optional(),
+      suffix: z4.nullable(z4.string()).optional()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         pageSize: "page_size",
         createdAfter: "created_after",
         createdByMe: "created_by_me",
@@ -66037,7 +66874,7 @@ var require_jobsapiroutesfinetuninggetfinetuningjobs = __commonJS({
       return JSON.stringify(exports2.JobsApiRoutesFineTuningGetFineTuningJobsRequest$outboundSchema.parse(jobsApiRoutesFineTuningGetFineTuningJobsRequest));
     }
     function jobsApiRoutesFineTuningGetFineTuningJobsRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobsApiRoutesFineTuningGetFineTuningJobsRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobsApiRoutesFineTuningGetFineTuningJobsRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobsApiRoutesFineTuningGetFineTuningJobsRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobsApiRoutesFineTuningGetFineTuningJobsRequest' from JSON`);
     }
   }
 });
@@ -66059,10 +66896,10 @@ var require_jobsapiroutesfinetuningstartfinetuningjob = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -66077,20 +66914,20 @@ var require_jobsapiroutesfinetuningstartfinetuningjob = __commonJS({
     exports2.JobsApiRoutesFineTuningStartFineTuningJobRequest$ = exports2.JobsApiRoutesFineTuningStartFineTuningJobRequest$outboundSchema = exports2.JobsApiRoutesFineTuningStartFineTuningJobRequest$inboundSchema = void 0;
     exports2.jobsApiRoutesFineTuningStartFineTuningJobRequestToJSON = jobsApiRoutesFineTuningStartFineTuningJobRequestToJSON;
     exports2.jobsApiRoutesFineTuningStartFineTuningJobRequestFromJSON = jobsApiRoutesFineTuningStartFineTuningJobRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.JobsApiRoutesFineTuningStartFineTuningJobRequest$inboundSchema = z3.object({
-      job_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesFineTuningStartFineTuningJobRequest$inboundSchema = z4.object({
+      job_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "job_id": "jobId"
       });
     });
-    exports2.JobsApiRoutesFineTuningStartFineTuningJobRequest$outboundSchema = z3.object({
-      jobId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesFineTuningStartFineTuningJobRequest$outboundSchema = z4.object({
+      jobId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         jobId: "job_id"
       });
     });
@@ -66103,7 +66940,7 @@ var require_jobsapiroutesfinetuningstartfinetuningjob = __commonJS({
       return JSON.stringify(exports2.JobsApiRoutesFineTuningStartFineTuningJobRequest$outboundSchema.parse(jobsApiRoutesFineTuningStartFineTuningJobRequest));
     }
     function jobsApiRoutesFineTuningStartFineTuningJobRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobsApiRoutesFineTuningStartFineTuningJobRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobsApiRoutesFineTuningStartFineTuningJobRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobsApiRoutesFineTuningStartFineTuningJobRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobsApiRoutesFineTuningStartFineTuningJobRequest' from JSON`);
     }
   }
 });
@@ -66125,10 +66962,10 @@ var require_jobsapiroutesfinetuningunarchivefinetunedmodel = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -66143,20 +66980,20 @@ var require_jobsapiroutesfinetuningunarchivefinetunedmodel = __commonJS({
     exports2.JobsApiRoutesFineTuningUnarchiveFineTunedModelRequest$ = exports2.JobsApiRoutesFineTuningUnarchiveFineTunedModelRequest$outboundSchema = exports2.JobsApiRoutesFineTuningUnarchiveFineTunedModelRequest$inboundSchema = void 0;
     exports2.jobsApiRoutesFineTuningUnarchiveFineTunedModelRequestToJSON = jobsApiRoutesFineTuningUnarchiveFineTunedModelRequestToJSON;
     exports2.jobsApiRoutesFineTuningUnarchiveFineTunedModelRequestFromJSON = jobsApiRoutesFineTuningUnarchiveFineTunedModelRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
-    exports2.JobsApiRoutesFineTuningUnarchiveFineTunedModelRequest$inboundSchema = z3.object({
-      model_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesFineTuningUnarchiveFineTunedModelRequest$inboundSchema = z4.object({
+      model_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "model_id": "modelId"
       });
     });
-    exports2.JobsApiRoutesFineTuningUnarchiveFineTunedModelRequest$outboundSchema = z3.object({
-      modelId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.JobsApiRoutesFineTuningUnarchiveFineTunedModelRequest$outboundSchema = z4.object({
+      modelId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         modelId: "model_id"
       });
     });
@@ -66169,7 +67006,7 @@ var require_jobsapiroutesfinetuningunarchivefinetunedmodel = __commonJS({
       return JSON.stringify(exports2.JobsApiRoutesFineTuningUnarchiveFineTunedModelRequest$outboundSchema.parse(jobsApiRoutesFineTuningUnarchiveFineTunedModelRequest));
     }
     function jobsApiRoutesFineTuningUnarchiveFineTunedModelRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobsApiRoutesFineTuningUnarchiveFineTunedModelRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobsApiRoutesFineTuningUnarchiveFineTunedModelRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobsApiRoutesFineTuningUnarchiveFineTunedModelRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobsApiRoutesFineTuningUnarchiveFineTunedModelRequest' from JSON`);
     }
   }
 });
@@ -66191,10 +67028,10 @@ var require_jobsapiroutesfinetuningupdatefinetunedmodel = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -66209,24 +67046,24 @@ var require_jobsapiroutesfinetuningupdatefinetunedmodel = __commonJS({
     exports2.JobsApiRoutesFineTuningUpdateFineTunedModelRequest$ = exports2.JobsApiRoutesFineTuningUpdateFineTunedModelRequest$outboundSchema = exports2.JobsApiRoutesFineTuningUpdateFineTunedModelRequest$inboundSchema = void 0;
     exports2.jobsApiRoutesFineTuningUpdateFineTunedModelRequestToJSON = jobsApiRoutesFineTuningUpdateFineTunedModelRequestToJSON;
     exports2.jobsApiRoutesFineTuningUpdateFineTunedModelRequestFromJSON = jobsApiRoutesFineTuningUpdateFineTunedModelRequestFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var components = __importStar(require_components());
-    exports2.JobsApiRoutesFineTuningUpdateFineTunedModelRequest$inboundSchema = z3.object({
-      model_id: z3.string(),
+    exports2.JobsApiRoutesFineTuningUpdateFineTunedModelRequest$inboundSchema = z4.object({
+      model_id: z4.string(),
       UpdateFTModelIn: components.UpdateFTModelIn$inboundSchema
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "model_id": "modelId",
         "UpdateFTModelIn": "updateFTModelIn"
       });
     });
-    exports2.JobsApiRoutesFineTuningUpdateFineTunedModelRequest$outboundSchema = z3.object({
-      modelId: z3.string(),
+    exports2.JobsApiRoutesFineTuningUpdateFineTunedModelRequest$outboundSchema = z4.object({
+      modelId: z4.string(),
       updateFTModelIn: components.UpdateFTModelIn$outboundSchema
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         modelId: "model_id",
         updateFTModelIn: "UpdateFTModelIn"
       });
@@ -66240,7 +67077,7 @@ var require_jobsapiroutesfinetuningupdatefinetunedmodel = __commonJS({
       return JSON.stringify(exports2.JobsApiRoutesFineTuningUpdateFineTunedModelRequest$outboundSchema.parse(jobsApiRoutesFineTuningUpdateFineTunedModelRequest));
     }
     function jobsApiRoutesFineTuningUpdateFineTunedModelRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.JobsApiRoutesFineTuningUpdateFineTunedModelRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'JobsApiRoutesFineTuningUpdateFineTunedModelRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.JobsApiRoutesFineTuningUpdateFineTunedModelRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'JobsApiRoutesFineTuningUpdateFineTunedModelRequest' from JSON`);
     }
   }
 });
@@ -66262,10 +67099,10 @@ var require_retrievemodelv1modelsmodelidget = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -66282,21 +67119,21 @@ var require_retrievemodelv1modelsmodelidget = __commonJS({
     exports2.retrieveModelV1ModelsModelIdGetRequestFromJSON = retrieveModelV1ModelsModelIdGetRequestFromJSON;
     exports2.retrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGetToJSON = retrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGetToJSON;
     exports2.retrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGetFromJSON = retrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGetFromJSON;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var primitives_js_1 = require_primitives();
     var schemas_js_1 = require_schemas();
     var components = __importStar(require_components());
-    exports2.RetrieveModelV1ModelsModelIdGetRequest$inboundSchema = z3.object({
-      model_id: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.RetrieveModelV1ModelsModelIdGetRequest$inboundSchema = z4.object({
+      model_id: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         "model_id": "modelId"
       });
     });
-    exports2.RetrieveModelV1ModelsModelIdGetRequest$outboundSchema = z3.object({
-      modelId: z3.string()
-    }).transform((v2) => {
-      return (0, primitives_js_1.remap)(v2, {
+    exports2.RetrieveModelV1ModelsModelIdGetRequest$outboundSchema = z4.object({
+      modelId: z4.string()
+    }).transform((v6) => {
+      return (0, primitives_js_1.remap)(v6, {
         modelId: "model_id"
       });
     });
@@ -66309,22 +67146,22 @@ var require_retrievemodelv1modelsmodelidget = __commonJS({
       return JSON.stringify(exports2.RetrieveModelV1ModelsModelIdGetRequest$outboundSchema.parse(retrieveModelV1ModelsModelIdGetRequest));
     }
     function retrieveModelV1ModelsModelIdGetRequestFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.RetrieveModelV1ModelsModelIdGetRequest$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'RetrieveModelV1ModelsModelIdGetRequest' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.RetrieveModelV1ModelsModelIdGetRequest$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'RetrieveModelV1ModelsModelIdGetRequest' from JSON`);
     }
-    exports2.RetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGet$inboundSchema = z3.union([
-      components.BaseModelCard$inboundSchema.and(z3.object({ type: z3.literal("base") }).transform((v2) => ({
-        type: v2.type
+    exports2.RetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGet$inboundSchema = z4.union([
+      components.BaseModelCard$inboundSchema.and(z4.object({ type: z4.literal("base") }).transform((v6) => ({
+        type: v6.type
       }))),
-      components.FTModelCard$inboundSchema.and(z3.object({ type: z3.literal("fine-tuned") }).transform((v2) => ({
-        type: v2.type
+      components.FTModelCard$inboundSchema.and(z4.object({ type: z4.literal("fine-tuned") }).transform((v6) => ({
+        type: v6.type
       })))
     ]);
-    exports2.RetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGet$outboundSchema = z3.union([
-      components.BaseModelCard$outboundSchema.and(z3.object({ type: z3.literal("base") }).transform((v2) => ({
-        type: v2.type
+    exports2.RetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGet$outboundSchema = z4.union([
+      components.BaseModelCard$outboundSchema.and(z4.object({ type: z4.literal("base") }).transform((v6) => ({
+        type: v6.type
       }))),
-      components.FTModelCard$outboundSchema.and(z3.object({ type: z3.literal("fine-tuned") }).transform((v2) => ({
-        type: v2.type
+      components.FTModelCard$outboundSchema.and(z4.object({ type: z4.literal("fine-tuned") }).transform((v6) => ({
+        type: v6.type
       })))
     ]);
     var RetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGet$;
@@ -66336,7 +67173,7 @@ var require_retrievemodelv1modelsmodelidget = __commonJS({
       return JSON.stringify(exports2.RetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGet$outboundSchema.parse(retrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGet));
     }
     function retrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGetFromJSON(jsonString) {
-      return (0, schemas_js_1.safeParse)(jsonString, (x2) => exports2.RetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGet$inboundSchema.parse(JSON.parse(x2)), `Failed to parse 'RetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGet' from JSON`);
+      return (0, schemas_js_1.safeParse)(jsonString, (x3) => exports2.RetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGet$inboundSchema.parse(JSON.parse(x3)), `Failed to parse 'RetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGet' from JSON`);
     }
   }
 });
@@ -66401,10 +67238,10 @@ var require_batchJobsCancel = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -66500,10 +67337,10 @@ var require_batchJobsCreate = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -66593,10 +67430,10 @@ var require_batchJobsGet = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -66692,10 +67529,10 @@ var require_batchJobsList = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -66867,10 +67704,10 @@ var require_chatComplete = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -66964,10 +67801,10 @@ var require_chatStream = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -66980,7 +67817,7 @@ var require_chatStream = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.chatStream = chatStream;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var encodings_js_1 = require_encodings();
     var event_streams_js_1 = require_event_streams();
     var M4 = __importStar(require_matchers());
@@ -67037,7 +67874,7 @@ var require_chatStream = __commonJS({
       const responseFields = {
         HttpMeta: { Response: response, Request: req }
       };
-      const [result] = await M4.match(M4.sse(200, z3.instanceof(ReadableStream).transform((stream4) => {
+      const [result] = await M4.match(M4.sse(200, z4.instanceof(ReadableStream).transform((stream4) => {
         return new event_streams_js_1.EventStream({
           stream: stream4,
           decoder(rawEvent) {
@@ -67102,10 +67939,10 @@ var require_classifiersModerate = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -67199,10 +68036,10 @@ var require_classifiersModerateChat = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -67324,10 +68161,10 @@ var require_embeddingsCreate = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -67445,10 +68282,10 @@ var require_filesDelete = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -67544,10 +68381,10 @@ var require_filesDownload = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -67560,7 +68397,7 @@ var require_filesDownload = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.filesDownload = filesDownload;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var encodings_js_1 = require_encodings();
     var M4 = __importStar(require_matchers());
     var schemas_js_1 = require_schemas();
@@ -67617,7 +68454,7 @@ var require_filesDownload = __commonJS({
         return doResult;
       }
       const response = doResult.value;
-      const [result] = await M4.match(M4.stream(200, z3.instanceof(ReadableStream)), M4.fail(["4XX", "5XX"]))(response);
+      const [result] = await M4.match(M4.stream(200, z4.instanceof(ReadableStream)), M4.fail(["4XX", "5XX"]))(response);
       if (!result.ok) {
         return result;
       }
@@ -67643,10 +68480,10 @@ var require_filesGetSignedUrl = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -67746,10 +68583,10 @@ var require_filesList = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -67848,10 +68685,10 @@ var require_filesRetrieve = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -67963,10 +68800,10 @@ var require_filesUpload = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -68145,10 +68982,10 @@ var require_fimComplete = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -68242,10 +69079,10 @@ var require_fimStream = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -68258,7 +69095,7 @@ var require_fimStream = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.fimStream = fimStream;
-    var z3 = __importStar(require_lib5());
+    var z4 = __importStar(require_lib5());
     var encodings_js_1 = require_encodings();
     var event_streams_js_1 = require_event_streams();
     var M4 = __importStar(require_matchers());
@@ -68315,7 +69152,7 @@ var require_fimStream = __commonJS({
       const responseFields = {
         HttpMeta: { Response: response, Request: req }
       };
-      const [result] = await M4.match(M4.sse(200, z3.instanceof(ReadableStream).transform((stream4) => {
+      const [result] = await M4.match(M4.sse(200, z4.instanceof(ReadableStream).transform((stream4) => {
         return new event_streams_js_1.EventStream({
           stream: stream4,
           decoder(rawEvent) {
@@ -68383,10 +69220,10 @@ var require_fineTuningJobsCancel = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -68482,10 +69319,10 @@ var require_fineTuningJobsCreate = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -68576,10 +69413,10 @@ var require_fineTuningJobsGet = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -68675,10 +69512,10 @@ var require_fineTuningJobsList = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -68780,10 +69617,10 @@ var require_fineTuningJobsStart = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -68961,10 +69798,10 @@ var require_modelsArchive = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -69060,10 +69897,10 @@ var require_modelsDelete = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -69163,10 +70000,10 @@ var require_modelsList = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -69250,10 +70087,10 @@ var require_modelsRetrieve = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -69352,10 +70189,10 @@ var require_modelsUnarchive = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -69451,10 +70288,10 @@ var require_modelsUpdate = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule) return mod;
@@ -69683,10 +70520,10 @@ var require_mistralai = __commonJS({
       if (k22 === void 0) k22 = k4;
       o3[k22] = m4[k4];
     });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v2) {
-      Object.defineProperty(o3, "default", { enumerable: true, value: v2 });
-    } : function(o3, v2) {
-      o3["default"] = v2;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o3, v6) {
+      Object.defineProperty(o3, "default", { enumerable: true, value: v6 });
+    } : function(o3, v6) {
+      o3["default"] = v6;
     });
     var __exportStar = exports2 && exports2.__exportStar || function(m4, exports3) {
       for (var p3 in m4) if (p3 !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p3)) __createBinding(exports3, m4, p3);
@@ -69820,187 +70657,11 @@ var require_lib6 = __commonJS({
 var import_core22 = __toESM(require_core(), 1);
 var import_exec = __toESM(require_exec(), 1);
 var import_github = __toESM(require_github(), 1);
-
-// node_modules/@clack/core/dist/index.mjs
-var import_sisteransi = __toESM(require_src(), 1);
-var import_node_process = require("node:process");
-var f = __toESM(require("node:readline"), 1);
-function j(t2) {
-  return t2 && t2.__esModule && Object.prototype.hasOwnProperty.call(t2, "default") ? t2.default : t2;
-}
-var M = { exports: {} };
-(function(t2) {
-  var u3 = {};
-  t2.exports = u3, u3.eastAsianWidth = function(e3) {
-    var s2 = e3.charCodeAt(0), C3 = e3.length == 2 ? e3.charCodeAt(1) : 0, D4 = s2;
-    return 55296 <= s2 && s2 <= 56319 && 56320 <= C3 && C3 <= 57343 && (s2 &= 1023, C3 &= 1023, D4 = s2 << 10 | C3, D4 += 65536), D4 == 12288 || 65281 <= D4 && D4 <= 65376 || 65504 <= D4 && D4 <= 65510 ? "F" : D4 == 8361 || 65377 <= D4 && D4 <= 65470 || 65474 <= D4 && D4 <= 65479 || 65482 <= D4 && D4 <= 65487 || 65490 <= D4 && D4 <= 65495 || 65498 <= D4 && D4 <= 65500 || 65512 <= D4 && D4 <= 65518 ? "H" : 4352 <= D4 && D4 <= 4447 || 4515 <= D4 && D4 <= 4519 || 4602 <= D4 && D4 <= 4607 || 9001 <= D4 && D4 <= 9002 || 11904 <= D4 && D4 <= 11929 || 11931 <= D4 && D4 <= 12019 || 12032 <= D4 && D4 <= 12245 || 12272 <= D4 && D4 <= 12283 || 12289 <= D4 && D4 <= 12350 || 12353 <= D4 && D4 <= 12438 || 12441 <= D4 && D4 <= 12543 || 12549 <= D4 && D4 <= 12589 || 12593 <= D4 && D4 <= 12686 || 12688 <= D4 && D4 <= 12730 || 12736 <= D4 && D4 <= 12771 || 12784 <= D4 && D4 <= 12830 || 12832 <= D4 && D4 <= 12871 || 12880 <= D4 && D4 <= 13054 || 13056 <= D4 && D4 <= 19903 || 19968 <= D4 && D4 <= 42124 || 42128 <= D4 && D4 <= 42182 || 43360 <= D4 && D4 <= 43388 || 44032 <= D4 && D4 <= 55203 || 55216 <= D4 && D4 <= 55238 || 55243 <= D4 && D4 <= 55291 || 63744 <= D4 && D4 <= 64255 || 65040 <= D4 && D4 <= 65049 || 65072 <= D4 && D4 <= 65106 || 65108 <= D4 && D4 <= 65126 || 65128 <= D4 && D4 <= 65131 || 110592 <= D4 && D4 <= 110593 || 127488 <= D4 && D4 <= 127490 || 127504 <= D4 && D4 <= 127546 || 127552 <= D4 && D4 <= 127560 || 127568 <= D4 && D4 <= 127569 || 131072 <= D4 && D4 <= 194367 || 177984 <= D4 && D4 <= 196605 || 196608 <= D4 && D4 <= 262141 ? "W" : 32 <= D4 && D4 <= 126 || 162 <= D4 && D4 <= 163 || 165 <= D4 && D4 <= 166 || D4 == 172 || D4 == 175 || 10214 <= D4 && D4 <= 10221 || 10629 <= D4 && D4 <= 10630 ? "Na" : D4 == 161 || D4 == 164 || 167 <= D4 && D4 <= 168 || D4 == 170 || 173 <= D4 && D4 <= 174 || 176 <= D4 && D4 <= 180 || 182 <= D4 && D4 <= 186 || 188 <= D4 && D4 <= 191 || D4 == 198 || D4 == 208 || 215 <= D4 && D4 <= 216 || 222 <= D4 && D4 <= 225 || D4 == 230 || 232 <= D4 && D4 <= 234 || 236 <= D4 && D4 <= 237 || D4 == 240 || 242 <= D4 && D4 <= 243 || 247 <= D4 && D4 <= 250 || D4 == 252 || D4 == 254 || D4 == 257 || D4 == 273 || D4 == 275 || D4 == 283 || 294 <= D4 && D4 <= 295 || D4 == 299 || 305 <= D4 && D4 <= 307 || D4 == 312 || 319 <= D4 && D4 <= 322 || D4 == 324 || 328 <= D4 && D4 <= 331 || D4 == 333 || 338 <= D4 && D4 <= 339 || 358 <= D4 && D4 <= 359 || D4 == 363 || D4 == 462 || D4 == 464 || D4 == 466 || D4 == 468 || D4 == 470 || D4 == 472 || D4 == 474 || D4 == 476 || D4 == 593 || D4 == 609 || D4 == 708 || D4 == 711 || 713 <= D4 && D4 <= 715 || D4 == 717 || D4 == 720 || 728 <= D4 && D4 <= 731 || D4 == 733 || D4 == 735 || 768 <= D4 && D4 <= 879 || 913 <= D4 && D4 <= 929 || 931 <= D4 && D4 <= 937 || 945 <= D4 && D4 <= 961 || 963 <= D4 && D4 <= 969 || D4 == 1025 || 1040 <= D4 && D4 <= 1103 || D4 == 1105 || D4 == 8208 || 8211 <= D4 && D4 <= 8214 || 8216 <= D4 && D4 <= 8217 || 8220 <= D4 && D4 <= 8221 || 8224 <= D4 && D4 <= 8226 || 8228 <= D4 && D4 <= 8231 || D4 == 8240 || 8242 <= D4 && D4 <= 8243 || D4 == 8245 || D4 == 8251 || D4 == 8254 || D4 == 8308 || D4 == 8319 || 8321 <= D4 && D4 <= 8324 || D4 == 8364 || D4 == 8451 || D4 == 8453 || D4 == 8457 || D4 == 8467 || D4 == 8470 || 8481 <= D4 && D4 <= 8482 || D4 == 8486 || D4 == 8491 || 8531 <= D4 && D4 <= 8532 || 8539 <= D4 && D4 <= 8542 || 8544 <= D4 && D4 <= 8555 || 8560 <= D4 && D4 <= 8569 || D4 == 8585 || 8592 <= D4 && D4 <= 8601 || 8632 <= D4 && D4 <= 8633 || D4 == 8658 || D4 == 8660 || D4 == 8679 || D4 == 8704 || 8706 <= D4 && D4 <= 8707 || 8711 <= D4 && D4 <= 8712 || D4 == 8715 || D4 == 8719 || D4 == 8721 || D4 == 8725 || D4 == 8730 || 8733 <= D4 && D4 <= 8736 || D4 == 8739 || D4 == 8741 || 8743 <= D4 && D4 <= 8748 || D4 == 8750 || 8756 <= D4 && D4 <= 8759 || 8764 <= D4 && D4 <= 8765 || D4 == 8776 || D4 == 8780 || D4 == 8786 || 8800 <= D4 && D4 <= 8801 || 8804 <= D4 && D4 <= 8807 || 8810 <= D4 && D4 <= 8811 || 8814 <= D4 && D4 <= 8815 || 8834 <= D4 && D4 <= 8835 || 8838 <= D4 && D4 <= 8839 || D4 == 8853 || D4 == 8857 || D4 == 8869 || D4 == 8895 || D4 == 8978 || 9312 <= D4 && D4 <= 9449 || 9451 <= D4 && D4 <= 9547 || 9552 <= D4 && D4 <= 9587 || 9600 <= D4 && D4 <= 9615 || 9618 <= D4 && D4 <= 9621 || 9632 <= D4 && D4 <= 9633 || 9635 <= D4 && D4 <= 9641 || 9650 <= D4 && D4 <= 9651 || 9654 <= D4 && D4 <= 9655 || 9660 <= D4 && D4 <= 9661 || 9664 <= D4 && D4 <= 9665 || 9670 <= D4 && D4 <= 9672 || D4 == 9675 || 9678 <= D4 && D4 <= 9681 || 9698 <= D4 && D4 <= 9701 || D4 == 9711 || 9733 <= D4 && D4 <= 9734 || D4 == 9737 || 9742 <= D4 && D4 <= 9743 || 9748 <= D4 && D4 <= 9749 || D4 == 9756 || D4 == 9758 || D4 == 9792 || D4 == 9794 || 9824 <= D4 && D4 <= 9825 || 9827 <= D4 && D4 <= 9829 || 9831 <= D4 && D4 <= 9834 || 9836 <= D4 && D4 <= 9837 || D4 == 9839 || 9886 <= D4 && D4 <= 9887 || 9918 <= D4 && D4 <= 9919 || 9924 <= D4 && D4 <= 9933 || 9935 <= D4 && D4 <= 9953 || D4 == 9955 || 9960 <= D4 && D4 <= 9983 || D4 == 10045 || D4 == 10071 || 10102 <= D4 && D4 <= 10111 || 11093 <= D4 && D4 <= 11097 || 12872 <= D4 && D4 <= 12879 || 57344 <= D4 && D4 <= 63743 || 65024 <= D4 && D4 <= 65039 || D4 == 65533 || 127232 <= D4 && D4 <= 127242 || 127248 <= D4 && D4 <= 127277 || 127280 <= D4 && D4 <= 127337 || 127344 <= D4 && D4 <= 127386 || 917760 <= D4 && D4 <= 917999 || 983040 <= D4 && D4 <= 1048573 || 1048576 <= D4 && D4 <= 1114109 ? "A" : "N";
-  }, u3.characterLength = function(e3) {
-    var s2 = this.eastAsianWidth(e3);
-    return s2 == "F" || s2 == "W" || s2 == "A" ? 2 : 1;
-  };
-  function F3(e3) {
-    return e3.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]|[^\uD800-\uDFFF]/g) || [];
-  }
-  u3.length = function(e3) {
-    for (var s2 = F3(e3), C3 = 0, D4 = 0; D4 < s2.length; D4++) C3 = C3 + this.characterLength(s2[D4]);
-    return C3;
-  }, u3.slice = function(e3, s2, C3) {
-    textLen = u3.length(e3), s2 = s2 || 0, C3 = C3 || 1, s2 < 0 && (s2 = textLen + s2), C3 < 0 && (C3 = textLen + C3);
-    for (var D4 = "", i3 = 0, n2 = F3(e3), E3 = 0; E3 < n2.length; E3++) {
-      var h3 = n2[E3], o3 = u3.length(h3);
-      if (i3 >= s2 - (o3 == 2 ? 1 : 0)) if (i3 + o3 <= C3) D4 += h3;
-      else break;
-      i3 += o3;
-    }
-    return D4;
-  };
-})(M);
-var J = M.exports;
-var Q = j(J);
-var X = function() {
-  return /\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62(?:\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73|\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74|\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67)\uDB40\uDC7F|(?:\uD83E\uDDD1\uD83C\uDFFF\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFE])|(?:\uD83E\uDDD1\uD83C\uDFFE\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFD\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFC\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFB\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFB\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFC-\uDFFF])|\uD83D\uDC68(?:\uD83C\uDFFB(?:\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF]))|\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFC-\uDFFF])|[\u2695\u2696\u2708]\uFE0F|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))?|(?:\uD83C[\uDFFC-\uDFFF])\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF]))|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83D\uDC68|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFE])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])\uFE0F|\u200D(?:(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D[\uDC66\uDC67])|\uD83D[\uDC66\uDC67])|\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC)?|(?:\uD83D\uDC69(?:\uD83C\uDFFB\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|(?:\uD83C[\uDFFC-\uDFFF])\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69]))|\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1)(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC69(?:\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83E\uDDD1(?:\u200D(?:\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83D\uDC69\u200D\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D[\uDC66\uDC67])|\uD83D\uDC69\u200D\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D\uDC41\uFE0F\u200D\uD83D\uDDE8|\uD83E\uDDD1(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|\uD83D\uDC69(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|\uD83D\uDE36\u200D\uD83C\uDF2B|\uD83C\uDFF3\uFE0F\u200D\u26A7|\uD83D\uDC3B\u200D\u2744|(?:(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF])\u200D[\u2640\u2642]|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|\uD83C\uDFF4\u200D\u2620|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])\u200D[\u2640\u2642]|[\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u2328\u23CF\u23ED-\u23EF\u23F1\u23F2\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB\u25FC\u2600-\u2604\u260E\u2611\u2618\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u2692\u2694-\u2697\u2699\u269B\u269C\u26A0\u26A7\u26B0\u26B1\u26C8\u26CF\u26D1\u26D3\u26E9\u26F0\u26F1\u26F4\u26F7\u26F8\u2702\u2708\u2709\u270F\u2712\u2714\u2716\u271D\u2721\u2733\u2734\u2744\u2747\u2763\u27A1\u2934\u2935\u2B05-\u2B07\u3030\u303D\u3297\u3299]|\uD83C[\uDD70\uDD71\uDD7E\uDD7F\uDE02\uDE37\uDF21\uDF24-\uDF2C\uDF36\uDF7D\uDF96\uDF97\uDF99-\uDF9B\uDF9E\uDF9F\uDFCD\uDFCE\uDFD4-\uDFDF\uDFF5\uDFF7]|\uD83D[\uDC3F\uDCFD\uDD49\uDD4A\uDD6F\uDD70\uDD73\uDD76-\uDD79\uDD87\uDD8A-\uDD8D\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA\uDECB\uDECD-\uDECF\uDEE0-\uDEE5\uDEE9\uDEF0\uDEF3])\uFE0F|\uD83C\uDFF3\uFE0F\u200D\uD83C\uDF08|\uD83D\uDC69\u200D\uD83D\uDC67|\uD83D\uDC69\u200D\uD83D\uDC66|\uD83D\uDE35\u200D\uD83D\uDCAB|\uD83D\uDE2E\u200D\uD83D\uDCA8|\uD83D\uDC15\u200D\uD83E\uDDBA|\uD83E\uDDD1(?:\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC|\uD83C\uDFFB)?|\uD83D\uDC69(?:\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC|\uD83C\uDFFB)?|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDF6\uD83C\uDDE6|\uD83C\uDDF4\uD83C\uDDF2|\uD83D\uDC08\u200D\u2B1B|\u2764\uFE0F\u200D(?:\uD83D\uDD25|\uD83E\uDE79)|\uD83D\uDC41\uFE0F|\uD83C\uDFF3\uFE0F|\uD83C\uDDFF(?:\uD83C[\uDDE6\uDDF2\uDDFC])|\uD83C\uDDFE(?:\uD83C[\uDDEA\uDDF9])|\uD83C\uDDFC(?:\uD83C[\uDDEB\uDDF8])|\uD83C\uDDFB(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA])|\uD83C\uDDFA(?:\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF])|\uD83C\uDDF9(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF])|\uD83C\uDDF8(?:\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF])|\uD83C\uDDF7(?:\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC])|\uD83C\uDDF5(?:\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE])|\uD83C\uDDF3(?:\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF])|\uD83C\uDDF2(?:\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF])|\uD83C\uDDF1(?:\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE])|\uD83C\uDDF0(?:\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF])|\uD83C\uDDEF(?:\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5])|\uD83C\uDDEE(?:\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9])|\uD83C\uDDED(?:\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA])|\uD83C\uDDEC(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE])|\uD83C\uDDEB(?:\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7])|\uD83C\uDDEA(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA])|\uD83C\uDDE9(?:\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF])|\uD83C\uDDE8(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF])|\uD83C\uDDE7(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF])|\uD83C\uDDE6(?:\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF])|[#\*0-9]\uFE0F\u20E3|\u2764\uFE0F|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])|\uD83C\uDFF4|(?:[\u270A\u270B]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5])(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u270C\u270D]|\uD83D[\uDD74\uDD90])(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])|[\u270A\u270B]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC08\uDC15\uDC3B\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE2E\uDE35\uDE36\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5]|\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD]|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF]|[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF84\uDF86-\uDF93\uDFA0-\uDFC1\uDFC5\uDFC6\uDFC8\uDFC9\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC07\uDC09-\uDC14\uDC16-\uDC3A\uDC3C-\uDC3E\uDC40\uDC44\uDC45\uDC51-\uDC65\uDC6A\uDC79-\uDC7B\uDC7D-\uDC80\uDC84\uDC88-\uDC8E\uDC90\uDC92-\uDCA9\uDCAB-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDDA4\uDDFB-\uDE2D\uDE2F-\uDE34\uDE37-\uDE44\uDE48-\uDE4A\uDE80-\uDEA2\uDEA4-\uDEB3\uDEB7-\uDEBF\uDEC1-\uDEC5\uDED0-\uDED2\uDED5-\uDED7\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0D\uDD0E\uDD10-\uDD17\uDD1D\uDD20-\uDD25\uDD27-\uDD2F\uDD3A\uDD3F-\uDD45\uDD47-\uDD76\uDD78\uDD7A-\uDDB4\uDDB7\uDDBA\uDDBC-\uDDCB\uDDD0\uDDE0-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6]|(?:[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u270A\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF93\uDFA0-\uDFCA\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF4\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC3E\uDC40\uDC42-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDD7A\uDD95\uDD96\uDDA4\uDDFB-\uDE4F\uDE80-\uDEC5\uDECC\uDED0-\uDED2\uDED5-\uDED7\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0C-\uDD3A\uDD3C-\uDD45\uDD47-\uDD78\uDD7A-\uDDCB\uDDCD-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6])|(?:[#\*0-9\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692-\u2697\u2699\u269B\u269C\u26A0\u26A1\u26A7\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD7A\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA4\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED2\uDED5-\uDED7\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0C-\uDD3A\uDD3C-\uDD45\uDD47-\uDD78\uDD7A-\uDDCB\uDDCD-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6])\uFE0F|(?:[\u261D\u26F9\u270A-\u270D]|\uD83C[\uDF85\uDFC2-\uDFC4\uDFC7\uDFCA-\uDFCC]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66-\uDC78\uDC7C\uDC81-\uDC83\uDC85-\uDC87\uDC8F\uDC91\uDCAA\uDD74\uDD75\uDD7A\uDD90\uDD95\uDD96\uDE45-\uDE47\uDE4B-\uDE4F\uDEA3\uDEB4-\uDEB6\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1F\uDD26\uDD30-\uDD39\uDD3C-\uDD3E\uDD77\uDDB5\uDDB6\uDDB8\uDDB9\uDDBB\uDDCD-\uDDCF\uDDD1-\uDDDD])/g;
-};
-var DD = j(X);
-var m = 10;
-var T = (t2 = 0) => (u3) => `\x1B[${u3 + t2}m`;
-var P = (t2 = 0) => (u3) => `\x1B[${38 + t2};5;${u3}m`;
-var W = (t2 = 0) => (u3, F3, e3) => `\x1B[${38 + t2};2;${u3};${F3};${e3}m`;
-var r = { modifier: { reset: [0, 0], bold: [1, 22], dim: [2, 22], italic: [3, 23], underline: [4, 24], overline: [53, 55], inverse: [7, 27], hidden: [8, 28], strikethrough: [9, 29] }, color: { black: [30, 39], red: [31, 39], green: [32, 39], yellow: [33, 39], blue: [34, 39], magenta: [35, 39], cyan: [36, 39], white: [37, 39], blackBright: [90, 39], gray: [90, 39], grey: [90, 39], redBright: [91, 39], greenBright: [92, 39], yellowBright: [93, 39], blueBright: [94, 39], magentaBright: [95, 39], cyanBright: [96, 39], whiteBright: [97, 39] }, bgColor: { bgBlack: [40, 49], bgRed: [41, 49], bgGreen: [42, 49], bgYellow: [43, 49], bgBlue: [44, 49], bgMagenta: [45, 49], bgCyan: [46, 49], bgWhite: [47, 49], bgBlackBright: [100, 49], bgGray: [100, 49], bgGrey: [100, 49], bgRedBright: [101, 49], bgGreenBright: [102, 49], bgYellowBright: [103, 49], bgBlueBright: [104, 49], bgMagentaBright: [105, 49], bgCyanBright: [106, 49], bgWhiteBright: [107, 49] } };
-Object.keys(r.modifier);
-var uD = Object.keys(r.color);
-var FD = Object.keys(r.bgColor);
-[...uD, ...FD];
-function tD() {
-  const t2 = /* @__PURE__ */ new Map();
-  for (const [u3, F3] of Object.entries(r)) {
-    for (const [e3, s2] of Object.entries(F3)) r[e3] = { open: `\x1B[${s2[0]}m`, close: `\x1B[${s2[1]}m` }, F3[e3] = r[e3], t2.set(s2[0], s2[1]);
-    Object.defineProperty(r, u3, { value: F3, enumerable: false });
-  }
-  return Object.defineProperty(r, "codes", { value: t2, enumerable: false }), r.color.close = "\x1B[39m", r.bgColor.close = "\x1B[49m", r.color.ansi = T(), r.color.ansi256 = P(), r.color.ansi16m = W(), r.bgColor.ansi = T(m), r.bgColor.ansi256 = P(m), r.bgColor.ansi16m = W(m), Object.defineProperties(r, { rgbToAnsi256: { value: (u3, F3, e3) => u3 === F3 && F3 === e3 ? u3 < 8 ? 16 : u3 > 248 ? 231 : Math.round((u3 - 8) / 247 * 24) + 232 : 16 + 36 * Math.round(u3 / 255 * 5) + 6 * Math.round(F3 / 255 * 5) + Math.round(e3 / 255 * 5), enumerable: false }, hexToRgb: { value: (u3) => {
-    const F3 = /[a-f\d]{6}|[a-f\d]{3}/i.exec(u3.toString(16));
-    if (!F3) return [0, 0, 0];
-    let [e3] = F3;
-    e3.length === 3 && (e3 = [...e3].map((C3) => C3 + C3).join(""));
-    const s2 = Number.parseInt(e3, 16);
-    return [s2 >> 16 & 255, s2 >> 8 & 255, s2 & 255];
-  }, enumerable: false }, hexToAnsi256: { value: (u3) => r.rgbToAnsi256(...r.hexToRgb(u3)), enumerable: false }, ansi256ToAnsi: { value: (u3) => {
-    if (u3 < 8) return 30 + u3;
-    if (u3 < 16) return 90 + (u3 - 8);
-    let F3, e3, s2;
-    if (u3 >= 232) F3 = ((u3 - 232) * 10 + 8) / 255, e3 = F3, s2 = F3;
-    else {
-      u3 -= 16;
-      const i3 = u3 % 36;
-      F3 = Math.floor(u3 / 36) / 5, e3 = Math.floor(i3 / 6) / 5, s2 = i3 % 6 / 5;
-    }
-    const C3 = Math.max(F3, e3, s2) * 2;
-    if (C3 === 0) return 30;
-    let D4 = 30 + (Math.round(s2) << 2 | Math.round(e3) << 1 | Math.round(F3));
-    return C3 === 2 && (D4 += 60), D4;
-  }, enumerable: false }, rgbToAnsi: { value: (u3, F3, e3) => r.ansi256ToAnsi(r.rgbToAnsi256(u3, F3, e3)), enumerable: false }, hexToAnsi: { value: (u3) => r.ansi256ToAnsi(r.hexToAnsi256(u3)), enumerable: false } }), r;
-}
-var eD = tD();
-var CD = "]";
-var w = `${CD}8;;`;
-var V = Symbol("clack:cancel");
-var PD = globalThis.process.platform.startsWith("win");
-function WD({ input: t2 = import_node_process.stdin, output: u3 = import_node_process.stdout, overwrite: F3 = true, hideCursor: e3 = true } = {}) {
-  const s2 = f.createInterface({ input: t2, output: u3, prompt: "", tabSize: 1 });
-  f.emitKeypressEvents(t2, s2), t2.isTTY && t2.setRawMode(true);
-  const C3 = (D4, { name: i3 }) => {
-    if (String(D4) === "" && process.exit(0), !F3) return;
-    let n2 = i3 === "return" ? 0 : -1, E3 = i3 === "return" ? -1 : 0;
-    f.moveCursor(u3, n2, E3, () => {
-      f.clearLine(u3, 1, () => {
-        t2.once("keypress", C3);
-      });
-    });
-  };
-  return e3 && process.stdout.write(import_sisteransi.cursor.hide), t2.once("keypress", C3), () => {
-    t2.off("keypress", C3), e3 && process.stdout.write(import_sisteransi.cursor.show), t2.isTTY && !PD && t2.setRawMode(false), s2.terminal = false, s2.close();
-  };
-}
-
-// node_modules/@clack/prompts/dist/index.mjs
-var import_node_process2 = __toESM(require("node:process"), 1);
-var import_picocolors = __toESM(require_picocolors(), 1);
-var import_sisteransi2 = __toESM(require_src(), 1);
-function N() {
-  return import_node_process2.default.platform !== "win32" ? import_node_process2.default.env.TERM !== "linux" : Boolean(import_node_process2.default.env.CI) || Boolean(import_node_process2.default.env.WT_SESSION) || Boolean(import_node_process2.default.env.TERMINUS_SUBLIME) || import_node_process2.default.env.ConEmuTask === "{cmd::Cmder}" || import_node_process2.default.env.TERM_PROGRAM === "Terminus-Sublime" || import_node_process2.default.env.TERM_PROGRAM === "vscode" || import_node_process2.default.env.TERM === "xterm-256color" || import_node_process2.default.env.TERM === "alacritty" || import_node_process2.default.env.TERMINAL_EMULATOR === "JetBrains-JediTerm";
-}
-var p = N();
-var u = (r3, n2) => p ? r3 : n2;
-var W2 = u("\u25C6", "*");
-var D = u("\u25A0", "x");
-var F = u("\u25B2", "x");
-var f2 = u("\u25C7", "o");
-var L = u("\u250C", "T");
-var a = u("\u2502", "|");
-var o = u("\u2514", "\u2014");
-var w2 = u("\u25CF", ">");
-var S = u("\u25CB", " ");
-var _ = u("\u25FB", "[\u2022]");
-var y = u("\u25FC", "[+]");
-var A = u("\u25FB", "[ ]");
-var q = u("\u25AA", "\u2022");
-var R = u("\u2500", "-");
-var G = u("\u256E", "+");
-var H = u("\u251C", "+");
-var K = u("\u256F", "+");
-var U = u("\u25CF", "\u2022");
-var Z = u("\u25C6", "*");
-var z = u("\u25B2", "!");
-var X2 = u("\u25A0", "x");
-var b = (r3) => r3.replace(ue(), "");
-var ie = (r3 = "", n2 = "") => {
-  const s2 = `
-${r3}
-`.split(`
-`), t2 = Math.max(s2.reduce((c2, l3) => (l3 = b(l3), l3.length > c2 ? l3.length : c2), 0), b(n2).length) + 2, i3 = s2.map((c2) => `${import_picocolors.default.gray(a)}  ${import_picocolors.default.dim(c2)}${" ".repeat(t2 - b(c2).length)}${import_picocolors.default.gray(a)}`).join(`
-`);
-  process.stdout.write(`${import_picocolors.default.gray(a)}
-${import_picocolors.default.green(f2)}  ${import_picocolors.default.reset(n2)} ${import_picocolors.default.gray(R.repeat(Math.max(t2 - n2.length - 1, 1)) + G)}
-${i3}
-${import_picocolors.default.gray(H + R.repeat(t2 + 2) + K)}
-`);
-};
-var ae = (r3 = "") => {
-  process.stdout.write(`${import_picocolors.default.gray(L)}  ${r3}
-`);
-};
-var ce = (r3 = "") => {
-  process.stdout.write(`${import_picocolors.default.gray(a)}
-${import_picocolors.default.gray(o)}  ${r3}
-
-`);
-};
-var C = p ? ["\u25D2", "\u25D0", "\u25D3", "\u25D1"] : ["\u2022", "o", "O", "0"];
-var le = () => {
-  let r3, n2;
-  const s2 = p ? 80 : 120;
-  return { start(t2 = "") {
-    t2 = t2.replace(/\.?\.?\.$/, ""), r3 = WD(), process.stdout.write(`${import_picocolors.default.gray(a)}
-${import_picocolors.default.magenta("\u25CB")}  ${t2}
-`);
-    let i3 = 0, c2 = 0;
-    n2 = setInterval(() => {
-      let l3 = C[i3];
-      process.stdout.write(import_sisteransi2.cursor.move(-999, -1)), process.stdout.write(`${import_picocolors.default.magenta(l3)}  ${t2}${Math.floor(c2) >= 1 ? ".".repeat(Math.floor(c2)).slice(0, 3) : ""}   
-`), i3 = i3 === C.length - 1 ? 0 : i3 + 1, c2 = c2 === C.length ? 0 : c2 + 0.125;
-    }, s2);
-  }, stop(t2 = "") {
-    process.stdout.write(import_sisteransi2.cursor.move(-999, -2)), process.stdout.write(import_sisteransi2.erase.down(2)), clearInterval(n2), process.stdout.write(`${import_picocolors.default.gray(a)}
-${import_picocolors.default.green(f2)}  ${t2}
-`), r3();
-  } };
-};
-function ue() {
-  const r3 = ["[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]+)*|[a-zA-Z\\d]+(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)", "(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-nq-uy=><~]))"].join("|");
-  return new RegExp(r3, "g");
-}
-
-// src/github-action.ts
+init_dist2();
 var import_fs3 = require("fs");
+
+// src/generateCommitMessageFromGitDiff.ts
+init_dist2();
 
 // node_modules/chalk/source/vendor/ansi-styles/index.js
 var ANSI_BACKGROUND_OFFSET = 10;
@@ -70191,7 +70852,7 @@ var ansi_styles_default = ansiStyles;
 // node_modules/chalk/source/vendor/supports-color/index.js
 var import_node_process3 = __toESM(require("node:process"), 1);
 var import_node_os = __toESM(require("node:os"), 1);
-var import_node_tty = __toESM(require("node:tty"), 1);
+var import_node_tty2 = __toESM(require("node:tty"), 1);
 function hasFlag(flag, argv = globalThis.Deno ? globalThis.Deno.args : import_node_process3.default.argv) {
   const prefix = flag.startsWith("-") ? "" : flag.length === 1 ? "-" : "--";
   const position = argv.indexOf(prefix + flag);
@@ -70309,8 +70970,8 @@ function createSupportsColor(stream4, options = {}) {
   return translateLevel(level);
 }
 var supportsColor = {
-  stdout: createSupportsColor({ isTTY: import_node_tty.default.isatty(1) }),
-  stderr: createSupportsColor({ isTTY: import_node_tty.default.isatty(2) })
+  stdout: createSupportsColor({ isTTY: import_node_tty2.default.isatty(1) }),
+  stderr: createSupportsColor({ isTTY: import_node_tty2.default.isatty(2) })
 };
 var supports_color_default = supportsColor;
 
@@ -70491,8 +71152,11 @@ var chalk = createChalk();
 var chalkStderr = createChalk({ level: stderrColor ? stderrColor.level : 0 });
 var source_default = chalk;
 
+// src/commands/config.ts
+init_dist2();
+
 // node_modules/type-flag/dist/index.mjs
-var { stringify: h } = JSON;
+var { stringify: h2 } = JSON;
 var { hasOwnProperty: D2 } = Object.prototype;
 
 // node_modules/cleye/dist/index.mjs
@@ -70503,22 +71167,22 @@ var DD2 = Object.create;
 var m2 = Object.defineProperty;
 var FD2 = Object.getOwnPropertyDescriptor;
 var tD2 = Object.getOwnPropertyNames;
-var ED = Object.getPrototypeOf;
-var L2 = Object.prototype.hasOwnProperty;
-var nD = (D4) => m2(D4, "__esModule", { value: true });
-var rD = (D4, F3) => () => (D4 && (F3 = D4(D4 = 0)), F3);
-var iD = (D4, F3) => () => (F3 || D4((F3 = { exports: {} }).exports, F3), F3.exports);
-var oD = (D4, F3, u3, C3) => {
-  if (F3 && typeof F3 == "object" || typeof F3 == "function") for (let t2 of tD2(F3)) !L2.call(D4, t2) && (u3 || t2 !== "default") && m2(D4, t2, { get: () => F3[t2], enumerable: !(C3 = FD2(F3, t2)) || C3.enumerable });
+var ED2 = Object.getPrototypeOf;
+var L3 = Object.prototype.hasOwnProperty;
+var nD2 = (D4) => m2(D4, "__esModule", { value: true });
+var rD2 = (D4, F3) => () => (D4 && (F3 = D4(D4 = 0)), F3);
+var iD2 = (D4, F3) => () => (F3 || D4((F3 = { exports: {} }).exports, F3), F3.exports);
+var oD2 = (D4, F3, u3, C3) => {
+  if (F3 && typeof F3 == "object" || typeof F3 == "function") for (let t2 of tD2(F3)) !L3.call(D4, t2) && (u3 || t2 !== "default") && m2(D4, t2, { get: () => F3[t2], enumerable: !(C3 = FD2(F3, t2)) || C3.enumerable });
   return D4;
 };
-var BD = (D4, F3) => oD(nD(m2(D4 != null ? DD2(ED(D4)) : {}, "default", !F3 && D4 && D4.__esModule ? { get: () => D4.default, enumerable: true } : { value: D4, enumerable: true })), D4);
-var i = rD(() => {
+var BD2 = (D4, F3) => oD2(nD2(m2(D4 != null ? DD2(ED2(D4)) : {}, "default", !F3 && D4 && D4.__esModule ? { get: () => D4.default, enumerable: true } : { value: D4, enumerable: true })), D4);
+var i = rD2(() => {
 });
-var $2 = iD((LD, N4) => {
+var $2 = iD2((LD, N5) => {
   "use strict";
   i();
-  N4.exports = function() {
+  N5.exports = function() {
     return /\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62(?:\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73|\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74|\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67)\uDB40\uDC7F|(?:\uD83E\uDDD1\uD83C\uDFFF\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFE])|(?:\uD83E\uDDD1\uD83C\uDFFE\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFD\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFC\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFB\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFB\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFC-\uDFFF])|\uD83D\uDC68(?:\uD83C\uDFFB(?:\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF]))|\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFC-\uDFFF])|[\u2695\u2696\u2708]\uFE0F|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))?|(?:\uD83C[\uDFFC-\uDFFF])\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF]))|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83D\uDC68|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFE])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])\uFE0F|\u200D(?:(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D[\uDC66\uDC67])|\uD83D[\uDC66\uDC67])|\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC)?|(?:\uD83D\uDC69(?:\uD83C\uDFFB\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|(?:\uD83C[\uDFFC-\uDFFF])\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69]))|\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1)(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC69(?:\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83E\uDDD1(?:\u200D(?:\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83D\uDC69\u200D\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D[\uDC66\uDC67])|\uD83D\uDC69\u200D\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D\uDC41\uFE0F\u200D\uD83D\uDDE8|\uD83E\uDDD1(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|\uD83D\uDC69(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|\uD83D\uDE36\u200D\uD83C\uDF2B|\uD83C\uDFF3\uFE0F\u200D\u26A7|\uD83D\uDC3B\u200D\u2744|(?:(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF])\u200D[\u2640\u2642]|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|\uD83C\uDFF4\u200D\u2620|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])\u200D[\u2640\u2642]|[\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u2328\u23CF\u23ED-\u23EF\u23F1\u23F2\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB\u25FC\u2600-\u2604\u260E\u2611\u2618\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u2692\u2694-\u2697\u2699\u269B\u269C\u26A0\u26A7\u26B0\u26B1\u26C8\u26CF\u26D1\u26D3\u26E9\u26F0\u26F1\u26F4\u26F7\u26F8\u2702\u2708\u2709\u270F\u2712\u2714\u2716\u271D\u2721\u2733\u2734\u2744\u2747\u2763\u27A1\u2934\u2935\u2B05-\u2B07\u3030\u303D\u3297\u3299]|\uD83C[\uDD70\uDD71\uDD7E\uDD7F\uDE02\uDE37\uDF21\uDF24-\uDF2C\uDF36\uDF7D\uDF96\uDF97\uDF99-\uDF9B\uDF9E\uDF9F\uDFCD\uDFCE\uDFD4-\uDFDF\uDFF5\uDFF7]|\uD83D[\uDC3F\uDCFD\uDD49\uDD4A\uDD6F\uDD70\uDD73\uDD76-\uDD79\uDD87\uDD8A-\uDD8D\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA\uDECB\uDECD-\uDECF\uDEE0-\uDEE5\uDEE9\uDEF0\uDEF3])\uFE0F|\uD83C\uDFF3\uFE0F\u200D\uD83C\uDF08|\uD83D\uDC69\u200D\uD83D\uDC67|\uD83D\uDC69\u200D\uD83D\uDC66|\uD83D\uDE35\u200D\uD83D\uDCAB|\uD83D\uDE2E\u200D\uD83D\uDCA8|\uD83D\uDC15\u200D\uD83E\uDDBA|\uD83E\uDDD1(?:\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC|\uD83C\uDFFB)?|\uD83D\uDC69(?:\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC|\uD83C\uDFFB)?|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDF6\uD83C\uDDE6|\uD83C\uDDF4\uD83C\uDDF2|\uD83D\uDC08\u200D\u2B1B|\u2764\uFE0F\u200D(?:\uD83D\uDD25|\uD83E\uDE79)|\uD83D\uDC41\uFE0F|\uD83C\uDFF3\uFE0F|\uD83C\uDDFF(?:\uD83C[\uDDE6\uDDF2\uDDFC])|\uD83C\uDDFE(?:\uD83C[\uDDEA\uDDF9])|\uD83C\uDDFC(?:\uD83C[\uDDEB\uDDF8])|\uD83C\uDDFB(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA])|\uD83C\uDDFA(?:\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF])|\uD83C\uDDF9(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF])|\uD83C\uDDF8(?:\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF])|\uD83C\uDDF7(?:\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC])|\uD83C\uDDF5(?:\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE])|\uD83C\uDDF3(?:\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF])|\uD83C\uDDF2(?:\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF])|\uD83C\uDDF1(?:\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE])|\uD83C\uDDF0(?:\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF])|\uD83C\uDDEF(?:\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5])|\uD83C\uDDEE(?:\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9])|\uD83C\uDDED(?:\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA])|\uD83C\uDDEC(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE])|\uD83C\uDDEB(?:\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7])|\uD83C\uDDEA(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA])|\uD83C\uDDE9(?:\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF])|\uD83C\uDDE8(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF])|\uD83C\uDDE7(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF])|\uD83C\uDDE6(?:\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF])|[#\*0-9]\uFE0F\u20E3|\u2764\uFE0F|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])|\uD83C\uDFF4|(?:[\u270A\u270B]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5])(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u270C\u270D]|\uD83D[\uDD74\uDD90])(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])|[\u270A\u270B]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC08\uDC15\uDC3B\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE2E\uDE35\uDE36\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5]|\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD]|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF]|[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF84\uDF86-\uDF93\uDFA0-\uDFC1\uDFC5\uDFC6\uDFC8\uDFC9\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC07\uDC09-\uDC14\uDC16-\uDC3A\uDC3C-\uDC3E\uDC40\uDC44\uDC45\uDC51-\uDC65\uDC6A\uDC79-\uDC7B\uDC7D-\uDC80\uDC84\uDC88-\uDC8E\uDC90\uDC92-\uDCA9\uDCAB-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDDA4\uDDFB-\uDE2D\uDE2F-\uDE34\uDE37-\uDE44\uDE48-\uDE4A\uDE80-\uDEA2\uDEA4-\uDEB3\uDEB7-\uDEBF\uDEC1-\uDEC5\uDED0-\uDED2\uDED5-\uDED7\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0D\uDD0E\uDD10-\uDD17\uDD1D\uDD20-\uDD25\uDD27-\uDD2F\uDD3A\uDD3F-\uDD45\uDD47-\uDD76\uDD78\uDD7A-\uDDB4\uDDB7\uDDBA\uDDBC-\uDDCB\uDDD0\uDDE0-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6]|(?:[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u270A\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF93\uDFA0-\uDFCA\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF4\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC3E\uDC40\uDC42-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDD7A\uDD95\uDD96\uDDA4\uDDFB-\uDE4F\uDE80-\uDEC5\uDECC\uDED0-\uDED2\uDED5-\uDED7\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0C-\uDD3A\uDD3C-\uDD45\uDD47-\uDD78\uDD7A-\uDDCB\uDDCD-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6])|(?:[#\*0-9\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692-\u2697\u2699\u269B\u269C\u26A0\u26A1\u26A7\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD7A\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA4\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED2\uDED5-\uDED7\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0C-\uDD3A\uDD3C-\uDD45\uDD47-\uDD78\uDD7A-\uDDCB\uDDCD-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6])\uFE0F|(?:[\u261D\u26F9\u270A-\u270D]|\uD83C[\uDF85\uDFC2-\uDFC4\uDFC7\uDFCA-\uDFCC]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66-\uDC78\uDC7C\uDC81-\uDC83\uDC85-\uDC87\uDC8F\uDC91\uDCAA\uDD74\uDD75\uDD7A\uDD90\uDD95\uDD96\uDE45-\uDE47\uDE4B-\uDE4F\uDEA3\uDEB4-\uDEB6\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1F\uDD26\uDD30-\uDD39\uDD3C-\uDD3E\uDD77\uDDB5\uDDB6\uDDB8\uDDB9\uDDBB\uDDCD-\uDDCF\uDDD1-\uDDDD])/g;
   };
 });
@@ -70531,15 +71195,15 @@ i();
 i();
 i();
 i();
-var j2 = BD($2(), 1);
+var j2 = BD2($2(), 1);
 i();
 i();
 i();
 i();
-var O = 10;
-var U2 = (D4 = 0) => (F3) => `\x1B[${F3 + D4}m`;
+var O2 = 10;
+var U3 = (D4 = 0) => (F3) => `\x1B[${F3 + D4}m`;
 var V2 = (D4 = 0) => (F3) => `\x1B[${38 + D4};5;${F3}m`;
-var Y = (D4 = 0) => (F3, u3, C3) => `\x1B[${38 + D4};2;${F3};${u3};${C3}m`;
+var Y3 = (D4 = 0) => (F3, u3, C3) => `\x1B[${38 + D4};2;${F3};${u3};${C3}m`;
 function AD2() {
   let D4 = /* @__PURE__ */ new Map(), F3 = { modifier: { reset: [0, 0], bold: [1, 22], dim: [2, 22], italic: [3, 23], underline: [4, 24], overline: [53, 55], inverse: [7, 27], hidden: [8, 28], strikethrough: [9, 29] }, color: { black: [30, 39], red: [31, 39], green: [32, 39], yellow: [33, 39], blue: [34, 39], magenta: [35, 39], cyan: [36, 39], white: [37, 39], blackBright: [90, 39], redBright: [91, 39], greenBright: [92, 39], yellowBright: [93, 39], blueBright: [94, 39], magentaBright: [95, 39], cyanBright: [96, 39], whiteBright: [97, 39] }, bgColor: { bgBlack: [40, 49], bgRed: [41, 49], bgGreen: [42, 49], bgYellow: [43, 49], bgBlue: [44, 49], bgMagenta: [45, 49], bgCyan: [46, 49], bgWhite: [47, 49], bgBlackBright: [100, 49], bgRedBright: [101, 49], bgGreenBright: [102, 49], bgYellowBright: [103, 49], bgBlueBright: [104, 49], bgMagentaBright: [105, 49], bgCyanBright: [106, 49], bgWhiteBright: [107, 49] } };
   F3.color.gray = F3.color.blackBright, F3.bgColor.bgGray = F3.bgColor.bgBlackBright, F3.color.grey = F3.color.blackBright, F3.bgColor.bgGrey = F3.bgColor.bgBlackBright;
@@ -70547,7 +71211,7 @@ function AD2() {
     for (let [t2, E3] of Object.entries(C3)) F3[t2] = { open: `\x1B[${E3[0]}m`, close: `\x1B[${E3[1]}m` }, C3[t2] = F3[t2], D4.set(E3[0], E3[1]);
     Object.defineProperty(F3, u3, { value: C3, enumerable: false });
   }
-  return Object.defineProperty(F3, "codes", { value: D4, enumerable: false }), F3.color.close = "\x1B[39m", F3.bgColor.close = "\x1B[49m", F3.color.ansi = U2(), F3.color.ansi256 = V2(), F3.color.ansi16m = Y(), F3.bgColor.ansi = U2(O), F3.bgColor.ansi256 = V2(O), F3.bgColor.ansi16m = Y(O), Object.defineProperties(F3, { rgbToAnsi256: { value: (u3, C3, t2) => u3 === C3 && C3 === t2 ? u3 < 8 ? 16 : u3 > 248 ? 231 : Math.round((u3 - 8) / 247 * 24) + 232 : 16 + 36 * Math.round(u3 / 255 * 5) + 6 * Math.round(C3 / 255 * 5) + Math.round(t2 / 255 * 5), enumerable: false }, hexToRgb: { value: (u3) => {
+  return Object.defineProperty(F3, "codes", { value: D4, enumerable: false }), F3.color.close = "\x1B[39m", F3.bgColor.close = "\x1B[49m", F3.color.ansi = U3(), F3.color.ansi256 = V2(), F3.color.ansi16m = Y3(), F3.bgColor.ansi = U3(O2), F3.bgColor.ansi256 = V2(O2), F3.bgColor.ansi16m = Y3(O2), Object.defineProperties(F3, { rgbToAnsi256: { value: (u3, C3, t2) => u3 === C3 && C3 === t2 ? u3 < 8 ? 16 : u3 > 248 ? 231 : Math.round((u3 - 8) / 247 * 24) + 232 : 16 + 36 * Math.round(u3 / 255 * 5) + 6 * Math.round(C3 / 255 * 5) + Math.round(t2 / 255 * 5), enumerable: false }, hexToRgb: { value: (u3) => {
     let C3 = /(?<colorString>[a-f\d]{6}|[a-f\d]{3})/i.exec(u3.toString(16));
     if (!C3) return [0, 0, 0];
     let { colorString: t2 } = C3.groups;
@@ -70570,20 +71234,20 @@ function AD2() {
     return e3 === 2 && (r3 += 60), r3;
   }, enumerable: false }, rgbToAnsi: { value: (u3, C3, t2) => F3.ansi256ToAnsi(F3.rgbToAnsi256(u3, C3, t2)), enumerable: false }, hexToAnsi: { value: (u3) => F3.ansi256ToAnsi(F3.hexToAnsi256(u3)), enumerable: false } }), F3;
 }
-var fD = AD2();
-var pD = "]";
-var M2 = `${pD}8;;`;
+var fD2 = AD2();
+var pD2 = "]";
+var M2 = `${pD2}8;;`;
 i();
 
 // node_modules/cleye/dist/index.mjs
-var J2 = import_tty.default.WriteStream.prototype.hasColors();
-var y2 = /^[\w.-]+$/;
+var J3 = import_tty.default.WriteStream.prototype.hasColors();
+var y3 = /^[\w.-]+$/;
 var { stringify: d3 } = JSON;
-function G2(t2, e3) {
+function G3(t2, e3) {
   if (!t2) throw new Error("Command options are required");
   const { name: r3 } = t2;
   if (t2.name === void 0) throw new Error("Command name is required");
-  if (!y2.test(r3)) throw new Error(`Invalid command name ${JSON.stringify(r3)}. Command names must be one word.`);
+  if (!y3.test(r3)) throw new Error(`Invalid command name ${JSON.stringify(r3)}. Command names must be one word.`);
   return { options: t2, callback: e3 };
 }
 
@@ -70916,10 +71580,11 @@ var MODEL_LIST = {
     "gpt-4o-mini-2024-07-18"
   ],
   anthropic: [
-    "claude-3-5-sonnet-20240620",
-    "claude-3-opus-20240229",
-    "claude-3-sonnet-20240229",
-    "claude-3-haiku-20240307"
+    "claude-sonnet-4-20250514",
+    "claude-opus-4-20250514",
+    "claude-3-7-sonnet-20250219",
+    "claude-3-5-sonnet-20241022",
+    "claude-3-5-haiku-20241022"
   ],
   gemini: [
     "gemini-1.5-flash",
@@ -71653,6 +72318,16 @@ var OCO_AI_PROVIDER_ENUM = /* @__PURE__ */ ((OCO_AI_PROVIDER_ENUM2) => {
   OCO_AI_PROVIDER_ENUM2["OPENROUTER"] = "openrouter";
   return OCO_AI_PROVIDER_ENUM2;
 })(OCO_AI_PROVIDER_ENUM || {});
+var RECOMMENDED_MODELS = {
+  ["openai" /* OPENAI */]: "gpt-4o-mini",
+  ["anthropic" /* ANTHROPIC */]: "claude-sonnet-4-20250514",
+  ["gemini" /* GEMINI */]: "gemini-1.5-flash",
+  ["groq" /* GROQ */]: "llama3-70b-8192",
+  ["mistral" /* MISTRAL */]: "mistral-small-latest",
+  ["deepseek" /* DEEPSEEK */]: "deepseek-chat",
+  ["openrouter" /* OPENROUTER */]: "openai/gpt-4o-mini",
+  ["aimlapi" /* AIMLAPI */]: "gpt-4o-mini"
+};
 var defaultConfigPath = (0, import_path.join)((0, import_os.homedir)(), ".opencommit");
 var defaultEnvPath = (0, import_path.resolve)(process.cwd(), ".env");
 var OCO_PROMPT_MODULE_ENUM = /* @__PURE__ */ ((OCO_PROMPT_MODULE_ENUM2) => {
@@ -71738,17 +72413,17 @@ var mergeConfigs = (main, fallback) => {
 };
 var cleanUndefinedValues = (config6) => {
   return Object.fromEntries(
-    Object.entries(config6).map(([_3, v2]) => {
+    Object.entries(config6).map(([_4, v6]) => {
       try {
-        if (typeof v2 === "string") {
-          if (v2 === "undefined") return [_3, void 0];
-          if (v2 === "null") return [_3, null];
-          const parsedValue = JSON.parse(v2);
-          return [_3, parsedValue];
+        if (typeof v6 === "string") {
+          if (v6 === "undefined") return [_4, void 0];
+          if (v6 === "null") return [_4, null];
+          const parsedValue = JSON.parse(v6);
+          return [_4, parsedValue];
         }
-        return [_3, v2];
+        return [_4, v6];
       } catch (error) {
-        return [_3, v2];
+        return [_4, v6];
       }
     })
   );
@@ -71950,7 +72625,7 @@ ${key}:`));
     )
   );
 }
-var configCommand = G2(
+var configCommand = G3(
   {
     name: "config" /* config */,
     parameters: ["<mode>", "[key=values...]"],
@@ -72003,6 +72678,12 @@ var configCommand = G2(
     }
   }
 );
+
+// src/prompts.ts
+init_dist2();
+
+// src/modules/commitlint/config.ts
+init_dist2();
 
 // node_modules/@anthropic-ai/sdk/version.mjs
 var VERSION = "0.19.2";
@@ -72805,7 +73486,7 @@ var SSEDecoder = class {
     if (line.startsWith(":")) {
       return null;
     }
-    let [fieldname, _3, value] = partition(line, ":");
+    let [fieldname, _4, value] = partition(line, ":");
     if (value.startsWith(" ")) {
       value = value.substring(1);
     }
@@ -72969,11 +73650,11 @@ function getName(value) {
   return getStringFromMaybeBuffer(value.name) || getStringFromMaybeBuffer(value.filename) || // For fs.ReadStream
   getStringFromMaybeBuffer(value.path)?.split(/[\\/]/).pop();
 }
-var getStringFromMaybeBuffer = (x2) => {
-  if (typeof x2 === "string")
-    return x2;
-  if (typeof Buffer !== "undefined" && x2 instanceof Buffer)
-    return String(x2);
+var getStringFromMaybeBuffer = (x3) => {
+  if (typeof x3 === "string")
+    return x3;
+  if (typeof Buffer !== "undefined" && x3 instanceof Buffer)
+    return String(x3);
   return void 0;
 };
 var isAsyncIterableIterator = (value) => value != null && typeof value === "object" && typeof value[Symbol.asyncIterator] === "function";
@@ -73280,7 +73961,7 @@ var APIClient = class {
     return url2.toString();
   }
   stringifyQuery(query) {
-    return Object.entries(query).filter(([_3, value]) => typeof value !== "undefined").map(([key, value]) => {
+    return Object.entries(query).filter(([_4, value]) => typeof value !== "undefined").map(([key, value]) => {
       if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
         return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
       }
@@ -73609,10 +74290,10 @@ function debug(action, ...args) {
   }
 }
 var uuid4 = () => {
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c2) => {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c3) => {
     const r3 = Math.random() * 16 | 0;
-    const v2 = c2 === "x" ? r3 : r3 & 3 | 8;
-    return v2.toString(16);
+    const v6 = c3 === "x" ? r3 : r3 & 3 | 8;
+    return v6.toString(16);
   });
 };
 
@@ -74329,15 +75010,15 @@ function merge() {
   }
   return result;
 }
-var extend = (a3, b3, thisArg, { allOwnKeys } = {}) => {
-  forEach(b3, (val, key) => {
+var extend = (a4, b4, thisArg, { allOwnKeys } = {}) => {
+  forEach(b4, (val, key) => {
     if (thisArg && isFunction3(val)) {
-      a3[key] = bind(val, thisArg);
+      a4[key] = bind(val, thisArg);
     } else {
-      a3[key] = val;
+      a4[key] = val;
     }
   }, { allOwnKeys });
-  return a3;
+  return a4;
 };
 var stripBOM = (content) => {
   if (content.charCodeAt(0) === 65279) {
@@ -74890,9 +75571,9 @@ var InterceptorManager = class {
    * @returns {void}
    */
   forEach(fn) {
-    utils_default.forEach(this.handlers, function forEachHandler(h3) {
-      if (h3 !== null) {
-        fn(h3);
+    utils_default.forEach(this.handlers, function forEachHandler(h4) {
+      if (h4 !== null) {
+        fn(h4);
       }
     });
   }
@@ -76445,30 +77126,30 @@ function mergeConfig(config1, config22) {
     }
     return source;
   }
-  function mergeDeepProperties(a3, b3, prop, caseless) {
-    if (!utils_default.isUndefined(b3)) {
-      return getMergedValue(a3, b3, prop, caseless);
-    } else if (!utils_default.isUndefined(a3)) {
-      return getMergedValue(void 0, a3, prop, caseless);
+  function mergeDeepProperties(a4, b4, prop, caseless) {
+    if (!utils_default.isUndefined(b4)) {
+      return getMergedValue(a4, b4, prop, caseless);
+    } else if (!utils_default.isUndefined(a4)) {
+      return getMergedValue(void 0, a4, prop, caseless);
     }
   }
-  function valueFromConfig2(a3, b3) {
-    if (!utils_default.isUndefined(b3)) {
-      return getMergedValue(void 0, b3);
+  function valueFromConfig2(a4, b4) {
+    if (!utils_default.isUndefined(b4)) {
+      return getMergedValue(void 0, b4);
     }
   }
-  function defaultToConfig2(a3, b3) {
-    if (!utils_default.isUndefined(b3)) {
-      return getMergedValue(void 0, b3);
-    } else if (!utils_default.isUndefined(a3)) {
-      return getMergedValue(void 0, a3);
+  function defaultToConfig2(a4, b4) {
+    if (!utils_default.isUndefined(b4)) {
+      return getMergedValue(void 0, b4);
+    } else if (!utils_default.isUndefined(a4)) {
+      return getMergedValue(void 0, a4);
     }
   }
-  function mergeDirectKeys(a3, b3, prop) {
+  function mergeDirectKeys(a4, b4, prop) {
     if (prop in config22) {
-      return getMergedValue(a3, b3);
+      return getMergedValue(a4, b4);
     } else if (prop in config1) {
-      return getMergedValue(void 0, a3);
+      return getMergedValue(void 0, a4);
     }
   }
   const mergeMap = {
@@ -76500,7 +77181,7 @@ function mergeConfig(config1, config22) {
     socketPath: defaultToConfig2,
     responseEncoding: defaultToConfig2,
     validateStatus: mergeDirectKeys,
-    headers: (a3, b3, prop) => mergeDeepProperties(headersToObject(a3), headersToObject(b3), prop, true)
+    headers: (a4, b4, prop) => mergeDeepProperties(headersToObject(a4), headersToObject(b4), prop, true)
   };
   utils_default.forEach(Object.keys(Object.assign({}, config1, config22)), function computeConfigValue(prop) {
     const merge2 = mergeMap[prop] || mergeDeepProperties;
@@ -76813,7 +77494,7 @@ var resolvers = {
 };
 isFetchSupported && ((res) => {
   ["text", "arrayBuffer", "blob", "formData", "stream"].forEach((type2) => {
-    !resolvers[type2] && (resolvers[type2] = utils_default.isFunction(res[type2]) ? (res2) => res2[type2]() : (_3, config6) => {
+    !resolvers[type2] && (resolvers[type2] = utils_default.isFunction(res[type2]) ? (res2) => res2[type2]() : (_4, config6) => {
       throw new AxiosError_default(`Response type '${type2}' is not supported`, AxiosError_default.ERR_NOT_SUPPORT, config6);
     });
   });
@@ -77370,8 +78051,8 @@ var CancelToken = class _CancelToken {
    */
   static source() {
     let cancel;
-    const token = new _CancelToken(function executor(c2) {
-      cancel = c2;
+    const token = new _CancelToken(function executor(c3) {
+      cancel = c3;
     });
     return {
       token,
@@ -77517,6 +78198,196 @@ var {
   mergeConfig: mergeConfig2
 } = axios_default;
 
+// src/utils/errors.ts
+var PROVIDER_BILLING_URLS = {
+  ["anthropic" /* ANTHROPIC */]: "https://console.anthropic.com/settings/billing",
+  ["openai" /* OPENAI */]: "https://platform.openai.com/settings/organization/billing",
+  ["gemini" /* GEMINI */]: "https://aistudio.google.com/app/plan",
+  ["groq" /* GROQ */]: "https://console.groq.com/settings/billing",
+  ["mistral" /* MISTRAL */]: "https://console.mistral.ai/billing/",
+  ["deepseek" /* DEEPSEEK */]: "https://platform.deepseek.com/usage",
+  ["openrouter" /* OPENROUTER */]: "https://openrouter.ai/credits",
+  ["aimlapi" /* AIMLAPI */]: "https://aimlapi.com/app/billing",
+  ["azure" /* AZURE */]: "https://portal.azure.com/#view/Microsoft_Azure_CostManagement",
+  ["ollama" /* OLLAMA */]: null,
+  ["mlx" /* MLX */]: null,
+  ["flowise" /* FLOWISE */]: null,
+  ["test" /* TEST */]: null
+};
+var InsufficientCreditsError = class extends Error {
+  constructor(provider, message) {
+    super(message || `Insufficient credits or quota for provider '${provider}'`);
+    this.name = "InsufficientCreditsError";
+    this.provider = provider;
+  }
+};
+var RateLimitError3 = class extends Error {
+  constructor(provider, retryAfter, message) {
+    super(message || `Rate limit exceeded for provider '${provider}'`);
+    this.name = "RateLimitError";
+    this.provider = provider;
+    this.retryAfter = retryAfter;
+  }
+};
+var ServiceUnavailableError = class extends Error {
+  constructor(provider, statusCode = 503, message) {
+    super(message || `Service unavailable for provider '${provider}'`);
+    this.name = "ServiceUnavailableError";
+    this.provider = provider;
+    this.statusCode = statusCode;
+  }
+};
+var AuthenticationError3 = class extends Error {
+  constructor(provider, message) {
+    super(message || `Authentication failed for provider '${provider}'`);
+    this.name = "AuthenticationError";
+    this.provider = provider;
+  }
+};
+var ModelNotFoundError = class extends Error {
+  constructor(modelName, provider, statusCode = 404) {
+    super(`Model '${modelName}' not found for provider '${provider}'`);
+    this.name = "ModelNotFoundError";
+    this.modelName = modelName;
+    this.provider = provider;
+    this.statusCode = statusCode;
+  }
+};
+function isModelNotFoundError(error) {
+  if (error instanceof ModelNotFoundError) {
+    return true;
+  }
+  if (error instanceof Error) {
+    const message = error.message.toLowerCase();
+    if (message.includes("model") && (message.includes("not found") || message.includes("does not exist") || message.includes("invalid model"))) {
+      return true;
+    }
+    if (message.includes("model") && (message.includes("not found") || message.includes("invalid"))) {
+      return true;
+    }
+    if ("status" in error && error.status === 404 && message.includes("model")) {
+      return true;
+    }
+    if ("response" in error) {
+      const response = error.response;
+      if (response?.status === 404) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+function getSuggestedModels(provider, failedModel) {
+  const providerKey = provider.toLowerCase();
+  const models = MODEL_LIST[providerKey];
+  if (!models || !Array.isArray(models)) {
+    return [];
+  }
+  return models.filter((m4) => m4 !== failedModel).slice(0, 5);
+}
+
+// src/utils/engineErrorHandler.ts
+function getStatusCode(error) {
+  if (typeof error?.status === "number") {
+    return error.status;
+  }
+  if (axios_default.isAxiosError(error)) {
+    return error.response?.status ?? null;
+  }
+  if (typeof error?.response?.status === "number") {
+    return error.response.status;
+  }
+  return null;
+}
+function getRetryAfter(error) {
+  const headers = error?.response?.headers;
+  if (headers) {
+    const retryAfter = headers["retry-after"] || headers["Retry-After"];
+    if (retryAfter) {
+      const seconds = parseInt(retryAfter, 10);
+      if (!isNaN(seconds)) {
+        return seconds;
+      }
+    }
+  }
+  return void 0;
+}
+function extractErrorMessage(error) {
+  if (error instanceof Error) {
+    return error.message;
+  }
+  const apiError = error?.response?.data?.error;
+  if (apiError) {
+    if (typeof apiError === "string") {
+      return apiError;
+    }
+    if (apiError.message) {
+      return apiError.message;
+    }
+  }
+  const errorData = error?.error;
+  if (errorData) {
+    if (typeof errorData === "string") {
+      return errorData;
+    }
+    if (errorData.message) {
+      return errorData.message;
+    }
+  }
+  if (typeof error === "string") {
+    return error;
+  }
+  return "An unknown error occurred";
+}
+function isModelNotFoundMessage(message) {
+  const lowerMessage = message.toLowerCase();
+  return lowerMessage.includes("model") && (lowerMessage.includes("not found") || lowerMessage.includes("does not exist") || lowerMessage.includes("invalid") || lowerMessage.includes("pull")) || lowerMessage.includes("does_not_exist");
+}
+function isInsufficientCreditsMessage(message) {
+  const lowerMessage = message.toLowerCase();
+  return lowerMessage.includes("insufficient") || lowerMessage.includes("credit") || lowerMessage.includes("quota") || lowerMessage.includes("balance too low") || lowerMessage.includes("billing") || lowerMessage.includes("payment required") || lowerMessage.includes("exceeded");
+}
+function normalizeEngineError(error, provider, model) {
+  if (error instanceof ModelNotFoundError || error instanceof AuthenticationError3 || error instanceof InsufficientCreditsError || error instanceof RateLimitError3 || error instanceof ServiceUnavailableError) {
+    return error;
+  }
+  const statusCode = getStatusCode(error);
+  const message = extractErrorMessage(error);
+  switch (statusCode) {
+    case 401:
+      return new AuthenticationError3(provider, message);
+    case 402:
+      return new InsufficientCreditsError(provider, message);
+    case 404:
+      if (isModelNotFoundMessage(message)) {
+        return new ModelNotFoundError(model, provider, 404);
+      }
+      return error instanceof Error ? error : new Error(message);
+    case 429:
+      const retryAfter = getRetryAfter(error);
+      return new RateLimitError3(provider, retryAfter, message);
+    case 500:
+    case 502:
+    case 503:
+    case 504:
+      return new ServiceUnavailableError(provider, statusCode, message);
+  }
+  if (isModelNotFoundMessage(message)) {
+    return new ModelNotFoundError(model, provider, 404);
+  }
+  if (isInsufficientCreditsMessage(message)) {
+    return new InsufficientCreditsError(provider, message);
+  }
+  const lowerMessage = message.toLowerCase();
+  if (lowerMessage.includes("rate limit") || lowerMessage.includes("rate_limit") || lowerMessage.includes("too many requests")) {
+    return new RateLimitError3(provider, void 0, message);
+  }
+  if (lowerMessage.includes("unauthorized") || lowerMessage.includes("api key") || lowerMessage.includes("apikey") || lowerMessage.includes("authentication") || lowerMessage.includes("invalid_api_key")) {
+    return new AuthenticationError3(provider, message);
+  }
+  return error instanceof Error ? error : new Error(message);
+}
+
 // src/utils/removeContentTags.ts
 function removeContentTags(content, tag) {
   if (!content || typeof content !== "string") {
@@ -77584,7 +78455,7 @@ var AnthropicEngine = class {
         max_tokens: this.config.maxTokensOutput
       };
       try {
-        const REQUEST_TOKENS = messages.map((msg) => tokenCount(msg.content) + 4).reduce((a3, b3) => a3 + b3, 0);
+        const REQUEST_TOKENS = messages.map((msg) => tokenCount(msg.content) + 4).reduce((a4, b4) => a4 + b4, 0);
         if (REQUEST_TOKENS > this.config.maxTokensInput - this.config.maxTokensOutput) {
           throw new Error("TOO_MUCH_TOKENS" /* tooMuchTokens */);
         }
@@ -77593,16 +78464,7 @@ var AnthropicEngine = class {
         let content = message;
         return removeContentTags(content, "think");
       } catch (error) {
-        const err = error;
-        ce(`${source_default.red("\u2716")} ${err?.message || err}`);
-        if (axios_default.isAxiosError(error) && error.response?.status === 401) {
-          const anthropicAiError = error.response.data.error;
-          if (anthropicAiError?.message) ce(anthropicAiError.message);
-          ce(
-            "For help look into README https://github.com/di-sukharev/opencommit#setup"
-          );
-        }
-        throw err;
+        throw normalizeEngineError(error, "anthropic", this.config.model);
       }
     };
     this.config = config6;
@@ -77746,31 +78608,31 @@ function __values(o3) {
   };
   throw new TypeError(s2 ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }
-function __await(v2) {
-  return this instanceof __await ? (this.v = v2, this) : new __await(v2);
+function __await(v6) {
+  return this instanceof __await ? (this.v = v6, this) : new __await(v6);
 }
 function __asyncGenerator(thisArg, _arguments, generator) {
   if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-  var g2 = generator.apply(thisArg, _arguments || []), i3, q3 = [];
+  var g4 = generator.apply(thisArg, _arguments || []), i3, q4 = [];
   return i3 = {}, verb("next"), verb("throw"), verb("return"), i3[Symbol.asyncIterator] = function() {
     return this;
   }, i3;
   function verb(n2) {
-    if (g2[n2]) i3[n2] = function(v2) {
-      return new Promise(function(a3, b3) {
-        q3.push([n2, v2, a3, b3]) > 1 || resume(n2, v2);
+    if (g4[n2]) i3[n2] = function(v6) {
+      return new Promise(function(a4, b4) {
+        q4.push([n2, v6, a4, b4]) > 1 || resume(n2, v6);
       });
     };
   }
-  function resume(n2, v2) {
+  function resume(n2, v6) {
     try {
-      step(g2[n2](v2));
+      step(g4[n2](v6));
     } catch (e3) {
-      settle2(q3[0][3], e3);
+      settle2(q4[0][3], e3);
     }
   }
   function step(r3) {
-    r3.value instanceof __await ? Promise.resolve(r3.value.v).then(fulfill, reject) : settle2(q3[0][2], r3);
+    r3.value instanceof __await ? Promise.resolve(r3.value.v).then(fulfill, reject) : settle2(q4[0][2], r3);
   }
   function fulfill(value) {
     resume("next", value);
@@ -77778,8 +78640,8 @@ function __asyncGenerator(thisArg, _arguments, generator) {
   function reject(value) {
     resume("throw", value);
   }
-  function settle2(f4, v2) {
-    if (f4(v2), q3.shift(), q3.length) resume(q3[0][0], q3[0][1]);
+  function settle2(f4, v6) {
+    if (f4(v6), q4.shift(), q4.length) resume(q4[0][0], q4[0][1]);
   }
 }
 function __asyncValues(o3) {
@@ -77789,15 +78651,15 @@ function __asyncValues(o3) {
     return this;
   }, i3);
   function verb(n2) {
-    i3[n2] = o3[n2] && function(v2) {
+    i3[n2] = o3[n2] && function(v6) {
       return new Promise(function(resolve, reject) {
-        v2 = o3[n2](v2), settle2(resolve, reject, v2.done, v2.value);
+        v6 = o3[n2](v6), settle2(resolve, reject, v6.done, v6.value);
       });
     };
   }
-  function settle2(resolve, reject, d5, v2) {
-    Promise.resolve(v2).then(function(v6) {
-      resolve({ value: v6, done: d5 });
+  function settle2(resolve, reject, d5, v6) {
+    Promise.resolve(v6).then(function(v7) {
+      resolve({ value: v7, done: d5 });
     }, reject);
   }
 }
@@ -78391,8 +79253,8 @@ function userAgentPolicy(options = {}) {
 var import_node_stream2 = require("node:stream");
 
 // node_modules/@azure/core-rest-pipeline/dist/esm/util/typeGuards.js
-function isBlob3(x2) {
-  return typeof x2.stream === "function";
+function isBlob3(x3) {
+  return typeof x3.stream === "function";
 }
 
 // node_modules/@azure/core-rest-pipeline/dist/esm/util/file.js
@@ -78408,8 +79270,8 @@ var unimplementedMethods = {
   }
 };
 var rawContent = Symbol("rawContent");
-function hasRawContent(x2) {
-  return typeof x2[rawContent] === "function";
+function hasRawContent(x3) {
+  return typeof x3[rawContent] === "function";
 }
 function getRawContent(blob) {
   if (hasRawContent(blob)) {
@@ -78471,7 +79333,7 @@ function toStream(source) {
 }
 async function concat(sources) {
   return function() {
-    const streams = sources.map((x2) => typeof x2 === "function" ? x2() : x2).map(toStream);
+    const streams = sources.map((x3) => typeof x3 === "function" ? x3() : x3).map(toStream);
     return import_node_stream2.Readable.from(function() {
       return __asyncGenerator(this, arguments, function* () {
         var _a5, e_1, _b2, _c2;
@@ -78557,7 +79419,7 @@ function assertValidBoundary(boundary) {
   if (boundary.length > maxBoundaryLength) {
     throw new Error(`Multipart boundary "${boundary}" exceeds maximum length of 70 characters`);
   }
-  if (Array.from(boundary).some((x2) => !validBoundaryCharacters.has(x2))) {
+  if (Array.from(boundary).some((x3) => !validBoundaryCharacters.has(x3))) {
     throw new Error(`Multipart boundary "${boundary}" contains invalid characters`);
   }
 }
@@ -80391,7 +81253,7 @@ function camelCaseKeys(obj) {
   if (typeof obj !== "object" || !obj)
     return obj;
   if (Array.isArray(obj)) {
-    return obj.map((v2) => camelCaseKeys(v2));
+    return obj.map((v6) => camelCaseKeys(v6));
   } else {
     for (const key of Object.keys(obj)) {
       const value = obj[key];
@@ -80408,7 +81270,7 @@ function snakeCaseKeys(obj) {
   if (typeof obj !== "object" || !obj)
     return obj;
   if (Array.isArray(obj)) {
-    return obj.map((v2) => snakeCaseKeys(v2));
+    return obj.map((v6) => snakeCaseKeys(v6));
   } else {
     for (const key of Object.keys(obj)) {
       const value = obj[key];
@@ -80792,10 +81654,10 @@ function createSseStream(chunkStream) {
   const asyncIter = toMessage(toLine(iterable));
   return createStream(asyncIter, cancel);
 }
-function concatBuffer(a3, b3) {
-  const res = new Uint8Array(a3.length + b3.length);
-  res.set(a3);
-  res.set(b3, a3.length);
+function concatBuffer(a4, b4) {
+  const res = new Uint8Array(a4.length + b4.length);
+  res.set(a4);
+  res.set(b4, a4.length);
   return res;
 }
 function createMessage() {
@@ -81150,7 +82012,7 @@ async function _getImageGenerationsDeserialize(result) {
   return {
     created: new Date(result.body["created"]),
     data: result.body["data"].map((p3) => {
-      var _a5, _b2, _c2, _d2, _e2, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r2, _s, _t2, _u, _v, _w, _x, _y, _z, _0, _1, _22, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _222, _23, _24, _25;
+      var _a5, _b2, _c2, _d2, _e2, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r2, _s, _t2, _u, _v, _w, _x, _y, _z, _0, _1, _22, _32, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _222, _23, _24, _25;
       return {
         url: p3["url"],
         base64Data: p3["b64_json"],
@@ -81179,7 +82041,7 @@ async function _getImageGenerationsDeserialize(result) {
             filtered: (_0 = (_z = p3.prompt_filter_results) === null || _z === void 0 ? void 0 : _z.sexual) === null || _0 === void 0 ? void 0 : _0["filtered"]
           },
           violence: !((_1 = p3.prompt_filter_results) === null || _1 === void 0 ? void 0 : _1.violence) ? void 0 : {
-            severity: (_3 = (_22 = p3.prompt_filter_results) === null || _22 === void 0 ? void 0 : _22.violence) === null || _3 === void 0 ? void 0 : _3["severity"],
+            severity: (_32 = (_22 = p3.prompt_filter_results) === null || _22 === void 0 ? void 0 : _22.violence) === null || _32 === void 0 ? void 0 : _32["severity"],
             filtered: (_5 = (_4 = p3.prompt_filter_results) === null || _4 === void 0 ? void 0 : _4.violence) === null || _5 === void 0 ? void 0 : _5["filtered"]
           },
           hate: !((_6 = p3.prompt_filter_results) === null || _6 === void 0 ? void 0 : _6.hate) ? void 0 : {
@@ -81422,7 +82284,7 @@ var AzureEngine = class {
   constructor(config6) {
     this.generateCommitMessage = async (messages) => {
       try {
-        const REQUEST_TOKENS = messages.map((msg) => tokenCount(msg.content) + 4).reduce((a3, b3) => a3 + b3, 0);
+        const REQUEST_TOKENS = messages.map((msg) => tokenCount(msg.content) + 4).reduce((a4, b4) => a4 + b4, 0);
         if (REQUEST_TOKENS > this.config.maxTokensInput - this.config.maxTokensOutput) {
           throw new Error("TOO_MUCH_TOKENS" /* tooMuchTokens */);
         }
@@ -81437,17 +82299,7 @@ var AzureEngine = class {
         let content = message?.content;
         return removeContentTags(content, "think");
       } catch (error) {
-        ce(`${source_default.red("\u2716")} ${this.config.model}`);
-        const err = error;
-        ce(`${source_default.red("\u2716")} ${JSON.stringify(error)}`);
-        if (axios_default.isAxiosError(error) && error.response?.status === 401) {
-          const openAiError = error.response.data.error;
-          if (openAiError?.message) ce(openAiError.message);
-          ce(
-            "For help look into README https://github.com/di-sukharev/opencommit#setup"
-          );
-        }
-        throw err;
+        throw normalizeEngineError(error, "azure", this.config.model);
       }
     };
     this.config = config6;
@@ -81481,9 +82333,8 @@ var FlowiseEngine = class {
       const message = response.data;
       let content = message?.text;
       return removeContentTags(content, "think");
-    } catch (err) {
-      const message = err.response?.data?.error ?? err.message;
-      throw new Error("local model issues. details: " + message);
+    } catch (error) {
+      throw normalizeEngineError(error, "flowise", this.config.model);
     }
   }
 };
@@ -81793,31 +82644,31 @@ function formatBlockErrorMessage(response) {
   }
   return message;
 }
-function __await2(v2) {
-  return this instanceof __await2 ? (this.v = v2, this) : new __await2(v2);
+function __await2(v6) {
+  return this instanceof __await2 ? (this.v = v6, this) : new __await2(v6);
 }
 function __asyncGenerator2(thisArg, _arguments, generator) {
   if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-  var g2 = generator.apply(thisArg, _arguments || []), i3, q3 = [];
+  var g4 = generator.apply(thisArg, _arguments || []), i3, q4 = [];
   return i3 = {}, verb("next"), verb("throw"), verb("return"), i3[Symbol.asyncIterator] = function() {
     return this;
   }, i3;
   function verb(n2) {
-    if (g2[n2]) i3[n2] = function(v2) {
-      return new Promise(function(a3, b3) {
-        q3.push([n2, v2, a3, b3]) > 1 || resume(n2, v2);
+    if (g4[n2]) i3[n2] = function(v6) {
+      return new Promise(function(a4, b4) {
+        q4.push([n2, v6, a4, b4]) > 1 || resume(n2, v6);
       });
     };
   }
-  function resume(n2, v2) {
+  function resume(n2, v6) {
     try {
-      step(g2[n2](v2));
+      step(g4[n2](v6));
     } catch (e3) {
-      settle2(q3[0][3], e3);
+      settle2(q4[0][3], e3);
     }
   }
   function step(r3) {
-    r3.value instanceof __await2 ? Promise.resolve(r3.value.v).then(fulfill, reject) : settle2(q3[0][2], r3);
+    r3.value instanceof __await2 ? Promise.resolve(r3.value.v).then(fulfill, reject) : settle2(q4[0][2], r3);
   }
   function fulfill(value) {
     resume("next", value);
@@ -81825,8 +82676,8 @@ function __asyncGenerator2(thisArg, _arguments, generator) {
   function reject(value) {
     resume("throw", value);
   }
-  function settle2(f4, v2) {
-    if (f4(v2), q3.shift(), q3.length) resume(q3[0][0], q3[0][1]);
+  function settle2(f4, v6) {
+    if (f4(v6), q4.shift(), q4.length) resume(q4[0][0], q4[0][1]);
   }
 }
 var responseLineRE = /^data\: (.*)(?:\n\n|\r\r|\r\n\r\n)/;
@@ -82343,12 +83194,7 @@ var GeminiEngine = class {
       const content = result.response.text();
       return removeContentTags(content, "think");
     } catch (error) {
-      const err = error;
-      if (axios_default.isAxiosError(error) && error.response?.status === 401) {
-        const geminiError = error.response.data.error;
-        if (geminiError) throw new Error(geminiError?.message);
-      }
-      throw err;
+      throw normalizeEngineError(error, "gemini", this.config.model);
     }
   }
 };
@@ -82381,9 +83227,8 @@ var OllamaEngine = class {
       const { message } = response.data;
       let content = message?.content;
       return removeContentTags(content, "think");
-    } catch (err) {
-      const message = err.response?.data?.error ?? err.message;
-      throw new Error(`Ollama provider error: ${message}`);
+    } catch (error) {
+      throw normalizeEngineError(error, "ollama", this.config.model);
     }
   }
 };
@@ -82395,7 +83240,7 @@ __export(error_exports2, {
   APIConnectionTimeoutError: () => APIConnectionTimeoutError3,
   APIError: () => APIError3,
   APIUserAbortError: () => APIUserAbortError3,
-  AuthenticationError: () => AuthenticationError3,
+  AuthenticationError: () => AuthenticationError4,
   BadRequestError: () => BadRequestError3,
   ConflictError: () => ConflictError3,
   ContentFilterFinishReasonError: () => ContentFilterFinishReasonError,
@@ -82404,7 +83249,7 @@ __export(error_exports2, {
   NotFoundError: () => NotFoundError3,
   OpenAIError: () => OpenAIError,
   PermissionDeniedError: () => PermissionDeniedError3,
-  RateLimitError: () => RateLimitError3,
+  RateLimitError: () => RateLimitError4,
   UnprocessableEntityError: () => UnprocessableEntityError3
 });
 
@@ -82762,7 +83607,7 @@ var SSEDecoder2 = class {
     if (line.startsWith(":")) {
       return null;
     }
-    let [fieldname, _3, value] = partition2(line, ":");
+    let [fieldname, _4, value] = partition2(line, ":");
     if (value.startsWith(" ")) {
       value = value.substring(1);
     }
@@ -82929,11 +83774,11 @@ function getName2(value) {
   return getStringFromMaybeBuffer2(value.name) || getStringFromMaybeBuffer2(value.filename) || // For fs.ReadStream
   getStringFromMaybeBuffer2(value.path)?.split(/[\\/]/).pop();
 }
-var getStringFromMaybeBuffer2 = (x2) => {
-  if (typeof x2 === "string")
-    return x2;
-  if (typeof Buffer !== "undefined" && x2 instanceof Buffer)
-    return String(x2);
+var getStringFromMaybeBuffer2 = (x3) => {
+  if (typeof x3 === "string")
+    return x3;
+  if (typeof Buffer !== "undefined" && x3 instanceof Buffer)
+    return String(x3);
   return void 0;
 };
 var isAsyncIterableIterator2 = (value) => value != null && typeof value === "object" && typeof value[Symbol.asyncIterator] === "function";
@@ -83273,7 +84118,7 @@ var APIClient2 = class {
     return url2.toString();
   }
   stringifyQuery(query) {
-    return Object.entries(query).filter(([_3, value]) => typeof value !== "undefined").map(([key, value]) => {
+    return Object.entries(query).filter(([_4, value]) => typeof value !== "undefined").map(([key, value]) => {
       if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
         return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
       }
@@ -83621,10 +84466,10 @@ function debug2(action, ...args) {
   }
 }
 var uuid42 = () => {
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c2) => {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c3) => {
     const r3 = Math.random() * 16 | 0;
-    const v2 = c2 === "x" ? r3 : r3 & 3 | 8;
-    return v2.toString(16);
+    const v6 = c3 === "x" ? r3 : r3 & 3 | 8;
+    return v6.toString(16);
   });
 };
 var isRunningInBrowser = () => {
@@ -83676,7 +84521,7 @@ var APIError3 = class _APIError extends OpenAIError {
       return new BadRequestError3(status, error, message, headers);
     }
     if (status === 401) {
-      return new AuthenticationError3(status, error, message, headers);
+      return new AuthenticationError4(status, error, message, headers);
     }
     if (status === 403) {
       return new PermissionDeniedError3(status, error, message, headers);
@@ -83691,7 +84536,7 @@ var APIError3 = class _APIError extends OpenAIError {
       return new UnprocessableEntityError3(status, error, message, headers);
     }
     if (status === 429) {
-      return new RateLimitError3(status, error, message, headers);
+      return new RateLimitError4(status, error, message, headers);
     }
     if (status >= 500) {
       return new InternalServerError3(status, error, message, headers);
@@ -83724,7 +84569,7 @@ var BadRequestError3 = class extends APIError3 {
     this.status = 400;
   }
 };
-var AuthenticationError3 = class extends APIError3 {
+var AuthenticationError4 = class extends APIError3 {
   constructor() {
     super(...arguments);
     this.status = 401;
@@ -83754,7 +84599,7 @@ var UnprocessableEntityError3 = class extends APIError3 {
     this.status = 422;
   }
 };
-var RateLimitError3 = class extends APIError3 {
+var RateLimitError4 = class extends APIError3 {
   constructor() {
     super(...arguments);
     this.status = 429;
@@ -84413,7 +85258,7 @@ var AbstractChatCompletionRunner = class extends EventStream {
     const finalFunctionCallResult = __classPrivateFieldGet10(this, _AbstractChatCompletionRunner_instances, "m", _AbstractChatCompletionRunner_getFinalFunctionCallResult).call(this);
     if (finalFunctionCallResult != null)
       this._emit("finalFunctionCallResult", finalFunctionCallResult);
-    if (this._chatCompletions.some((c2) => c2.usage)) {
+    if (this._chatCompletions.some((c3) => c3.usage)) {
       this._emit("totalUsage", __classPrivateFieldGet10(this, _AbstractChatCompletionRunner_instances, "m", _AbstractChatCompletionRunner_calculateTotalUsage).call(this));
     }
   }
@@ -84621,7 +85466,7 @@ _AbstractChatCompletionRunner_instances = /* @__PURE__ */ new WeakSet(), _Abstra
     if (isFunctionMessage(message) && message.content != null) {
       return message.content;
     }
-    if (isToolMessage(message) && message.content != null && typeof message.content === "string" && this.messages.some((x2) => x2.role === "assistant" && x2.tool_calls?.some((y4) => y4.type === "function" && y4.id === message.tool_call_id))) {
+    if (isToolMessage(message) && message.content != null && typeof message.content === "string" && this.messages.some((x3) => x3.role === "assistant" && x3.tool_calls?.some((y5) => y5.type === "function" && y5.id === message.tool_call_id))) {
       return message.content;
     }
   }
@@ -85379,8 +86224,8 @@ ${str(snapshot)}`);
   };
   return maybeParseChatCompletion(completion, params);
 }
-function str(x2) {
-  return JSON.stringify(x2);
+function str(x3) {
+  return JSON.stringify(x3);
 }
 function assertIsEmpty(obj) {
   return;
@@ -85719,7 +86564,7 @@ var AssistantStream = class _AssistantStream extends EventStream {
       } else if (isObj(accValue) && isObj(deltaValue)) {
         accValue = this.accumulateDelta(accValue, deltaValue);
       } else if (Array.isArray(accValue) && Array.isArray(deltaValue)) {
-        if (accValue.every((x2) => typeof x2 === "string" || typeof x2 === "number")) {
+        if (accValue.every((x3) => typeof x3 === "string" || typeof x3 === "number")) {
           accValue.push(...deltaValue);
           continue;
         }
@@ -87063,15 +87908,15 @@ OpenAI.APIConnectionTimeoutError = APIConnectionTimeoutError3;
 OpenAI.APIUserAbortError = APIUserAbortError3;
 OpenAI.NotFoundError = NotFoundError3;
 OpenAI.ConflictError = ConflictError3;
-OpenAI.RateLimitError = RateLimitError3;
+OpenAI.RateLimitError = RateLimitError4;
 OpenAI.BadRequestError = BadRequestError3;
-OpenAI.AuthenticationError = AuthenticationError3;
+OpenAI.AuthenticationError = AuthenticationError4;
 OpenAI.InternalServerError = InternalServerError3;
 OpenAI.PermissionDeniedError = PermissionDeniedError3;
 OpenAI.UnprocessableEntityError = UnprocessableEntityError3;
 OpenAI.toFile = toFile2;
 OpenAI.fileFromPath = fileFromPath4;
-var { OpenAIError: OpenAIError2, APIError: APIError4, APIConnectionError: APIConnectionError4, APIConnectionTimeoutError: APIConnectionTimeoutError4, APIUserAbortError: APIUserAbortError4, NotFoundError: NotFoundError4, ConflictError: ConflictError4, RateLimitError: RateLimitError4, BadRequestError: BadRequestError4, AuthenticationError: AuthenticationError4, InternalServerError: InternalServerError4, PermissionDeniedError: PermissionDeniedError4, UnprocessableEntityError: UnprocessableEntityError4 } = error_exports2;
+var { OpenAIError: OpenAIError2, APIError: APIError4, APIConnectionError: APIConnectionError4, APIConnectionTimeoutError: APIConnectionTimeoutError4, APIUserAbortError: APIUserAbortError4, NotFoundError: NotFoundError4, ConflictError: ConflictError4, RateLimitError: RateLimitError5, BadRequestError: BadRequestError4, AuthenticationError: AuthenticationError5, InternalServerError: InternalServerError4, PermissionDeniedError: PermissionDeniedError4, UnprocessableEntityError: UnprocessableEntityError4 } = error_exports2;
 (function(OpenAI2) {
   OpenAI2.Page = Page;
   OpenAI2.CursorPage = CursorPage;
@@ -87104,7 +87949,7 @@ var OpenAiEngine = class {
         max_tokens: this.config.maxTokensOutput
       };
       try {
-        const REQUEST_TOKENS = messages.map((msg) => tokenCount(msg.content) + 4).reduce((a3, b3) => a3 + b3, 0);
+        const REQUEST_TOKENS = messages.map((msg) => tokenCount(msg.content) + 4).reduce((a4, b4) => a4 + b4, 0);
         if (REQUEST_TOKENS > this.config.maxTokensInput - this.config.maxTokensOutput)
           throw new Error("TOO_MUCH_TOKENS" /* tooMuchTokens */);
         const completion = await this.client.chat.completions.create(params);
@@ -87112,12 +87957,7 @@ var OpenAiEngine = class {
         let content = message?.content;
         return removeContentTags(content, "think");
       } catch (error) {
-        const err = error;
-        if (axios_default.isAxiosError(error) && error.response?.status === 401) {
-          const openAiError = error.response.data.error;
-          if (openAiError) throw new Error(openAiError.message);
-        }
-        throw err;
+        throw normalizeEngineError(error, "openai", this.config.model);
       }
     };
     this.config = config6;
@@ -87150,7 +87990,7 @@ var MistralAiEngine = class {
         maxTokens: this.config.maxTokensOutput
       };
       try {
-        const REQUEST_TOKENS = messages.map((msg) => tokenCount(msg.content) + 4).reduce((a3, b3) => a3 + b3, 0);
+        const REQUEST_TOKENS = messages.map((msg) => tokenCount(msg.content) + 4).reduce((a4, b4) => a4 + b4, 0);
         if (REQUEST_TOKENS > this.config.maxTokensInput - this.config.maxTokensOutput)
           throw new Error("TOO_MUCH_TOKENS" /* tooMuchTokens */);
         const completion = await this.client.chat.complete(params);
@@ -87161,12 +88001,7 @@ var MistralAiEngine = class {
         let content = message.content;
         return removeContentTags(content, "think");
       } catch (error) {
-        const err = error;
-        if (axios_default.isAxiosError(error) && error.response?.status === 401) {
-          const mistralError = error.response.data.error;
-          if (mistralError) throw new Error(mistralError.message);
-        }
-        throw err;
+        throw normalizeEngineError(error, "mistral", this.config.model);
       }
     };
     this.config = config6;
@@ -87215,9 +88050,8 @@ var MLXEngine = class {
       const message = choices[0].message;
       let content = message?.content;
       return removeContentTags(content, "think");
-    } catch (err) {
-      const message = err.response?.data?.error ?? err.message;
-      throw new Error(`MLX provider error: ${message}`);
+    } catch (error) {
+      throw normalizeEngineError(error, "mlx", this.config.model);
     }
   }
 };
@@ -87239,7 +88073,7 @@ var DeepseekEngine = class extends OpenAiEngine {
         max_tokens: this.config.maxTokensOutput
       };
       try {
-        const REQUEST_TOKENS = messages.map((msg) => tokenCount(msg.content) + 4).reduce((a3, b3) => a3 + b3, 0);
+        const REQUEST_TOKENS = messages.map((msg) => tokenCount(msg.content) + 4).reduce((a4, b4) => a4 + b4, 0);
         if (REQUEST_TOKENS > this.config.maxTokensInput - this.config.maxTokensOutput)
           throw new Error("TOO_MUCH_TOKENS" /* tooMuchTokens */);
         const completion = await this.client.chat.completions.create(params);
@@ -87247,12 +88081,7 @@ var DeepseekEngine = class extends OpenAiEngine {
         let content = message?.content;
         return removeContentTags(content, "think");
       } catch (error) {
-        const err = error;
-        if (axios_default.isAxiosError(error) && error.response?.status === 401) {
-          const openAiError = error.response.data.error;
-          if (openAiError) throw new Error(openAiError.message);
-        }
-        throw err;
+        throw normalizeEngineError(error, "deepseek", this.config.model);
       }
     };
   }
@@ -87271,12 +88100,7 @@ var AimlApiEngine = class {
         const message = response.data.choices?.[0]?.message;
         return message?.content ?? null;
       } catch (error) {
-        const err = error;
-        if (axios_default.isAxiosError(error) && error.response?.status === 401) {
-          const apiError = error.response.data.error;
-          if (apiError) throw new Error(apiError.message);
-        }
-        throw err;
+        throw normalizeEngineError(error, "aimlapi", this.config.model);
       }
     };
     this.client = axios_default.create({
@@ -87306,12 +88130,7 @@ var OpenRouterEngine = class {
         let content = message?.content;
         return removeContentTags(content, "think");
       } catch (error) {
-        const err = error;
-        if (axios_default.isAxiosError(error) && error.response?.status === 401) {
-          const openRouterError = error.response.data.error;
-          if (openRouterError) throw new Error(openRouterError.message);
-        }
-        throw err;
+        throw normalizeEngineError(error, "openrouter", this.config.model);
       }
     };
     this.client = axios_default.create({
@@ -87404,6 +88223,7 @@ var computeHash = async (content, algorithm = "sha256") => {
 };
 
 // src/modules/commitlint/prompts.ts
+init_dist2();
 var import_types = __toESM(require_lib6(), 1);
 var config2 = getConfig();
 var translation = i18n[config2.OCO_LANGUAGE || "en"];
@@ -87416,11 +88236,11 @@ var llmReadableRules = {
   enumRule: (key, applicable, value) => `The ${key} should ${applicable} be one of the following values:
   - ${Array.isArray(value) ? value.join("\n  - ") : value}.`,
   enumTypeRule: (key, applicable, value, prompt) => `The ${key} should ${applicable} be one of the following values:
-  - ${Array.isArray(value) ? value.map((v2) => {
-    const description = getTypeRuleExtraDescription(v2, prompt);
+  - ${Array.isArray(value) ? value.map((v6) => {
+    const description = getTypeRuleExtraDescription(v6, prompt);
     if (description) {
-      return `${v2} (${description})`;
-    } else return v2;
+      return `${v6} (${description})`;
+    } else return v6;
   }).join("\n  - ") : value}.`,
   fullStopRule: (key, applicable, value) => `The ${key} should ${applicable} end with '${value}'.`,
   maxLengthRule: (key, applicable, value) => `The ${key} should ${applicable} have ${value} characters or less.`,
@@ -87911,8 +88731,77 @@ var GenerateCommitMessageErrorEnum = ((GenerateCommitMessageErrorEnum2) => {
   GenerateCommitMessageErrorEnum2["outputTokensTooHigh"] = `Token limit exceeded, OCO_TOKENS_MAX_OUTPUT must not be much higher than the default ${500 /* DEFAULT_MAX_TOKENS_OUTPUT */} tokens.`;
   return GenerateCommitMessageErrorEnum2;
 })(GenerateCommitMessageErrorEnum || {});
+async function handleModelNotFoundError(error, provider, currentModel) {
+  console.log(
+    source_default.red(`
+\u2716 Model '${currentModel}' not found
+`)
+  );
+  const suggestedModels = getSuggestedModels(provider, currentModel);
+  const recommended = RECOMMENDED_MODELS[provider];
+  if (suggestedModels.length === 0) {
+    console.log(
+      source_default.yellow(
+        `No alternative models available. Run 'oco setup' to configure a different model.`
+      )
+    );
+    return null;
+  }
+  const options = [];
+  if (recommended && suggestedModels.includes(recommended)) {
+    options.push({
+      value: recommended,
+      label: `${recommended} (Recommended)`
+    });
+  }
+  suggestedModels.filter((m4) => m4 !== recommended).forEach((model) => {
+    options.push({ value: model, label: model });
+  });
+  options.push({ value: "__custom__", label: "Enter custom model..." });
+  const selection = await ee({
+    message: "Select an alternative model:",
+    options
+  });
+  if (hD(selection)) {
+    return null;
+  }
+  let newModel;
+  if (selection === "__custom__") {
+    const { text } = await Promise.resolve().then(() => (init_dist2(), dist_exports));
+    const customModel = await text({
+      message: "Enter model name:",
+      validate: (value) => {
+        if (!value || value.trim().length === 0) {
+          return "Model name is required";
+        }
+        return void 0;
+      }
+    });
+    if (hD(customModel)) {
+      return null;
+    }
+    newModel = customModel;
+  } else {
+    newModel = selection;
+  }
+  const saveAsDefault = await Q2({
+    message: "Save as default model?"
+  });
+  if (!hD(saveAsDefault) && saveAsDefault) {
+    const existingConfig = getGlobalConfig();
+    setGlobalConfig({
+      ...existingConfig,
+      OCO_MODEL: newModel
+    });
+    console.log(source_default.green("\u2714") + " Model saved as default\n");
+  }
+  return newModel;
+}
 var ADJUSTMENT_FACTOR = 20;
-var generateCommitMessageByDiff = async (diff, fullGitMojiSpec = false, context2 = "") => {
+var generateCommitMessageByDiff = async (diff, fullGitMojiSpec = false, context2 = "", retryWithModel) => {
+  const currentConfig = getConfig();
+  const provider = currentConfig.OCO_AI_PROVIDER || "openai";
+  const currentModel = retryWithModel || currentConfig.OCO_MODEL;
   try {
     const INIT_MESSAGES_PROMPT = await getMainCommitPrompt(
       fullGitMojiSpec,
@@ -87920,7 +88809,7 @@ var generateCommitMessageByDiff = async (diff, fullGitMojiSpec = false, context2
     );
     const INIT_MESSAGES_PROMPT_LENGTH = INIT_MESSAGES_PROMPT.map(
       (msg) => tokenCount(msg.content) + 4
-    ).reduce((a3, b3) => a3 + b3, 0);
+    ).reduce((a4, b4) => a4 + b4, 0);
     const MAX_REQUEST_TOKENS = MAX_TOKENS_INPUT - ADJUSTMENT_FACTOR - INIT_MESSAGES_PROMPT_LENGTH - MAX_TOKENS_OUTPUT;
     if (tokenCount(diff) >= MAX_REQUEST_TOKENS) {
       const commitMessagePromises = await getCommitMsgsPromisesFromFileDiffs(
@@ -87946,6 +88835,28 @@ var generateCommitMessageByDiff = async (diff, fullGitMojiSpec = false, context2
       throw new Error("EMPTY_MESSAGE" /* emptyMessage */);
     return commitMessage;
   } catch (error) {
+    if (isModelNotFoundError(error)) {
+      const newModel = await handleModelNotFoundError(
+        error,
+        provider,
+        currentModel
+      );
+      if (newModel) {
+        console.log(source_default.cyan(`Retrying with ${newModel}...
+`));
+        const existingConfig = getGlobalConfig();
+        setGlobalConfig({
+          ...existingConfig,
+          OCO_MODEL: newModel
+        });
+        return generateCommitMessageByDiff(
+          diff,
+          fullGitMojiSpec,
+          context2,
+          newModel
+        );
+      }
+    }
     throw error;
   }
 };

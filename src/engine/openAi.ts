@@ -1,7 +1,7 @@
-import axios from 'axios';
 import { OpenAI } from 'openai';
 import { GenerateCommitMessageErrorEnum } from '../generateCommitMessageFromGitDiff';
 import { parseCustomHeaders } from '../utils/engine';
+import { normalizeEngineError } from '../utils/engineErrorHandler';
 import { removeContentTags } from '../utils/removeContentTags';
 import { tokenCount } from '../utils/tokenCount';
 import { AiEngine, AiEngineConfig } from './Engine';
@@ -61,17 +61,7 @@ export class OpenAiEngine implements AiEngine {
       let content = message?.content;
       return removeContentTags(content, 'think');
     } catch (error) {
-      const err = error as Error;
-      if (
-        axios.isAxiosError<{ error?: { message: string } }>(error) &&
-        error.response?.status === 401
-      ) {
-        const openAiError = error.response.data.error;
-
-        if (openAiError) throw new Error(openAiError.message);
-      }
-
-      throw err;
+      throw normalizeEngineError(error, 'openai', this.config.model);
     }
   };
 }
