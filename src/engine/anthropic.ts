@@ -1,11 +1,12 @@
 import AnthropicClient from '@anthropic-ai/sdk';
+import { HttpsProxyAgent } from 'https-proxy-agent';
 import {
   MessageCreateParamsNonStreaming,
   MessageParam
 } from '@anthropic-ai/sdk/resources/messages.mjs';
 import { OpenAI } from 'openai';
-import { GenerateCommitMessageErrorEnum } from '../generateCommitMessageFromGitDiff';
 import { normalizeEngineError } from '../utils/engineErrorHandler';
+import { GenerateCommitMessageErrorEnum } from '../utils/generateCommitMessageErrors';
 import { removeContentTags } from '../utils/removeContentTags';
 import { tokenCount } from '../utils/tokenCount';
 import { AiEngine, AiEngineConfig } from './Engine';
@@ -18,7 +19,14 @@ export class AnthropicEngine implements AiEngine {
 
   constructor(config) {
     this.config = config;
-    this.client = new AnthropicClient({ apiKey: this.config.apiKey });
+    const clientOptions: any = { apiKey: this.config.apiKey };
+
+    const proxy = config.proxy;
+    if (proxy) {
+      clientOptions.httpAgent = new HttpsProxyAgent(proxy);
+    }
+
+    this.client = new AnthropicClient(clientOptions);
   }
 
   public generateCommitMessage = async (
@@ -38,8 +46,8 @@ export class AnthropicEngine implements AiEngine {
       max_tokens: this.config.maxTokensOutput
     };
 
-    // add top_p for non-4.5 models
-    if (!/claude.*-4-5/.test(params.model)) {
+    // Anthropic rejects simultaneous temperature and top_p on Claude 4.5+
+    if (!/claude.*-4-(?:5|[6-9])/.test(params.model)) {
       params.top_p = 0.1;
     }
 
