@@ -85879,6 +85879,7 @@ ${source_default.grey("\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2
         message: "Please edit the commit message: (press Enter to continue)",
         initialValue: commitMessage
       });
+      if (hD2(textResponse)) process.exit(1);
       commitMessage = textResponse.toString();
     }
     if (userAction === "Yes" || userAction === "Edit") {
